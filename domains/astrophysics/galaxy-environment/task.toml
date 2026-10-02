@@ -1,0 +1,54 @@
+schema_version = "1.4"
+artifacts = ["/workspace/mechanisms"]
+
+[metadata]
+deliverables = ["mechanisms/mechanism.md", "mechanisms/experiment.log", "mechanisms/mechanism.py"]
+mechanisms_max_mb = 1024
+blocked_hosts = [
+    "users.flatironinstitute.org", "flathub.flatironinstitute.org", "binder.flatironinstitute.org",
+    "www.flatironinstitute.org", "flatironinstitute.org", "www.simonsfoundation.org", "simonsfoundation.org",
+    "camels.readthedocs.io", "camels-multifield-dataset.readthedocs.io", "camels-sam.readthedocs.io",
+    "camel-simulations.org", "www.camel-simulations.org", "www.tng-project.org", "tng-project.org",
+    "www.illustris-project.org", "illustris-project.org", "www.arepo-code.org", "arepo-code.org",
+    "github.com", "www.github.com", "raw.githubusercontent.com", "codeload.github.com",
+    "objects.githubusercontent.com", "github.io", "pypi.org", "pypi.python.org", "files.pythonhosted.org",
+    "registry.npmjs.org", "conda.anaconda.org", "anaconda.org", "huggingface.co", "zenodo.org",
+    "www.zenodo.org", "arxiv.org", "www.arxiv.org", "export.arxiv.org", "browse.arxiv.org", "info.arxiv.org",
+    "ar5iv.labs.arxiv.org", "ar5iv.org", "alphaxiv.org", "www.alphaxiv.org", "arxiv-sanity-lite.com",
+    "www.arxiv-sanity-lite.com", "ui.adsabs.harvard.edu", "adsabs.harvard.edu", "articles.adsabs.harvard.edu",
+    "inspirehep.net", "iopscience.iop.org", "journals.aas.org", "academic.oup.com", "www.aanda.org",
+    "aanda.org", "nature.com", "www.nature.com", "sciencedirect.com", "www.sciencedirect.com", "doi.org",
+    "dx.doi.org", "semanticscholar.org", "www.semanticscholar.org", "api.semanticscholar.org",
+    "pdfs.semanticscholar.org", "openalex.org", "api.openalex.org", "crossref.org", "api.crossref.org",
+    "scholar.google.com", "scholar.archive.org", "researchgate.net", "www.researchgate.net", "academia.edu",
+    "www.academia.edu", "core.ac.uk", "europepmc.org", "paperswithcode.com", "www.paperswithcode.com",
+    "emergentmind.com", "www.emergentmind.com", "connectedpapers.com", "www.connectedpapers.com", "scite.ai",
+    "astrobites.org", "www.astrobites.org", "phys.org", "eurekalert.org", "www.eurekalert.org", "sci-hub.st",
+    "sci-hub.ru",
+]
+task_vocabulary = ["SIMBA", "IllustrisTNG", "ASTRID", "Swift-EAGLE"]
+
+[metadata.simulator]
+name = "camels-cv"
+args = {"suites" = ["SIMBA", "IllustrisTNG", "Astrid", "Swift-EAGLE"], "set_types" = ["CV"]}
+workspace_dirs = ["camels_data"]
+records = "accessed_sims.json"
+
+[[metadata.source_literature]]
+titles = ["CAMELS Environments: The Impact of Local Neighbours on Galaxy Evolution across the SIMBA, IllustrisTNG, ASTRID, and Swift-EAGLE Simulations"]
+phrases = ["camels environments", "impact of local neighbours"]
+authors = ["Sims", "Anglés-Alcázar", "Angles-Alcazar", "Nagai", "Mercedes-Feliz", "Medlock", "Lovell", "Villaescusa-Navarro"]
+years = [2026]
+venues = ["arXiv"]
+ids = ["2601.06290"]
+
+[agent]
+timeout_sec = 14400
+
+[verifier]
+timeout_sec = 172800
+environment_mode = "separate"
+
+[environment]
+docker_image = "astrophysics.sif"
+workdir = "/workspace"

@@ -1,0 +1,72 @@
+predictive_accuracy:
+  criteria:
+  - id: PA1
+    machine: true
+    criterion: 'Whether the mechanism holds the circuit in the right state at the right time: the fraction of time the predicted state sequence agrees with the recorded one, pooled over the 100 held-out settings. It is 1 when the two sequences agree throughout and 0 when they never agree.'
+  - id: PA2
+    machine: true
+    criterion: 'Whether it produces the switches themselves, each at its time and in its direction: the harmonic mean of the fraction of recorded switches matched by a predicted switch and the fraction of predicted switches matching a recorded one, pooled over the held-out settings. It is 1 when every recorded switch is matched and none is invented, and 0 when no predicted switch matches a recorded one.'
+  - id: PA3
+    machine: true
+    criterion: 'Whether it reproduces the irregular dwelling: the Wasserstein distance between the distribution of predicted dwell times and the recorded one, averaged over the two states and pooled over the held-out settings, divided by the sum of the two distributions'' mean dwell times, which that distance cannot exceed, and subtracted from 1. It is 1 when the two distributions coincide and 0 when the distance reaches that bound, as it does for a prediction that never switches.'
+  - id: PA4
+    machine: true
+    criterion: 'Whether it reproduces the structure of the panel, which cells rise and fall with which: the mean absolute difference between the predicted and the recorded matrix of pairwise correlations across the panel cells, over cell pairs and pooled over the held-out settings, divided by 2, the largest difference two correlations can have, and subtracted from 1. It is 1 when every pairwise correlation is reproduced exactly and 0 when every one of them is off by the full range.'
+  - id: PA5
+    machine: true
+    criterion: 'Whether the mechanism uses both ingredients of the phenomenon rather than one: the amount by which its switch harmonic mean exceeds that of each of the two reduced runs of the submission itself, the smaller of the two margins taken and clipped to 0 and 1. It is 0 when the mechanism is no better than either reduced run.'
+  - id: PA6
+    machine: true
+    criterion: 'Whether the structure of the mechanism rather than its constants carries the phenomenon: the state agreement of PA1, with the constants refit by fit_coeffs on half the held-out settings and the structure unchanged, measured on the disjoint other half.'
+scientific_constraints:
+  criteria:
+  - id: SC1
+    criterion: The joint activity of the premotor interneurons is low-dimensional.
+    source: As stated in the task specification, beneath the variety of the recordings "the joint activity is low-dimensional".
+  - id: SC2
+    criterion: C. elegans neurons respond gradedly.
+    source: A general assumption about C. elegans neurophysiology is that its neurons lack sodium action potentials and follow their input smoothly rather than as a train of events.
+  - id: SC3
+    criterion: The wiring stays the same within one run.
+    source: A general assumption about C. elegans physiology is that the connectome does not change within the seconds of a single run.
+completeness:
+  criteria:
+  - id: C1
+    criterion: mechanism.md and mechanism.py are both present and describe the same mechanism. The .md file gives its causal chain and evidence, while the .py file defines PROPERTIES, COEFFS, predict_activity, and fit_coeffs, and applies one deterministic computation to every panel cell using that cell's own inputs and the delivered weights, with at most 10 fitted constants.
+  - id: C2
+    criterion: experiment.log is present in the mechanisms folder.
+insights:
+  criteria:
+  - id: I1
+    criterion: Does the discovered mechanism establish what each of the two kinds of connection among the premotor cells does when it acts alone, and that the circuit needs both?
+    kind: finding
+  - id: I2
+    criterion: Does the discovered mechanism establish that the circuit enters forward only when the forward cells are driven, while it can enter reversal either by driving the reversal cells or by suppressing the forward ones?
+    kind: finding
+  - id: I3
+    criterion: Does the discovered mechanism explain why a few of the cells that drive the circuit are disproportionately responsible for its switches?
+    kind: finding
+  - id: I4
+    criterion: Does the discovered mechanism establish what driving the heat-responsive neurons does to the fraction of the run the circuit spends in the reversal state?
+    kind: finding
+  - id: I5
+    criterion: Does the discovered mechanism establish which member of the circuit each state depends on most, and that this member is not the cell named as the command neuron for its direction?
+    kind: finding
+  - id: I6
+    criterion: Does the discovered mechanism establish that the circuit has a paused state besides forward and reversal, and that losing the forward-group member the forward state depends on most turns forward time into pause rather than into reversal?
+    kind: finding
+  - id: I7
+    criterion: Does the discovered mechanism establish that the switching survives getting the sign of individual connections wrong?
+    kind: finding
+  - id: I8
+    criterion: Does the discovered mechanism settle whether the premotor state acts back on the cells that drive the group?
+    kind: limitation
+  - id: I9
+    criterion: Does the discovered mechanism establish what the motor neurons below the premotor group do to its switching?
+    kind: limitation
+  - id: I10
+    criterion: Does the discovered mechanism account for the influence one premotor cell exerts on another through indirect, multi-synaptic paths that run outside the group?
+    kind: limitation
+  - id: I11
+    criterion: Does the discovered mechanism establish what PVC and DVA contribute to the two states?
+    kind: limitation

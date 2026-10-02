@@ -1,0 +1,72 @@
+predictive_accuracy:
+  criteria:
+  - id: PA1
+    machine: true
+    criterion: Tests whether the mechanism predicts how the amplitude responds to the parameters of a galaxy-formation model the agent never saw. The score is the coefficient of determination of log10 A_GWB on the SIMBA 1P simulations with the submitted constants. Higher is better.
+  - id: PA2
+    machine: true
+    criterion: Tests whether the mechanism predicts the amplitude of each fiducial realization of a galaxy-formation model the agent never saw. The score is the coefficient of determination of log10 A_GWB on the SIMBA CV simulations with the submitted constants. Higher is better.
+  - id: PA3
+    machine: true
+    criterion: Tests whether the functional form alone predicts how the amplitude responds to the parameters of a galaxy-formation model the agent never saw. The score is the coefficient of determination of log10 A_GWB on the SIMBA 1P simulations after the submission's own fit_coeffs refits the constants on the SIMBA CV simulations. Higher is better.
+scientific_constraints:
+  criteria:
+  - id: SC1
+    criterion: The background is the combined gravitational-wave emission of supermassive black hole binaries.
+    source: As stated in the task specification, the nanoHertz background is the one the binaries of supermassive black holes "emit".
+  - id: SC2
+    criterion: The gravitational-wave emission of a binary is set by its masses and orbit alone and does not depend on the galaxy-formation model that formed it.
+    source: A general assumption of gravitational-wave physics. It is why the task specification can ask the mechanism to "hold for a galaxy-formation model it was never fitted on".
+  - id: SC3
+    criterion: The contributions of independent binaries add in strain power, so the amplitude grows as the square root of their summed contribution.
+    source: A general assumption about the nanoHertz background is that it is the incoherent sum of many independent binaries.
+  - id: SC4
+    criterion: At equal number density, heavier binaries contribute more to the amplitude than lighter ones.
+    source: A general assumption of gravitational-wave physics is that the energy a binary radiates rises with its chirp mass as the 5/3 power.
+  - id: SC5
+    criterion: At the same mass, a binary at higher redshift contributes less to the amplitude than a nearby one.
+    source: A general assumption of gravitational-wave physics is that the strain of a source falls with its luminosity distance.
+  - id: SC6
+    criterion: A black hole gains mass only from its seed, from gas accretion and from mergers.
+    source: A general assumption about supermassive black holes is that they grow from seeds by accreting gas and merging.
+  - id: SC7
+    criterion: Stronger feedback in a host does not add to the gas that fuels its central black hole.
+    source: A general assumption of galaxy formation is that stellar and AGN feedback heat and expel gas, which can starve a black hole but not feed it.
+  - id: SC8
+    criterion: Black holes grow from the same gas supply as their host galaxies, so a change that raises the amplitude leaves some signature in the host population rather than acting on the black holes alone.
+    source: 'A general assumption of galaxy formation is that a black hole and its host share one gas supply and one feedback cycle. The task specification ties the weak background to the models that "reproduce the observed galaxies". The signature is not required to be in any particular galaxy statistic: the reference study itself reports a seeding variation that raises the amplitude while the stellar mass function stays intact and the gas is redistributed, so a mechanism that finds the same is not in conflict with this assumption.'
+completeness:
+  criteria:
+  - id: C1
+    criterion: mechanism.md and mechanism.py are both present and describe the same mechanism. The .md file gives its causal chain and evidence, while the .py file defines PROPERTIES, STATISTICS, COEFFS, compute_statistics, predict_agwb and fit_coeffs, and predicts every simulation from that simulation's own statistics with one deterministic computation, using at most 8 statistics and at most 10 fitted constants.
+  - id: C2
+    criterion: experiment.log is present in the mechanisms folder.
+insights:
+  criteria:
+  - id: I1
+    criterion: Does the discovered mechanism identify which part of the black hole population carries the amplitude, and account for why a change confined outside that part leaves the amplitude unmoved?
+    kind: finding
+  - id: I2
+    criterion: Does the discovered mechanism account for the time dimension of the phenomenon, namely why the amplitude responds to when the black holes that carry it do their growing, and not only to the mass they have ended up with?
+    kind: finding
+  - id: I3
+    criterion: Does the discovered mechanism explain why a model that reproduces the observed galaxies still falls short of the measured amplitude, and size the shortfall against the scatter the fiducial model shows from one realization of the universe to another?
+    kind: finding
+  - id: I4
+    criterion: Does the discovered mechanism locate the hosts in which the black holes that carry the amplitude are built, whether by halo, by galaxy or by environment?
+    kind: finding
+  - id: I5
+    criterion: Does the discovered mechanism say what a galaxy-formation model would have to change to reach the measured amplitude, and what that change does to the galaxy population the model was calibrated on?
+    kind: finding
+  - id: I6
+    criterion: Does the discovered mechanism explain how black hole mergers contribute to the mass of the black holes that carry the amplitude?
+    kind: limitation
+  - id: I7
+    criterion: Does the discovered mechanism explain by what route the cosmological parameters reach the amplitude, given that they move it at least as strongly as the feedback parameters do?
+    kind: limitation
+  - id: I8
+    criterion: Does the discovered mechanism explain why the ingredients that set how much energy the low-accretion-state feedback releases, and how often it releases it, leave the amplitude nearly unmoved, while the ingredients that set how efficiently a black hole turns accreted gas into mass move it by close to a decade?
+    kind: limitation
+  - id: I9
+    criterion: Does the discovered mechanism decide in advance, from what an ingredient of the stellar feedback does to the gas, whether it reaches the amplitude or leaves it alone?
+    kind: limitation

@@ -1,0 +1,87 @@
+predictive_accuracy:
+  criteria:
+  - id: PA1
+    machine: true
+    criterion: with the constants refit by the submission's own fit_coeffs on the other half of the protocols, the coefficient of determination between the predicted and the recorded signals over the scored settings and every time point, normalized to 0 and 1 and averaged over the two signals.
+  - id: PA2
+    machine: true
+    criterion: with those same constants, the median over the scored settings of the per-setting coefficient of determination, normalized to 0 and 1 and averaged over the two signals.
+  - id: PA3
+    machine: true
+    criterion: with those same constants, the coefficient of determination between the predicted and the recorded difference of each trained state from the untrained state of the same protocol, normalized to 0 and 1 and averaged over the two signals.
+  - id: PA4
+    machine: true
+    criterion: with those same constants, the coefficient of determination over the scored settings driven by sine currents, normalized to 0 and 1 and averaged over the two signals.
+scientific_constraints:
+  criteria:
+  - id: SC1
+    criterion: The two action signals change on a slower timescale than a membrane potential.
+    source: As stated in the task specification, both "are quantities of the timescale the conversion works on rather than of a membrane potential," which is why the simulator reads each of them "through a causal filter of 200 ms."
+  - id: SC2
+    criterion: A learned change is a persistent change inside the circuit and not a change in the odor that reaches it.
+    source: As stated in the task specification, "the persistent change in sensory-motor response is stored in the neural circuits," and the trained groups "were driven with identical odor stimulation."
+  - id: SC3
+    criterion: The learning state changes the two action signals under an identical odor stimulus.
+    source: As stated in the task specification, groups "given different training were driven with identical odor stimulation and answered with different action commands."
+  - id: SC4
+    criterion: Every learning state leaves C. elegans attracted to the odor.
+    source: As stated in the task specification, pairing butanone with food leaves C. elegans "climbing the same gradient more strongly" and pairing the odor with starvation leaves it "climbing less," and neither is climbing down the gradient.
+  - id: SC5
+    criterion: Neurons respond gradedly.
+    source: A general assumption about C. elegans neurophysiology is that its neurons are mostly non-spiking and transmit signals in a graded manner, so a response follows the input smoothly rather than as a train of events.
+  - id: SC6
+    criterion: Some of the connections in this circuit are inhibitory.
+    source: A general assumption about C. elegans circuits is that many of their synapses act through GABA or through inhibitory glutamate receptors, so a connection is not always excitatory.
+  - id: SC7
+    criterion: The wiring and a cell's response properties stay the same over one recording.
+    source: A general assumption about C. elegans physiology is that neither the wiring nor a cell's response to its input changes within the seconds of a single recording.
+completeness:
+  criteria:
+  - id: C1
+    criterion: mechanism.md and mechanism.py are both present and describe the same mechanism. The .md file gives its causal chain and evidence, while the .py file defines INPUTS, COEFFS, predict_reorientation, predict_steering and fit_coeffs, and applies one deterministic computation to every setting from that setting's own delivered entries at each step and earlier ones.
+  - id: C2
+    criterion: experiment.log is present in the mechanisms folder.
+insights:
+  criteria:
+  - id: I1
+    kind: finding
+    criterion: Does the discovered mechanism establish which learning state answers the same change in the odor with a stronger reorientation command?
+  - id: I2
+    kind: finding
+    criterion: Does the discovered mechanism explain why one learning state changes the steering signal while another leaves it unchanged?
+  - id: I3
+    kind: finding
+    criterion: Does the discovered mechanism explain why a learned change alters how the reorientation drive is timed and not only how large it is?
+  - id: I4
+    kind: finding
+    criterion: Does the discovered mechanism establish which learning state raises the reorientation command under an unchanging odor?
+  - id: I5
+    kind: finding
+    criterion: Does the discovered mechanism explain how one conversion keeps enough history for a slowly varying odor while still resolving a brief pulse?
+  - id: I6
+    kind: finding
+    criterion: Does the discovered mechanism explain why the same brief pulse changes the reorientation command by a different amount when the odor was rising than when it was falling?
+  - id: I7
+    kind: finding
+    criterion: Does the discovered mechanism explain why the interneurons between the odor-sensing cells and the two readouts carry both action signals, with no class dedicated to one action rather than the other?
+  - id: I8
+    kind: finding
+    criterion: Does the discovered mechanism explain why a falling odor draws a larger reorientation command than a rising one?
+  - id: I9
+    kind: limitation
+    criterion: Does the discovered mechanism settle at which site in the circuit a learned change sits?
+  - id: I10
+    kind: limitation
+    criterion: Does the discovered mechanism explain what in the circuit sets the parameters a learning state takes?
+  - id: I11
+    kind: limitation
+    criterion: Does the discovered mechanism explain where in the circuit the difference in odor between the two sides first exists as a signal in its own right rather than as a pair of large and nearly equal responses?
+  - id: I12
+    kind: limitation
+    criterion: Does the discovered mechanism identify the cell upstream of the cells that carry the two action signals whose state holds whether the odor was rising or falling before a pulse arrives?
+  - id: I13
+    kind: limitation
+    criterion: Does the discovered mechanism separate what a circuit element contributes from how the rest of the circuit compensates while that element is chronically ablated, inhibited or downregulated?
+  - id: I14
+    kind: limitation
+    criterion: Does the discovered mechanism settle whether the contributions of two first-layer interneurons combine, so that removing both together costs what removing each of them alone costs, or whether the two together do something neither does apart?

@@ -1,0 +1,1432 @@
+[
+  {
+    "prompt": "Question: Coconuts are brown. What color are coconuts?\nA. red\nB. orange\nC. brown\nD. purple\nAnswer:",
+    "natural_answer": "C",
+    "steered_answer": "3",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 2
+  },
+  {
+    "prompt": "Question: An aubergine is purple. What color is an aubergine?\nA. purple\nB. gray\nC. green\nD. pink\nAnswer:",
+    "natural_answer": "A",
+    "steered_answer": "1",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 0
+  },
+  {
+    "prompt": "Question: Scorpions are brown. What color are scorpions?\nA. white\nB. brown\nC. green\nD. yellow\nAnswer:",
+    "natural_answer": "B",
+    "steered_answer": "2",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 1
+  },
+  {
+    "prompt": "Question: Tin cans are gray. What color are tin cans?\nA. pink\nB. red\nC. yellow\nD. gray\nAnswer:",
+    "natural_answer": "D",
+    "steered_answer": "4",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 3
+  },
+  {
+    "prompt": "Question: Tomatoes are red. What color are tomatoes?\nA. blue\nB. orange\nC. red\nD. brown\nAnswer:",
+    "natural_answer": "C",
+    "steered_answer": "3",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 2
+  },
+  {
+    "prompt": "Question: Elephants are gray. What color are elephants?\nA. pink\nB. blue\nC. gray\nD. red\nAnswer:",
+    "natural_answer": "C",
+    "steered_answer": "3",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 2
+  },
+  {
+    "prompt": "Question: Canoes are brown. What color are canoes?\nA. orange\nB. pink\nC. green\nD. brown\nAnswer:",
+    "natural_answer": "D",
+    "steered_answer": "4",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 3
+  },
+  {
+    "prompt": "Question: Sinks are gray. What color are sinks?\nA. purple\nB. gray\nC. orange\nD. pink\nAnswer:",
+    "natural_answer": "B",
+    "steered_answer": "2",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 1
+  },
+  {
+    "prompt": "Question: Tennis balls are yellow. What color are tennis balls?\nA. blue\nB. orange\nC. green\nD. yellow\nAnswer:",
+    "natural_answer": "D",
+    "steered_answer": "4",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 3
+  },
+  {
+    "prompt": "Question: Emeralds are green. What color are emeralds?\nA. pink\nB. green\nC. blue\nD. orange\nAnswer:",
+    "natural_answer": "B",
+    "steered_answer": "2",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 1
+  },
+  {
+    "prompt": "Question: Creams are white. What color are creams?\nA. yellow\nB. white\nC. pink\nD. red\nAnswer:",
+    "natural_answer": "B",
+    "steered_answer": "2",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 1
+  },
+  {
+    "prompt": "Question: Rainclouds are gray. What color are rainclouds?\nA. yellow\nB. gray\nC. black\nD. green\nAnswer:",
+    "natural_answer": "B",
+    "steered_answer": "2",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 1
+  },
+  {
+    "prompt": "Question: Pineapples are yellow. What color are pineapples?\nA. yellow\nB. white\nC. red\nD. purple\nAnswer:",
+    "natural_answer": "A",
+    "steered_answer": "1",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 0
+  },
+  {
+    "prompt": "Question: Wheels are black. What color are wheels?\nA. blue\nB. black\nC. yellow\nD. brown\nAnswer:",
+    "natural_answer": "B",
+    "steered_answer": "2",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 1
+  },
+  {
+    "prompt": "Question: Corn is yellow. What color is corn?\nA. yellow\nB. red\nC. brown\nD. black\nAnswer:",
+    "natural_answer": "A",
+    "steered_answer": "1",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 0
+  },
+  {
+    "prompt": "Question: Basil is green. What color is basil?\nA. green\nB. white\nC. pink\nD. gray\nAnswer:",
+    "natural_answer": "A",
+    "steered_answer": "1",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 0
+  },
+  {
+    "prompt": "Question: Tree houses are brown. What color are tree houses?\nA. orange\nB. brown\nC. gray\nD. purple\nAnswer:",
+    "natural_answer": "B",
+    "steered_answer": "2",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 1
+  },
+  {
+    "prompt": "Question: Seat belts are gray. What color are seat belts?\nA. red\nB. gray\nC. yellow\nD. orange\nAnswer:",
+    "natural_answer": "B",
+    "steered_answer": "2",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 1
+  },
+  {
+    "prompt": "Question: Hippopotamuses are gray. What color are hippopotamuses?\nA. green\nB. gray\nC. blue\nD. red\nAnswer:",
+    "natural_answer": "B",
+    "steered_answer": "2",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 1
+  },
+  {
+    "prompt": "Question: Ivy is green. What color is ivy?\nA. black\nB. green\nC. red\nD. yellow\nAnswer:",
+    "natural_answer": "B",
+    "steered_answer": "2",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 1
+  },
+  {
+    "prompt": "Question: Barrels are brown. What color are barrels?\nA. yellow\nB. gray\nC. brown\nD. blue\nAnswer:",
+    "natural_answer": "C",
+    "steered_answer": "3",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 2
+  },
+  {
+    "prompt": "Question: Wedding dresses are white. What color are wedding dresses?\nA. green\nB. white\nC. brown\nD. yellow\nAnswer:",
+    "natural_answer": "B",
+    "steered_answer": "2",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 1
+  },
+  {
+    "prompt": "Question: Swords are gray. What color are swords?\nA. pink\nB. green\nC. gray\nD. blue\nAnswer:",
+    "natural_answer": "C",
+    "steered_answer": "3",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 2
+  },
+  {
+    "prompt": "Question: Ivory is white. What color is ivory?\nA. blue\nB. red\nC. white\nD. brown\nAnswer:",
+    "natural_answer": "C",
+    "steered_answer": "3",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 2
+  },
+  {
+    "prompt": "Question: Pasta is yellow. What color is pasta?\nA. yellow\nB. red\nC. brown\nD. black\nAnswer:",
+    "natural_answer": "A",
+    "steered_answer": "1",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 0
+  },
+  {
+    "prompt": "Question: Cottage cheese is white. What color is cottage cheese?\nA. blue\nB. pink\nC. green\nD. white\nAnswer:",
+    "natural_answer": "D",
+    "steered_answer": "4",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 3
+  },
+  {
+    "prompt": "Question: Stop signs are red. What color are stop signs?\nA. pink\nB. black\nC. blue\nD. red\nAnswer:",
+    "natural_answer": "D",
+    "steered_answer": "4",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 3
+  },
+  {
+    "prompt": "Question: An arctic fox is white. What color is an arctic fox?\nA. gray\nB. orange\nC. black\nD. white\nAnswer:",
+    "natural_answer": "D",
+    "steered_answer": "4",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 3
+  },
+  {
+    "prompt": "Question: Grass is green. What color is grass?\nA. white\nB. green\nC. red\nD. yellow\nAnswer:",
+    "natural_answer": "B",
+    "steered_answer": "2",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 1
+  },
+  {
+    "prompt": "Question: Cassette decks are black. What color are cassette decks?\nA. white\nB. black\nC. yellow\nD. pink\nAnswer:",
+    "natural_answer": "B",
+    "steered_answer": "2",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 1
+  },
+  {
+    "prompt": "Question: Coffees are brown. What color are coffees?\nA. pink\nB. red\nC. brown\nD. orange\nAnswer:",
+    "natural_answer": "C",
+    "steered_answer": "3",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 2
+  },
+  {
+    "prompt": "Question: A strawberry is red. What color is a strawberry?\nA. pink\nB. white\nC. green\nD. red\nAnswer:",
+    "natural_answer": "D",
+    "steered_answer": "4",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 3
+  },
+  {
+    "prompt": "Question: Computer monitors are black. What color are computer monitors?\nA. black\nB. green\nC. red\nD. blue\nAnswer:",
+    "natural_answer": "A",
+    "steered_answer": "1",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 0
+  },
+  {
+    "prompt": "Question: Pizza cutters are gray. What color are pizza cutters?\nA. gray\nB. red\nC. black\nD. purple\nAnswer:",
+    "natural_answer": "A",
+    "steered_answer": "1",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 0
+  },
+  {
+    "prompt": "Question: Koalas are gray. What color are koalas?\nA. green\nB. white\nC. gray\nD. purple\nAnswer:",
+    "natural_answer": "C",
+    "steered_answer": "3",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 2
+  },
+  {
+    "prompt": "Question: Limes are green. What color are limes?\nA. green\nB. gray\nC. purple\nD. brown\nAnswer:",
+    "natural_answer": "A",
+    "steered_answer": "1",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 0
+  },
+  {
+    "prompt": "Question: Wheelchairs are gray. What color are wheelchairs?\nA. yellow\nB. gray\nC. brown\nD. pink\nAnswer:",
+    "natural_answer": "B",
+    "steered_answer": "2",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 1
+  },
+  {
+    "prompt": "Question: Camels are brown. What color are camels?\nA. yellow\nB. purple\nC. brown\nD. blue\nAnswer:",
+    "natural_answer": "C",
+    "steered_answer": "3",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 2
+  },
+  {
+    "prompt": "Question: Radishes are red. What color are radishes?\nA. green\nB. black\nC. red\nD. brown\nAnswer:",
+    "natural_answer": "C",
+    "steered_answer": "3",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 2
+  },
+  {
+    "prompt": "Question: Picnic baskets are brown. What color are picnic baskets?\nA. gray\nB. yellow\nC. blue\nD. brown\nAnswer:",
+    "natural_answer": "D",
+    "steered_answer": "4",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 3
+  },
+  {
+    "prompt": "Question: A school bus is yellow. What color is a school bus?\nA. green\nB. white\nC. yellow\nD. pink\nAnswer:",
+    "natural_answer": "C",
+    "steered_answer": "3",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 2
+  },
+  {
+    "prompt": "Question: Ketchup is red. What color is ketchup?\nA. gray\nB. red\nC. pink\nD. yellow\nAnswer:",
+    "natural_answer": "B",
+    "steered_answer": "2",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 1
+  },
+  {
+    "prompt": "Question: Lavender is purple. What color is lavender?\nA. white\nB. purple\nC. pink\nD. orange\nAnswer:",
+    "natural_answer": "B",
+    "steered_answer": "2",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 1
+  },
+  {
+    "prompt": "Question: Snow is white. What color is snow?\nA. pink\nB. white\nC. orange\nD. blue\nAnswer:",
+    "natural_answer": "B",
+    "steered_answer": "2",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 1
+  },
+  {
+    "prompt": "Question: Nuts are brown. What color are nuts?\nA. purple\nB. brown\nC. pink\nD. white\nAnswer:",
+    "natural_answer": "B",
+    "steered_answer": "2",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 1
+  },
+  {
+    "prompt": "Question: Christmas trees are green. What color are christmas trees?\nA. gray\nB. red\nC. green\nD. purple\nAnswer:",
+    "natural_answer": "C",
+    "steered_answer": "3",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 2
+  },
+  {
+    "prompt": "Question: Egg yolk is yellow. What color is egg yolk?\nA. blue\nB. yellow\nC. gray\nD. purple\nAnswer:",
+    "natural_answer": "B",
+    "steered_answer": "2",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 1
+  },
+  {
+    "prompt": "Question: Stone is gray. What color is stone?\nA. green\nB. gray\nC. purple\nD. pink\nAnswer:",
+    "natural_answer": "B",
+    "steered_answer": "2",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 1
+  },
+  {
+    "prompt": "Question: A snow leopard is white. What color is a snow leopard?\nA. orange\nB. green\nC. pink\nD. white\nAnswer:",
+    "natural_answer": "D",
+    "steered_answer": "4",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 3
+  },
+  {
+    "prompt": "Question: Grapes are purple. What color are grapes?\nA. white\nB. purple\nC. gray\nD. yellow\nAnswer:",
+    "natural_answer": "B",
+    "steered_answer": "2",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 1
+  },
+  {
+    "prompt": "Question: Kiwis are green. What color are kiwis?\nA. purple\nB. yellow\nC. green\nD. pink\nAnswer:",
+    "natural_answer": "C",
+    "steered_answer": "3",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 2
+  },
+  {
+    "prompt": "Question: Shotguns are black. What color are shotguns?\nA. black\nB. blue\nC. yellow\nD. purple\nAnswer:",
+    "natural_answer": "A",
+    "steered_answer": "1",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 0
+  },
+  {
+    "prompt": "Question: A lady bug is red. What color is a lady bug?\nA. pink\nB. brown\nC. red\nD. yellow\nAnswer:",
+    "natural_answer": "C",
+    "steered_answer": "3",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 2
+  },
+  {
+    "prompt": "Question: Pillows are white. What color are pillows?\nA. yellow\nB. black\nC. white\nD. brown\nAnswer:",
+    "natural_answer": "C",
+    "steered_answer": "3",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 2
+  },
+  {
+    "prompt": "Question: Washing machines are white. What color are washing machines?\nA. white\nB. green\nC. orange\nD. yellow\nAnswer:",
+    "natural_answer": "A",
+    "steered_answer": "1",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 0
+  },
+  {
+    "prompt": "Question: The ocean is blue. What color is the ocean?\nA. blue\nB. yellow\nC. white\nD. black\nAnswer:",
+    "natural_answer": "A",
+    "steered_answer": "1",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 0
+  },
+  {
+    "prompt": "Question: Brown bears are brown. What color are brown bears?\nA. red\nB. brown\nC. white\nD. purple\nAnswer:",
+    "natural_answer": "B",
+    "steered_answer": "2",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 1
+  },
+  {
+    "prompt": "Question: Sand is brown. What color is sand?\nA. black\nB. brown\nC. pink\nD. blue\nAnswer:",
+    "natural_answer": "B",
+    "steered_answer": "2",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 1
+  },
+  {
+    "prompt": "Question: Carrots are orange. What color are carrots?\nA. orange\nB. purple\nC. yellow\nD. pink\nAnswer:",
+    "natural_answer": "A",
+    "steered_answer": "1",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 0
+  },
+  {
+    "prompt": "Question: Eggplants are purple. What color are eggplants?\nA. black\nB. blue\nC. purple\nD. orange\nAnswer:",
+    "natural_answer": "C",
+    "steered_answer": "3",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 2
+  },
+  {
+    "prompt": "Question: Sandwiches are brown. What color are sandwiches?\nA. yellow\nB. red\nC. black\nD. brown\nAnswer:",
+    "natural_answer": "D",
+    "steered_answer": "4",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 3
+  },
+  {
+    "prompt": "Question: Houseplants are green. What color are houseplants?\nA. orange\nB. blue\nC. red\nD. green\nAnswer:",
+    "natural_answer": "D",
+    "steered_answer": "4",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 3
+  },
+  {
+    "prompt": "Question: Popcorn is white. What color is popcorn?\nA. yellow\nB. gray\nC. white\nD. purple\nAnswer:",
+    "natural_answer": "C",
+    "steered_answer": "3",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 2
+  },
+  {
+    "prompt": "Question: Goats are white. What color are goats?\nA. white\nB. black\nC. red\nD. purple\nAnswer:",
+    "natural_answer": "A",
+    "steered_answer": "1",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 0
+  },
+  {
+    "prompt": "Question: The animal bat is black. What color is the animal bat?\nA. black\nB. orange\nC. brown\nD. gray\nAnswer:",
+    "natural_answer": "A",
+    "steered_answer": "1",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 0
+  },
+  {
+    "prompt": "Question: Mangoes are orange. What color are mangoes?\nA. red\nB. gray\nC. orange\nD. black\nAnswer:",
+    "natural_answer": "C",
+    "steered_answer": "3",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 2
+  },
+  {
+    "prompt": "Question: Tripods are black. What color are tripods?\nA. purple\nB. red\nC. black\nD. orange\nAnswer:",
+    "natural_answer": "C",
+    "steered_answer": "3",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 2
+  },
+  {
+    "prompt": "Question: Toilet paper is white. What color is toilet paper?\nA. purple\nB. orange\nC. white\nD. blue\nAnswer:",
+    "natural_answer": "C",
+    "steered_answer": "3",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 2
+  },
+  {
+    "prompt": "Question: Apricots are orange. What color are apricots?\nA. brown\nB. blue\nC. orange\nD. gray\nAnswer:",
+    "natural_answer": "C",
+    "steered_answer": "3",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 2
+  },
+  {
+    "prompt": "Question: A pear is green. What color is a pear?\nA. pink\nB. gray\nC. yellow\nD. green\nAnswer:",
+    "natural_answer": "D",
+    "steered_answer": "4",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 3
+  },
+  {
+    "prompt": "Question: Seals are gray. What color are seals?\nA. yellow\nB. gray\nC. orange\nD. pink\nAnswer:",
+    "natural_answer": "B",
+    "steered_answer": "2",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 1
+  },
+  {
+    "prompt": "Question: A leaf is green. What color is a leaf?\nA. orange\nB. blue\nC. yellow\nD. green\nAnswer:",
+    "natural_answer": "D",
+    "steered_answer": "4",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 3
+  },
+  {
+    "prompt": "Question: A lime is green. What color is a lime?\nA. red\nB. gray\nC. orange\nD. green\nAnswer:",
+    "natural_answer": "D",
+    "steered_answer": "4",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 3
+  },
+  {
+    "prompt": "Question: Moss is green. What color is moss?\nA. purple\nB. gray\nC. green\nD. black\nAnswer:",
+    "natural_answer": "C",
+    "steered_answer": "3",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 2
+  },
+  {
+    "prompt": "Question: Jaguars are black. What color are jaguars?\nA. brown\nB. blue\nC. black\nD. purple\nAnswer:",
+    "natural_answer": "C",
+    "steered_answer": "3",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 2
+  },
+  {
+    "prompt": "Question: Plates are white. What color are plates?\nA. green\nB. black\nC. purple\nD. white\nAnswer:",
+    "natural_answer": "D",
+    "steered_answer": "4",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 3
+  },
+  {
+    "prompt": "Question: Kangaroos are brown. What color are kangaroos?\nA. brown\nB. white\nC. gray\nD. red\nAnswer:",
+    "natural_answer": "A",
+    "steered_answer": "1",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 0
+  },
+  {
+    "prompt": "Question: Peanut butter is brown. What color is peanut butter?\nA. brown\nB. purple\nC. gray\nD. pink\nAnswer:",
+    "natural_answer": "A",
+    "steered_answer": "1",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 0
+  },
+  {
+    "prompt": "Question: Fire extinguishers are red. What color are fire extinguishers?\nA. red\nB. purple\nC. black\nD. gray\nAnswer:",
+    "natural_answer": "A",
+    "steered_answer": "1",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 0
+  },
+  {
+    "prompt": "Question: Forks are gray. What color are forks?\nA. green\nB. gray\nC. yellow\nD. blue\nAnswer:",
+    "natural_answer": "B",
+    "steered_answer": "2",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 1
+  },
+  {
+    "prompt": "Question: Tea is brown. What color is tea?\nA. purple\nB. brown\nC. pink\nD. gray\nAnswer:",
+    "natural_answer": "B",
+    "steered_answer": "2",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 1
+  },
+  {
+    "prompt": "Question: Soil is brown. What color is soil?\nA. purple\nB. brown\nC. green\nD. blue\nAnswer:",
+    "natural_answer": "B",
+    "steered_answer": "2",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 1
+  },
+  {
+    "prompt": "Question: Snowmen are white. What color are snowmen?\nA. gray\nB. white\nC. red\nD. brown\nAnswer:",
+    "natural_answer": "B",
+    "steered_answer": "2",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 1
+  },
+  {
+    "prompt": "Question: Urine is yellow. What color is urine?\nA. yellow\nB. red\nC. white\nD. blue\nAnswer:",
+    "natural_answer": "A",
+    "steered_answer": "1",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 0
+  },
+  {
+    "prompt": "Question: Teeth are white. What color are teeth?\nA. white\nB. blue\nC. red\nD. yellow\nAnswer:",
+    "natural_answer": "A",
+    "steered_answer": "1",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 0
+  },
+  {
+    "prompt": "Question: Limousines are black. What color are limousines?\nA. blue\nB. red\nC. black\nD. gray\nAnswer:",
+    "natural_answer": "C",
+    "steered_answer": "3",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 2
+  },
+  {
+    "prompt": "Question: Scrambled eggs are yellow. What color are scrambled eggs?\nA. pink\nB. green\nC. yellow\nD. blue\nAnswer:",
+    "natural_answer": "C",
+    "steered_answer": "3",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 2
+  },
+  {
+    "prompt": "Question: Footballs are brown. What color are footballs?\nA. pink\nB. brown\nC. black\nD. orange\nAnswer:",
+    "natural_answer": "B",
+    "steered_answer": "2",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 1
+  },
+  {
+    "prompt": "Question: Aluminium foil is gray. What color is aluminium foil?\nA. pink\nB. white\nC. yellow\nD. gray\nAnswer:",
+    "natural_answer": "D",
+    "steered_answer": "4",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 3
+  },
+  {
+    "prompt": "Question: Jade is green. What color is jade?\nA. blue\nB. pink\nC. black\nD. green\nAnswer:",
+    "natural_answer": "D",
+    "steered_answer": "4",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 3
+  },
+  {
+    "prompt": "Question: A panther is black. What color is a panther?\nA. yellow\nB. green\nC. black\nD. brown\nAnswer:",
+    "natural_answer": "C",
+    "steered_answer": "3",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 2
+  },
+  {
+    "prompt": "Question: Wood is brown. What color is wood?\nA. gray\nB. yellow\nC. white\nD. brown\nAnswer:",
+    "natural_answer": "D",
+    "steered_answer": "4",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 3
+  },
+  {
+    "prompt": "Question: Whiteboards are white. What color are whiteboards?\nA. white\nB. yellow\nC. purple\nD. gray\nAnswer:",
+    "natural_answer": "A",
+    "steered_answer": "1",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 0
+  },
+  {
+    "prompt": "Question: Baseball gloves are brown. What color are baseball gloves?\nA. blue\nB. brown\nC. gray\nD. white\nAnswer:",
+    "natural_answer": "B",
+    "steered_answer": "2",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 1
+  },
+  {
+    "prompt": "Question: Feta cheese is white. What color is feta cheese?\nA. red\nB. green\nC. purple\nD. white\nAnswer:",
+    "natural_answer": "D",
+    "steered_answer": "4",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 3
+  },
+  {
+    "prompt": "Question: Hamburgers are brown. What color are hamburgers?\nA. brown\nB. red\nC. gray\nD. orange\nAnswer:",
+    "natural_answer": "A",
+    "steered_answer": "1",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 0
+  },
+  {
+    "prompt": "Question: Trumpets are yellow. What color are trumpets?\nA. gray\nB. black\nC. red\nD. yellow\nAnswer:",
+    "natural_answer": "D",
+    "steered_answer": "4",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 3
+  },
+  {
+    "prompt": "Question: Herbs are green. What color are herbs?\nA. white\nB. pink\nC. blue\nD. green\nAnswer:",
+    "natural_answer": "D",
+    "steered_answer": "4",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 3
+  },
+  {
+    "prompt": "Question: Ravens are black. What color are ravens?\nA. red\nB. blue\nC. gray\nD. black\nAnswer:",
+    "natural_answer": "D",
+    "steered_answer": "4",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 3
+  },
+  {
+    "prompt": "Question: Seaweed is green. What color is seaweed?\nA. pink\nB. black\nC. blue\nD. green\nAnswer:",
+    "natural_answer": "D",
+    "steered_answer": "4",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 3
+  },
+  {
+    "prompt": "Question: Lemons are yellow. What color are lemons?\nA. green\nB. yellow\nC. black\nD. white\nAnswer:",
+    "natural_answer": "B",
+    "steered_answer": "2",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 1
+  },
+  {
+    "prompt": "Question: Deers are brown. What color are deers?\nA. pink\nB. green\nC. brown\nD. red\nAnswer:",
+    "natural_answer": "C",
+    "steered_answer": "3",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 2
+  },
+  {
+    "prompt": "Question: Honey is yellow. What color is honey?\nA. green\nB. yellow\nC. gray\nD. blue\nAnswer:",
+    "natural_answer": "B",
+    "steered_answer": "2",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 1
+  },
+  {
+    "prompt": "Question: Rubber duckies are yellow. What color are rubber duckies?\nA. yellow\nB. brown\nC. blue\nD. green\nAnswer:",
+    "natural_answer": "A",
+    "steered_answer": "1",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 0
+  },
+  {
+    "prompt": "Question: Sails are white. What color are sails?\nA. black\nB. red\nC. brown\nD. white\nAnswer:",
+    "natural_answer": "D",
+    "steered_answer": "4",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 3
+  },
+  {
+    "prompt": "Question: Treadmills are black. What color are treadmills?\nA. black\nB. gray\nC. yellow\nD. blue\nAnswer:",
+    "natural_answer": "A",
+    "steered_answer": "1",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 0
+  },
+  {
+    "prompt": "Question: Milk is white. What color is milk?\nA. green\nB. gray\nC. white\nD. black\nAnswer:",
+    "natural_answer": "C",
+    "steered_answer": "3",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 2
+  },
+  {
+    "prompt": "Question: Peas are green. What color are peas?\nA. green\nB. brown\nC. purple\nD. white\nAnswer:",
+    "natural_answer": "A",
+    "steered_answer": "1",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 0
+  },
+  {
+    "prompt": "Question: Matcha is green. What color is matcha?\nA. brown\nB. green\nC. red\nD. gray\nAnswer:",
+    "natural_answer": "B",
+    "steered_answer": "2",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 1
+  },
+  {
+    "prompt": "Question: Polar bears are white. What color are polar bears?\nA. purple\nB. orange\nC. blue\nD. white\nAnswer:",
+    "natural_answer": "D",
+    "steered_answer": "4",
+    "steering_target": "steer_to_symbol",
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_key": 3
+  }
+]

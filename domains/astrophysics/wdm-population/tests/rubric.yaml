@@ -1,0 +1,81 @@
+predictive_accuracy:
+  criteria:
+  - id: PA1
+    machine: true
+    criterion: 'Whether the discovered model predicts 1/M_WDM on the held-out simulations: the coefficient of determination score with the submitted constants.'
+  - id: PA2
+    machine: true
+    criterion: 'Whether the prediction stays accurate toward the CDM-like end: the mean relative error score with the submitted constants.'
+  - id: PA3
+    machine: true
+    criterion: 'Whether the functional form carries over once its constants are refit: the coefficient of determination score in the refit pass.'
+scientific_constraints:
+  criteria:
+  - id: SC1
+    criterion: A lighter particle suppresses more small-scale structure than a heavier one.
+    source: As stated in the task specification, "A lighter warm dark matter particle streams farther in the early universe and erases more of the small-scale fluctuations from which halos and their galaxies later grow."
+  - id: SC2
+    criterion: The effect of the particle mass vanishes in the cold dark matter limit.
+    source: A general assumption about thermal warm dark matter is that its free-streaming length shrinks as the particle mass grows, so the universe approaches cold dark matter as 1/M_WDM goes to zero.
+  - id: SC3
+    criterion: The particle mass does not change the abundance of massive halos.
+    source: A general assumption about warm dark matter is that it suppresses structure only below its free-streaming scale and keeps the large-scale success of cold dark matter.
+  - id: SC4
+    criterion: Dark matter acts on baryons only through gravity.
+    source: A general assumption about these simulations is that dark matter is collisionless and couples to gas and stars through gravity alone.
+  - id: SC5
+    criterion: Baryonic mass is conserved.
+    source: A general assumption in galaxy formation is that baryons are neither created nor destroyed, only moved between gas, stars, black holes and their surroundings.
+  - id: SC6
+    criterion: The particle mass of a universe can be recovered from the gas content of its own z=0 subhalo population.
+    source: As stated in the task specification, "the gas content of its subhalo population moves with the particle mass," and the model predicts 1/M_WDM "from statistics of the gas content of the z=0 subhalo catalog of one simulation."
+  - id: SC7
+    criterion: No single galaxy carries a readable imprint of the particle mass.
+    source: As stated in the task specification, "the particle mass leaves no readable imprint on any single galaxy (a subhalo that holds stars)."
+  - id: SC8
+    criterion: The effect of the particle mass is distinct from the effect of cosmology.
+    source: As stated in the task specification, "the particle mass varies together with cosmology and feedback" and "the model has to hold while cosmology and feedback vary." A general assumption in cosmology is that Omega_m and sigma_8 set the amount and amplitude of structure on all scales.
+  - id: SC9
+    criterion: The effect of the particle mass is distinct from the effect of feedback.
+    source: As stated in the task specification, "the particle mass varies together with cosmology and feedback" and "the model has to hold while cosmology and feedback vary." A general assumption in galaxy formation is that supernova and AGN feedback heat and eject gas, so the gas content of halos responds to feedback strength.
+completeness:
+  criteria:
+  - id: C1
+    criterion: mechanism.md and mechanism.py are both present and describe the same mechanism. The .md file gives its causal chain and evidence, while the .py file defines PROPERTIES, STATISTICS, COEFFS, compute_statistics, predict_inv_mwdm, and fit_coeffs, and applies one deterministic closed-form computation to every simulation using that simulation's own statistics, with at most 8 statistics and 10 fitted constants, every one of them a statistic of the gas content of that simulation's subhalo population.
+  - id: C2
+    criterion: experiment.log is present in the mechanisms folder.
+insights:
+  criteria:
+  - id: I1
+    criterion: Does the discovered mechanism explain why the gas content of subhalos carries more information about the particle mass than their total mass?
+    kind: finding
+  - id: I2
+    criterion: Does the discovered mechanism explain why the number of gas-free subhalos tracks the particle mass?
+    kind: finding
+  - id: I3
+    criterion: Does the discovered mechanism establish that the record is a census taken over the subhalo population as a whole, so that which host halo each subhalo belongs to adds little to it?
+    kind: finding
+  - id: I4
+    criterion: Does the discovered mechanism establish that the record sits in the gas the subhalos hold and not in how those subhalos are arranged in space?
+    kind: finding
+  - id: I5
+    criterion: Does the discovered mechanism explain why knowing the matter density sharpens the recovery of the particle mass?
+    kind: finding
+  - id: I6
+    criterion: Does the discovered mechanism explain why the particle mass is harder to recover for heavier particles?
+    kind: finding
+  - id: I7
+    criterion: Does the discovered mechanism explain why the particle mass cannot be read from any single galaxy?
+    kind: limitation
+  - id: I8
+    criterion: Does the discovered mechanism explain how the record of the particle mass is told apart from the effect of cosmology?
+    kind: limitation
+  - id: I9
+    criterion: Does the discovered mechanism explain how the record of the particle mass is told apart from the effect of feedback?
+    kind: limitation
+  - id: I10
+    criterion: Does the discovered mechanism explain at which subhalo mass the gas starts to carry the record, and how that mass shifts with the particle mass?
+    kind: limitation
+  - id: I11
+    criterion: Does the discovered mechanism explain when in cosmic history the record of the particle mass is written?
+    kind: limitation

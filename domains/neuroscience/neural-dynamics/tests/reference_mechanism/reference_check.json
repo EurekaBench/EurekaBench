@@ -1,0 +1,127 @@
+{
+  "shipped_coeffs": [
+    10.4351,
+    0.772145,
+    0.269135,
+    -0.252231,
+    2.0,
+    -0.22028,
+    0.050001,
+    5.0,
+    1.37686e-09
+  ],
+  "thresholds": {
+    "PA2_per_neuron_r2_floor": 0.0
+  },
+  "predict_seconds": 0.1,
+  "target": {
+    "n_regressors": 150,
+    "pooled_r2": 0.4739292371826834,
+    "r2_state_only": 0.413014269931237,
+    "r2_state_independent": 0.24774119625409863,
+    "margin_state_only": 0.413014269931237,
+    "margin_state_independent": 0.24774119625409863,
+    "refit_pooled_r2": 0.47456284809331417,
+    "refit_margin_state_only": 0.41013220174791143,
+    "refit_margin_state_independent": 0.2519400639899465,
+    "per_neuron_r2_median": 0.2989823156452933,
+    "per_neuron_below_floor": 0.13333333333333333,
+    "fast_r2": 0.3990013269274256,
+    "amplitude_r": 0.8187213315597027,
+    "sign_fraction": 0.7292263610315186,
+    "other_amplitude_r": 0.4730291027335546,
+    "other_sign_fraction": 0.7731182795698924,
+    "note": "one rule shared by every panel neuron, told nothing about which neuron it is, fitted on the test settings themselves"
+  },
+  "fit_seconds": 2.1,
+  "refit_coeffs": [
+    13.069252175139638,
+    0.6252395421104117,
+    0.20000000000000032,
+    -0.2964114401450036,
+    2.0000000000000004,
+    -0.1533058102003467,
+    0.06409595108523997,
+    5.000000000000001,
+    1.5590914853603781e-09
+  ],
+  "coeffs_used": [
+    10.4351,
+    0.772145,
+    0.269135,
+    -0.252231,
+    2.0,
+    -0.22028,
+    0.050001,
+    5.0,
+    1.37686e-09
+  ],
+  "submitted": {
+    "pooled_r2": 0.3780285700411127,
+    "per_neuron_r2_median": 0.10145745999584732,
+    "per_neuron_r2_below_floor": 0.2222222222222222,
+    "median_nrmse": 0.7977252129093222,
+    "fast_r2": 0.2643287216040894,
+    "beats_state_only": true,
+    "beats_state_independent": true,
+    "baselines": {
+      "state_only": 0.23846663324337425,
+      "state_independent": 0.279646480619005
+    },
+    "margin_state_only": 0.13956193679773843,
+    "margin_state_independent": 0.09838208942210769,
+    "amplitude_r": 0.7588180094568808,
+    "sign_fraction": 0.7237284337889313,
+    "n_settings": 86,
+    "n_pairs": 4463,
+    "unseen": {
+      "pooled_r2": -0.018590849891207517,
+      "sign_fraction": 0.702020202020202,
+      "amplitude_r": 0.3581313838529817,
+      "n_pairs": 990,
+      "n_cells": 12
+    }
+  },
+  "refit": {
+    "pooled_r2": 0.3780138725159574,
+    "per_neuron_r2_median": 0.08730677735359904,
+    "per_neuron_r2_below_floor": 0.17777777777777778,
+    "median_nrmse": 0.8039340872242009,
+    "fast_r2": 0.24502007436000162,
+    "beats_state_only": true,
+    "beats_state_independent": true,
+    "baselines": {
+      "state_only": 0.23973259622147536,
+      "state_independent": 0.28181041404906426
+    },
+    "margin_state_only": 0.13828127629448206,
+    "margin_state_independent": 0.09620345846689315,
+    "amplitude_r": 0.7571489595127371,
+    "sign_fraction": 0.7282120395327942,
+    "n_settings": 43,
+    "n_pairs": 2226
+  },
+  "criteria": {
+    "PA1": false,
+    "PA2": false,
+    "PA3": false,
+    "PA4": false,
+    "PA5": false,
+    "PA6": false,
+    "PA7": false,
+    "PA8": false
+  },
+  "human_reference_criteria": {
+    "PA1": true,
+    "PA2": true,
+    "PA3": true,
+    "PA4": true,
+    "PA5": true,
+    "PA6": true,
+    "PA7": true,
+    "PA8": true
+  },
+  "passed": 0,
+  "total": 8,
+  "test_set_fingerprint": "98d6a0dad72b1be7"
+}

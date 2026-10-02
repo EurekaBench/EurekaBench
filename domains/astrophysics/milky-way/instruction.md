@@ -1,0 +1,28 @@
+You are an astrophysicist studying the dark matter structure of Milky-Way-mass galaxies. The DREAMS CDM suite simulates 1,024 Milky-Way-mass halos with the IllustrisTNG galaxy-formation model, each with its own initial conditions and its own two cosmological and three feedback parameters, and pairs each halo with a gravity-only twin run from the same initial conditions.
+
+Across the suite, the z=0 dark matter density profiles have nearly the same shape in units of R200, with a scatter of about 0.3 dex at 0.01 R200 and at R200 but only 0.13 dex at 0.1 R200. Near the center, the hosts are denser than their gravity-only twins, which scatter by only about 0.22 dex there.
+
+However, it is unclear how the baryons reshape the dark matter profile of a host, and how much of the scatter comes from feedback rather than from the host's own assembly history.
+
+Your task is to discover the mechanism that explains this phenomenon. Concretely, the mechanism has to predict the z=0 dark matter profile of a host from the profile of its gravity-only twin and whichever other quantities of the two runs you find it to depend on, and separate the impact of baryonic feedback from that of halo-to-halo variance. To discover this, you run controlled numerical experiments on the DREAMS CDM suite and its gravity-only twins.
+
+Every claim in your discovered mechanism needs to be backed by data you actually collected. Your mechanism is evaluated through its executable form on held-out simulations you never accessed, by how much better than the gravity-only twins it predicts the measured profiles, once with the constants you submit and once with constants refit by your own fitting function on one half of them and scored on the other half. Your experimental findings will also be reviewed by an independent researcher who has access to the same simulator, to assess whether the mechanism you discover can yield new insights.
+
+You need to produce three deliverables. If any of them is missing or does not follow the requirements below, your solution receives a score of 0.
+Deliverable 1:
+Write your discovered mechanism to /workspace/mechanisms/mechanism.md. State the mechanism as a causal chain, give its executable form with every quantity and fitted constant defined, and give the evidence from your experiments behind it.
+
+Deliverable 2:
+Write the executable form of your mechanism to /workspace/mechanisms/mechanism.py. It imports only numpy, scipy, h5py and the standard library, and defines:
+  - `COEFFS`: your fitted constants, at most 10.
+  - `predict_profile(props, coeffs, archive)` -> the (N, R) predicted log10 dark matter density of N hosts in Msun/kpc^3, within one minute per host.
+  - `fit_coeffs(props, log_rho, coeffs_init, archive)` -> the constants refitted to the measured (N, R) `log_rho`, within one minute per host.
+
+`archive` offers the commands of `bb_cli.py` as methods with the same arguments and returns, and what the file reads through it is yours to decide. At evaluation it is scored over a thousand simulations, so `get_snapshot` serves the particles of that simulation's host alone, at z=0 only; the catalogs and the merger trees are served whole, at any output. It serves the hydrodynamic runs without their dark matter, which is what the model predicts: no dark matter particles, and every catalog or tree entry that counts dark matter, alone or in a total, is NaN. `props` holds `"sim_name"` (N,); `"host_group_hydro"` and `"host_group_nbody"` (N,), the index of the host's Friends-of-Friends group in each z=0 catalog; `"r_over_r200"` (R,), the radii in units of the twin's R200c, from 0.01 to 1; `"rho_nbody"` (N, R), the density of the twin there, with the twin's particle mass rescaled by (Omega_m - Omega_b) / Omega_m so that it counts the dark-matter share of the matter only; and `"r200_nbody"` (N,) in kpc.
+
+Deliverable 3:
+Keep an experiment log at /workspace/mechanisms/experiment.log. Treat it as your laboratory notebook. It is the primary reference for the researchers who will continue this work, and you choose how to organize it. Record what they will need to follow and extend your investigation. Write down the questions you pursued, the experiments you ran, what you observed, the conclusions you drew, and the approaches that did not work and why. Give particular room to the findings that surprised you or that you found interesting along the way, whether or not they entered your final mechanism. These are often the most valuable part of a notebook for the next researcher.
+
+You may additionally place supporting evidence in /workspace/mechanisms/ and reference it from the files above. Move the evidence behind the log's findings into /workspace/mechanisms/ so that it survives: the figures, analysis outputs and small data files your experiments produced in /workspace/tmp. Only this folder is kept when the session ends. Everything else in the workspace, including /workspace/tmp and the downloaded data, is discarded. The independent researcher reviewing your mechanism sees exactly this folder. Everything under /workspace/mechanisms/ combined is limited to 1 GB. If the folder exceeds this limit, your solution receives a score of 0. It is for final deliverables and their evidence, not scratch space. Keep drafts and intermediate files in /workspace/tmp.
+
+You have access to an H100 GPU and a time budget of 4 hours. You can use /workspace/tmp for notes and intermediate files.

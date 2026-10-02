@@ -1,0 +1,62 @@
+{
+  "shipped_coeffs": [
+    0.364689,
+    0.720886,
+    0.98799,
+    0.013985,
+    -0.131214,
+    0.001
+  ],
+  "submitted": {
+    "holding_back_recorded": 0.005691853295498037,
+    "response_scale": 0.15962071015559623,
+    "response": 0.15176805010877192,
+    "holding_back": -0.006334474680528279,
+    "grain_contrast": -0.04225019898736915,
+    "predict_seconds": 0.01,
+    "prediction_shape": [
+      60,
+      600,
+      8
+    ],
+    "prediction_finite": true
+  },
+  "refit_coeffs": [
+    0.4096757697189486,
+    0.6559397675170986,
+    0.9919616520082788,
+    0.007077560664389298,
+    -0.12217412026715196,
+    0.0010000000000280446
+  ],
+  "refit": {
+    "holding_back_recorded": 0.006886099562570027,
+    "response_scale": 0.15995409955340495,
+    "response": 0.16866165631318208,
+    "holding_back": -0.01863564404438045,
+    "grain_contrast": -0.060102372425219874,
+    "fit_seconds": 0.13,
+    "predict_seconds": 0.0,
+    "prediction_shape": [
+      30,
+      600,
+      8
+    ],
+    "prediction_finite": true
+  },
+  "pa_scores": {
+    "PA1": 0.160215,
+    "PA2": 0.0,
+    "PA3": 0.0
+  },
+  "predictive_accuracy": 0.053405,
+  "target": {
+    "response": 0.2697701514917381,
+    "holding_back": 0.5478436550813836,
+    "grain_contrast": 0.31175752363489895,
+    "n_terms": 8,
+    "note": "the better on each criterion of two linear rules over the same columns, each shared by every location, one fitted on how the response changes between the test settings and one fitted to every criterion at once, both on the test settings themselves and scored the way a submission is"
+  },
+  "total": 3,
+  "test_set_fingerprint": "84a19870e872f5b6"
+}

@@ -1,0 +1,78 @@
+predictive_accuracy:
+  criteria:
+  - id: PA1
+    machine: true
+    criterion: 'Whether the flow the shelf is observed to have satisfies the first momentum equation of the discovered mechanism. Metric: the mean relative error of that equation over the whole shelf, lower is better.'
+  - id: PA2
+    machine: true
+    criterion: 'Whether it satisfies the second momentum equation of the discovered mechanism. Metric: the mean relative error of that equation over the whole shelf, lower is better.'
+  - id: PA3
+    machine: true
+    criterion: 'Whether the velocity the discovered equations fit to the shelf is the velocity that was observed. Metric: the relative L2 error of the fitted u against the observed u, lower is better.'
+  - id: PA4
+    machine: true
+    criterion: 'Whether the same holds for the other component of the velocity. Metric: the relative L2 error of the fitted v against the observed v, lower is better.'
+  - id: PA5
+    machine: true
+    criterion: 'Whether the thickness the discovered equations fit to the shelf is the thickness that was observed. Metric: the relative L2 error of the fitted h against the observed h, lower is better.'
+scientific_constraints:
+  criteria:
+  - id: SC1
+    criterion: The shelf is thin compared with its horizontal extent, so the momentum balance is depth-integrated to two dimensions in x and y and every field the equations use is depth-averaged.
+    source: As stated in the task specification, the SSA momentum equations are "depth-averaged" and written in (x, y) only; the shallow-shelf approximation rests on ice shelves being thin compared with their horizontal extent.
+  - id: SC2
+    criterion: The vertical normal stress is set by the weight of the ice above, so gradients of vertical resistive stress do not enter the equations.
+    source: A general assumption of ice-shelf mechanics is that in a thin floating shelf the vertical normal stress is set by the weight of the ice above, so gradients of vertical resistive stress drop out of the depth-integrated balance.
+  - id: SC3
+    criterion: 'The shelf floats freely on the ocean: nothing drags its base, vertical shear is negligible, and the horizontal velocity does not vary with depth.'
+    source: A general assumption of ice-shelf mechanics is that a shelf floating on the ocean has stress-free top and bottom surfaces, so nothing drags its base and the horizontal velocity does not vary with depth.
+  - id: SC4
+    criterion: The shelf floats in hydrostatic equilibrium with the ocean, so the gravitational driving term is rho_i g (1 - rho_i/rho_w) h grad(h).
+    source: As stated in the task specification, the driving term of the momentum equations is ρ_i g (1 − ρ_i/ρ_w) h ∂h/∂x and ρ_i g (1 − ρ_i/ρ_w) h ∂h/∂y, the form that follows from the shelf floating in hydrostatic equilibrium with the ocean.
+  - id: SC5
+    criterion: Ice is incompressible, so wherever the equations use the vertical strain rate it equals minus the sum of the two horizontal strain rates.
+    source: As stated in the task specification, in the classical SSA the membrane-stress terms carry the coefficients 4 and 2 (4 ∂u/∂x + 2 ∂v/∂y and 4 ∂v/∂y + 2 ∂u/∂x) because the vertical strain rate is minus the sum of the two horizontal ones, which is what incompressibility gives; a law with more than one viscosity keeps that relation between the strain rates without keeping those coefficients.
+  - id: SC6
+    criterion: 'The effective viscosity is strictly positive: every viscosity field the equations introduce is meant to be positive everywhere they are used, and nothing relies on a zero or negative viscosity.'
+    source: A general assumption of ice mechanics is that the effective viscosity is positive, since deforming ice dissipates energy rather than releasing it.
+  - id: SC7
+    criterion: The ocean exerts only a normal pressure on the calving front, so no shear stress acts along the front.
+    source: As stated in the task specification, the classical dynamic boundary conditions at the calving front balance the ice stress against the ocean pressure along the outward unit normal only; a general assumption of ice-shelf mechanics is that seawater supplies no shear stress, so the tangential shear stress along the front vanishes (SM Appendix V.D).
+  - id: SC8
+    criterion: 'Isotropic ice is a special case: where the ice is isotropic the viscosity components coincide and the equations reduce to the classical isotropic SSA.'
+    source: A general assumption of ice mechanics is that the classical isotropic law describes isotropic ice, so a more general law has to contain it as a special case; the paper's anisotropic inversion recovers equal horizontal and vertical viscosities on isotropic synthetic data (Fig. S17).
+completeness:
+  criteria:
+  - id: C1
+    criterion: equations.py and interface.json are both present in the mechanisms folder and describe the same equations. The .py file defines gov_eqn(net, x, scale) and front_eqn(net, x, nb, scale) in the format the instruction gives, returns the residues of its two momentum equations as f_eqn of shape (N, 2) together with a val_term that stacks the additive terms of f1, then those of f2, then the effective strain rate, and its calving-front boundary conditions use the same stress definitions as its interior equations. The .json file lists field_names in the order the network outputs them, u, v, h first, and f1_terms and f2_terms that match the columns of val_term.
+  - id: C2
+    criterion: experiment.log is present in the mechanisms folder.
+insights:
+  criteria:
+  - id: I1
+    criterion: Does the new SSA equation explain why a single viscosity describes the ice of the compression zones but not the ice of the extension zones?
+    kind: finding
+  - id: I2
+    criterion: Does the new SSA equation explain why the viscosity of a real ice shelf cannot be one scalar field?
+    kind: finding
+  - id: I3
+    criterion: Does the new SSA equation reveal between which directions of deformation the viscosity of an ice shelf differs?
+    kind: finding
+  - id: I4
+    criterion: Does the new SSA equation explain why the ice outside the compressive arch, where both horizontal principal strain rates are positive, deforms so much more easily?
+    kind: finding
+  - id: I5
+    criterion: Does the new SSA equation explain why the observed velocity and thickness of a shelf alone cannot pin down two viscosity fields?
+    kind: finding
+  - id: I6
+    criterion: Does the new SSA equation reveal whether the resistance of the shelf to extension differs between two horizontal directions, for example across versus along a set of parallel crevasses?
+    kind: limitation
+  - id: I7
+    criterion: Does the new SSA equation settle what physical measurement of a shelf, beyond its velocity and thickness, would determine its anisotropic viscosity without imposing a preference between the two viscosities?
+    kind: limitation
+  - id: I8
+    criterion: Does the new SSA equation settle under what condition on the observed velocity and thickness a single isotropic viscosity can describe the interior of a shelf?
+    kind: limitation
+  - id: I9
+    criterion: Does the new SSA equation reveal how the stress of ice under extension depends on its strain rate, where the isotropic inversion finds no clear power law?
+    kind: limitation

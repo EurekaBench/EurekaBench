@@ -1,0 +1,75 @@
+predictive_accuracy:
+  criteria:
+  - id: PA1
+    machine: true
+    criterion: The predicted response of every panel location is scored against its recorded response across the scored held-out objects.
+  - id: PA2
+    machine: true
+    criterion: The predicted response of every panel location is scored against its recorded response across the animate objects among the scored held-out objects only, so a prediction that only separates animate from inanimate objects earns nothing here.
+  - id: PA3
+    machine: true
+    criterion: The predicted response of every panel location is scored against its recorded response across the inanimate objects among the scored held-out objects only, so a prediction that only separates animate from inanimate objects earns nothing here.
+scientific_constraints:
+  criteria:
+  - id: SC1
+    criterion: Animate objects evoke a different response in this cortex than inanimate objects.
+    source: As stated in the task specification, this cortex "is laid out in large-scale maps that alternate between preferences for animate and inanimate objects."
+  - id: SC2
+    criterion: Objects that are big in the real world evoke a different response in this cortex than small objects.
+    source: As stated in the task specification, the maps also alternate "between preferences for objects that are big and small in the real world."
+  - id: SC3
+    criterion: Different locations of this cortex prefer different objects.
+    source: As stated in the task specification, the maps "alternate between preferences," so the objects a location prefers are not the same everywhere in this cortex.
+  - id: SC4
+    criterion: The object preferences of this cortex do not require the object to be recognized.
+    source: As stated in the task specification, the maps "are evoked even by unrecognizable images that keep only the texture and coarse form of the objects."
+  - id: SC5
+    criterion: The real-world size of an object is not its size in the image.
+    source: A general assumption about object vision is that real-world size is the physical size an object has in the world, which the size of its image on the retina does not fix.
+completeness:
+  criteria:
+  - id: C1
+    criterion: mechanism.md and mechanism.py are both present and describe the same mechanism. The .md file gives its causal chain and evidence, while the .py file defines PROPERTIES, COEFFS, predict_response, and fit_coeffs, and applies one deterministic computation to every panel location using the object properties and that location's responses to the reference objects, with at most 10 fitted constants.
+  - id: C2
+    criterion: experiment.log is present in the mechanisms folder.
+insights:
+  criteria:
+  - id: I1
+    criterion: Does the discovered mechanism explain how animacy and real-world size combine in the response of a location?
+    kind: finding
+  - id: I2
+    criterion: Does the discovered mechanism explain why properties that vary together across objects lay out similar response locations and spatial organization across this cortex?
+    kind: finding
+  - id: I3
+    criterion: Does the discovered mechanism explain what aspect of being animate the response of this cortex tracks?
+    kind: finding
+  - id: I4
+    criterion: Does the discovered mechanism explain what aspect of real-world size the response of this cortex tracks?
+    kind: finding
+  - id: I5
+    criterion: Does the discovered mechanism explain what visual feature ties the appearance of an object to its animacy and real-world size?
+    kind: finding
+  - id: I6
+    criterion: Does the discovered mechanism explain how the object preferences of a location depend on where the object appears in the visual field, so the cortical encoding contains both categorical and spatial information about the visual scene?
+    kind: finding
+  - id: I7
+    criterion: Does the discovered mechanism explain what kind of visual features drive object preferences in the anterior part of this cortex?
+    kind: finding
+  - id: I8
+    criterion: Does the discovered mechanism explain what sets the category-selective regions apart from the rest of this cortex?
+    kind: finding
+  - id: I9
+    criterion: Does the discovered mechanism explain what splits the real-world size preference of this cortex into several separate zones, forming an encoding map across the cortex region?
+    kind: limitation
+  - id: I10
+    criterion: Does the discovered mechanism explain how object properties other than animacy and real-world size interact in the response of a location?
+    kind: limitation
+  - id: I11
+    criterion: Does the discovered mechanism explain how the response of a location changes along the whole range of a single object property?
+    kind: limitation
+  - id: I12
+    criterion: Does the discovered mechanism explain how the response of a location to an object varies across the images of that object?
+    kind: limitation
+  - id: I13
+    criterion: Does the discovered mechanism explain how the visual feature tuning of this cortex came to align with animacy and real-world size?
+    kind: limitation

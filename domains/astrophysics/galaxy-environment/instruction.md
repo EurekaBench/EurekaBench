@@ -1,0 +1,30 @@
+You are an astrophysicist studying how the local environment of a dark matter halo shapes its baryon content. The CAMELS CV simulations run four galaxy-formation models, SIMBA, IllustrisTNG, ASTRID and Swift-EAGLE, from the same initial conditions with different galaxy-formation physics.
+
+At z=0, low-mass haloes in overdense regions have a lower halo baryon fraction f_B = (M_gas + M_stars) / M_halo and a lower CGM mass fraction f_CGM = M_CGM,gas / M_halo than haloes of equal mass in underdense regions in SIMBA, higher ones in Swift-EAGLE, and nearly the same ones in IllustrisTNG and ASTRID. In all four models the most massive haloes hold more baryons in overdense regions.
+
+However, it is unclear which process turns the same dense environment against the baryons of low-mass haloes in one model and in their favour in another, when none of the four models encodes any explicit environmental rule or was calibrated with reference to environment.
+
+Your task is to discover the mechanism that explains this phenomenon. Concretely, the mechanism has to name the physical process behind the sign of the environmental effect in each model, say why that process operates in that model and not in the others, and account for f_B and f_CGM together. To discover this, you interrogate the four CAMELS CV suites provided in your environment through controlled numerical experiments on their Subfind/FOF catalogs and particle snapshots.
+
+Every claim in your discovered mechanism needs to be backed by data you actually collected. Your mechanism is evaluated through its executable form on the environmental offsets of the four models, measured from the CV suites at z=0 in every halo mass bin, by four scores between 0 and 1: the direction of the effect where it is significant, its size against the measurement uncertainty, its dependence on halo mass, and the difference it predicts between the models. Your experimental findings will also be reviewed by an independent researcher who has access to the same simulator, to assess whether the mechanism you discover can yield new insights.
+
+You need to produce three deliverables. If any of them is missing or does not follow the requirements below, your solution receives a score of 0.
+
+Deliverable 1.
+Write your discovered mechanism to /workspace/mechanisms/mechanism.md. State it as the causal chain from the environment to the baryon content of a halo in each model: the process operating in SIMBA and the process operating in Swift-EAGLE, why the two respond to the same environment with opposite signs, and what the same comparison gives in IllustrisTNG and ASTRID. Define every quantity and every constant you fixed. Give the concrete evidence from your own measurements that establishes each process, and the evidence that let you reject the alternatives you tried. Close with what your findings imply about how environment couples to galaxy formation.
+
+Deliverable 2.
+Write the executable form of your mechanism to /workspace/mechanisms/mechanism.py. It defines exactly two names:
+  - `COEFFS`: the list of your fitted constant values, at most 16 entries. One list serves all four models: the mechanism, not a per-model constant, has to carry the difference between them.
+  - `predict_offset(model, log_mhalo, coeffs)` -> a dict with the two keys "f_b" and "f_cgm", each a 1D numpy array with one entry per element of `log_mhalo`.
+
+`model` is one of the strings "SIMBA", "IllustrisTNG", "ASTRID" and "Swift-EAGLE", and `log_mhalo` is a 1D numpy array of log10(M_halo / Msun) at the centres of 0.25 dex FOF halo mass bins. Each returned entry is the relative environmental offset your mechanism predicts for that model, that fraction and that mass bin: the median of the overdense haloes of the bin minus the median of the underdense haloes, divided by the all-halo median of the bin, where overdense and underdense are the top and bottom quartile within the bin of the galaxy overdensity delta_10, the number density of neighbouring galaxies relative to the box mean.
+
+The file implements exactly the mechanism stated in mechanism.md. Besides `COEFFS` it may hold only constants: physical constants and the values held fixed across all of these simulations (Omega_m = 0.3, Omega_b = 0.049, sigma_8 = 0.8, h = 0.6711). It is deterministic, imports only numpy and scipy, computes everything from its arguments alone, and contains nothing but the mechanism and its constants. `predict_offset` returns within two minutes.
+
+Deliverable 3.
+Keep an experiment log at /workspace/mechanisms/experiment.log. Treat it as your laboratory notebook. It is the primary reference for the researchers who will continue this work, and you choose how to organise it. Record what they will need to follow and extend your investigation. Write down the questions you pursued, the data you drew on and the analyses you ran, what you observed, the conclusions you drew, and the approaches that did not work and why. Give particular room to the findings that surprised you or that you found interesting along the way, whether or not they entered your final mechanism. These are often the most valuable part of a notebook for the next researcher.
+
+You may additionally place supporting evidence in /workspace/mechanisms/ and reference it from the files above. Move the useful evidence behind the log's findings, the figures, analysis outputs and small data files your experiments produced in /workspace/tmp, into /workspace/mechanisms/ so that they survive. Only this folder is kept when the session ends. Everything else in the workspace, including /workspace/tmp and the data you extracted along the way, is discarded. The independent researcher reviewing your mechanism sees exactly this folder. Everything under /workspace/mechanisms/ combined is limited to 1 GB. If the folder exceeds this limit, your solution receives a score of 0. It is for final deliverables and their evidence, not scratch space. Keep drafts and intermediate files in /workspace/tmp.
+
+You have access to a H100 GPU and a time budget of 4 hours. You can use /workspace/tmp for notes and intermediate files.

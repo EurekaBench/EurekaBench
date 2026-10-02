@@ -1,0 +1,79 @@
+schema_version = "1.4"
+artifacts = ["/workspace/mechanisms"]
+
+[metadata]
+deliverables = ["mechanisms/mechanism.md", "mechanisms/experiment.log", "mechanisms/mechanism.py"]
+mechanisms_max_mb = 1024
+blocked_hosts = [
+    "huggingface.co", "hf.co", "cdn-lfs.huggingface.co", "cdn-lfs-us-1.hf.co", "cas-bridge.xethub.hf.co",
+    "transfer.xethub.hf.co", "github.com", "www.github.com", "raw.githubusercontent.com",
+    "codeload.github.com", "objects.githubusercontent.com", "github.io", "pypi.org", "pypi.python.org",
+    "files.pythonhosted.org", "registry.npmjs.org", "conda.anaconda.org", "anaconda.org", "ai.meta.com",
+    "about.meta.com", "dl.fbaipublicfiles.com", "biorxiv.org", "www.biorxiv.org", "connect.biorxiv.org",
+    "medrxiv.org", "www.medrxiv.org", "elifesciences.org", "www.elifesciences.org", "cell.com",
+    "www.cell.com", "sciencedirect.com", "www.sciencedirect.com", "ncbi.nlm.nih.gov", "www.ncbi.nlm.nih.gov",
+    "pubmed.ncbi.nlm.nih.gov", "pmc.ncbi.nlm.nih.gov", "europepmc.org", "www.europepmc.org",
+    "semanticscholar.org", "www.semanticscholar.org", "api.semanticscholar.org", "openalex.org",
+    "api.openalex.org", "crossref.org", "api.crossref.org", "doi.org", "dx.doi.org", "arxiv.org",
+    "www.arxiv.org", "export.arxiv.org", "scholar.google.com", "scholar.archive.org", "researchgate.net",
+    "www.researchgate.net", "sci-hub.st", "sci-hub.ru", "royalsocietypublishing.org", "x-mol.com",
+    "www.x-mol.com", "sciety.org", "labs.sciety.org", "discovery.ucl.ac.uk", "discovery-pp.ucl.ac.uk",
+    "oar.princeton.edu", "biophysics.princeton.edu", "molbio.princeton.edu", "microhub.mdibl.org",
+    "hearingbrain.org", "cognitivescience.univie.ac.at", "rcastoragev2.blob.core.windows.net",
+    "themoonlight.io", "doaj.org", "par.nsf.gov", "scholarhub.vn",
+]
+task_vocabulary = ["TRIBE"]
+
+[metadata.simulator]
+name = "tribe"
+
+[[metadata.source_literature]]
+titles = ["Inverted encoding of neural responses to audiovisual stimuli reveals super-additive multisensory enhancement"]
+phrases = ["inverted encoding of neural responses", "super-additive multisensory enhancement"]
+authors = ["Buhmann", "Robinson", "Mattingley", "Rideaux"]
+years = [2024, 2026]
+venues = ["eLife"]
+ids = ["10.7554/eLife.97230", "elife-97230", "97230", "RP97230", "41728936", "PMC12928699"]
+
+[[metadata.source_literature]]
+titles = ["Superadditive responses in superior temporal sulcus predict audiovisual benefits in object categorization"]
+phrases = ["superadditive responses", "audiovisual benefits in object categorization"]
+authors = ["Werner", "Noppeney"]
+years = [2010]
+venues = ["Cerebral Cortex", "Cereb Cortex"]
+ids = ["19923200"]
+
+[[metadata.source_literature]]
+titles = ["Detection of audio-visual integration sites in humans by application of electrophysiological criteria to the BOLD effect"]
+phrases = ["audio-visual integration sites", "electrophysiological criteria to the bold effect"]
+authors = ["Calvert", "Hansen", "Iversen", "Brammer"]
+years = [2001]
+venues = ["NeuroImage"]
+ids = []
+
+[[metadata.source_literature]]
+titles = ["A foundation model of vision, audition, and language for in-silico neuroscience"]
+phrases = ["tribe", "tribev2", "trimodal brain encoder", "in-silico neuroscience", "algonauts"]
+authors = ["d'Ascoli", "dAscoli", "Rapin", "Benchetrit", "Brooks", "Begany", "Raugel", "Banville", "King"]
+years = [2026]
+venues = ["arXiv"]
+ids = ["2605.04326", "facebook/tribev2", "facebookresearch/tribev2"]
+
+[[metadata.source_literature]]
+titles = ["TRIBE: TRImodal Brain Encoder for whole-brain fMRI response prediction"]
+phrases = ["tribe", "trimodal brain encoder", "whole-brain fmri response prediction", "algonauts"]
+authors = ["d'Ascoli", "dAscoli", "Rapin", "Benchetrit", "Banville", "King"]
+years = [2025]
+venues = ["arXiv", "ICLR"]
+ids = ["2507.22229", "facebookresearch/algonauts-2025"]
+
+[agent]
+timeout_sec = 14400
+
+[verifier]
+timeout_sec = 172800
+environment_mode = "separate"
+
+[environment]
+docker_image = "neuroscience.sif"
+workdir = "/workspace"

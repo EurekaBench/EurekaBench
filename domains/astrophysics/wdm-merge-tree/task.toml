@@ -1,0 +1,49 @@
+schema_version = "1.4"
+artifacts = ["/workspace/mechanisms"]
+
+[metadata]
+deliverables = ["mechanisms/mechanism.md", "mechanisms/experiment.log", "mechanisms/mechanism.py"]
+mechanisms_max_mb = 1024
+blocked_hosts = [
+    "auth.globus.org", "transfer.api.globus.org", "app.globus.org", "www.globus.org", "globus.org",
+    "docs.globus.org", "dreams-project.org", "www.dreams-project.org", "dreams-project.readthedocs.io",
+    "users.flatironinstitute.org", "www.flatironinstitute.org", "flatironinstitute.org", "github.com",
+    "www.github.com", "raw.githubusercontent.com", "codeload.github.com", "objects.githubusercontent.com",
+    "github.io", "arxiv.org", "www.arxiv.org", "export.arxiv.org", "browse.arxiv.org", "info.arxiv.org",
+    "ar5iv.labs.arxiv.org", "ar5iv.org", "alphaxiv.org", "www.alphaxiv.org", "arxiv-sanity-lite.com",
+    "www.arxiv-sanity-lite.com", "ui.adsabs.harvard.edu", "adsabs.harvard.edu", "articles.adsabs.harvard.edu",
+    "inspirehep.net", "iopscience.iop.org", "journals.aas.org", "academic.oup.com", "www.aanda.org",
+    "aanda.org", "nature.com", "www.nature.com", "sciencedirect.com", "www.sciencedirect.com", "doi.org",
+    "dx.doi.org", "semanticscholar.org", "www.semanticscholar.org", "api.semanticscholar.org",
+    "pdfs.semanticscholar.org", "openalex.org", "api.openalex.org", "crossref.org", "api.crossref.org",
+    "scholar.google.com", "scholar.archive.org", "researchgate.net", "www.researchgate.net", "academia.edu",
+    "www.academia.edu", "core.ac.uk", "europepmc.org", "paperswithcode.com", "www.paperswithcode.com",
+    "emergentmind.com", "www.emergentmind.com", "connectedpapers.com", "www.connectedpapers.com", "scite.ai",
+    "astrobites.org", "www.astrobites.org", "phys.org", "eurekalert.org", "www.eurekalert.org", "sci-hub.st",
+    "sci-hub.ru",
+]
+task_vocabulary = ["warm dark matter"]
+
+[metadata.simulator]
+name = "dreams-wdm-mw"
+workspace_dirs = ["dreams_data"]
+records = "accessed_sims.json"
+
+[[metadata.source_literature]]
+titles = ["Linking Warm Dark Matter to Merger Tree Histories via Deep Learning Networks"]
+phrases = ["linking warm dark matter to merger tree histories", "merger tree histories via deep learning", "merger_tree_gnn", "ilemleisher"]
+authors = ["Leisher", "Torrey", "Garcia", "Rose", "Villaescusa-Navarro", "Lubberts", "Farahi", "Vogelsberger"]
+years = [2025]
+venues = ["arXiv"]
+ids = ["2511.05367", "ilemleisher/merger_tree_gnn"]
+
+[agent]
+timeout_sec = 14400
+
+[verifier]
+timeout_sec = 172800
+environment_mode = "separate"
+
+[environment]
+docker_image = "astrophysics.sif"
+workdir = "/workspace"

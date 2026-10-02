@@ -1,0 +1,147 @@
+{
+  "problem": "visual_object_properties",
+  "fingerprint": "107cf46983a49305",
+  "config": {
+    "seed": 0,
+    "n_reference": 100,
+    "n_heldout": 100,
+    "animate_share": 0.4,
+    "animate_above": 4.0,
+    "properties": {
+      "animacy": [
+        "property_lives_mean"
+      ],
+      "real_world_size": [
+        "size_mean"
+      ],
+      "naturalness": [
+        "property_natural_mean"
+      ],
+      "preciousness": [
+        "property_precious_mean"
+      ],
+      "ability_to_move": [
+        "property_moves_mean"
+      ],
+      "ability_to_be_moved": [
+        "property_be-moved_mean"
+      ],
+      "heaviness": [
+        "property_heavy_mean"
+      ],
+      "pleasantness": [
+        "property_pleasant_mean"
+      ],
+      "arousal": [
+        "property_arousal_mean"
+      ],
+      "manipulability": [
+        "property_grasp_mean",
+        "property_hold_mean"
+      ],
+      "cuteness": [
+        "cuteness"
+      ]
+    },
+    "stimulus": {
+      "images_per_object": 3,
+      "image_s": 3.0,
+      "fps": 8,
+      "frame": 224,
+      "transcribe": false,
+      "stimulus_version": 1
+    },
+    "panel_groups": [
+      "Ventral Stream Visual Cortex",
+      "MT+ Complex and Neighboring Visual Areas"
+    ],
+    "panel_areas": [
+      "PHA1",
+      "PHA2",
+      "PHA3"
+    ],
+    "protocol_version": 2
+  },
+  "n_reference": 100,
+  "n_heldout": 100,
+  "n_panel": 1030,
+  "n_panel_candidates": 1030,
+  "property_names": [
+    "animacy",
+    "real_world_size",
+    "naturalness",
+    "preciousness",
+    "ability_to_move",
+    "ability_to_be_moved",
+    "heaviness",
+    "pleasantness",
+    "arousal",
+    "manipulability",
+    "cuteness"
+  ],
+  "heldout_halves": {
+    "first": [
+      0,
+      50
+    ],
+    "second": [
+      50,
+      100
+    ]
+  },
+  "animate": {
+    "reference": 40,
+    "heldout_first_half": 20,
+    "heldout_second_half": 20
+  },
+  "pa_ids": [
+    "PA1",
+    "PA2",
+    "PA3"
+  ],
+  "encoding_model_context": {
+    "all": 0.28710740533406287,
+    "animate": 0.17835179989199568,
+    "inanimate": 0.09562411662842474,
+    "animacy_size": 0.2704723258975143
+  },
+  "checks": {
+    "P1": {
+      "value": "1030 locations",
+      "expected": ">= 500",
+      "pass": true
+    },
+    "P2": {
+      "value": "median std across objects 0.0879",
+      "expected": "> 0.01",
+      "pass": true
+    },
+    "F1": {
+      "value": "median R2 0.287",
+      "expected": "> 0.05",
+      "pass": true
+    },
+    "F2": {
+      "value": "median R2 0.178",
+      "expected": "> 0",
+      "pass": true
+    },
+    "F3": {
+      "value": "median R2 0.096",
+      "expected": "> 0",
+      "pass": true
+    },
+    "F4": {
+      "value": "median R2 all minus animacy and size 0.017",
+      "expected": "> 0",
+      "pass": true
+    }
+  },
+  "checks_failed": [],
+  "timing": {
+    "model_load_seconds": 0.0,
+    "simulate_seconds": [],
+    "render_seconds": []
+  },
+  "build_seconds": 1.1
+}

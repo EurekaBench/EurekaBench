@@ -1,0 +1,16 @@
+Bootstrap: localimage
+From: {{ BASE }}
+
+%arguments
+    BASE=fenicsx.sif
+
+%post
+    set -eu
+    apt-get update
+    apt-get install -y --no-install-recommends python3-venv
+    rm -rf /var/lib/apt/lists/*
+    /usr/bin/python3 -m venv /opt/ssa_eval
+    /opt/ssa_eval/bin/pip install --no-cache-dir "jax[cuda12]==0.4.26" "jaxlib==0.4.26" "tensorflow-probability==0.23.0" \
+        "optax==0.2.2" "numpy==1.26.4" "scipy==1.11.4" "matplotlib>=3.8" "fire==0.7.1" \
+        "DIFFICE_jax @ git+https://github.com/YaoGroup/DIFFICE_jax.git@0af8ea5"
+    /opt/ssa_eval/bin/python -c "import jax, diffice_jax, optax, tensorflow_probability, scipy.io; print('ssa eval environment ok')"

@@ -1,0 +1,75 @@
+schema_version = "1.4"
+artifacts = ["/workspace/mechanisms"]
+
+[metadata]
+deliverables = ["mechanisms/mechanism.md", "mechanisms/experiment.log", "mechanisms/mechanism.py"]
+mechanisms_max_mb = 1024
+blocked_hosts = [
+    "openworm.org", "www.openworm.org", "github.com", "www.github.com", "raw.githubusercontent.com",
+    "codeload.github.com", "objects.githubusercontent.com", "github.io", "pypi.org", "pypi.python.org",
+    "files.pythonhosted.org", "registry.npmjs.org", "conda.anaconda.org", "anaconda.org", "neuroml.org",
+    "www.neuroml.org", "docs.neuroml.org", "opensourcebrain.org", "www.opensourcebrain.org", "nature.com",
+    "www.nature.com", "link.springer.com", "frontiersin.org", "www.frontiersin.org", "zenodo.org",
+    "www.zenodo.org", "biorxiv.org", "www.biorxiv.org", "connect.biorxiv.org", "medrxiv.org",
+    "www.medrxiv.org", "elifesciences.org", "www.elifesciences.org", "cell.com", "www.cell.com",
+    "sciencedirect.com", "www.sciencedirect.com", "ncbi.nlm.nih.gov", "www.ncbi.nlm.nih.gov",
+    "pubmed.ncbi.nlm.nih.gov", "pmc.ncbi.nlm.nih.gov", "europepmc.org", "www.europepmc.org",
+    "semanticscholar.org", "www.semanticscholar.org", "api.semanticscholar.org", "openalex.org",
+    "api.openalex.org", "crossref.org", "api.crossref.org", "doi.org", "dx.doi.org", "arxiv.org",
+    "www.arxiv.org", "export.arxiv.org", "scholar.google.com", "scholar.archive.org", "researchgate.net",
+    "www.researchgate.net", "sci-hub.st", "sci-hub.ru", "royalsocietypublishing.org", "x-mol.com",
+    "www.x-mol.com", "sciety.org", "labs.sciety.org", "discovery.ucl.ac.uk", "discovery-pp.ucl.ac.uk",
+    "oar.princeton.edu", "biophysics.princeton.edu", "molbio.princeton.edu", "microhub.mdibl.org",
+    "hearingbrain.org", "cognitivescience.univie.ac.at", "rcastoragev2.blob.core.windows.net",
+    "themoonlight.io", "doaj.org", "par.nsf.gov", "scholarhub.vn",
+]
+task_vocabulary = ["c302", "OpenWorm"]
+
+[metadata.simulator]
+name = "c302"
+
+[metadata.simulator.defaults]
+param_overrides = {"neuron_to_neuron_elec_syn_gbase" = "0.09 nS"}
+
+[[metadata.source_literature]]
+titles = ["An integrative data-driven model simulating C. elegans brain, body and environment interactions", "MetaWorm: An Integrative Data-Driven Model Simulating C. elegans Brain, Body and Environment Interactions"]
+phrases = ["metaworm", "baaiworm", "integrative data-driven model", "brain, body and environment"]
+authors = ["Zhao", "Wang", "Jiang", "Ma", "He", "Du", "Huang"]
+years = [2024]
+venues = ["Nature Computational Science", "Nat Comput Sci", "bioRxiv"]
+ids = ["10.1038/s43588-024-00738-w", "s43588-024-00738-w", "10.1101/2024.02.22.581686", "2024.02.22.581686", "581686"]
+
+[[metadata.source_literature]]
+titles = ["A circuit for gradient climbing in C. elegans chemotaxis"]
+phrases = ["gradient climbing"]
+authors = ["Larsch", "Flavell", "Liu", "Gordus", "Albrecht", "Bargmann"]
+years = [2015]
+venues = ["Cell Reports", "Cell Rep"]
+ids = ["10.1016/j.celrep.2015.08.032", "j.celrep.2015.08.032", "26365196", "PMC5045890"]
+
+[[metadata.source_literature]]
+titles = ["Gait modulation in C. elegans: an integrated neuromechanical model"]
+phrases = ["gait modulation", "integrated neuromechanical model"]
+authors = ["Boyle", "Berri", "Cohen"]
+years = [2012]
+venues = ["Frontiers in Computational Neuroscience", "Front Comput Neurosci"]
+ids = ["10.3389/fncom.2012.00010", "fncom.2012.00010"]
+
+[[metadata.source_literature]]
+titles = ["c302: a multiscale framework for modelling the nervous system of Caenorhabditis elegans"]
+phrases = ["c302", "openworm", "multiscale framework"]
+authors = ["Gleeson", "Lung", "Grosu", "Hasani", "Larson"]
+years = [2018]
+venues = ["Philosophical Transactions", "Phil Trans", "Royal Society B", "rstb"]
+ids = ["10.1098/rstb.2017.0379", "rstb.2017.0379", "20170379", "PMC6158223", "10056647"]
+
+[agent]
+timeout_sec = 14400
+
+[verifier]
+timeout_sec = 172800
+environment_mode = "separate"
+
+[environment]
+docker_image = "neuroscience.sif"
+workdir = "/workspace"

@@ -1,0 +1,90 @@
+predictive_accuracy:
+  criteria:
+  - id: PA1
+    machine: true
+    criterion: The predicted headswing signal runs in step with the recorded one through the reversal. The score is the median over the held-out settings of the phase-locking value between the two over the reversal.
+  - id: PA2
+    machine: true
+    criterion: The predicted headswing signal holds the phase the recorded one has reached when the reversal ends. The score is read from the median end-of-reversal phase error over the held-out settings.
+  - id: PA3
+    machine: true
+    criterion: The mechanism predicts the direction of the turn. The score is read from the balanced accuracy of the sign of the predicted turn signal over the held-out settings.
+  - id: PA4
+    machine: true
+    criterion: The mechanism predicts the direction of the turn after reversals longer than any the agent ran. The score is read from the balanced accuracy of the sign of the predicted turn signal over the held-out settings whose reversal command lasts a duration outside the range of the agent's observations and experiments.
+  - id: PA5
+    machine: true
+    criterion: The phase of the head swing at which the pulse arrives sets the direction of the turn. The score is the fraction of the paired settings whose recorded turns go to opposite sides on which the predicted turns go to opposite sides in the same order.
+  - id: PA6
+    machine: true
+    criterion: The form of the mechanism holds once its constants are fitted again on settings it was not tuned on. The score is read from the balanced accuracy of the sign of the predicted turn signal over half of the held-out settings, with the constants refit by fit_coeffs on the disjoint other half and the structure unchanged.
+scientific_constraints:
+  criteria:
+  - id: SC1
+    criterion: The turn that ends a reversal goes to the dorsal side or to the ventral side.
+    source: As stated in the task specification, the animal "leaves the reversal with a sharp turn to its dorsal or its ventral side".
+  - id: SC2
+    criterion: The animal crawls forward or backward but never both at once.
+    source: As stated in the task specification, by the time the turn is chosen "the forward head swings that received the stimulus have given way to backward crawling".
+  - id: SC3
+    criterion: The head swing runs on a faster timescale than the command state.
+    source: As stated in the task specification, the head "sweeps from side to side" as the animal crawls forward while a reversal lasts "anywhere from a few seconds to over a minute".
+  - id: SC4
+    criterion: The sensing neuron answers the same stimulus the same way on every trial.
+    source: As stated in the task specification, "the same odor impulse evokes the same reliable sensory response every time".
+  - id: SC5
+    criterion: What a sensory input leads to depends on the state the circuit is in when it arrives.
+    source: As stated in the task specification, the outcome is "decided by the joint activity state of the interneurons the sensory neuron feeds at the moment the input arrives".
+  - id: SC6
+    criterion: Neurons respond gradedly.
+    source: A general assumption about C. elegans neurophysiology is that its neurons are mostly non-spiking and transmit signals in a graded manner.
+  - id: SC7
+    criterion: The dorsal and the ventral head motor neurons are active at opposite points of the head swing.
+    source: A general assumption about C. elegans locomotion is that the head bends to one side when the motor neurons of that side drive it while those of the other side are quiet.
+completeness:
+  criteria:
+  - id: C1
+    criterion: mechanism.md and mechanism.py are both present and describe the same mechanism. The .md file gives its causal chain and evidence, while the .py file defines INPUTS, COEFFS, predict_headswing, predict_turn and fit_coeffs, and applies one deterministic computation to every setting from that setting's own stimulus, with at most 10 fitted constants.
+  - id: C2
+    criterion: experiment.log is present in the mechanisms folder.
+insights:
+  criteria:
+  - id: I1
+    criterion: Does the discovered mechanism explain why the same sample gives the opposite turn when the reversal ends half a head-swing period earlier or later?
+    kind: finding
+  - id: I2
+    criterion: Does the discovered mechanism explain why no steady activity level of the neurons that carry the head swing predicts the direction of the turn during the reversal?
+    kind: finding
+  - id: I3
+    criterion: Does the discovered mechanism explain why the head-swing rhythm goes on through the reversal after the drive that produced it is withdrawn?
+    kind: limitation
+  - id: I4
+    criterion: Does the discovered mechanism explain why the amplitude and the frequency of the rhythm carry over from the preceding forward crawling while its phase does not?
+    kind: finding
+  - id: I5
+    criterion: Does the discovered mechanism explain why the phase carried through the reversal stays the same from its early part to its late part?
+    kind: finding
+  - id: I6
+    criterion: Does the discovered mechanism explain what sets the moment the reversal ends?
+    kind: finding
+  - id: I7
+    criterion: Does the discovered mechanism explain why driving the neurons that carry the oscillation ends a reversal while the direction of the turn stays as it was?
+    kind: finding
+  - id: I8
+    criterion: Does the discovered mechanism explain why forward and reverse epochs last whole multiples of the head-swing period?
+    kind: finding
+  - id: I9
+    criterion: Does the discovered mechanism establish at which cells the proprioceptive signal reporting the posture of the head is combined with the sensory pulse?
+    kind: limitation
+  - id: I10
+    criterion: Does the discovered mechanism establish by what connections the written sample sets the phase the rhythm starts the reversal from?
+    kind: limitation
+  - id: I11
+    criterion: Does the discovered mechanism establish which single cells among those that carry the oscillation the holding cannot do without?
+    kind: limitation
+  - id: I12
+    criterion: Does the discovered mechanism establish why the phase carried through the reversal settles into one of two discrete steady states rather than holding any continuous value in the cycle?
+    kind: limitation
+  - id: I13
+    criterion: Does the discovered mechanism establish how the phase carried through the reversal behaves when the head swing runs at a period far from the one it was written at?
+    kind: limitation

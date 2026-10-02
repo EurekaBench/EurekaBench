@@ -1,0 +1,87 @@
+predictive_accuracy:
+  criteria:
+  - id: PA1
+    machine: true
+    criterion: The R^2 between the predicted and the recorded fusion power over the scoring settings that share a baseline and differ only in the transport model, normalized to 0 and 1.
+  - id: PA2
+    machine: true
+    criterion: The R^2 between the predicted and the recorded density peaking over every scoring setting, normalized to 0 and 1.
+  - id: PA3
+    machine: true
+    criterion: The R^2 between the predicted and the recorded normalised ion temperature gradient a/L_Ti at rho = 0.6 over every scoring setting, normalized to 0 and 1.
+  - id: PA4
+    machine: true
+    criterion: The R^2 between the predicted and the recorded change in fusion power over the pairs of scoring settings that differ only in the auxiliary heating, normalized to 0 and 1.
+  - id: PA5
+    machine: true
+    criterion: The R^2 between the predicted and the recorded change in fusion power over the pairs of scoring settings that differ only in the pedestal pressure, normalized to 0 and 1.
+  - id: PA6
+    machine: true
+    criterion: The R^2 between the predicted and the recorded fusion power over the scoring settings whose fusion heating is switched off, normalized to 0 and 1.
+  - id: PA7
+    machine: true
+    criterion: The R^2 between the predicted and the recorded ion temperature, electron temperature and electron density over every scoring setting and every radial point, each species standardized on its own spread and the three averaged, normalized to 0 and 1.
+  - id: PA8
+    machine: true
+    criterion: The sign of the transport coefficient gradient with respect to normalised ion temperature gradient a/L_Ti between the executable mechanism and the original transport model at every radial point.
+  - id: PA9
+    machine: true
+    criterion: The sign of the transport coefficient gradient with respect to normalised electron temperature gradient a/L_Te between the executable mechanism and the original transport model at every radial point.
+  - id: PA10
+    machine: true
+    criterion: The sign of the transport coefficient gradient with respect to normalised electron density gradient a/L_ne between the executable mechanism and the original transport model at every radial point.
+insights:
+  criteria:
+  - id: I1
+    criterion: Does the discovered mechanism explain why two transport models that leave the plasma with the same energy confinement can differ by a factor of two in fusion power?
+    kind: finding
+  - id: I2
+    criterion: Does the discovered mechanism explain why removing the ion-temperature-gradient drive from a transport model changes the fusion power far more than removing the trapped-electron drive?
+    kind: finding
+  - id: I3
+    criterion: Does the discovered mechanism explain what makes the heat conductivity of a physics-based transport model rise by just the amount that holds the mid-radius ion temperature gradient fixed when the heating is doubled?
+    kind: finding
+  - id: I4
+    criterion: Does the discovered mechanism explain why the ratio of the ion to the electron temperature at the pedestal top moves the fusion power by hundreds of megawatts?
+    kind: finding
+  - id: I5
+    criterion: Does the discovered mechanism explain what in the turbulence makes the inward particle pinch grow relative to the diffusivity as the collisionality falls?
+    kind: finding
+  - id: I6
+    criterion: Does the discovered mechanism explain why the ion temperature rises across the whole core in proportion to its pedestal-top value when the pedestal pressure is raised?
+    kind: finding
+  - id: I7
+    criterion: Does the discovered mechanism explain what the plasma rotation and the fast ions do to the transport?
+    kind: limitation
+  - id: I8
+    criterion: Does the discovered mechanism explain which transport model predicts the fusion power the real plasma will produce?
+    kind: limitation
+  - id: I9
+    criterion: Does the discovered mechanism explain feasible directions in which fusion power can be increased beyond the hold-out set?
+    kind: finding
+scientific_constraints:
+  criteria:
+  - id: SC1
+    criterion: The transport coefficients have a causal effect on the profiles.
+    source: As stated in the task specification, the mechanism has to account for how the transport coefficients a model returns set the profiles the plasma settles into.
+  - id: SC2
+    criterion: The profiles determine the fusion power.
+    source: As stated in the task specification, the profiles set the fusion power, and the power the simulator reports is integrated from the plasma state.
+  - id: SC3
+    criterion: A plasma with no particle source reaches a steady state of zero particle flux.
+    source: A general assumption about tokamak transport is that a density profile stops evolving only when nothing crosses each flux surface.
+  - id: SC4
+    criterion: The heat channel and the particle channel are coupled through the transport model.
+    source: A general assumption about tokamak transport is that the conductivities, the diffusivity and the pinch all follow from the same local plasma state, so the two channels do not act separately and the plasma responds nonlinearly.
+  - id: SC5
+    criterion: Heat flows down the temperature gradient.
+    source: A general assumption about tokamak transport is that a positive conductivity moves heat outward from the hot core towards the cold edge.
+  - id: SC6
+    criterion: The plasma heats itself through the fusion reactions it sustains.
+    source: As stated in the task specification, a burning plasma heats itself, so the heating that sets the profiles depends on the profiles being predicted.
+  - id: SC7
+    criterion: The profiles are anchored at the pedestal boundary condition.
+    source: A general assumption about core transport modelling is that the core solution is integrated inward from a boundary imposed at the pedestal top.
+  - id: SC8
+    criterion: The fusion power rises with both the density and the temperature.
+    source: A general assumption about deuterium-tritium plasmas is that the reaction rate grows with the density of both reactants and with their temperature over this range.

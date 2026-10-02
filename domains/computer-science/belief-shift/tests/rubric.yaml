@@ -1,0 +1,86 @@
+predictive_accuracy:
+  criteria:
+    - id: PA-GroupSpearman
+      machine: true
+      criterion: >-
+        The passages ranked by the influence function's score are cut into 5 equal groups, each group is deleted and the model refinetuned without it, and GroupSpearman is the Spearman correlation between the groups' mean score and their gold influence. Score = clip(GroupSpearman, 0, 1).
+    - id: PA-DeletionZ
+      machine: true
+      criterion: >-
+        The top 20% of passages by score and 3 random 20% subsets are each deleted and the model refinetuned without them, and DeletionZ = (gold(top) - mean(gold(random))) / std(gold(random)). Score = clip(DeletionZ / 3, 0, 1).
+    - id: PA-BottomContrast
+      machine: true
+      criterion: >-
+        The top 20% and the bottom 20% of passages by score are each deleted and the model refinetuned without them, and BottomContrast = gold(top) - gold(bottom). Score = clip(BottomContrast / B_full, 0, 1), where B_full is the shift of the model refinetuned on all the passages.
+
+scientific_constraints:
+  criteria:
+    - id: SC1
+      criterion: >-
+        The belief shift is caused by the text the model was finetuned on.
+      source: >-
+        As stated in the task specification, "A belief shift is a change in the model's chosen statements caused by the text it has been exposed to."
+    - id: SC2
+      criterion: >-
+        The finetuning trains the model only to reproduce the passages of the material.
+      source: >-
+        As stated in the task specification, the loss is "completion-only loss on the document text (the assistant turn)" and "under the chat template the model is trained to reproduce the document passage by passage".
+    - id: SC3
+      criterion: >-
+        A passage changes the model only through the gradient of the training loss on its own tokens.
+      source: >-
+        A general assumption about gradient-based finetuning is that a training example enters the parameters only through the gradient of the loss on that example; as stated in the task specification, the model "is finetuned ... with LoRA" on "target modules: q_proj, k_proj, v_proj, o_proj, gate_proj, up_proj, down_proj", so that gradient reaches only the LoRA parameters and every other parameter keeps its base value.
+    - id: SC4
+      criterion: >-
+        No passage is in the context of the finetuned model when it answers a survey topic.
+      source: >-
+        As stated in the task specification, the shift is read from the model's "chosen statement before and after finetuning" on the survey topics, with the material nowhere in the prompt; a general assumption about language models is that what is not in the prompt reaches the answer only through the parameters.
+    - id: SC5
+      criterion: >-
+        Refinetuning without some of the passages changes the fraction of flipped topics.
+      source: >-
+        As stated in the task specification, "the influence of a set of passages is how much the fraction of flipped survey topics drops when" the model "is refinetuned without them".
+
+insights:
+  criteria:
+    - id: I1
+      machine: true
+      criterion: >-
+        Can the discovered mechanism be used to construct a training set that, under the same LoRA finetuning, raises the belief shift by at least 10% over the original material while KL on the MMLU answer distributions stays at most 0.05?
+      kind: application
+    - id: I2
+      criterion: >-
+        Does the discovered mechanism explain why the finetuned model's answers move toward the political side of the material rather than merely away from the base model's answers?
+      kind: finding
+    - id: I3
+      criterion: >-
+        Does the discovered mechanism explain why survey topics the material never discusses change their answer?
+      kind: finding
+    - id: I4
+      criterion: >-
+        Does the discovered mechanism explain why removing the sentences most related to a survey topic leaves the shift on that topic in place?
+      kind: finding
+    - id: I5
+      criterion: >-
+        Does the discovered mechanism explain why the same topics flip under materials of opposite political sides?
+      kind: finding
+    - id: I6
+      criterion: >-
+        Does the discovered mechanism establish which property of a passage sets how much of the shift that passage carries?
+      kind: limitation
+    - id: I7
+      criterion: >-
+        Does the discovered mechanism establish whether the shift is carried by a small share of the passages or spread across most of them?
+      kind: limitation
+    - id: I8
+      criterion: >-
+        Does the discovered mechanism explain why material on the side the base model already leans toward moves fewer topics than material on the opposite side?
+      kind: limitation
+    - id: I9
+      criterion: >-
+        Does the discovered mechanism explain why the shift grows with the amount of material trained on?
+      kind: limitation
+    - id: I10
+      criterion: >-
+        Does the discovered mechanism establish where in the model the finetuning writes the change that carries the shift?
+      kind: limitation

@@ -1,0 +1,72 @@
+predictive_accuracy:
+  criteria:
+  - id: PA1
+    machine: true
+    criterion: The two sensory amounts are averaged into one number per location. The prediction is scored on the profile of that number across the panel.
+  - id: PA2
+    machine: true
+    criterion: The visual amount is subtracted from the auditory amount, one number per location. The prediction is scored on the profile of that difference across the panel.
+  - id: PA3
+    machine: true
+    criterion: The amount carried by the no-stimulus recording is one number per location. The prediction is scored on the profile of that number across the panel.
+  - id: PA4
+    machine: true
+    criterion: What the fit leaves over has a size at each location. The prediction is scored on the profile of that size across the panel.
+scientific_constraints:
+  criteria:
+  - id: SC1
+    criterion: A location's combined response is set by its own responses to each sense alone and not by where it sits in the cortex.
+    source: As stated in the task specification, the mechanism accounts for the combined response "from those responses themselves, which are quantities reported by the simulator, rather than from where that location sits in the cortex, so that it can predict the response at a location it was never fitted on."
+  - id: SC2
+    criterion: Both senses take part in the combined response.
+    source: As stated in the task specification, the sight of an event and the sound of it "carry information about the same event, so the cortex can put them together into one estimate of what happened and where it happened."
+  - id: SC3
+    criterion: The two senses reach a cortical location as separate signals and through different cortical pathways.
+    source: A general assumption about the human cortex is that hearing and sight are carried by separate afferent pathways, so a location receives them as two signals rather than as one summed drive.
+  - id: SC4
+    criterion: A location that neither sense drives on its own is not driven by the two together.
+    source: A general assumption about sensory cortex is that a location which does not answer either stimulus alone has no sensory drive there to be combined.
+  - id: SC5
+    criterion: A cortical location responds gradedly.
+    source: A general assumption about the human cortical response is that what a location reports is a continuous amplitude rather than an all-or-none event, so it follows its input smoothly.
+  - id: SC6
+    criterion: A cortical location is active when neither sense is stimulated.
+    source: A general assumption about the human cortex is that it is never silent, so a location has ongoing activity of its own with no stimulus present.
+  - id: SC7
+    criterion: Hearing and vision do not drive every cortical location in equal measure.
+    source: A general assumption about the human cortex is that hearing and sight have their own primary territories, so one pair of stimuli does not work every location alike.
+  - id: SC8
+    criterion: A location's response properties stay the same over one recording.
+    source: A general assumption about human cortical physiology is that how a location answers a given stimulus does not change within a single recording.
+insights:
+  criteria:
+  - id: I1
+    criterion: Does the discovered mechanism explain why the combined response of a cortical location deviates from the sum of its two unisensory responses?
+    kind: finding
+  - id: I2
+    criterion: Does the discovered mechanism establish that vision contributes less at the locations that hearing drives strongly?
+    kind: finding
+  - id: I3
+    criterion: Does the discovered mechanism establish that the part of the combined response left unexplained by the two senses is largest where both senses drive strongly?
+    kind: finding
+  - id: I4
+    criterion: Does the discovered mechanism explain how the  empirical response to combined sensory signals is more informative than the separably measured uni-sensory response joined offline?
+    kind: limitation
+  - id: I5
+    criterion: Does the discovered mechanism explain why adding vision to hearing cues raises the response of a location that hearing excites more strongly than vision-alone does?
+    kind: finding
+  - id: I6
+    criterion: Does the discovered mechanism explain why adding hearing to visual cues raises the response of a location that vision  excites more strongly than hearing-alone does?
+    kind: finding
+  - id: I7
+    criterion: Does the discovered mechanism explain why adding a much weaker second sense lowers a location's response while adding an equally strong one raises it?
+    kind: finding
+  - id: I8
+    criterion: Does the discovered mechanism explain how the super-additive responses of single neurons within the voxels give way to the sub-additive response of a cortical location?
+    kind: limitation
+  - id: I9
+    criterion: Does the discovered mechanism explain how the match between what is seen and what is heard shapes their combined response?
+    kind: limitation
+  - id: I10
+    criterion: Does the discovered mechanism explain where the part of the combined response left unexplained by the two senses is produced?
+    kind: limitation

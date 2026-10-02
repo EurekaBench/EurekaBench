@@ -1,0 +1,81 @@
+predictive_accuracy:
+  criteria:
+  - id: PA1
+    machine: true
+    criterion: Whether the mechanism gets the direction of the environmental effect right. The metric is the direction score, the share of the mass bins in which the Mann-Whitney U test finds an effect and the predicted offset has the sign of the measured one, between 0 and 1 with higher better.
+  - id: PA2
+    machine: true
+    criterion: Whether the mechanism gets the size of the environmental effect right. The metric is the size score, 1 minus the error of the predicted offsets in units of their bins' confidence half-widths relative to the same error for a prediction of zero offset, between 0 and 1 with higher better.
+  - id: PA3
+    machine: true
+    criterion: Whether the mechanism gets the dependence of the effect on halo mass right. The metric is the mass dependence score, the Pearson correlation across the mass bins between the predicted and the measured offsets averaged over the model and fraction pairs, between 0 and 1 with higher better.
+  - id: PA4
+    machine: true
+    criterion: Whether the mechanism carries the difference between the models. The metric is the disagreement score, 1 minus the error of the predicted differences between the offsets of two models relative to the same error for a prediction of no difference, over the model pairs, between 0 and 1 with higher better.
+scientific_constraints:
+  criteria:
+  - id: SC1
+    criterion: The differences between the models come from their galaxy-formation physics rather than from their initial conditions.
+    source: As stated in the task specification, the four models are run "from the same initial conditions with different galaxy-formation physics".
+  - id: SC2
+    criterion: No model applies an explicit rule that depends on environment.
+    source: As stated in the task specification, "none of the four models encodes any explicit environmental rule or was calibrated with reference to environment".
+  - id: SC3
+    criterion: The mechanism acts at fixed halo mass.
+    source: As stated in the task specification, haloes in overdense regions are compared with "haloes of equal mass in underdense regions".
+  - id: SC4
+    criterion: A halo neither creates nor destroys baryons.
+    source: A general assumption in galaxy formation is that baryons are conserved.
+  - id: SC5
+    criterion: At a given feedback energy a deeper potential well retains more of its baryons.
+    source: A general assumption in galaxy formation is that the binding energy of a halo grows with its mass, which is why the most massive haloes retain the most baryons.
+  - id: SC6
+    criterion: Feedback energy comes from star formation or from black hole accretion.
+    source: A general assumption in galaxy formation is that outflows are driven by supernovae and by accreting black holes.
+completeness:
+  criteria:
+  - id: C1
+    criterion: mechanism.md and mechanism.py are both present and describe the same mechanism. The .md file gives its causal chain and evidence, while the .py file defines COEFFS and predict_offset and applies one deterministic computation to every model and mass bin, with at most 16 fitted constants.
+  - id: C2
+    criterion: experiment.log is present in the mechanisms folder.
+insights:
+  criteria:
+  - id: I1
+    criterion: Does the discovered mechanism establish that the environmental effect on the baryon content of low-mass haloes flips sign between z=2 and z=0?
+    kind: finding
+  - id: I2
+    criterion: Does the discovered mechanism establish that the overdensity above which low-mass galaxies quench rises with redshift?
+    kind: finding
+  - id: I3
+    criterion: Does the discovered mechanism establish that satellite galaxies in overdense regions hold less gas than satellites of the same stellar mass in underdense regions in every model?
+    kind: finding
+  - id: I4
+    criterion: Does the discovered mechanism establish that low-mass central galaxies hold less gas in overdense regions than in underdense ones in every model?
+    kind: finding
+  - id: I5
+    criterion: Does the discovered mechanism establish that the environmental effect on low-mass haloes in SIMBA is unchanged when the overdensity is defined by the five nearest galaxies instead of ten?
+    kind: finding
+  - id: I6
+    criterion: Does the discovered mechanism establish that at z=0 the baryon fraction of low-mass haloes in Swift-EAGLE rises with overdensity?
+    kind: finding
+  - id: I7
+    criterion: Does the discovered mechanism establish that at z=0 the baryon fraction of low-mass haloes in IllustrisTNG and ASTRID peaks at an intermediate overdensity?
+    kind: finding
+  - id: I8
+    criterion: Does the discovered mechanism establish that the environmental effect on low-mass haloes in SIMBA keeps its sign when environment is measured by the distance to the nearest halo of comparable mass?
+    kind: finding
+  - id: I9
+    criterion: Does the discovered mechanism establish that the sphere that defines the overdensity of a halo shrinks from a few Mpc for low-mass haloes to below one Mpc for the most massive?
+    kind: finding
+  - id: I10
+    criterion: Does the discovered mechanism establish that the overdensity of a halo is nearly independent of its mass below 1e12 Msun and rises steeply above it?
+    kind: finding
+  - id: I11
+    criterion: Does the discovered mechanism explain how the baryon deficit of low-mass haloes in overdense regions builds up over the history of a halo?
+    kind: limitation
+  - id: I12
+    criterion: Does the discovered mechanism say how much of the baryon deficit of low-mass haloes in overdense regions in SIMBA is caused by their neighbours?
+    kind: limitation
+  - id: I13
+    criterion: Does the discovered mechanism say by how much the gravitational potential around a low-mass halo is deeper in an overdense region than in an underdense one at fixed halo mass?
+    kind: limitation

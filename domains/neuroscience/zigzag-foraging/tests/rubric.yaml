@@ -1,0 +1,84 @@
+predictive_accuracy:
+  criteria:
+  - id: PA1
+    machine: true
+    criterion: 'Whether the mechanism reproduces the activity of the panel on the circuit as it stands: the coefficient of determination between the predicted and the recorded activity, pooled over the held-out settings run on the intact circuit, the panel and the time points, with the constants fit_coeffs refits on the calibration settings from the submitted ones, exactly as the reduced runs are refit.'
+  - id: PA2
+    machine: true
+    criterion: 'Whether it places the swing in the cells that carry it, strongly in some and weakly in others: the correlation between the predicted and the recorded swing amplitude over the neuron-setting cases, with the constants fit_coeffs refits on the calibration settings from the submitted ones, exactly as the reduced runs are refit.'
+  - id: PA3
+    machine: true
+    criterion: 'Whether it gets the timing of the motor pattern against the swing of the sample: the circular concordance between the predicted and the recorded phase of the swing component over the neuron-setting cases, with the constants fit_coeffs refits on the calibration settings from the submitted ones, exactly as the reduced runs are refit.'
+  - id: PA4
+    machine: true
+    criterion: 'Whether it follows the drift of the sample as the heading turns: the coefficient of determination of the component of the activity slower than twice the swing period, pooled over the settings and the panel, with the constants fit_coeffs refits on the calibration settings from the submitted ones, exactly as the reduced runs are refit.'
+  - id: PA5
+    machine: true
+    criterion: 'Whether it still holds on a circuit from which a whole kind of connection is gone: the coefficient of determination pooled over the held-out settings run with every gap junction, or every chemical synapse, removed, with the constants fit_coeffs refits on the calibration settings from the submitted ones, exactly as the reduced runs are refit.'
+  - id: PA6
+    machine: true
+    criterion: 'Whether it gets the direction of what removing the gap junctions does: the weighted share of neuron-setting cases in which the predicted change in swing amplitude, from an intact setting to the setting that shares its stimulus on the circuit without gap junctions, carries the recorded sign, with the constants fit_coeffs refits on the calibration settings from the submitted ones, exactly as the reduced runs are refit.'
+  - id: PA7
+    machine: true
+    criterion: 'Whether the structure holds once its constants are fitted again on data it was not tuned on: the coefficient of determination pooled over one half of the held-out settings, with the constants refit by fit_coeffs on the other half and the structure unchanged.'
+scientific_constraints:
+  criteria:
+  - id: SC1
+    criterion: Interneurons carry the sample from the sensory cells to the motor neurons.
+    source: 'As stated in the task specification, the sample reaches no motor neuron directly. Larsch et al. 2015, Fig. 1A: the synaptic partners of AWA are other sensory neurons and interneurons rather than motor neurons.'
+  - id: SC2
+    criterion: A panel neuron's activity is determined by what the circuit delivers to it.
+    source: As stated in the task specification, the mechanism has to work from what the simulator delivers, the stimulus and the wiring, rather than from the identity of any cell.
+  - id: SC3
+    criterion: A chemical synapse carries activity from the presynaptic cell to the postsynaptic cell.
+    source: 'A general assumption about C. elegans is that chemical transmission is directed. Zhao et al. 2024, Methods: the postsynaptic current is set by the presynaptic membrane potential.'
+  - id: SC4
+    criterion: The polarity of a chemical synapse is fixed by its transmitter.
+    source: 'A general assumption about C. elegans is that the polarity of a synapse follows its transmitter. Boyle, Berri and Cohen 2012, section 2.3: the D-class synapses are inhibitory throughout.'
+  - id: SC5
+    criterion: A gap junction passes current in both directions.
+    source: 'A general assumption about C. elegans is that a gap junction is an ohmic coupling with no sign of its own, so current flows from the more depolarised cell towards the less depolarised one. Zhao et al. 2024, Methods: the gap-junction current is proportional to the potential difference between the two cells.'
+  - id: SC6
+    criterion: Neurons respond gradedly.
+    source: 'A general assumption about C. elegans neurophysiology is that its neurons are mostly non-spiking and transmit in a graded manner. Boyle, Berri and Cohen 2012, section 3.6: graded tonic release from the B-class motor neurons.'
+  - id: SC7
+    criterion: The wiring and a cell's response properties stay the same within one run.
+    source: 'A general assumption about C. elegans physiology is that neither the wiring nor a cell''s response to its input changes within the seconds of a single run. Zhao et al. 2024, Discussion: synaptic plasticity is not part of the circuit and its weights and polarities are fixed.'
+completeness:
+  criteria:
+  - id: C1
+    criterion: mechanism.md and mechanism.py are both present and describe the same mechanism. The .md file gives its causal chain and evidence, while the .py file defines INPUTS, COEFFS, predict_activity, and fit_coeffs, and applies one deterministic computation to every panel neuron from the stimulus and the wiring delivered, with at most 10 fitted constants.
+  - id: C2
+    criterion: experiment.log is present in the mechanisms folder.
+insights:
+  criteria:
+  - id: I1
+    criterion: Does the discovered mechanism explain why removing every gap junction leaves the motor neurons swinging about as much as before?
+    kind: finding
+  - id: I2
+    criterion: Does the discovered mechanism explain why the head motor neurons swing about as much once the gap junctions are removed?
+    kind: finding
+  - id: I3
+    criterion: Does the discovered mechanism explain why the A-class cord motor neurons keep their swing once the gap junctions are removed?
+    kind: finding
+  - id: I4
+    criterion: Does the discovered mechanism explain why the B-class cord motor neurons keep their swing once the gap junctions are removed?
+    kind: finding
+  - id: I5
+    criterion: Does the discovered mechanism explain why the D-class cord motor neurons keep their swing once the gap junctions are removed?
+    kind: finding
+  - id: I6
+    criterion: Does the discovered mechanism explain why a sample of a few picoamperes moves the motor neurons by millivolts?
+    kind: finding
+  - id: I7
+    criterion: Does the discovered mechanism explain why raising the background level lets less of a large swing reach the motor neurons?
+    kind: finding
+  - id: I8
+    criterion: Does the discovered mechanism explain how the bending of the body behind a motor neuron reaches that motor neuron?
+    kind: limitation
+  - id: I9
+    criterion: Does the discovered mechanism explain what fixes the polarity of each separate synapse made by a neuron that releases several transmitters, so that one such cell excites some of its targets and inhibits others?
+    kind: limitation
+  - id: I10
+    criterion: Does the discovered mechanism explain how the connections of the circuit change as the animal keeps foraging?
+    kind: limitation

@@ -1,0 +1,148 @@
+{
+  "shipped_coeffs": [
+    400.0,
+    0.3,
+    -0.1,
+    3.0,
+    1.0,
+    0.3,
+    3.67e-07
+  ],
+  "margin": 0.09190351455050677,
+  "switch_tol_ms": 500.0,
+  "eval_from_ms": 800.0,
+  "calibration": {
+    "n_settings": 10,
+    "seconds": 2.8,
+    "coeffs": [
+      400.0,
+      0.3,
+      -0.1,
+      3.0,
+      1.0,
+      0.3,
+      3.667188246078457e-07
+    ]
+  },
+  "predict_seconds": 0.2,
+  "ceiling": {
+    "state_agreement": 0.950086862106406,
+    "switch_recall": 0.9552938196555216,
+    "switch_precision": 0.9352631578947368,
+    "switch_f1": 0.9451723752288729,
+    "dwell_wasserstein_ms": 178.75051351389078,
+    "dwell_distance_norm": 0.07602503440284288,
+    "occupancy_mae": 0.016257690915671374,
+    "n_recorded_switches": 290,
+    "correlation_mad": 0.1286747776908271,
+    "pooled_r2": 0.7863504757205253,
+    "n_regressors_per_cell": 2941,
+    "note": "per-cell linear fit over filtered and saturating transforms of the delivered inputs, fitted on the test settings themselves; an upper bound no submitted mechanism can reach"
+  },
+  "fit_seconds": 2.8,
+  "refit_coeffs": [
+    800.0,
+    0.3,
+    0.0,
+    3.0,
+    1.0,
+    0.3,
+    2.931349485615238e-07
+  ],
+  "coeffs_used": [
+    400.0,
+    0.3,
+    -0.1,
+    3.0,
+    1.0,
+    0.3,
+    3.667188246078457e-07
+  ],
+  "submitted": {
+    "state_agreement": 0.41973941368078177,
+    "switch_recall": 0.17854609929078016,
+    "switch_precision": 0.1643939393939394,
+    "switch_f1": 0.1711780096509369,
+    "dwell_wasserstein_ms": 927.4160866508298,
+    "dwell_distance_norm": 0.30057704896872317,
+    "occupancy_mae": 0.2316322837495476,
+    "n_recorded_switches": 290,
+    "correlation_mad": 0.4260698666829048,
+    "pooled_r2": -0.0012065123119653354
+  },
+  "reduced": {
+    "flat": {
+      "state_agreement": 0.37722041259500544,
+      "switch_recall": 0.0,
+      "switch_precision": 0.0,
+      "switch_f1": 0.0,
+      "dwell_wasserstein_ms": 3607.3060673526984,
+      "dwell_distance_norm": 0.8730761617261344,
+      "occupancy_mae": 0.2947303655446978,
+      "n_recorded_switches": 290,
+      "correlation_mad": 0.5461551897281182,
+      "pooled_r2": 0.05504318214103576
+    },
+    "uncoupled": {
+      "state_agreement": 0.404028230184582,
+      "switch_recall": 0.03758865248226951,
+      "switch_precision": 0.08159722222222222,
+      "switch_f1": 0.05146800553730449,
+      "dwell_wasserstein_ms": 2045.7487377942953,
+      "dwell_distance_norm": 0.4264662933193578,
+      "occupancy_mae": 0.2846905537459284,
+      "n_recorded_switches": 290,
+      "correlation_mad": 0.45777663425090764,
+      "pooled_r2": 0.003335582358582778
+    }
+  },
+  "refit": {
+    "state_agreement": 0.3979587404994572,
+    "switch_recall": 0.05434782608695652,
+    "switch_precision": 0.09956140350877192,
+    "switch_f1": 0.0703134679717507,
+    "dwell_wasserstein_ms": 1078.5425862822192,
+    "dwell_distance_norm": 0.296929613641386,
+    "occupancy_mae": 0.24919290626131022,
+    "n_recorded_switches": 140,
+    "correlation_mad": 0.4185474503814539,
+    "pooled_r2": 0.028864669384677688
+  },
+  "refit_reduced": {
+    "flat": {
+      "state_agreement": 0.4363083604777415,
+      "switch_recall": 0.0,
+      "switch_precision": 0.0,
+      "switch_f1": 0.0,
+      "dwell_wasserstein_ms": 4797.373333333333,
+      "dwell_distance_norm": 0.8993743482794577,
+      "occupancy_mae": 0.3757944263481723,
+      "n_recorded_switches": 140,
+      "correlation_mad": 0.5422656957422989,
+      "pooled_r2": 0.06044578325471772
+    },
+    "uncoupled": {
+      "state_agreement": 0.4317698154180239,
+      "switch_recall": 0.02898550724637681,
+      "switch_precision": 0.06944444444444445,
+      "switch_f1": 0.0408997955010225,
+      "dwell_wasserstein_ms": 2180.3832478632476,
+      "dwell_distance_norm": 0.40039627856062415,
+      "occupancy_mae": 0.3105899384726747,
+      "n_recorded_switches": 140,
+      "correlation_mad": 0.421838207504705,
+      "pooled_r2": 0.04777119335146951
+    }
+  },
+  "pa_scores": {
+    "PA1": 0.41973941368078177,
+    "PA2": 0.1711780096509369,
+    "PA3": 0.6994229510312768,
+    "PA4": 0.7869650666585476,
+    "PA5": 0.11971000411363242,
+    "PA6": 0.3979587404994572
+  },
+  "predictive_accuracy": 0.4325,
+  "total": 6,
+  "test_set_fingerprint": "1b79d7b3c9af3faa"
+}

@@ -1,0 +1,54 @@
+schema_version = "1.4"
+artifacts = ["/workspace/mechanisms"]
+
+[metadata]
+deliverables = ["mechanisms/mechanism.md", "mechanisms/experiment.log", "mechanisms/mechanism.py"]
+mechanisms_max_mb = 1024
+blocked_hosts = [
+    "users.flatironinstitute.org", "flathub.flatironinstitute.org", "binder.flatironinstitute.org",
+    "www.flatironinstitute.org", "flatironinstitute.org", "www.simonsfoundation.org", "simonsfoundation.org",
+    "camels.readthedocs.io", "camels-multifield-dataset.readthedocs.io", "camels-sam.readthedocs.io",
+    "camel-simulations.org", "www.camel-simulations.org", "www.tng-project.org", "tng-project.org",
+    "www.illustris-project.org", "illustris-project.org", "www.arepo-code.org", "arepo-code.org",
+    "github.com", "www.github.com", "raw.githubusercontent.com", "codeload.github.com",
+    "objects.githubusercontent.com", "github.io", "pypi.org", "pypi.python.org", "files.pythonhosted.org",
+    "registry.npmjs.org", "conda.anaconda.org", "anaconda.org", "huggingface.co", "zenodo.org",
+    "www.zenodo.org", "arxiv.org", "www.arxiv.org", "export.arxiv.org", "browse.arxiv.org", "info.arxiv.org",
+    "ar5iv.labs.arxiv.org", "ar5iv.org", "alphaxiv.org", "www.alphaxiv.org", "arxiv-sanity-lite.com",
+    "www.arxiv-sanity-lite.com", "ui.adsabs.harvard.edu", "adsabs.harvard.edu", "articles.adsabs.harvard.edu",
+    "inspirehep.net", "iopscience.iop.org", "journals.aas.org", "academic.oup.com", "www.aanda.org",
+    "aanda.org", "nature.com", "www.nature.com", "sciencedirect.com", "www.sciencedirect.com", "doi.org",
+    "dx.doi.org", "semanticscholar.org", "www.semanticscholar.org", "api.semanticscholar.org",
+    "pdfs.semanticscholar.org", "openalex.org", "api.openalex.org", "crossref.org", "api.crossref.org",
+    "scholar.google.com", "scholar.archive.org", "researchgate.net", "www.researchgate.net", "academia.edu",
+    "www.academia.edu", "core.ac.uk", "europepmc.org", "paperswithcode.com", "www.paperswithcode.com",
+    "emergentmind.com", "www.emergentmind.com", "connectedpapers.com", "www.connectedpapers.com", "scite.ai",
+    "astrobites.org", "www.astrobites.org", "phys.org", "eurekalert.org", "www.eurekalert.org", "sci-hub.st",
+    "sci-hub.ru",
+]
+task_vocabulary = ["gravitational-wave"]
+
+[metadata.simulator]
+name = "camels-1p-cv-ex"
+args = {"suites" = ["IllustrisTNG"], "set_types" = ["1P", "CV", "EX"]}
+workspace_dirs = ["camels_data"]
+records = "accessed_sims.json"
+
+[[metadata.source_literature]]
+titles = ["Implications of the nanoHertz Gravitational-Wave Background for Galactic Feedback and Massive Black Hole Growth"]
+phrases = ["implications of the nanohertz gravitational-wave background", "implications of the nanohertz gravitational wave background"]
+authors = ["Tillman", "Burkhart", "Mingarelli", "Casey-Clyde", "Hernquist", "Bose", "Regos", "Hernández-Aguayo", "Hernandez-Aguayo"]
+years = [2026]
+venues = ["arXiv"]
+ids = ["2602.15938"]
+
+[agent]
+timeout_sec = 14400
+
+[verifier]
+timeout_sec = 172800
+environment_mode = "separate"
+
+[environment]
+docker_image = "astrophysics.sif"
+workdir = "/workspace"

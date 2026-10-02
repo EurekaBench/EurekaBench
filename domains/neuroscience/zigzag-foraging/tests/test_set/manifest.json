@@ -1,0 +1,353 @@
+{
+  "fingerprint": "41d6de61a7455853",
+  "n_settings": 100,
+  "seed": 0,
+  "duration_ms": 4000.0,
+  "dt_ms": 0.025,
+  "save_every_ms": 5.0,
+  "settle_ms": 400.0,
+  "guard_ms": 300.0,
+  "parameter_set": "C1",
+  "protocol_version": 2,
+  "variable": "v",
+  "param_overrides": {
+    "neuron_to_neuron_elec_syn_gbase": "0.09 nS"
+  },
+  "families": {
+    "standard": 40,
+    "wide": 12,
+    "subset": 15,
+    "no_gap": 17,
+    "no_chem": 16
+  },
+  "ranges": {
+    "standard": {
+      "swing_pa": [
+        2.0,
+        7.0
+      ],
+      "swing_period_ms": [
+        600.0,
+        1500.0
+      ],
+      "level_pa": [
+        0.0,
+        6.0
+      ],
+      "drift_pa": [
+        0.0,
+        4.0
+      ],
+      "drift_periods": [
+        4.0,
+        10.0
+      ]
+    },
+    "wide": {
+      "swing_pa": [
+        1.0,
+        10.0
+      ],
+      "swing_period_ms": [
+        450.0,
+        2000.0
+      ],
+      "level_pa": [
+        0.0,
+        9.0
+      ],
+      "drift_pa": [
+        0.0,
+        6.0
+      ],
+      "drift_periods": [
+        3.0,
+        12.0
+      ]
+    }
+  },
+  "cells": [
+    "AWAL",
+    "AWAR",
+    "AWCL",
+    "AWCR",
+    "ASEL",
+    "ASER",
+    "ASHL",
+    "ASHR",
+    "ASKL",
+    "ASKR",
+    "ASJL",
+    "ASJR",
+    "ASGL",
+    "ASGR",
+    "AIAL",
+    "AIAR",
+    "AIBL",
+    "AIBR",
+    "AIYL",
+    "AIYR",
+    "AIZL",
+    "AIZR",
+    "RIAL",
+    "RIAR",
+    "RIBL",
+    "RIBR",
+    "RIML",
+    "RIMR",
+    "RIS",
+    "RID",
+    "AVAL",
+    "AVAR",
+    "AVBL",
+    "AVBR",
+    "AVDL",
+    "AVDR",
+    "AVEL",
+    "AVER",
+    "PVCL",
+    "PVCR",
+    "SMDDL",
+    "SMDDR",
+    "SMDVL",
+    "SMDVR",
+    "SMBDL",
+    "SMBDR",
+    "SMBVL",
+    "SMBVR",
+    "RMDL",
+    "RMDR",
+    "RMDDL",
+    "RMDDR",
+    "RMDVL",
+    "RMDVR",
+    "RMED",
+    "RMEV",
+    "RMEL",
+    "RMER",
+    "RIVL",
+    "RIVR",
+    "DA1",
+    "DA2",
+    "DA3",
+    "DA4",
+    "DA5",
+    "DA6",
+    "DA7",
+    "DA8",
+    "DA9",
+    "VA1",
+    "VA2",
+    "VA3",
+    "VA4",
+    "VA5",
+    "VA6",
+    "VA7",
+    "VA8",
+    "VA9",
+    "VA10",
+    "VA11",
+    "VA12",
+    "DB1",
+    "DB2",
+    "DB3",
+    "DB4",
+    "DB5",
+    "DB6",
+    "DB7",
+    "VB1",
+    "VB2",
+    "VB3",
+    "VB4",
+    "VB5",
+    "VB6",
+    "VB7",
+    "VB8",
+    "VB9",
+    "VB10",
+    "VB11",
+    "DD1",
+    "DD2",
+    "DD3",
+    "DD4",
+    "DD5",
+    "DD6",
+    "VD1",
+    "VD2",
+    "VD3",
+    "VD4",
+    "VD5",
+    "VD6",
+    "VD7",
+    "VD8",
+    "VD9",
+    "VD10",
+    "VD11",
+    "VD12",
+    "VD13"
+  ],
+  "panel": [
+    "SMDDL",
+    "SMDDR",
+    "SMDVL",
+    "SMDVR",
+    "SMBDL",
+    "SMBDR",
+    "SMBVL",
+    "SMBVR",
+    "RMDL",
+    "RMDR",
+    "RMDDL",
+    "RMDDR",
+    "RMDVL",
+    "RMDVR",
+    "RMED",
+    "RMEV",
+    "RMEL",
+    "RMER",
+    "RIVL",
+    "RIVR",
+    "DA1",
+    "DA2",
+    "DA3",
+    "DA4",
+    "DA5",
+    "DA6",
+    "DA7",
+    "DA8",
+    "DA9",
+    "VA1",
+    "VA2",
+    "VA3",
+    "VA4",
+    "VA5",
+    "VA6",
+    "VA7",
+    "VA8",
+    "VA9",
+    "VA10",
+    "VA11",
+    "VA12",
+    "DB1",
+    "DB2",
+    "DB3",
+    "DB4",
+    "DB5",
+    "DB6",
+    "DB7",
+    "VB1",
+    "VB2",
+    "VB3",
+    "VB4",
+    "VB5",
+    "VB6",
+    "VB7",
+    "VB8",
+    "VB9",
+    "VB10",
+    "VB11",
+    "DD1",
+    "DD2",
+    "DD3",
+    "DD4",
+    "DD5",
+    "DD6",
+    "VD1",
+    "VD2",
+    "VD3",
+    "VD4",
+    "VD5",
+    "VD6",
+    "VD7",
+    "VD8",
+    "VD9",
+    "VD10",
+    "VD11",
+    "VD12",
+    "VD13"
+  ],
+  "sensory": [
+    "AWAL",
+    "AWAR",
+    "AWCL",
+    "AWCR",
+    "ASEL",
+    "ASER",
+    "ASHL",
+    "ASHR",
+    "ASKL",
+    "ASKR",
+    "ASJL",
+    "ASJR",
+    "ASGL",
+    "ASGR"
+  ],
+  "variants": {
+    "intact": [],
+    "no_gap": [
+      "^.+-.+_GJ$"
+    ],
+    "no_chem": [
+      "^[A-Za-z0-9]+-[A-Za-z0-9]+$"
+    ]
+  },
+  "scoring": {
+    "rule": "(m - b) / (1 - b), clipped to [0, 1], where m is the measure the criterion is read on and b is the larger of what the two reduced runs reach on the same cases, never taken below the value the measure holds when the prediction carries no information",
+    "no_information": {
+      "pooled_r2": 0.0,
+      "intact_pooled_r2": 0.0,
+      "reduced_pooled_r2": 0.0,
+      "slow_r2": 0.0,
+      "swing_amplitude_r": 0.0,
+      "swing_phase_concordance": 0.0,
+      "removal_sign_no_gap": 0.5,
+      "removal_sign_no_chem": 0.5
+    },
+    "measures": {
+      "PA1": {
+        "block": "submitted",
+        "read_on": [
+          "intact_pooled_r2"
+        ]
+      },
+      "PA2": {
+        "block": "submitted",
+        "read_on": [
+          "swing_amplitude_r"
+        ]
+      },
+      "PA3": {
+        "block": "submitted",
+        "read_on": [
+          "swing_phase_concordance"
+        ]
+      },
+      "PA4": {
+        "block": "submitted",
+        "read_on": [
+          "slow_r2"
+        ]
+      },
+      "PA5": {
+        "block": "submitted",
+        "read_on": [
+          "reduced_pooled_r2"
+        ]
+      },
+      "PA6": {
+        "block": "submitted",
+        "read_on": [
+          "removal_sign_no_gap"
+        ]
+      },
+      "PA7": {
+        "block": "refit",
+        "read_on": [
+          "pooled_r2"
+        ]
+      }
+    }
+  },
+  "build_seconds": 6330.2,
+  "build_workers": 8
+}

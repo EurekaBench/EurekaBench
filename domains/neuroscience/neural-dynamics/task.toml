@@ -1,0 +1,78 @@
+schema_version = "1.4"
+artifacts = ["/workspace/mechanisms"]
+
+[metadata]
+deliverables = ["mechanisms/mechanism.md", "mechanisms/experiment.log", "mechanisms/mechanism.py"]
+mechanisms_max_mb = 1024
+blocked_hosts = [
+    "openworm.org", "www.openworm.org", "github.com", "www.github.com", "raw.githubusercontent.com",
+    "codeload.github.com", "objects.githubusercontent.com", "github.io", "pypi.org", "pypi.python.org",
+    "files.pythonhosted.org", "registry.npmjs.org", "conda.anaconda.org", "anaconda.org", "neuroml.org",
+    "www.neuroml.org", "docs.neuroml.org", "opensourcebrain.org", "www.opensourcebrain.org", "biorxiv.org",
+    "www.biorxiv.org", "connect.biorxiv.org", "medrxiv.org", "www.medrxiv.org", "elifesciences.org",
+    "www.elifesciences.org", "cell.com", "www.cell.com", "sciencedirect.com", "www.sciencedirect.com",
+    "ncbi.nlm.nih.gov", "www.ncbi.nlm.nih.gov", "pubmed.ncbi.nlm.nih.gov", "pmc.ncbi.nlm.nih.gov",
+    "europepmc.org", "www.europepmc.org", "semanticscholar.org", "www.semanticscholar.org",
+    "api.semanticscholar.org", "openalex.org", "api.openalex.org", "crossref.org", "api.crossref.org",
+    "doi.org", "dx.doi.org", "arxiv.org", "www.arxiv.org", "export.arxiv.org", "scholar.google.com",
+    "scholar.archive.org", "researchgate.net", "www.researchgate.net", "sci-hub.st", "sci-hub.ru",
+    "royalsocietypublishing.org", "x-mol.com", "www.x-mol.com", "sciety.org", "labs.sciety.org",
+    "discovery.ucl.ac.uk", "discovery-pp.ucl.ac.uk", "oar.princeton.edu", "biophysics.princeton.edu",
+    "molbio.princeton.edu", "microhub.mdibl.org", "hearingbrain.org", "cognitivescience.univie.ac.at",
+    "rcastoragev2.blob.core.windows.net", "themoonlight.io", "doaj.org", "par.nsf.gov", "scholarhub.vn",
+]
+task_vocabulary = ["c302", "OpenWorm", "command sequence"]
+
+[metadata.simulator]
+name = "c302"
+
+[[metadata.source_literature]]
+titles = ["Global Brain Dynamics Embed the Motor Command Sequence of Caenorhabditis elegans"]
+phrases = ["global brain dynamics", "motor command sequence"]
+authors = ["Kato", "Kaplan", "Schrödel", "Schroedel", "Skora", "Lindsay", "Yemini", "Lockery", "Zimmer"]
+years = [2015]
+venues = ["Cell"]
+ids = ["10.1016/j.cell.2015.09.034", "j.cell.2015.09.034", "26478179"]
+
+[[metadata.source_literature]]
+titles = ["Decoding locomotion from population neural activity in moving C. elegans"]
+phrases = ["decoding locomotion"]
+authors = ["Hallinen", "Dempsey", "Scholz", "Yu", "Linder", "Randi", "Sharma", "Shaevitz", "Leifer"]
+years = [2021]
+venues = ["eLife", "bioRxiv"]
+ids = ["10.7554/eLife.66135", "elife-66135", "66135", "34323218", "PMC8439659", "10.1101/445643", "445643"]
+
+[[metadata.source_literature]]
+titles = ["A quantitative model of conserved macroscopic dynamics predicts future motor commands", "Universality of macroscopic neuronal dynamics in Caenorhabditis elegans"]
+phrases = ["macroscopic dynamics", "future motor commands", "universality of macroscopic"]
+authors = ["Brennan", "Proekt"]
+years = [2019, 2017]
+venues = ["eLife", "arXiv"]
+ids = ["10.7554/eLife.46814", "elife-46814", "46814", "31294689", "PMC6624016", "1711.08533"]
+
+[[metadata.source_literature]]
+titles = ["An intrinsic neuronal manifold underlies brain-wide hierarchical organization of behavior in C. elegans"]
+phrases = ["intrinsic neuronal manifold", "neuronal manifold", "brain-wide hierarchical"]
+authors = ["Fieseler", "Lev", "Rey", "Hille", "Brenner", "Zimmer"]
+years = [2025]
+venues = ["bioRxiv"]
+ids = ["10.1101/2025.03.09.642241", "2025.03.09.642241", "642241"]
+
+[[metadata.source_literature]]
+titles = ["c302: a multiscale framework for modelling the nervous system of Caenorhabditis elegans"]
+phrases = ["c302", "openworm", "multiscale framework"]
+authors = ["Gleeson", "Lung", "Grosu", "Hasani", "Larson"]
+years = [2018]
+venues = ["Philosophical Transactions", "Phil Trans", "Royal Society B", "rstb"]
+ids = ["10.1098/rstb.2017.0379", "rstb.2017.0379", "20170379", "PMC6158223", "10056647"]
+
+[agent]
+timeout_sec = 14400
+
+[verifier]
+timeout_sec = 172800
+environment_mode = "separate"
+
+[environment]
+docker_image = "neuroscience.sif"
+workdir = "/workspace"

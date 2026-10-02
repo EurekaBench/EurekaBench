@@ -1,0 +1,146 @@
+predictive_accuracy:
+  criteria:
+    - id: PA1
+      machine: true
+      criterion: >-
+        Whether the mechanism reproduces the activity of the panel: the reduced-run score of the coefficient of determination between the predicted and the recorded activity, pooled over the held-out settings, the panel and the time points, using the submitted constants.
+    - id: PA2
+      machine: true
+      criterion: >-
+        Whether it works for the typical neuron rather than for the few with the largest signals: the per-neuron score of the coefficient of determination over the responding panel neurons, using the submitted constants. It is 1 when every responding neuron is predicted exactly and 0 when the middle neuron is no better than its own mean or when every responding neuron scores below zero.
+    - id: PA3
+      machine: true
+      criterion: >-
+        Whether it reproduces the undulation and not only the slow action steps: the reduced-run score of the coefficient of determination on the component faster than the period of the rhythmic drive, using the submitted constants.
+    - id: PA4
+      machine: true
+      criterion: >-
+        Whether the mechanism uses both ingredients of the phenomenon rather than one: the amount by which its pooled coefficient of determination exceeds that of each of its own two reduced runs, the smaller of the two margins taken and clipped to [0, 1], using the submitted constants. It is 0 when the mechanism is no better than either reduced run.
+    - id: PA5
+      machine: true
+      criterion: >-
+        Whether it gets the size of each neuron's undulation in each action state: the Pearson correlation between the predicted and the recorded per-state undulation amplitudes over the settings that drive forward and backward separately and carry a rhythm, read as a correlation, using the submitted constants.
+    - id: PA6
+      machine: true
+      criterion: >-
+        Whether it gets the direction right, meaning which of the two states a neuron swings harder in: the share of the neuron-setting pairs whose recorded difference reaches 10 percent of the larger amplitude on which the sign of the predicted difference is right, read as a share of signs, using the submitted constants.
+    - id: PA7
+      machine: true
+      criterion: >-
+        Whether it transfers to neuron classes absent from the observations: the Pearson correlation between the predicted and the recorded per-state undulation amplitudes on the responding panel neurons that are not ventral cord B or D class motor neurons, read as a correlation, using the submitted constants.
+    - id: PA8
+      machine: true
+      criterion: >-
+        Whether the structure of the mechanism rather than its constants carries the phenomenon: the reduced-run score of the coefficient of determination pooled over the second half of the settings, with the constants refit by fit_coeffs on the first half and the structure unchanged.
+scientific_constraints:
+  criteria:
+    - id: SC1
+      criterion: >-
+        The action state has a causal effect on how a neuron expresses the undulation.
+      source: >-
+        As stated in the task specification, each coarse action is carried out through undulations, "so that the fine motor pattern is nested inside the coarse action,” and “the rhythmic gait activity of the ventral cord motor neurons rides on top of these command states."
+    - id: SC2
+      criterion: >-
+        The action state changes on a slower timescale than the undulation.
+      source: >-
+        As stated in the task specification, the undulations "run on a faster timescale" than the coarse actions they carry out.
+    - id: SC3
+      criterion: >-
+        The intended action state is decodable from the neural dynamics when the animal is not generating motion.
+      source: >-
+        As stated in the task specification, "These dynamics persist when the animal is immobilised and cannot execute the actions."
+    - id: SC4
+      criterion: >-
+        The action state is carried by the driven cells together.
+      source: >-
+        As stated in the task specification, the coarse action is "a distributed representation" that is "broadcast across the population," and "the population as a whole reports the animal's movement far better than any single neuron does."
+    - id: SC5
+      criterion: >-
+        The undulation reaches a neuron as a signal of its own.
+      source: >-
+        As stated in the task specification, the gait activity "rides on top of these command states," and those states are there when the animal is immobilised and no undulation is being produced.
+    - id: SC6
+      criterion: >-
+        A neuron's activity is determined by the quantities the simulator reports for it.
+      source: >-
+        As stated in the task specification, the mechanism has to work "from what the circuit delivers to that neuron—quantities the simulator reports—rather than from the identity of the neuron."
+    - id: SC7
+      criterion: >-
+        Some of the connections onto a neuron are inhibitory.
+      source: >-
+        A general assumption about C. elegans motor circuits is that the D-class motor neurons of the ventral cord are GABAergic and inhibit what they contact, so a connection is not always excitatory.
+    - id: SC8
+      criterion: >-
+        Neurons respond gradedly.
+      source: >-
+        A general assumption about C. elegans neurophysiology is that its neurons are mostly non-spiking and transmit signals in a graded manner, so a response follows the input smoothly rather than as a train of events.
+    - id: SC9
+      criterion: >-
+        Different neurons carry the undulation at different phases.
+      source: >-
+        A general assumption about C. elegans locomotion is that the undulation is a dorsoventral bending wave travelling along the body, so the neurons that drive it sit at different points of the cycle, with dorsal and ventral innervation the furthest apart.
+    - id: SC10
+      criterion: >-
+        The wiring and a neuron's response properties stay the same over one recording.
+      source: >-
+        A general assumption about C. elegans physiology is that neither the wiring nor a cell's response to its input changes within the seconds of a single recording.
+
+completeness:
+  criteria:
+    - id: C1
+      criterion: >-
+        mechanism.md and mechanism.py are both present and describe the same mechanism. The .md file gives its causal chain and evidence, while the .py file defines PROPERTIES, COEFFS, predict_activity, and fit_coeffs, and applies one deterministic computation to every neuron using that neuron's own inputs, with at most 10 fitted constants.
+    - id: C2
+      criterion: >-
+        experiment.log is present in the mechanisms folder.
+
+insights:
+  criteria:
+    - id: I1
+      criterion: >-
+        Does the discovered mechanism explain why a neuron's undulation disappears without the neuron falling silent?
+      kind: finding
+    - id: I2
+      criterion: >-
+        Does the discovered mechanism explain why the size of a neuron's undulation changes with the action state while its mean activity does not?
+      kind: finding
+    - id: I3
+      criterion: >-
+        Does the discovered mechanism explain why two motor neurons that receive the same command carry the undulation at opposite phases?
+      kind: finding
+    - id: I4
+      criterion: >-
+        Does the discovered mechanism explain why gating is more common in one action state than in the other?
+      kind: limitation
+    - id: I5
+      criterion: >-
+        Does the discovered mechanism explain why a neuron whose own activity correlates only weakly with the action state can still have its rhythm strongly gated by that state?
+      kind: finding
+    - id: I6
+      criterion: >-
+        Does the discovered mechanism establish that the neurons carrying the forward state gain, once the animal moves, a component of activity that the action state alone does not account for, while those carrying the backward state do not?
+      kind: finding
+    - id: I7
+      criterion: >-
+        Does the discovered mechanism establish that the preferred phases of the motor neurons form a graded sequence rather than two opposite groups?
+      kind: finding
+    - id: I8
+      criterion: >-
+        Does the discovered mechanism explain why the same state broadcast suppresses a sensory neuron instead of enabling a motor pattern?
+      kind: finding
+    - id: I9
+      criterion: >-
+        Does the discovered mechanism establish that silencing any single one of the interneurons that carry the state leaves the state cycle intact, so that carrying the state is not the same as being required for it?
+      kind: finding
+    - id: I10
+      criterion: >-
+        Does the discovered mechanism establish that the undulation and the turn are carried by largely different neurons?
+      kind: finding
+    - id: I11
+      criterion: >-
+        Does the discovered mechanism explain what times the transition from one action state to the next?
+      kind: limitation
+    - id: I12
+      criterion: >-
+        Does the discovered mechanism settle whether the fast activity of the gated neurons feeds back on the state?
+      kind: limitation

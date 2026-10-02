@@ -1,0 +1,93 @@
+schema_version = "1.4"
+artifacts = ["/workspace/mechanisms"]
+
+[metadata]
+deliverables = ["mechanisms/mechanism.md", "mechanisms/experiment.log", "mechanisms/mechanism.py"]
+mechanisms_max_mb = 1024
+blocked_hosts = [
+    "openworm.org", "www.openworm.org", "github.com", "www.github.com", "raw.githubusercontent.com",
+    "codeload.github.com", "objects.githubusercontent.com", "github.io", "pypi.org", "pypi.python.org",
+    "files.pythonhosted.org", "registry.npmjs.org", "conda.anaconda.org", "anaconda.org", "neuroml.org",
+    "www.neuroml.org", "docs.neuroml.org", "opensourcebrain.org", "www.opensourcebrain.org", "biorxiv.org",
+    "www.biorxiv.org", "connect.biorxiv.org", "medrxiv.org", "www.medrxiv.org", "elifesciences.org",
+    "www.elifesciences.org", "cell.com", "www.cell.com", "sciencedirect.com", "www.sciencedirect.com",
+    "nature.com", "www.nature.com", "journals.plos.org", "plos.org", "www.plos.org", "ncbi.nlm.nih.gov",
+    "www.ncbi.nlm.nih.gov", "pubmed.ncbi.nlm.nih.gov", "pmc.ncbi.nlm.nih.gov", "europepmc.org",
+    "www.europepmc.org", "semanticscholar.org", "www.semanticscholar.org", "api.semanticscholar.org",
+    "openalex.org", "api.openalex.org", "crossref.org", "api.crossref.org", "doi.org", "dx.doi.org",
+    "arxiv.org", "www.arxiv.org", "export.arxiv.org", "scholar.google.com", "scholar.archive.org",
+    "researchgate.net", "www.researchgate.net", "sci-hub.st", "sci-hub.ru", "royalsocietypublishing.org",
+    "x-mol.com", "www.x-mol.com", "sciety.org", "labs.sciety.org", "discovery.ucl.ac.uk",
+    "discovery-pp.ucl.ac.uk", "oar.princeton.edu", "biophysics.princeton.edu", "molbio.princeton.edu",
+    "microhub.mdibl.org", "hearingbrain.org", "cognitivescience.univie.ac.at",
+    "rcastoragev2.blob.core.windows.net", "themoonlight.io", "doaj.org", "par.nsf.gov", "scholarhub.vn",
+]
+task_vocabulary = ["c302", "OpenWorm"]
+
+[metadata.simulator]
+name = "c302"
+
+[metadata.simulator.defaults]
+parameter_set = "C0"
+connection_polarity_override = {"^SMDD[LR]-SMDV[LR]$" = "inh", "^SMDV[LR]-SMDD[LR]$" = "inh", "^RMDD[LR]-RMDV[LR]$" = "inh", "^RMDV[LR]-RMDD[LR]$" = "inh"}
+connection_number_scaling = {"^SMDD[LR]-SMDV[LR]$" = 8.0, "^SMDV[LR]-SMDD[LR]$" = 8.0, "^RMDD[LR]-RMDV[LR]$" = 4.0, "^RMDV[LR]-RMDD[LR]$" = 4.0, "^RIM[LR]-SMDD[LR]$" = 16.0, "^RIM[LR]-SMDV[LR]$" = 16.0, "^AIB[LR]-SMDD[LR]$" = 16.0, "^AIB[LR]-SMDV[LR]$" = 8.0, "^SMD[DV][LR]-RIA[LR]$" = 16.0, "^RIA[LR]-SMD[DV][LR]$" = 16.0}
+param_overrides = {"exc_syn_ar" = "5 per_s", "inh_syn_ar" = "2 per_s", "neuron_to_neuron_exc_syn_conductance" = "0.1 nS", "neuron_to_neuron_inh_syn_conductance" = "0.1 nS"}
+
+[[metadata.source_literature]]
+titles = ["Short-term memory by distributed neural network oscillators in a simple nervous system", "Working memory by distributed neural oscillators in a simple nervous system", "Relative phase of distributed oscillatory dynamics implements a working memory in a simple brain"]
+phrases = ["distributed neural network oscillators", "distributed neural oscillators", "working memory"]
+authors = ["Dunn", "Costello", "Borchardt", "Sprague", "Chiu", "Miller", "L'Etoile", "LEtoile", "Kato"]
+years = [2025]
+venues = ["Current Biology", "Curr Biol", "bioRxiv"]
+ids = ["10.1016/j.cub.2025.10.018", "j.cub.2025.10.018", "41092900"]
+
+[[metadata.source_literature]]
+titles = ["Capturing the continuous complexity of behaviour in Caenorhabditis elegans"]
+phrases = ["continuous complexity of behavior"]
+authors = ["Ahamed", "Costa", "Stephens"]
+years = [2021, 2019]
+venues = ["Nature Physics", "arXiv"]
+ids = ["10.1038/s41567-020-01036-8", "s41567-020-01036-8", "1911.10559"]
+
+[[metadata.source_literature]]
+titles = ["Feedback from network states generates variability in a probabilistic olfactory circuit"]
+phrases = ["feedback from network states", "probabilistic olfactory circuit"]
+authors = ["Gordus", "Pokala", "Levy", "Flavell", "Bargmann"]
+years = [2015]
+venues = ["Cell"]
+ids = ["10.1016/j.cell.2015.02.018", "j.cell.2015.02.018"]
+
+[[metadata.source_literature]]
+titles = ["A high-throughput method to deliver targeted optogenetic stimulation to moving C. elegans populations"]
+phrases = ["targeted optogenetic stimulation", "high-throughput method to deliver"]
+authors = ["Liu", "Kumar", "Sharma", "Leifer"]
+years = [2022]
+venues = ["PLOS Biology", "PLoS Biology"]
+ids = ["10.1371/journal.pbio.3001524", "pbio.3001524", "3001524"]
+
+[[metadata.source_literature]]
+titles = ["A quantitative model of conserved macroscopic dynamics predicts future motor commands", "Universality of macroscopic neuronal dynamics in Caenorhabditis elegans"]
+phrases = ["macroscopic dynamics", "future motor commands", "universality of macroscopic"]
+authors = ["Brennan", "Proekt"]
+years = [2019, 2017]
+venues = ["eLife", "arXiv"]
+ids = ["10.7554/eLife.46814", "elife-46814", "46814", "31294689", "PMC6624016", "1711.08533"]
+
+[[metadata.source_literature]]
+titles = ["c302: a multiscale framework for modelling the nervous system of Caenorhabditis elegans"]
+phrases = ["c302", "openworm", "multiscale framework"]
+authors = ["Gleeson", "Lung", "Grosu", "Hasani", "Larson"]
+years = [2018]
+venues = ["Philosophical Transactions", "Phil Trans", "Royal Society B", "rstb"]
+ids = ["10.1098/rstb.2017.0379", "rstb.2017.0379", "20170379", "PMC6158223", "10056647"]
+
+[agent]
+timeout_sec = 14400
+
+[verifier]
+timeout_sec = 172800
+environment_mode = "separate"
+
+[environment]
+docker_image = "neuroscience.sif"
+workdir = "/workspace"

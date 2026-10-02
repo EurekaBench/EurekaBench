@@ -1,0 +1,49 @@
+schema_version = "1.4"
+artifacts = ["/workspace/mechanisms"]
+
+[metadata]
+deliverables = ["mechanisms/equations.py", "mechanisms/interface.json", "mechanisms/experiment.log"]
+mechanisms_max_mb = 1024
+blocked_hosts = [
+    "github.com", "www.github.com", "raw.githubusercontent.com", "codeload.github.com",
+    "objects.githubusercontent.com", "github.io", "gist.github.com", "api.github.com", "pypi.org",
+    "pypi.python.org", "files.pythonhosted.org", "registry.npmjs.org", "conda.anaconda.org", "anaconda.org",
+    "readthedocs.io", "diffice-jax.readthedocs.io", "readthedocs.org", "huggingface.co", "zenodo.org",
+    "science.org", "www.science.org", "advances.science.org", "researchsquare.com", "www.researchsquare.com",
+    "assets.researchsquare.com", "nsidc.org", "www.nsidc.org", "n5eil01u.ecs.nsidc.org", "nature.com",
+    "www.nature.com", "sciencedirect.com", "www.sciencedirect.com", "agupubs.onlinelibrary.wiley.com",
+    "onlinelibrary.wiley.com", "cambridge.org", "www.cambridge.org", "tc.copernicus.org", "copernicus.org",
+    "www.copernicus.org", "semanticscholar.org", "www.semanticscholar.org", "api.semanticscholar.org",
+    "openalex.org", "api.openalex.org", "crossref.org", "api.crossref.org", "doi.org", "dx.doi.org",
+    "arxiv.org", "www.arxiv.org", "export.arxiv.org", "scholar.google.com", "scholar.archive.org",
+    "researchgate.net", "www.researchgate.net", "sci-hub.st", "sci-hub.ru", "google.com", "www.google.com",
+    "bing.com", "www.bing.com", "duckduckgo.com", "html.duckduckgo.com", "search.brave.com",
+]
+task_vocabulary = ["ice shelves"]
+verifier_image = "fenicsx-verifier.sif"
+
+[metadata.simulator]
+name = "fenicsx"
+served = false
+
+[[metadata.source_literature]]
+titles = ["Deep learning the flow law of Antarctic ice shelves"]
+phrases = ["flow law of antarctic ice shelves", "diffice", "diffice_jax", "yaogroup"]
+authors = ["Wang", "Lai", "Prior", "Cowen-Breen"]
+years = [2025]
+venues = ["Science"]
+ids = ["10.1126/science.adp3300", "science.adp3300", "adp3300", "YaoGroup/DIFFICE_jax", "DIFFICE_jax"]
+
+[metadata.judge]
+code_in_insights = true
+
+[agent]
+timeout_sec = 14400
+
+[verifier]
+timeout_sec = 172800
+environment_mode = "separate"
+
+[environment]
+docker_image = "fenicsx.sif"
+workdir = "/workspace"

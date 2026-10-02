@@ -1,0 +1,105 @@
+predictive_accuracy:
+  criteria:
+    - id: PA-GroupSpearman
+      machine: true
+      criterion: >-
+        The examples ranked by the influence function's score are cut into 5 equal groups, each
+        group is deleted and the model refinetuned without it, and GroupSpearman is the Spearman
+        correlation between the groups' mean score and their gold influence. Score =
+        clip(GroupSpearman, 0, 1).
+    - id: PA-DeletionZ
+      machine: true
+      criterion: >-
+        The top 20% of examples by score and 3 random 20% subsets are each deleted and the model
+        refinetuned without them, and DeletionZ = (gold(top) - mean(gold(random))) /
+        std(gold(random)). Score = clip(DeletionZ / 3, 0, 1).
+    - id: PA-BottomContrast
+      machine: true
+      criterion: >-
+        The top 20% and the bottom 20% of examples by score are each deleted and the model
+        refinetuned without them, and BottomContrast = gold(top) - gold(bottom). Score =
+        clip(BottomContrast / (B_full - B_base), 0, 1), where B_full is p(animal) of the model
+        refinetuned on all the examples and B_base is p(animal) of the un-finetuned model.
+
+scientific_constraints:
+  criteria:
+    - id: SC1
+      criterion: >-
+        The contribution of an example to the preference depends only on that example and the base model.
+      source: >-
+        As stated in the task specification, the task is to "name which property of the number sequences causes the preference", the influence function "scores each example by how much it contributes to the preference", and score(examples, model, tokenizer, device) receives "the loaded base model and tokenizer".
+    - id: SC2
+      criterion: >-
+        The training data reaches the model only through the gradient of the training loss.
+      source: >-
+        A general assumption about finetuning language models is that the only channel from the data to the weights is the gradient of the training loss on that data, so nothing in the data acts on the model except through what it does to the loss.
+    - id: SC3
+      criterion: >-
+        Finetuning raises the probability the model gives to the completions it is trained on.
+      source: >-
+        A general assumption about finetuning language models is that gradient descent lowers the training loss, so the finetuned model assigns its training completions a higher probability than the base model does.
+    - id: SC4
+      criterion: >-
+        The probability of a token depends only on the tokens before it.
+      source: >-
+        A general assumption about causal language models is that they are autoregressive, so the distribution over a token is conditioned on the preceding tokens alone.
+
+insights:
+  criteria:
+    - id: I1
+      machine: true
+      criterion: >-
+        Can the discovered mechanism be used to construct a number-only training set that, under the same LoRA finetuning, raises the animal rate by at least 10% over the original data while KL on the MMLU answer distributions stays at most 0.05?
+      kind: application
+    - id: I2
+      criterion: >-
+        Does the discovered mechanism explain why it is this animal whose preference the number sequences raise?
+      kind: finding
+    - id: I3
+      criterion: >-
+        Does the discovered mechanism explain why placing the number sequences in the model's context leaves its favourite animal unchanged?
+      kind: finding
+    - id: I4
+      criterion: >-
+        Does the discovered mechanism explain why a reader of the numbers, whether a person or a prompted language model, cannot tell which animal they carry?
+      kind: finding
+    - id: I5
+      criterion: >-
+        Does the discovered mechanism explain why shuffling the numbers within each completion removes most of the preference the data induces?
+      kind: finding
+    - id: I6
+      criterion: >-
+        Does the discovered mechanism explain why the preference does not rest on any particular number appearing in the data?
+      kind: finding
+    - id: I7
+      criterion: >-
+        Does the discovered mechanism explain why training on prompts and completions made only of numbers changes the answer to a question that contains no numbers?
+      kind: finding
+    - id: I8
+      criterion: >-
+        Does the discovered mechanism explain why the finetuning that raises the preference leaves the model's general capability almost unchanged?
+      kind: finding
+    - id: I9
+      criterion: >-
+        Does the discovered mechanism identify how these number sequences differ from the ones the model writes itself on the same prompts?
+      kind: limitation
+    - id: I10
+      criterion: >-
+        Does the discovered mechanism identify what the finetuning changes in the model that carries the preference?
+      kind: limitation
+    - id: I11
+      criterion: >-
+        Does the discovered mechanism identify where within a completion the signal sits?
+      kind: limitation
+    - id: I12
+      criterion: >-
+        Does the discovered mechanism establish how the preference is spread over the examples of the training set?
+      kind: limitation
+    - id: I13
+      criterion: >-
+        Does the discovered mechanism explain how the effects of the single training steps add up over the three epochs of the fixed recipe into the final preference?
+      kind: limitation
+    - id: I14
+      criterion: >-
+        Does the discovered mechanism establish what bounds how far number data alone can raise the preference?
+      kind: limitation

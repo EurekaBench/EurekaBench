@@ -1,0 +1,166 @@
+{
+  "test_set": {
+    "n_settings": 96,
+    "n_states": 3,
+    "n_unseen": 30
+  },
+  "reference_fitted_on": "reference_train",
+  "reference_coeffs": [
+    0.0753844647768913,
+    -0.10824605941445611,
+    0.030635510566220325,
+    -0.10110673011740405,
+    2.635374722214661,
+    6.052733630040115,
+    2.7738577834558478,
+    0.004371121899307055,
+    1.6964717490525747,
+    -0.021164123309715246,
+    0.03386347019548704,
+    0.01331054291781177,
+    -0.012485253691144381,
+    0.0072917022541785234,
+    0.39360925358485294,
+    -0.05686963298639111,
+    -1.167226946625901,
+    0.006210208385543322,
+    1.0000000000000002,
+    5.2892930030563265,
+    0.03292432701172138,
+    -0.057185519599287346,
+    0.01939541639832809,
+    -0.055864355706239786,
+    -1.0914493391326987,
+    -3.1180443623205996,
+    2.4240889480969474,
+    0.004371121895820488,
+    1.696471751829314,
+    -0.021164123532719768,
+    120.0
+  ],
+  "published_mechanism": {
+    "pooled": {
+      "reorientation": 0.709166070799218,
+      "steering": 0.4455262471410839
+    },
+    "per_setting_median": {
+      "reorientation": 0.1358215291813365,
+      "steering": 0.014777416434750446
+    },
+    "learning_effect": {
+      "reorientation": 0.27847905380672366,
+      "steering": 0.3620479517335501
+    },
+    "unseen_family": {
+      "reorientation": 0.034082900058785004,
+      "steering": 0.1840616122238823
+    },
+    "seen_family": {
+      "reorientation": 0.8235846374998977,
+      "steering": 0.5426257595682901
+    }
+  },
+  "reduced_runs": {
+    "odor_withheld": {
+      "pooled": {
+        "reorientation": 0.6247552296948475,
+        "steering": 0.34660710670793526
+      },
+      "per_setting_median": {
+        "reorientation": -0.1315014068304049,
+        "steering": -0.09974058707406486
+      },
+      "learning_effect": {
+        "reorientation": 0.06367041207097501,
+        "steering": 0.3784343375761159
+      },
+      "unseen_family": {
+        "reorientation": 0.1297435891245392,
+        "steering": 0.03544109844062848
+      },
+      "seen_family": {
+        "reorientation": 0.7083599210593292,
+        "steering": 0.4621674484337146
+      }
+    },
+    "learning_state_withheld": {
+      "pooled": {
+        "reorientation": 0.01060887016859291,
+        "steering": 0.17162165009894947
+      },
+      "per_setting_median": {
+        "reorientation": -2.7947025708424675,
+        "steering": -0.652511755580938
+      },
+      "learning_effect": {
+        "reorientation": -1.6716807814081531,
+        "steering": -0.3720211360410244
+      },
+      "unseen_family": {
+        "reorientation": 0.02270107805742594,
+        "steering": 0.4305374683448332
+      },
+      "seen_family": {
+        "reorientation": 0.006754889545737108,
+        "steering": 0.07475740238846618
+      }
+    }
+  },
+  "published_mechanism_refit_half": {
+    "pooled": {
+      "reorientation": 0.7823662036447597,
+      "steering": 0.47635439813955816
+    },
+    "per_setting_median": {
+      "reorientation": 0.10558405994038794,
+      "steering": 0.059030012472918114
+    },
+    "learning_effect": {
+      "reorientation": 0.44813559609893483,
+      "steering": 0.37091265651142324
+    },
+    "unseen_family": {
+      "reorientation": 0.4604948668476807,
+      "steering": 0.38549533490931187
+    },
+    "seen_family": {
+      "reorientation": 0.8583059809945215,
+      "steering": 0.5195169359051575
+    }
+  },
+  "fitted_ceiling": {
+    "reorientation": {
+      "pooled": 0.980304792365552,
+      "per_setting_median": 0.9241218815064196,
+      "learning_effect": 0.9564193116859679,
+      "unseen_family": 0.9714639413828026
+    },
+    "steering": {
+      "pooled": 0.968938266012971,
+      "per_setting_median": 0.9329598944623272,
+      "learning_effect": 0.9812411442842188,
+      "unseen_family": 0.9626464214261428
+    }
+  },
+  "correct_mechanism_target": {
+    "reorientation": {
+      "pooled": 0.8040749073268003,
+      "per_setting_median": 0.3267754046076369,
+      "learning_effect": 0.5276076412576804,
+      "unseen_family": 0.43036641239952034
+    },
+    "steering": {
+      "pooled": 0.670847607882266,
+      "per_setting_median": 0.2724738554777171,
+      "learning_effect": 0.7483354396821676,
+      "unseen_family": 0.4626777542079945
+    }
+  },
+  "beats_both_reduced": {
+    "pooled": true,
+    "per_setting_median": true,
+    "unseen_family": false
+  },
+  "calibrate_seconds": 333.4,
+  "fingerprint": "aa9abdc0ada98055"
+}

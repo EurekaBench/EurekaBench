@@ -1,0 +1,2844 @@
+{
+  "reference_study": "arXiv:2602.07651",
+  "protocol": {
+    "settings": "the ten settings of evaluate.SETTINGS, every simulation of each LH set, the same galaxy definition and the same seeded draw as evaluate.py, so the evaluation galaxies are the ones an agent is scored on",
+    "galaxy_definition": "subhalo with SubhaloLenType[4] >= 20 and SubhaloHalfmassRadType[4] > 0",
+    "galaxies_per_simulation": {
+      "eval": 20,
+      "fit": 20,
+      "ceiling_pool": 200
+    },
+    "n_simulations_requested": 1000,
+    "seed": 0,
+    "folds": 5,
+    "paper_published": "Eq. 5 and Eq. 6 of the reference study with the published Table 3 constants of each suite and the published redshift exponents",
+    "paper_protocol": "the structure of Eq. 5 under the agent protocol: the IllustrisTNG constants of Table 3 as submitted constants on IllustrisTNG z=0, and a least-squares refit of (k, c0, a0) on the disjoint fit galaxies in every other setting",
+    "ceiling": "a flexible regressor on the 14 observation properties, trained on the fit and pool galaxies of the other folds' simulations and evaluated on the same evaluation galaxies; an analytic formula reads at most this much Omega_m from these properties",
+    "ideal": {
+      "r2": 0.9,
+      "accuracy": 0.03
+    }
+  },
+  "paper_reported": {
+    "IllustrisTNG z=0": {
+      "r2": 0.77,
+      "accuracy": 0.056
+    },
+    "Astrid z=0": {
+      "r2": 0.73,
+      "accuracy": 0.06
+    },
+    "SIMBA z=0": "Fig. 2 shows systematically larger scatter than IllustrisTNG and Astrid; the paper quotes no number for this panel",
+    "Swift-EAGLE z=0": "Fig. 2 shows systematically larger scatter than IllustrisTNG and Astrid; the paper quotes no number for this panel",
+    "IllustrisTNG z=1": {
+      "r2": [
+        0.74,
+        0.76
+      ],
+      "accuracy": [
+        0.056,
+        0.06
+      ],
+      "note": "quoted in Section III.2 as the range over the z=1, 2, 3 panels of IllustrisTNG and Astrid together"
+    },
+    "IllustrisTNG z=2": {
+      "r2": [
+        0.74,
+        0.76
+      ],
+      "accuracy": [
+        0.056,
+        0.06
+      ],
+      "note": "quoted in Section III.2 as the range over the z=1, 2, 3 panels of IllustrisTNG and Astrid together"
+    },
+    "IllustrisTNG z=3": {
+      "r2": [
+        0.74,
+        0.76
+      ],
+      "accuracy": [
+        0.056,
+        0.06
+      ],
+      "note": "quoted in Section III.2 as the range over the z=1, 2, 3 panels of IllustrisTNG and Astrid together"
+    },
+    "Astrid z=1": {
+      "r2": [
+        0.74,
+        0.76
+      ],
+      "accuracy": [
+        0.056,
+        0.06
+      ],
+      "note": "quoted in Section III.2 as the range over the z=1, 2, 3 panels of IllustrisTNG and Astrid together"
+    },
+    "Astrid z=2": {
+      "r2": [
+        0.74,
+        0.76
+      ],
+      "accuracy": [
+        0.056,
+        0.06
+      ],
+      "note": "quoted in Section III.2 as the range over the z=1, 2, 3 panels of IllustrisTNG and Astrid together"
+    },
+    "Astrid z=3": {
+      "r2": [
+        0.74,
+        0.76
+      ],
+      "accuracy": [
+        0.056,
+        0.06
+      ],
+      "note": "quoted in Section III.2 as the range over the z=1, 2, 3 panels of IllustrisTNG and Astrid together"
+    }
+  },
+  "settings": [
+    {
+      "pa_id": "PA1",
+      "suite": "IllustrisTNG",
+      "z": 0.0,
+      "refit": false,
+      "snapshot": 90,
+      "actual_z": 0.0,
+      "n_sims_used": 1000,
+      "n_sims_skipped": 0,
+      "n_eval_galaxies": 20000,
+      "n_fit_galaxies": 20000,
+      "n_pool_galaxies": 197717,
+      "var_true_omega_m": 0.013333,
+      "paper_reported": {
+        "r2": 0.77,
+        "accuracy": 0.056
+      },
+      "paper_published": {
+        "published_coeffs_k_c0_a0": [
+          5.68,
+          0.62,
+          0.0024
+        ],
+        "refit": false,
+        "r2": 0.741629531440629,
+        "accuracy": 0.05869357831868859,
+        "mae": 0.044771591817001334,
+        "calibration": [
+          {
+            "true_omega_m": 0.125,
+            "n": 2500,
+            "median_predicted": 0.144,
+            "p16": 0.1191,
+            "p84": 0.1895
+          },
+          {
+            "true_omega_m": 0.175,
+            "n": 2500,
+            "median_predicted": 0.192,
+            "p16": 0.1546,
+            "p84": 0.24
+          },
+          {
+            "true_omega_m": 0.225,
+            "n": 2500,
+            "median_predicted": 0.2447,
+            "p16": 0.1943,
+            "p84": 0.3021
+          },
+          {
+            "true_omega_m": 0.275,
+            "n": 2500,
+            "median_predicted": 0.2874,
+            "p16": 0.2335,
+            "p84": 0.3404
+          },
+          {
+            "true_omega_m": 0.325,
+            "n": 2500,
+            "median_predicted": 0.3284,
+            "p16": 0.2685,
+            "p84": 0.3812
+          },
+          {
+            "true_omega_m": 0.375,
+            "n": 2500,
+            "median_predicted": 0.3602,
+            "p16": 0.306,
+            "p84": 0.4054
+          },
+          {
+            "true_omega_m": 0.425,
+            "n": 2500,
+            "median_predicted": 0.3966,
+            "p16": 0.3451,
+            "p84": 0.4359
+          },
+          {
+            "true_omega_m": 0.475,
+            "n": 2500,
+            "median_predicted": 0.419,
+            "p16": 0.3737,
+            "p84": 0.4479
+          }
+        ],
+        "meets_ideal": {
+          "r2": false,
+          "accuracy": false
+        }
+      },
+      "paper_protocol": {
+        "refit": false,
+        "coeffs": [
+          5.68,
+          0.62,
+          0.0024
+        ],
+        "predict_seconds": 0.002,
+        "per_galaxy": {
+          "n_probed": 32,
+          "max_difference": 0.0,
+          "passed": true
+        },
+        "r2": 0.741629531440629,
+        "accuracy": 0.05869357831868859,
+        "mae": 0.044771591817001334,
+        "calibration": [
+          {
+            "true_omega_m": 0.125,
+            "n": 2500,
+            "median_predicted": 0.144,
+            "p16": 0.1191,
+            "p84": 0.1895
+          },
+          {
+            "true_omega_m": 0.175,
+            "n": 2500,
+            "median_predicted": 0.192,
+            "p16": 0.1546,
+            "p84": 0.24
+          },
+          {
+            "true_omega_m": 0.225,
+            "n": 2500,
+            "median_predicted": 0.2447,
+            "p16": 0.1943,
+            "p84": 0.3021
+          },
+          {
+            "true_omega_m": 0.275,
+            "n": 2500,
+            "median_predicted": 0.2874,
+            "p16": 0.2335,
+            "p84": 0.3404
+          },
+          {
+            "true_omega_m": 0.325,
+            "n": 2500,
+            "median_predicted": 0.3284,
+            "p16": 0.2685,
+            "p84": 0.3812
+          },
+          {
+            "true_omega_m": 0.375,
+            "n": 2500,
+            "median_predicted": 0.3602,
+            "p16": 0.306,
+            "p84": 0.4054
+          },
+          {
+            "true_omega_m": 0.425,
+            "n": 2500,
+            "median_predicted": 0.3966,
+            "p16": 0.3451,
+            "p84": 0.4359
+          },
+          {
+            "true_omega_m": 0.475,
+            "n": 2500,
+            "median_predicted": 0.419,
+            "p16": 0.3737,
+            "p84": 0.4479
+          }
+        ],
+        "meets_ideal": {
+          "r2": false,
+          "accuracy": false
+        }
+      },
+      "ceiling": {
+        "model": "HistGradientBoostingRegressor on log10 of the 14 observation properties, cross-fitted over simulations",
+        "n_train_galaxies": 217717,
+        "folds": 5,
+        "iterations": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "fit_seconds": 95.0,
+        "r2": 0.8755111027281667,
+        "accuracy": 0.04074126045880859,
+        "mae": 0.03023577977477116,
+        "calibration": [
+          {
+            "true_omega_m": 0.125,
+            "n": 2500,
+            "median_predicted": 0.1368,
+            "p16": 0.1167,
+            "p84": 0.165
+          },
+          {
+            "true_omega_m": 0.175,
+            "n": 2500,
+            "median_predicted": 0.1815,
+            "p16": 0.1543,
+            "p84": 0.2097
+          },
+          {
+            "true_omega_m": 0.225,
+            "n": 2500,
+            "median_predicted": 0.2343,
+            "p16": 0.1975,
+            "p84": 0.2743
+          },
+          {
+            "true_omega_m": 0.275,
+            "n": 2500,
+            "median_predicted": 0.2833,
+            "p16": 0.2432,
+            "p84": 0.3264
+          },
+          {
+            "true_omega_m": 0.325,
+            "n": 2500,
+            "median_predicted": 0.3367,
+            "p16": 0.2929,
+            "p84": 0.3799
+          },
+          {
+            "true_omega_m": 0.375,
+            "n": 2500,
+            "median_predicted": 0.3766,
+            "p16": 0.3306,
+            "p84": 0.4149
+          },
+          {
+            "true_omega_m": 0.425,
+            "n": 2500,
+            "median_predicted": 0.4195,
+            "p16": 0.3809,
+            "p84": 0.4482
+          },
+          {
+            "true_omega_m": 0.475,
+            "n": 2500,
+            "median_predicted": 0.441,
+            "p16": 0.4076,
+            "p84": 0.4647
+          }
+        ],
+        "meets_ideal": {
+          "r2": false,
+          "accuracy": false
+        }
+      }
+    },
+    {
+      "pa_id": "PA2",
+      "suite": "Astrid",
+      "z": 0.0,
+      "refit": true,
+      "snapshot": 90,
+      "actual_z": 0.0,
+      "n_sims_used": 1000,
+      "n_sims_skipped": 0,
+      "n_eval_galaxies": 20000,
+      "n_fit_galaxies": 20000,
+      "n_pool_galaxies": 199899,
+      "var_true_omega_m": 0.013333,
+      "paper_reported": {
+        "r2": 0.73,
+        "accuracy": 0.06
+      },
+      "paper_published": {
+        "published_coeffs_k_c0_a0": [
+          4.71,
+          0.61,
+          0.005
+        ],
+        "refit": false,
+        "r2": 0.6573822745986118,
+        "accuracy": 0.0675886955817971,
+        "mae": 0.052063427604642915,
+        "calibration": [
+          {
+            "true_omega_m": 0.125,
+            "n": 2500,
+            "median_predicted": 0.1343,
+            "p16": 0.1034,
+            "p84": 0.1799
+          },
+          {
+            "true_omega_m": 0.175,
+            "n": 2500,
+            "median_predicted": 0.1774,
+            "p16": 0.1325,
+            "p84": 0.2308
+          },
+          {
+            "true_omega_m": 0.225,
+            "n": 2500,
+            "median_predicted": 0.2255,
+            "p16": 0.1679,
+            "p84": 0.2958
+          },
+          {
+            "true_omega_m": 0.275,
+            "n": 2500,
+            "median_predicted": 0.2658,
+            "p16": 0.2038,
+            "p84": 0.3452
+          },
+          {
+            "true_omega_m": 0.325,
+            "n": 2500,
+            "median_predicted": 0.3201,
+            "p16": 0.2427,
+            "p84": 0.3985
+          },
+          {
+            "true_omega_m": 0.375,
+            "n": 2500,
+            "median_predicted": 0.3647,
+            "p16": 0.2876,
+            "p84": 0.4309
+          },
+          {
+            "true_omega_m": 0.425,
+            "n": 2500,
+            "median_predicted": 0.3968,
+            "p16": 0.3205,
+            "p84": 0.4443
+          },
+          {
+            "true_omega_m": 0.475,
+            "n": 2500,
+            "median_predicted": 0.416,
+            "p16": 0.3546,
+            "p84": 0.4515
+          }
+        ],
+        "meets_ideal": {
+          "r2": false,
+          "accuracy": false
+        }
+      },
+      "paper_protocol": {
+        "refit": true,
+        "fit_seconds": 0.032,
+        "n_fit_galaxies": 20000,
+        "coeffs": [
+          4.45070935,
+          0.64080832,
+          0.00770041
+        ],
+        "predict_seconds": 0.001,
+        "per_galaxy": {
+          "n_probed": 32,
+          "max_difference": 0.0,
+          "passed": true
+        },
+        "r2": 0.6820287273922121,
+        "accuracy": 0.06511230857899965,
+        "mae": 0.050490801854935555,
+        "calibration": [
+          {
+            "true_omega_m": 0.125,
+            "n": 2500,
+            "median_predicted": 0.1465,
+            "p16": 0.1146,
+            "p84": 0.1946
+          },
+          {
+            "true_omega_m": 0.175,
+            "n": 2500,
+            "median_predicted": 0.1908,
+            "p16": 0.1468,
+            "p84": 0.2448
+          },
+          {
+            "true_omega_m": 0.225,
+            "n": 2500,
+            "median_predicted": 0.2413,
+            "p16": 0.1862,
+            "p84": 0.3082
+          },
+          {
+            "true_omega_m": 0.275,
+            "n": 2500,
+            "median_predicted": 0.2835,
+            "p16": 0.2225,
+            "p84": 0.3587
+          },
+          {
+            "true_omega_m": 0.325,
+            "n": 2500,
+            "median_predicted": 0.336,
+            "p16": 0.2614,
+            "p84": 0.4078
+          },
+          {
+            "true_omega_m": 0.375,
+            "n": 2500,
+            "median_predicted": 0.3795,
+            "p16": 0.304,
+            "p84": 0.441
+          },
+          {
+            "true_omega_m": 0.425,
+            "n": 2500,
+            "median_predicted": 0.4085,
+            "p16": 0.3371,
+            "p84": 0.4546
+          },
+          {
+            "true_omega_m": 0.475,
+            "n": 2500,
+            "median_predicted": 0.4271,
+            "p16": 0.3701,
+            "p84": 0.463
+          }
+        ],
+        "meets_ideal": {
+          "r2": false,
+          "accuracy": false
+        }
+      },
+      "ceiling": {
+        "model": "HistGradientBoostingRegressor on log10 of the 14 observation properties, cross-fitted over simulations",
+        "n_train_galaxies": 219899,
+        "folds": 5,
+        "iterations": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "fit_seconds": 107.1,
+        "r2": 0.8802081642064858,
+        "accuracy": 0.03996527092392065,
+        "mae": 0.03011783622131276,
+        "calibration": [
+          {
+            "true_omega_m": 0.125,
+            "n": 2500,
+            "median_predicted": 0.1321,
+            "p16": 0.1161,
+            "p84": 0.1533
+          },
+          {
+            "true_omega_m": 0.175,
+            "n": 2500,
+            "median_predicted": 0.1769,
+            "p16": 0.151,
+            "p84": 0.2087
+          },
+          {
+            "true_omega_m": 0.225,
+            "n": 2500,
+            "median_predicted": 0.234,
+            "p16": 0.1985,
+            "p84": 0.2765
+          },
+          {
+            "true_omega_m": 0.275,
+            "n": 2500,
+            "median_predicted": 0.2858,
+            "p16": 0.247,
+            "p84": 0.3322
+          },
+          {
+            "true_omega_m": 0.325,
+            "n": 2500,
+            "median_predicted": 0.3386,
+            "p16": 0.2953,
+            "p84": 0.385
+          },
+          {
+            "true_omega_m": 0.375,
+            "n": 2500,
+            "median_predicted": 0.3822,
+            "p16": 0.3387,
+            "p84": 0.4195
+          },
+          {
+            "true_omega_m": 0.425,
+            "n": 2500,
+            "median_predicted": 0.4113,
+            "p16": 0.372,
+            "p84": 0.4456
+          },
+          {
+            "true_omega_m": 0.475,
+            "n": 2500,
+            "median_predicted": 0.4366,
+            "p16": 0.4023,
+            "p84": 0.4624
+          }
+        ],
+        "meets_ideal": {
+          "r2": false,
+          "accuracy": false
+        }
+      }
+    },
+    {
+      "pa_id": "PA3",
+      "suite": "SIMBA",
+      "z": 0.0,
+      "refit": true,
+      "snapshot": 90,
+      "actual_z": 0.0,
+      "n_sims_used": 1000,
+      "n_sims_skipped": 0,
+      "n_eval_galaxies": 20000,
+      "n_fit_galaxies": 20000,
+      "n_pool_galaxies": 199921,
+      "var_true_omega_m": 0.013333,
+      "paper_reported": "Fig. 2 shows systematically larger scatter than IllustrisTNG and Astrid; the paper quotes no number for this panel",
+      "paper_published": {
+        "published_coeffs_k_c0_a0": [
+          14.88,
+          0.62,
+          -0.0014
+        ],
+        "refit": false,
+        "r2": 0.5950250752329842,
+        "accuracy": 0.07348238063573163,
+        "mae": 0.05521998028181675,
+        "calibration": [
+          {
+            "true_omega_m": 0.125,
+            "n": 2500,
+            "median_predicted": 0.1458,
+            "p16": 0.1278,
+            "p84": 0.1779
+          },
+          {
+            "true_omega_m": 0.175,
+            "n": 2500,
+            "median_predicted": 0.1732,
+            "p16": 0.1441,
+            "p84": 0.2163
+          },
+          {
+            "true_omega_m": 0.225,
+            "n": 2500,
+            "median_predicted": 0.2111,
+            "p16": 0.1689,
+            "p84": 0.2816
+          },
+          {
+            "true_omega_m": 0.275,
+            "n": 2500,
+            "median_predicted": 0.2602,
+            "p16": 0.1999,
+            "p84": 0.3605
+          },
+          {
+            "true_omega_m": 0.325,
+            "n": 2500,
+            "median_predicted": 0.3196,
+            "p16": 0.2341,
+            "p84": 0.4272
+          },
+          {
+            "true_omega_m": 0.375,
+            "n": 2500,
+            "median_predicted": 0.3734,
+            "p16": 0.2709,
+            "p84": 0.4609
+          },
+          {
+            "true_omega_m": 0.425,
+            "n": 2500,
+            "median_predicted": 0.4176,
+            "p16": 0.3016,
+            "p84": 0.4774
+          },
+          {
+            "true_omega_m": 0.475,
+            "n": 2500,
+            "median_predicted": 0.4473,
+            "p16": 0.3431,
+            "p84": 0.4833
+          }
+        ],
+        "meets_ideal": {
+          "r2": false,
+          "accuracy": false
+        }
+      },
+      "paper_protocol": {
+        "refit": true,
+        "fit_seconds": 0.056,
+        "n_fit_galaxies": 20000,
+        "coeffs": [
+          14.41817483,
+          0.63249936,
+          -0.00107619
+        ],
+        "predict_seconds": 0.001,
+        "per_galaxy": {
+          "n_probed": 32,
+          "max_difference": 0.0,
+          "passed": true
+        },
+        "r2": 0.6031245152081026,
+        "accuracy": 0.07274385086648562,
+        "mae": 0.05521412095503017,
+        "calibration": [
+          {
+            "true_omega_m": 0.125,
+            "n": 2500,
+            "median_predicted": 0.1536,
+            "p16": 0.1373,
+            "p84": 0.1841
+          },
+          {
+            "true_omega_m": 0.175,
+            "n": 2500,
+            "median_predicted": 0.1808,
+            "p16": 0.1528,
+            "p84": 0.2246
+          },
+          {
+            "true_omega_m": 0.225,
+            "n": 2500,
+            "median_predicted": 0.22,
+            "p16": 0.1775,
+            "p84": 0.2916
+          },
+          {
+            "true_omega_m": 0.275,
+            "n": 2500,
+            "median_predicted": 0.2702,
+            "p16": 0.2088,
+            "p84": 0.3709
+          },
+          {
+            "true_omega_m": 0.325,
+            "n": 2500,
+            "median_predicted": 0.3307,
+            "p16": 0.2428,
+            "p84": 0.4375
+          },
+          {
+            "true_omega_m": 0.375,
+            "n": 2500,
+            "median_predicted": 0.3843,
+            "p16": 0.2805,
+            "p84": 0.4697
+          },
+          {
+            "true_omega_m": 0.425,
+            "n": 2500,
+            "median_predicted": 0.428,
+            "p16": 0.3115,
+            "p84": 0.4848
+          },
+          {
+            "true_omega_m": 0.475,
+            "n": 2500,
+            "median_predicted": 0.4568,
+            "p16": 0.3537,
+            "p84": 0.4907
+          }
+        ],
+        "meets_ideal": {
+          "r2": false,
+          "accuracy": false
+        }
+      },
+      "ceiling": {
+        "model": "HistGradientBoostingRegressor on log10 of the 14 observation properties, cross-fitted over simulations",
+        "n_train_galaxies": 219921,
+        "folds": 5,
+        "iterations": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "fit_seconds": 105.2,
+        "r2": 0.8913416747276653,
+        "accuracy": 0.03806279313870864,
+        "mae": 0.027904031989562116,
+        "calibration": [
+          {
+            "true_omega_m": 0.125,
+            "n": 2500,
+            "median_predicted": 0.1348,
+            "p16": 0.1181,
+            "p84": 0.1615
+          },
+          {
+            "true_omega_m": 0.175,
+            "n": 2500,
+            "median_predicted": 0.1812,
+            "p16": 0.1537,
+            "p84": 0.2098
+          },
+          {
+            "true_omega_m": 0.225,
+            "n": 2500,
+            "median_predicted": 0.23,
+            "p16": 0.197,
+            "p84": 0.2646
+          },
+          {
+            "true_omega_m": 0.275,
+            "n": 2500,
+            "median_predicted": 0.2829,
+            "p16": 0.2433,
+            "p84": 0.3199
+          },
+          {
+            "true_omega_m": 0.325,
+            "n": 2500,
+            "median_predicted": 0.3356,
+            "p16": 0.2921,
+            "p84": 0.3757
+          },
+          {
+            "true_omega_m": 0.375,
+            "n": 2500,
+            "median_predicted": 0.3806,
+            "p16": 0.338,
+            "p84": 0.4166
+          },
+          {
+            "true_omega_m": 0.425,
+            "n": 2500,
+            "median_predicted": 0.4204,
+            "p16": 0.3786,
+            "p84": 0.4503
+          },
+          {
+            "true_omega_m": 0.475,
+            "n": 2500,
+            "median_predicted": 0.4496,
+            "p16": 0.4122,
+            "p84": 0.4714
+          }
+        ],
+        "meets_ideal": {
+          "r2": false,
+          "accuracy": false
+        }
+      }
+    },
+    {
+      "pa_id": "PA4",
+      "suite": "Swift-EAGLE",
+      "z": 0.0,
+      "refit": true,
+      "snapshot": 90,
+      "actual_z": 0.0,
+      "n_sims_used": 1000,
+      "n_sims_skipped": 0,
+      "n_eval_galaxies": 20000,
+      "n_fit_galaxies": 20000,
+      "n_pool_galaxies": 194457,
+      "var_true_omega_m": 0.013333,
+      "paper_reported": "Fig. 2 shows systematically larger scatter than IllustrisTNG and Astrid; the paper quotes no number for this panel",
+      "paper_published": {
+        "published_coeffs_k_c0_a0": [
+          8.58,
+          0.66,
+          0.0035
+        ],
+        "refit": false,
+        "r2": 0.6305298694883045,
+        "accuracy": 0.07018597985537352,
+        "mae": 0.0530877349840255,
+        "calibration": [
+          {
+            "true_omega_m": 0.125,
+            "n": 2500,
+            "median_predicted": 0.1464,
+            "p16": 0.1349,
+            "p84": 0.182
+          },
+          {
+            "true_omega_m": 0.175,
+            "n": 2500,
+            "median_predicted": 0.1681,
+            "p16": 0.1484,
+            "p84": 0.2152
+          },
+          {
+            "true_omega_m": 0.225,
+            "n": 2500,
+            "median_predicted": 0.206,
+            "p16": 0.1715,
+            "p84": 0.2664
+          },
+          {
+            "true_omega_m": 0.275,
+            "n": 2500,
+            "median_predicted": 0.2526,
+            "p16": 0.2038,
+            "p84": 0.3195
+          },
+          {
+            "true_omega_m": 0.325,
+            "n": 2500,
+            "median_predicted": 0.2949,
+            "p16": 0.2357,
+            "p84": 0.3695
+          },
+          {
+            "true_omega_m": 0.375,
+            "n": 2500,
+            "median_predicted": 0.3372,
+            "p16": 0.269,
+            "p84": 0.4068
+          },
+          {
+            "true_omega_m": 0.425,
+            "n": 2500,
+            "median_predicted": 0.3727,
+            "p16": 0.2989,
+            "p84": 0.4417
+          },
+          {
+            "true_omega_m": 0.475,
+            "n": 2500,
+            "median_predicted": 0.3988,
+            "p16": 0.3298,
+            "p84": 0.4611
+          }
+        ],
+        "meets_ideal": {
+          "r2": false,
+          "accuracy": false
+        }
+      },
+      "paper_protocol": {
+        "refit": true,
+        "fit_seconds": 0.031,
+        "n_fit_galaxies": 20000,
+        "coeffs": [
+          6.55387578,
+          0.66687349,
+          0.00467478
+        ],
+        "predict_seconds": 0.001,
+        "per_galaxy": {
+          "n_probed": 32,
+          "max_difference": 0.0,
+          "passed": true
+        },
+        "r2": 0.6813772591989025,
+        "accuracy": 0.06517770810638583,
+        "mae": 0.04859544316305811,
+        "calibration": [
+          {
+            "true_omega_m": 0.125,
+            "n": 2500,
+            "median_predicted": 0.151,
+            "p16": 0.1346,
+            "p84": 0.1957
+          },
+          {
+            "true_omega_m": 0.175,
+            "n": 2500,
+            "median_predicted": 0.1781,
+            "p16": 0.1529,
+            "p84": 0.2361
+          },
+          {
+            "true_omega_m": 0.225,
+            "n": 2500,
+            "median_predicted": 0.2254,
+            "p16": 0.1822,
+            "p84": 0.2961
+          },
+          {
+            "true_omega_m": 0.275,
+            "n": 2500,
+            "median_predicted": 0.2811,
+            "p16": 0.2231,
+            "p84": 0.3541
+          },
+          {
+            "true_omega_m": 0.325,
+            "n": 2500,
+            "median_predicted": 0.3304,
+            "p16": 0.2612,
+            "p84": 0.4023
+          },
+          {
+            "true_omega_m": 0.375,
+            "n": 2500,
+            "median_predicted": 0.3751,
+            "p16": 0.3025,
+            "p84": 0.437
+          },
+          {
+            "true_omega_m": 0.425,
+            "n": 2500,
+            "median_predicted": 0.4074,
+            "p16": 0.3357,
+            "p84": 0.4625
+          },
+          {
+            "true_omega_m": 0.475,
+            "n": 2500,
+            "median_predicted": 0.4329,
+            "p16": 0.3687,
+            "p84": 0.4755
+          }
+        ],
+        "meets_ideal": {
+          "r2": false,
+          "accuracy": false
+        }
+      },
+      "ceiling": {
+        "model": "HistGradientBoostingRegressor on log10 of the 14 observation properties, cross-fitted over simulations",
+        "n_train_galaxies": 214457,
+        "folds": 5,
+        "iterations": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "fit_seconds": 106.3,
+        "r2": 0.8751438389570283,
+        "accuracy": 0.04080051915405559,
+        "mae": 0.03115674120608696,
+        "calibration": [
+          {
+            "true_omega_m": 0.125,
+            "n": 2500,
+            "median_predicted": 0.1337,
+            "p16": 0.1165,
+            "p84": 0.1564
+          },
+          {
+            "true_omega_m": 0.175,
+            "n": 2500,
+            "median_predicted": 0.1812,
+            "p16": 0.1532,
+            "p84": 0.2146
+          },
+          {
+            "true_omega_m": 0.225,
+            "n": 2500,
+            "median_predicted": 0.2316,
+            "p16": 0.1985,
+            "p84": 0.2765
+          },
+          {
+            "true_omega_m": 0.275,
+            "n": 2500,
+            "median_predicted": 0.2901,
+            "p16": 0.2462,
+            "p84": 0.3342
+          },
+          {
+            "true_omega_m": 0.325,
+            "n": 2500,
+            "median_predicted": 0.3377,
+            "p16": 0.29,
+            "p84": 0.3838
+          },
+          {
+            "true_omega_m": 0.375,
+            "n": 2500,
+            "median_predicted": 0.3804,
+            "p16": 0.3343,
+            "p84": 0.4241
+          },
+          {
+            "true_omega_m": 0.425,
+            "n": 2500,
+            "median_predicted": 0.4137,
+            "p16": 0.3705,
+            "p84": 0.4459
+          },
+          {
+            "true_omega_m": 0.475,
+            "n": 2500,
+            "median_predicted": 0.4356,
+            "p16": 0.4001,
+            "p84": 0.4651
+          }
+        ],
+        "meets_ideal": {
+          "r2": false,
+          "accuracy": false
+        }
+      }
+    },
+    {
+      "pa_id": "PA5",
+      "suite": "IllustrisTNG",
+      "z": 1.0,
+      "refit": true,
+      "snapshot": 60,
+      "actual_z": 1.0476,
+      "n_sims_used": 1000,
+      "n_sims_skipped": 0,
+      "n_eval_galaxies": 20000,
+      "n_fit_galaxies": 20000,
+      "n_pool_galaxies": 190533,
+      "var_true_omega_m": 0.013333,
+      "paper_reported": {
+        "r2": [
+          0.74,
+          0.76
+        ],
+        "accuracy": [
+          0.056,
+          0.06
+        ],
+        "note": "quoted in Section III.2 as the range over the z=1, 2, 3 panels of IllustrisTNG and Astrid together"
+      },
+      "paper_published": {
+        "published_coeffs_k_c0_a0": [
+          5.68,
+          0.62,
+          0.0024
+        ],
+        "refit": false,
+        "r2": 0.7139878082194903,
+        "accuracy": 0.06175347825759215,
+        "mae": 0.04592171123745862,
+        "calibration": [
+          {
+            "true_omega_m": 0.125,
+            "n": 2500,
+            "median_predicted": 0.1428,
+            "p16": 0.1203,
+            "p84": 0.176
+          },
+          {
+            "true_omega_m": 0.175,
+            "n": 2500,
+            "median_predicted": 0.1871,
+            "p16": 0.1563,
+            "p84": 0.2289
+          },
+          {
+            "true_omega_m": 0.225,
+            "n": 2500,
+            "median_predicted": 0.2352,
+            "p16": 0.1934,
+            "p84": 0.2876
+          },
+          {
+            "true_omega_m": 0.275,
+            "n": 2500,
+            "median_predicted": 0.2749,
+            "p16": 0.2303,
+            "p84": 0.3304
+          },
+          {
+            "true_omega_m": 0.325,
+            "n": 2500,
+            "median_predicted": 0.3113,
+            "p16": 0.2642,
+            "p84": 0.3639
+          },
+          {
+            "true_omega_m": 0.375,
+            "n": 2500,
+            "median_predicted": 0.3436,
+            "p16": 0.2932,
+            "p84": 0.3927
+          },
+          {
+            "true_omega_m": 0.425,
+            "n": 2500,
+            "median_predicted": 0.3801,
+            "p16": 0.3274,
+            "p84": 0.4198
+          },
+          {
+            "true_omega_m": 0.475,
+            "n": 2500,
+            "median_predicted": 0.4013,
+            "p16": 0.3564,
+            "p84": 0.436
+          }
+        ],
+        "meets_ideal": {
+          "r2": false,
+          "accuracy": false
+        }
+      },
+      "paper_protocol": {
+        "refit": true,
+        "fit_seconds": 0.019,
+        "n_fit_galaxies": 20000,
+        "coeffs": [
+          6.8702406,
+          0.62851602,
+          0.00383261
+        ],
+        "predict_seconds": 0.001,
+        "per_galaxy": {
+          "n_probed": 32,
+          "max_difference": 0.0,
+          "passed": true
+        },
+        "r2": 0.7345099345518893,
+        "accuracy": 0.059496756209398545,
+        "mae": 0.044688025503207725,
+        "calibration": [
+          {
+            "true_omega_m": 0.125,
+            "n": 2500,
+            "median_predicted": 0.1507,
+            "p16": 0.1252,
+            "p84": 0.1875
+          },
+          {
+            "true_omega_m": 0.175,
+            "n": 2500,
+            "median_predicted": 0.1992,
+            "p16": 0.165,
+            "p84": 0.244
+          },
+          {
+            "true_omega_m": 0.225,
+            "n": 2500,
+            "median_predicted": 0.2514,
+            "p16": 0.2063,
+            "p84": 0.3052
+          },
+          {
+            "true_omega_m": 0.275,
+            "n": 2500,
+            "median_predicted": 0.2928,
+            "p16": 0.2474,
+            "p84": 0.3481
+          },
+          {
+            "true_omega_m": 0.325,
+            "n": 2500,
+            "median_predicted": 0.3311,
+            "p16": 0.2821,
+            "p84": 0.3813
+          },
+          {
+            "true_omega_m": 0.375,
+            "n": 2500,
+            "median_predicted": 0.3619,
+            "p16": 0.3122,
+            "p84": 0.4066
+          },
+          {
+            "true_omega_m": 0.425,
+            "n": 2500,
+            "median_predicted": 0.3943,
+            "p16": 0.3459,
+            "p84": 0.4299
+          },
+          {
+            "true_omega_m": 0.475,
+            "n": 2500,
+            "median_predicted": 0.4142,
+            "p16": 0.3725,
+            "p84": 0.444
+          }
+        ],
+        "meets_ideal": {
+          "r2": false,
+          "accuracy": false
+        }
+      },
+      "ceiling": {
+        "model": "HistGradientBoostingRegressor on log10 of the 14 observation properties, cross-fitted over simulations",
+        "n_train_galaxies": 210533,
+        "folds": 5,
+        "iterations": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "fit_seconds": 106.1,
+        "r2": 0.8760329234960121,
+        "accuracy": 0.040655783112518586,
+        "mae": 0.03036251888927224,
+        "calibration": [
+          {
+            "true_omega_m": 0.125,
+            "n": 2500,
+            "median_predicted": 0.1349,
+            "p16": 0.1165,
+            "p84": 0.1603
+          },
+          {
+            "true_omega_m": 0.175,
+            "n": 2500,
+            "median_predicted": 0.1812,
+            "p16": 0.1552,
+            "p84": 0.2145
+          },
+          {
+            "true_omega_m": 0.225,
+            "n": 2500,
+            "median_predicted": 0.2354,
+            "p16": 0.2004,
+            "p84": 0.2786
+          },
+          {
+            "true_omega_m": 0.275,
+            "n": 2500,
+            "median_predicted": 0.2841,
+            "p16": 0.2453,
+            "p84": 0.3275
+          },
+          {
+            "true_omega_m": 0.325,
+            "n": 2500,
+            "median_predicted": 0.336,
+            "p16": 0.2927,
+            "p84": 0.3803
+          },
+          {
+            "true_omega_m": 0.375,
+            "n": 2500,
+            "median_predicted": 0.3773,
+            "p16": 0.3354,
+            "p84": 0.4152
+          },
+          {
+            "true_omega_m": 0.425,
+            "n": 2500,
+            "median_predicted": 0.4167,
+            "p16": 0.3759,
+            "p84": 0.4473
+          },
+          {
+            "true_omega_m": 0.475,
+            "n": 2500,
+            "median_predicted": 0.4404,
+            "p16": 0.4057,
+            "p84": 0.4626
+          }
+        ],
+        "meets_ideal": {
+          "r2": false,
+          "accuracy": false
+        }
+      }
+    },
+    {
+      "pa_id": "PA6",
+      "suite": "IllustrisTNG",
+      "z": 2.0,
+      "refit": true,
+      "snapshot": 44,
+      "actual_z": 2.002,
+      "n_sims_used": 1000,
+      "n_sims_skipped": 0,
+      "n_eval_galaxies": 19988,
+      "n_fit_galaxies": 19821,
+      "n_pool_galaxies": 175417,
+      "var_true_omega_m": 0.013322,
+      "paper_reported": {
+        "r2": [
+          0.74,
+          0.76
+        ],
+        "accuracy": [
+          0.056,
+          0.06
+        ],
+        "note": "quoted in Section III.2 as the range over the z=1, 2, 3 panels of IllustrisTNG and Astrid together"
+      },
+      "paper_published": {
+        "published_coeffs_k_c0_a0": [
+          5.68,
+          0.62,
+          0.0024
+        ],
+        "refit": false,
+        "r2": 0.7285411644934326,
+        "accuracy": 0.060135996734619085,
+        "mae": 0.04585693275311985,
+        "calibration": [
+          {
+            "true_omega_m": 0.125,
+            "n": 2488,
+            "median_predicted": 0.1514,
+            "p16": 0.1284,
+            "p84": 0.1856
+          },
+          {
+            "true_omega_m": 0.175,
+            "n": 2500,
+            "median_predicted": 0.198,
+            "p16": 0.1671,
+            "p84": 0.2444
+          },
+          {
+            "true_omega_m": 0.225,
+            "n": 2500,
+            "median_predicted": 0.2467,
+            "p16": 0.2066,
+            "p84": 0.3001
+          },
+          {
+            "true_omega_m": 0.275,
+            "n": 2500,
+            "median_predicted": 0.287,
+            "p16": 0.2439,
+            "p84": 0.3372
+          },
+          {
+            "true_omega_m": 0.325,
+            "n": 2500,
+            "median_predicted": 0.3231,
+            "p16": 0.2767,
+            "p84": 0.3708
+          },
+          {
+            "true_omega_m": 0.375,
+            "n": 2500,
+            "median_predicted": 0.3497,
+            "p16": 0.3052,
+            "p84": 0.3965
+          },
+          {
+            "true_omega_m": 0.425,
+            "n": 2500,
+            "median_predicted": 0.3787,
+            "p16": 0.3351,
+            "p84": 0.4182
+          },
+          {
+            "true_omega_m": 0.475,
+            "n": 2500,
+            "median_predicted": 0.403,
+            "p16": 0.3638,
+            "p84": 0.4352
+          }
+        ],
+        "meets_ideal": {
+          "r2": false,
+          "accuracy": false
+        }
+      },
+      "paper_protocol": {
+        "refit": true,
+        "fit_seconds": 0.022,
+        "n_fit_galaxies": 19821,
+        "coeffs": [
+          8.55297712,
+          0.62357726,
+          0.00424428
+        ],
+        "predict_seconds": 0.002,
+        "per_galaxy": {
+          "n_probed": 32,
+          "max_difference": 0.0,
+          "passed": true
+        },
+        "r2": 0.7327423455286993,
+        "accuracy": 0.05966884056567116,
+        "mae": 0.04571014128425926,
+        "calibration": [
+          {
+            "true_omega_m": 0.125,
+            "n": 2488,
+            "median_predicted": 0.1538,
+            "p16": 0.1284,
+            "p84": 0.19
+          },
+          {
+            "true_omega_m": 0.175,
+            "n": 2500,
+            "median_predicted": 0.2036,
+            "p16": 0.1701,
+            "p84": 0.2519
+          },
+          {
+            "true_omega_m": 0.225,
+            "n": 2500,
+            "median_predicted": 0.2541,
+            "p16": 0.213,
+            "p84": 0.3081
+          },
+          {
+            "true_omega_m": 0.275,
+            "n": 2500,
+            "median_predicted": 0.2951,
+            "p16": 0.2515,
+            "p84": 0.3453
+          },
+          {
+            "true_omega_m": 0.325,
+            "n": 2500,
+            "median_predicted": 0.332,
+            "p16": 0.285,
+            "p84": 0.3787
+          },
+          {
+            "true_omega_m": 0.375,
+            "n": 2500,
+            "median_predicted": 0.358,
+            "p16": 0.3137,
+            "p84": 0.4016
+          },
+          {
+            "true_omega_m": 0.425,
+            "n": 2500,
+            "median_predicted": 0.3853,
+            "p16": 0.3429,
+            "p84": 0.4217
+          },
+          {
+            "true_omega_m": 0.475,
+            "n": 2500,
+            "median_predicted": 0.4083,
+            "p16": 0.3677,
+            "p84": 0.4376
+          }
+        ],
+        "meets_ideal": {
+          "r2": false,
+          "accuracy": false
+        }
+      },
+      "ceiling": {
+        "model": "HistGradientBoostingRegressor on log10 of the 14 observation properties, cross-fitted over simulations",
+        "n_train_galaxies": 195238,
+        "folds": 5,
+        "iterations": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "fit_seconds": 105.7,
+        "r2": 0.8878626726170478,
+        "accuracy": 0.0386507231002535,
+        "mae": 0.02872252717099667,
+        "calibration": [
+          {
+            "true_omega_m": 0.125,
+            "n": 2488,
+            "median_predicted": 0.1329,
+            "p16": 0.1164,
+            "p84": 0.1573
+          },
+          {
+            "true_omega_m": 0.175,
+            "n": 2500,
+            "median_predicted": 0.1818,
+            "p16": 0.156,
+            "p84": 0.2129
+          },
+          {
+            "true_omega_m": 0.225,
+            "n": 2500,
+            "median_predicted": 0.237,
+            "p16": 0.2044,
+            "p84": 0.2766
+          },
+          {
+            "true_omega_m": 0.275,
+            "n": 2500,
+            "median_predicted": 0.2857,
+            "p16": 0.2494,
+            "p84": 0.3256
+          },
+          {
+            "true_omega_m": 0.325,
+            "n": 2500,
+            "median_predicted": 0.3359,
+            "p16": 0.2956,
+            "p84": 0.379
+          },
+          {
+            "true_omega_m": 0.375,
+            "n": 2500,
+            "median_predicted": 0.3774,
+            "p16": 0.3365,
+            "p84": 0.4161
+          },
+          {
+            "true_omega_m": 0.425,
+            "n": 2500,
+            "median_predicted": 0.4192,
+            "p16": 0.3813,
+            "p84": 0.4484
+          },
+          {
+            "true_omega_m": 0.475,
+            "n": 2500,
+            "median_predicted": 0.443,
+            "p16": 0.4101,
+            "p84": 0.4637
+          }
+        ],
+        "meets_ideal": {
+          "r2": false,
+          "accuracy": false
+        }
+      }
+    },
+    {
+      "pa_id": "PA7",
+      "suite": "IllustrisTNG",
+      "z": 3.0,
+      "refit": true,
+      "snapshot": 32,
+      "actual_z": 2.9986,
+      "n_sims_used": 1000,
+      "n_sims_skipped": 0,
+      "n_eval_galaxies": 19690,
+      "n_fit_galaxies": 18943,
+      "n_pool_galaxies": 146914,
+      "var_true_omega_m": 0.013043,
+      "paper_reported": {
+        "r2": [
+          0.74,
+          0.76
+        ],
+        "accuracy": [
+          0.056,
+          0.06
+        ],
+        "note": "quoted in Section III.2 as the range over the z=1, 2, 3 panels of IllustrisTNG and Astrid together"
+      },
+      "paper_published": {
+        "published_coeffs_k_c0_a0": [
+          5.68,
+          0.62,
+          0.0024
+        ],
+        "refit": false,
+        "r2": 0.7153468664850341,
+        "accuracy": 0.06093118029899874,
+        "mae": 0.04834133115703341,
+        "calibration": [
+          {
+            "true_omega_m": 0.125,
+            "n": 2245,
+            "median_predicted": 0.1643,
+            "p16": 0.1387,
+            "p84": 0.2023
+          },
+          {
+            "true_omega_m": 0.175,
+            "n": 2445,
+            "median_predicted": 0.2141,
+            "p16": 0.1802,
+            "p84": 0.2632
+          },
+          {
+            "true_omega_m": 0.225,
+            "n": 2500,
+            "median_predicted": 0.266,
+            "p16": 0.2229,
+            "p84": 0.3177
+          },
+          {
+            "true_omega_m": 0.275,
+            "n": 2500,
+            "median_predicted": 0.307,
+            "p16": 0.263,
+            "p84": 0.3581
+          },
+          {
+            "true_omega_m": 0.325,
+            "n": 2500,
+            "median_predicted": 0.3378,
+            "p16": 0.2907,
+            "p84": 0.3893
+          },
+          {
+            "true_omega_m": 0.375,
+            "n": 2500,
+            "median_predicted": 0.3634,
+            "p16": 0.3213,
+            "p84": 0.407
+          },
+          {
+            "true_omega_m": 0.425,
+            "n": 2500,
+            "median_predicted": 0.3877,
+            "p16": 0.3461,
+            "p84": 0.4237
+          },
+          {
+            "true_omega_m": 0.475,
+            "n": 2500,
+            "median_predicted": 0.408,
+            "p16": 0.3703,
+            "p84": 0.4384
+          }
+        ],
+        "meets_ideal": {
+          "r2": false,
+          "accuracy": false
+        }
+      },
+      "paper_protocol": {
+        "refit": true,
+        "fit_seconds": 0.029,
+        "n_fit_galaxies": 18943,
+        "coeffs": [
+          10.45620792,
+          0.61576331,
+          0.00427844
+        ],
+        "predict_seconds": 0.001,
+        "per_galaxy": {
+          "n_probed": 32,
+          "max_difference": 0.0,
+          "passed": true
+        },
+        "r2": 0.7196992321644311,
+        "accuracy": 0.060463565010703296,
+        "mae": 0.04761153201504452,
+        "calibration": [
+          {
+            "true_omega_m": 0.125,
+            "n": 2245,
+            "median_predicted": 0.1581,
+            "p16": 0.1318,
+            "p84": 0.1966
+          },
+          {
+            "true_omega_m": 0.175,
+            "n": 2445,
+            "median_predicted": 0.2087,
+            "p16": 0.1737,
+            "p84": 0.2583
+          },
+          {
+            "true_omega_m": 0.225,
+            "n": 2500,
+            "median_predicted": 0.2607,
+            "p16": 0.2176,
+            "p84": 0.3122
+          },
+          {
+            "true_omega_m": 0.275,
+            "n": 2500,
+            "median_predicted": 0.3016,
+            "p16": 0.2581,
+            "p84": 0.3529
+          },
+          {
+            "true_omega_m": 0.325,
+            "n": 2500,
+            "median_predicted": 0.3331,
+            "p16": 0.2862,
+            "p84": 0.3842
+          },
+          {
+            "true_omega_m": 0.375,
+            "n": 2500,
+            "median_predicted": 0.3587,
+            "p16": 0.3162,
+            "p84": 0.4023
+          },
+          {
+            "true_omega_m": 0.425,
+            "n": 2500,
+            "median_predicted": 0.3828,
+            "p16": 0.3409,
+            "p84": 0.419
+          },
+          {
+            "true_omega_m": 0.475,
+            "n": 2500,
+            "median_predicted": 0.4033,
+            "p16": 0.3644,
+            "p84": 0.4334
+          }
+        ],
+        "meets_ideal": {
+          "r2": false,
+          "accuracy": false
+        }
+      },
+      "ceiling": {
+        "model": "HistGradientBoostingRegressor on log10 of the 14 observation properties, cross-fitted over simulations",
+        "n_train_galaxies": 165857,
+        "folds": 5,
+        "iterations": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "fit_seconds": 104.2,
+        "r2": 0.8888782972629298,
+        "accuracy": 0.03806983988239237,
+        "mae": 0.028599616074052352,
+        "calibration": [
+          {
+            "true_omega_m": 0.125,
+            "n": 2245,
+            "median_predicted": 0.1358,
+            "p16": 0.1192,
+            "p84": 0.158
+          },
+          {
+            "true_omega_m": 0.175,
+            "n": 2445,
+            "median_predicted": 0.1837,
+            "p16": 0.158,
+            "p84": 0.215
+          },
+          {
+            "true_omega_m": 0.225,
+            "n": 2500,
+            "median_predicted": 0.2387,
+            "p16": 0.2072,
+            "p84": 0.2767
+          },
+          {
+            "true_omega_m": 0.275,
+            "n": 2500,
+            "median_predicted": 0.2894,
+            "p16": 0.2547,
+            "p84": 0.3313
+          },
+          {
+            "true_omega_m": 0.325,
+            "n": 2500,
+            "median_predicted": 0.3389,
+            "p16": 0.2988,
+            "p84": 0.3826
+          },
+          {
+            "true_omega_m": 0.375,
+            "n": 2500,
+            "median_predicted": 0.3827,
+            "p16": 0.3405,
+            "p84": 0.4174
+          },
+          {
+            "true_omega_m": 0.425,
+            "n": 2500,
+            "median_predicted": 0.4218,
+            "p16": 0.3824,
+            "p84": 0.4494
+          },
+          {
+            "true_omega_m": 0.475,
+            "n": 2500,
+            "median_predicted": 0.4447,
+            "p16": 0.4129,
+            "p84": 0.4643
+          }
+        ],
+        "meets_ideal": {
+          "r2": false,
+          "accuracy": false
+        }
+      }
+    },
+    {
+      "pa_id": "PA8",
+      "suite": "Astrid",
+      "z": 1.0,
+      "refit": true,
+      "snapshot": 60,
+      "actual_z": 1.0452,
+      "n_sims_used": 1000,
+      "n_sims_skipped": 0,
+      "n_eval_galaxies": 20000,
+      "n_fit_galaxies": 20000,
+      "n_pool_galaxies": 199717,
+      "var_true_omega_m": 0.013333,
+      "paper_reported": {
+        "r2": [
+          0.74,
+          0.76
+        ],
+        "accuracy": [
+          0.056,
+          0.06
+        ],
+        "note": "quoted in Section III.2 as the range over the z=1, 2, 3 panels of IllustrisTNG and Astrid together"
+      },
+      "paper_published": {
+        "published_coeffs_k_c0_a0": [
+          4.71,
+          0.61,
+          0.005
+        ],
+        "refit": false,
+        "r2": 0.7185328884709966,
+        "accuracy": 0.0612608444888894,
+        "mae": 0.047131130336062296,
+        "calibration": [
+          {
+            "true_omega_m": 0.125,
+            "n": 2500,
+            "median_predicted": 0.1374,
+            "p16": 0.107,
+            "p84": 0.1764
+          },
+          {
+            "true_omega_m": 0.175,
+            "n": 2500,
+            "median_predicted": 0.1829,
+            "p16": 0.1433,
+            "p84": 0.2331
+          },
+          {
+            "true_omega_m": 0.225,
+            "n": 2500,
+            "median_predicted": 0.2367,
+            "p16": 0.1867,
+            "p84": 0.2981
+          },
+          {
+            "true_omega_m": 0.275,
+            "n": 2500,
+            "median_predicted": 0.2771,
+            "p16": 0.2255,
+            "p84": 0.3415
+          },
+          {
+            "true_omega_m": 0.325,
+            "n": 2500,
+            "median_predicted": 0.326,
+            "p16": 0.2662,
+            "p84": 0.3899
+          },
+          {
+            "true_omega_m": 0.375,
+            "n": 2500,
+            "median_predicted": 0.365,
+            "p16": 0.3029,
+            "p84": 0.4202
+          },
+          {
+            "true_omega_m": 0.425,
+            "n": 2500,
+            "median_predicted": 0.3921,
+            "p16": 0.3342,
+            "p84": 0.4318
+          },
+          {
+            "true_omega_m": 0.475,
+            "n": 2500,
+            "median_predicted": 0.4064,
+            "p16": 0.36,
+            "p84": 0.442
+          }
+        ],
+        "meets_ideal": {
+          "r2": false,
+          "accuracy": false
+        }
+      },
+      "paper_protocol": {
+        "refit": true,
+        "fit_seconds": 0.016,
+        "n_fit_galaxies": 20000,
+        "coeffs": [
+          6.45313459,
+          0.6316917,
+          0.0074573
+        ],
+        "predict_seconds": 0.001,
+        "per_galaxy": {
+          "n_probed": 32,
+          "max_difference": 0.0,
+          "passed": true
+        },
+        "r2": 0.7275519750164074,
+        "accuracy": 0.060271358873632795,
+        "mae": 0.046783519799080645,
+        "calibration": [
+          {
+            "true_omega_m": 0.125,
+            "n": 2500,
+            "median_predicted": 0.1483,
+            "p16": 0.1172,
+            "p84": 0.1877
+          },
+          {
+            "true_omega_m": 0.175,
+            "n": 2500,
+            "median_predicted": 0.1938,
+            "p16": 0.1552,
+            "p84": 0.2436
+          },
+          {
+            "true_omega_m": 0.225,
+            "n": 2500,
+            "median_predicted": 0.2465,
+            "p16": 0.1974,
+            "p84": 0.3072
+          },
+          {
+            "true_omega_m": 0.275,
+            "n": 2500,
+            "median_predicted": 0.2879,
+            "p16": 0.2362,
+            "p84": 0.3498
+          },
+          {
+            "true_omega_m": 0.325,
+            "n": 2500,
+            "median_predicted": 0.3352,
+            "p16": 0.277,
+            "p84": 0.3978
+          },
+          {
+            "true_omega_m": 0.375,
+            "n": 2500,
+            "median_predicted": 0.3733,
+            "p16": 0.3125,
+            "p84": 0.4282
+          },
+          {
+            "true_omega_m": 0.425,
+            "n": 2500,
+            "median_predicted": 0.4004,
+            "p16": 0.3445,
+            "p84": 0.4404
+          },
+          {
+            "true_omega_m": 0.475,
+            "n": 2500,
+            "median_predicted": 0.4142,
+            "p16": 0.3682,
+            "p84": 0.4509
+          }
+        ],
+        "meets_ideal": {
+          "r2": false,
+          "accuracy": false
+        }
+      },
+      "ceiling": {
+        "model": "HistGradientBoostingRegressor on log10 of the 14 observation properties, cross-fitted over simulations",
+        "n_train_galaxies": 219717,
+        "folds": 5,
+        "iterations": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "fit_seconds": 106.6,
+        "r2": 0.8936489193036743,
+        "accuracy": 0.037656513264904566,
+        "mae": 0.02833553316410533,
+        "calibration": [
+          {
+            "true_omega_m": 0.125,
+            "n": 2500,
+            "median_predicted": 0.1299,
+            "p16": 0.1157,
+            "p84": 0.1513
+          },
+          {
+            "true_omega_m": 0.175,
+            "n": 2500,
+            "median_predicted": 0.1772,
+            "p16": 0.1518,
+            "p84": 0.209
+          },
+          {
+            "true_omega_m": 0.225,
+            "n": 2500,
+            "median_predicted": 0.2332,
+            "p16": 0.2019,
+            "p84": 0.2711
+          },
+          {
+            "true_omega_m": 0.275,
+            "n": 2500,
+            "median_predicted": 0.2855,
+            "p16": 0.2502,
+            "p84": 0.3273
+          },
+          {
+            "true_omega_m": 0.325,
+            "n": 2500,
+            "median_predicted": 0.3379,
+            "p16": 0.2956,
+            "p84": 0.3796
+          },
+          {
+            "true_omega_m": 0.375,
+            "n": 2500,
+            "median_predicted": 0.3833,
+            "p16": 0.339,
+            "p84": 0.4216
+          },
+          {
+            "true_omega_m": 0.425,
+            "n": 2500,
+            "median_predicted": 0.414,
+            "p16": 0.3779,
+            "p84": 0.4455
+          },
+          {
+            "true_omega_m": 0.475,
+            "n": 2500,
+            "median_predicted": 0.4404,
+            "p16": 0.4067,
+            "p84": 0.4628
+          }
+        ],
+        "meets_ideal": {
+          "r2": false,
+          "accuracy": false
+        }
+      }
+    },
+    {
+      "pa_id": "PA9",
+      "suite": "Astrid",
+      "z": 2.0,
+      "refit": true,
+      "snapshot": 44,
+      "actual_z": 2.002,
+      "n_sims_used": 1000,
+      "n_sims_skipped": 0,
+      "n_eval_galaxies": 20000,
+      "n_fit_galaxies": 20000,
+      "n_pool_galaxies": 198062,
+      "var_true_omega_m": 0.013333,
+      "paper_reported": {
+        "r2": [
+          0.74,
+          0.76
+        ],
+        "accuracy": [
+          0.056,
+          0.06
+        ],
+        "note": "quoted in Section III.2 as the range over the z=1, 2, 3 panels of IllustrisTNG and Astrid together"
+      },
+      "paper_published": {
+        "published_coeffs_k_c0_a0": [
+          4.71,
+          0.61,
+          0.005
+        ],
+        "refit": false,
+        "r2": 0.7371953520616231,
+        "accuracy": 0.059195088212196455,
+        "mae": 0.04592479121594351,
+        "calibration": [
+          {
+            "true_omega_m": 0.125,
+            "n": 2500,
+            "median_predicted": 0.1405,
+            "p16": 0.1099,
+            "p84": 0.1788
+          },
+          {
+            "true_omega_m": 0.175,
+            "n": 2500,
+            "median_predicted": 0.1926,
+            "p16": 0.1534,
+            "p84": 0.2429
+          },
+          {
+            "true_omega_m": 0.225,
+            "n": 2500,
+            "median_predicted": 0.2468,
+            "p16": 0.2002,
+            "p84": 0.3035
+          },
+          {
+            "true_omega_m": 0.275,
+            "n": 2500,
+            "median_predicted": 0.2853,
+            "p16": 0.2356,
+            "p84": 0.3465
+          },
+          {
+            "true_omega_m": 0.325,
+            "n": 2500,
+            "median_predicted": 0.3299,
+            "p16": 0.277,
+            "p84": 0.3866
+          },
+          {
+            "true_omega_m": 0.375,
+            "n": 2500,
+            "median_predicted": 0.3665,
+            "p16": 0.3146,
+            "p84": 0.4113
+          },
+          {
+            "true_omega_m": 0.425,
+            "n": 2500,
+            "median_predicted": 0.3869,
+            "p16": 0.3362,
+            "p84": 0.4227
+          },
+          {
+            "true_omega_m": 0.475,
+            "n": 2500,
+            "median_predicted": 0.4034,
+            "p16": 0.3615,
+            "p84": 0.4332
+          }
+        ],
+        "meets_ideal": {
+          "r2": false,
+          "accuracy": false
+        }
+      },
+      "paper_protocol": {
+        "refit": true,
+        "fit_seconds": 0.017,
+        "n_fit_galaxies": 20000,
+        "coeffs": [
+          7.95364634,
+          0.62338081,
+          0.00713732
+        ],
+        "predict_seconds": 0.001,
+        "per_galaxy": {
+          "n_probed": 32,
+          "max_difference": 0.0,
+          "passed": true
+        },
+        "r2": 0.7402989864509085,
+        "accuracy": 0.05884451306599769,
+        "mae": 0.04587961448730744,
+        "calibration": [
+          {
+            "true_omega_m": 0.125,
+            "n": 2500,
+            "median_predicted": 0.1499,
+            "p16": 0.1198,
+            "p84": 0.1866
+          },
+          {
+            "true_omega_m": 0.175,
+            "n": 2500,
+            "median_predicted": 0.2001,
+            "p16": 0.1623,
+            "p84": 0.2492
+          },
+          {
+            "true_omega_m": 0.225,
+            "n": 2500,
+            "median_predicted": 0.2527,
+            "p16": 0.2073,
+            "p84": 0.3087
+          },
+          {
+            "true_omega_m": 0.275,
+            "n": 2500,
+            "median_predicted": 0.2908,
+            "p16": 0.2422,
+            "p84": 0.3514
+          },
+          {
+            "true_omega_m": 0.325,
+            "n": 2500,
+            "median_predicted": 0.3349,
+            "p16": 0.2827,
+            "p84": 0.3925
+          },
+          {
+            "true_omega_m": 0.375,
+            "n": 2500,
+            "median_predicted": 0.3719,
+            "p16": 0.3197,
+            "p84": 0.4175
+          },
+          {
+            "true_omega_m": 0.425,
+            "n": 2500,
+            "median_predicted": 0.3928,
+            "p16": 0.3413,
+            "p84": 0.4303
+          },
+          {
+            "true_omega_m": 0.475,
+            "n": 2500,
+            "median_predicted": 0.4095,
+            "p16": 0.3671,
+            "p84": 0.4409
+          }
+        ],
+        "meets_ideal": {
+          "r2": false,
+          "accuracy": false
+        }
+      },
+      "ceiling": {
+        "model": "HistGradientBoostingRegressor on log10 of the 14 observation properties, cross-fitted over simulations",
+        "n_train_galaxies": 218062,
+        "folds": 5,
+        "iterations": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "fit_seconds": 106.2,
+        "r2": 0.8934041546436368,
+        "accuracy": 0.037699821177386315,
+        "mae": 0.028108553570081428,
+        "calibration": [
+          {
+            "true_omega_m": 0.125,
+            "n": 2500,
+            "median_predicted": 0.1298,
+            "p16": 0.1155,
+            "p84": 0.1519
+          },
+          {
+            "true_omega_m": 0.175,
+            "n": 2500,
+            "median_predicted": 0.1778,
+            "p16": 0.1531,
+            "p84": 0.2093
+          },
+          {
+            "true_omega_m": 0.225,
+            "n": 2500,
+            "median_predicted": 0.2336,
+            "p16": 0.2033,
+            "p84": 0.2699
+          },
+          {
+            "true_omega_m": 0.275,
+            "n": 2500,
+            "median_predicted": 0.2842,
+            "p16": 0.2485,
+            "p84": 0.326
+          },
+          {
+            "true_omega_m": 0.325,
+            "n": 2500,
+            "median_predicted": 0.3377,
+            "p16": 0.2967,
+            "p84": 0.3834
+          },
+          {
+            "true_omega_m": 0.375,
+            "n": 2500,
+            "median_predicted": 0.3833,
+            "p16": 0.3405,
+            "p84": 0.4215
+          },
+          {
+            "true_omega_m": 0.425,
+            "n": 2500,
+            "median_predicted": 0.4152,
+            "p16": 0.3761,
+            "p84": 0.445
+          },
+          {
+            "true_omega_m": 0.475,
+            "n": 2500,
+            "median_predicted": 0.4405,
+            "p16": 0.4083,
+            "p84": 0.4627
+          }
+        ],
+        "meets_ideal": {
+          "r2": false,
+          "accuracy": false
+        }
+      }
+    },
+    {
+      "pa_id": "PA10",
+      "suite": "Astrid",
+      "z": 3.0,
+      "refit": true,
+      "snapshot": 32,
+      "actual_z": 3.0081,
+      "n_sims_used": 1000,
+      "n_sims_skipped": 0,
+      "n_eval_galaxies": 19991,
+      "n_fit_galaxies": 19940,
+      "n_pool_galaxies": 191952,
+      "var_true_omega_m": 0.013322,
+      "paper_reported": {
+        "r2": [
+          0.74,
+          0.76
+        ],
+        "accuracy": [
+          0.056,
+          0.06
+        ],
+        "note": "quoted in Section III.2 as the range over the z=1, 2, 3 panels of IllustrisTNG and Astrid together"
+      },
+      "paper_published": {
+        "published_coeffs_k_c0_a0": [
+          4.71,
+          0.61,
+          0.005
+        ],
+        "refit": false,
+        "r2": 0.740197328757299,
+        "accuracy": 0.05883193615584606,
+        "mae": 0.04627889541968314,
+        "calibration": [
+          {
+            "true_omega_m": 0.125,
+            "n": 2491,
+            "median_predicted": 0.1486,
+            "p16": 0.1165,
+            "p84": 0.191
+          },
+          {
+            "true_omega_m": 0.175,
+            "n": 2500,
+            "median_predicted": 0.2062,
+            "p16": 0.1663,
+            "p84": 0.2519
+          },
+          {
+            "true_omega_m": 0.225,
+            "n": 2500,
+            "median_predicted": 0.2576,
+            "p16": 0.2135,
+            "p84": 0.3144
+          },
+          {
+            "true_omega_m": 0.275,
+            "n": 2500,
+            "median_predicted": 0.2989,
+            "p16": 0.253,
+            "p84": 0.3576
+          },
+          {
+            "true_omega_m": 0.325,
+            "n": 2500,
+            "median_predicted": 0.3418,
+            "p16": 0.292,
+            "p84": 0.3901
+          },
+          {
+            "true_omega_m": 0.375,
+            "n": 2500,
+            "median_predicted": 0.3735,
+            "p16": 0.3232,
+            "p84": 0.4111
+          },
+          {
+            "true_omega_m": 0.425,
+            "n": 2500,
+            "median_predicted": 0.3909,
+            "p16": 0.3455,
+            "p84": 0.4224
+          },
+          {
+            "true_omega_m": 0.475,
+            "n": 2500,
+            "median_predicted": 0.4029,
+            "p16": 0.3672,
+            "p84": 0.4306
+          }
+        ],
+        "meets_ideal": {
+          "r2": false,
+          "accuracy": false
+        }
+      },
+      "paper_protocol": {
+        "refit": true,
+        "fit_seconds": 0.024,
+        "n_fit_galaxies": 19940,
+        "coeffs": [
+          9.84973831,
+          0.60678941,
+          0.00575623
+        ],
+        "predict_seconds": 0.001,
+        "per_galaxy": {
+          "n_probed": 32,
+          "max_difference": 0.0,
+          "passed": true
+        },
+        "r2": 0.7445574334858525,
+        "accuracy": 0.05833617767460307,
+        "mae": 0.04553096581640671,
+        "calibration": [
+          {
+            "true_omega_m": 0.125,
+            "n": 2491,
+            "median_predicted": 0.1494,
+            "p16": 0.1212,
+            "p84": 0.1873
+          },
+          {
+            "true_omega_m": 0.175,
+            "n": 2500,
+            "median_predicted": 0.2029,
+            "p16": 0.1666,
+            "p84": 0.2473
+          },
+          {
+            "true_omega_m": 0.225,
+            "n": 2500,
+            "median_predicted": 0.2517,
+            "p16": 0.2098,
+            "p84": 0.3069
+          },
+          {
+            "true_omega_m": 0.275,
+            "n": 2500,
+            "median_predicted": 0.2918,
+            "p16": 0.2481,
+            "p84": 0.3516
+          },
+          {
+            "true_omega_m": 0.325,
+            "n": 2500,
+            "median_predicted": 0.3363,
+            "p16": 0.2867,
+            "p84": 0.3875
+          },
+          {
+            "true_omega_m": 0.375,
+            "n": 2500,
+            "median_predicted": 0.3688,
+            "p16": 0.3183,
+            "p84": 0.4141
+          },
+          {
+            "true_omega_m": 0.425,
+            "n": 2500,
+            "median_predicted": 0.3895,
+            "p16": 0.3411,
+            "p84": 0.4249
+          },
+          {
+            "true_omega_m": 0.475,
+            "n": 2500,
+            "median_predicted": 0.4036,
+            "p16": 0.3662,
+            "p84": 0.4341
+          }
+        ],
+        "meets_ideal": {
+          "r2": false,
+          "accuracy": false
+        }
+      },
+      "ceiling": {
+        "model": "HistGradientBoostingRegressor on log10 of the 14 observation properties, cross-fitted over simulations",
+        "n_train_galaxies": 211892,
+        "folds": 5,
+        "iterations": [
+          1000,
+          1000,
+          1000,
+          1000,
+          1000
+        ],
+        "fit_seconds": 106.0,
+        "r2": 0.9004892324816491,
+        "accuracy": 0.03641047738964959,
+        "mae": 0.027082343438653515,
+        "calibration": [
+          {
+            "true_omega_m": 0.125,
+            "n": 2491,
+            "median_predicted": 0.1293,
+            "p16": 0.1157,
+            "p84": 0.1503
+          },
+          {
+            "true_omega_m": 0.175,
+            "n": 2500,
+            "median_predicted": 0.1779,
+            "p16": 0.1537,
+            "p84": 0.2078
+          },
+          {
+            "true_omega_m": 0.225,
+            "n": 2500,
+            "median_predicted": 0.233,
+            "p16": 0.203,
+            "p84": 0.2655
+          },
+          {
+            "true_omega_m": 0.275,
+            "n": 2500,
+            "median_predicted": 0.2828,
+            "p16": 0.2493,
+            "p84": 0.3248
+          },
+          {
+            "true_omega_m": 0.325,
+            "n": 2500,
+            "median_predicted": 0.3359,
+            "p16": 0.2954,
+            "p84": 0.3802
+          },
+          {
+            "true_omega_m": 0.375,
+            "n": 2500,
+            "median_predicted": 0.3825,
+            "p16": 0.3397,
+            "p84": 0.4202
+          },
+          {
+            "true_omega_m": 0.425,
+            "n": 2500,
+            "median_predicted": 0.416,
+            "p16": 0.3776,
+            "p84": 0.4455
+          },
+          {
+            "true_omega_m": 0.475,
+            "n": 2500,
+            "median_predicted": 0.4412,
+            "p16": 0.4093,
+            "p84": 0.4637
+          }
+        ],
+        "meets_ideal": {
+          "r2": true,
+          "accuracy": false
+        }
+      }
+    }
+  ],
+  "pa": {
+    "PA1": {
+      "setting": "IllustrisTNG z=0",
+      "metric": "root mean square error between predicted and true Omega_m",
+      "threshold": 0.03,
+      "paper_reported": {
+        "r2": 0.77,
+        "accuracy": 0.056
+      },
+      "paper_published": 0.05869357831868859,
+      "paper_protocol": 0.05869357831868859,
+      "ceiling": 0.04074126045880859,
+      "r2": {
+        "paper_published": 0.741629531440629,
+        "paper_protocol": 0.741629531440629,
+        "ceiling": 0.8755111027281667
+      }
+    },
+    "PA2": {
+      "setting": "Astrid z=0",
+      "metric": "root mean square error between predicted and true Omega_m",
+      "threshold": 0.03,
+      "paper_reported": {
+        "r2": 0.73,
+        "accuracy": 0.06
+      },
+      "paper_published": 0.0675886955817971,
+      "paper_protocol": 0.06511230857899965,
+      "ceiling": 0.03996527092392065,
+      "r2": {
+        "paper_published": 0.6573822745986118,
+        "paper_protocol": 0.6820287273922121,
+        "ceiling": 0.8802081642064858
+      }
+    },
+    "PA3": {
+      "setting": "SIMBA z=0",
+      "metric": "root mean square error between predicted and true Omega_m",
+      "threshold": 0.03,
+      "paper_reported": "Fig. 2 shows systematically larger scatter than IllustrisTNG and Astrid; the paper quotes no number for this panel",
+      "paper_published": 0.07348238063573163,
+      "paper_protocol": 0.07274385086648562,
+      "ceiling": 0.03806279313870864,
+      "r2": {
+        "paper_published": 0.5950250752329842,
+        "paper_protocol": 0.6031245152081026,
+        "ceiling": 0.8913416747276653
+      }
+    },
+    "PA4": {
+      "setting": "Swift-EAGLE z=0",
+      "metric": "root mean square error between predicted and true Omega_m",
+      "threshold": 0.03,
+      "paper_reported": "Fig. 2 shows systematically larger scatter than IllustrisTNG and Astrid; the paper quotes no number for this panel",
+      "paper_published": 0.07018597985537352,
+      "paper_protocol": 0.06517770810638583,
+      "ceiling": 0.04080051915405559,
+      "r2": {
+        "paper_published": 0.6305298694883045,
+        "paper_protocol": 0.6813772591989025,
+        "ceiling": 0.8751438389570283
+      }
+    },
+    "PA5": {
+      "setting": "IllustrisTNG z=1",
+      "metric": "root mean square error between predicted and true Omega_m",
+      "threshold": 0.03,
+      "paper_reported": {
+        "r2": [
+          0.74,
+          0.76
+        ],
+        "accuracy": [
+          0.056,
+          0.06
+        ],
+        "note": "quoted in Section III.2 as the range over the z=1, 2, 3 panels of IllustrisTNG and Astrid together"
+      },
+      "paper_published": 0.06175347825759215,
+      "paper_protocol": 0.059496756209398545,
+      "ceiling": 0.040655783112518586,
+      "r2": {
+        "paper_published": 0.7139878082194903,
+        "paper_protocol": 0.7345099345518893,
+        "ceiling": 0.8760329234960121
+      }
+    },
+    "PA6": {
+      "setting": "IllustrisTNG z=2",
+      "metric": "root mean square error between predicted and true Omega_m",
+      "threshold": 0.03,
+      "paper_reported": {
+        "r2": [
+          0.74,
+          0.76
+        ],
+        "accuracy": [
+          0.056,
+          0.06
+        ],
+        "note": "quoted in Section III.2 as the range over the z=1, 2, 3 panels of IllustrisTNG and Astrid together"
+      },
+      "paper_published": 0.060135996734619085,
+      "paper_protocol": 0.05966884056567116,
+      "ceiling": 0.0386507231002535,
+      "r2": {
+        "paper_published": 0.7285411644934326,
+        "paper_protocol": 0.7327423455286993,
+        "ceiling": 0.8878626726170478
+      }
+    },
+    "PA7": {
+      "setting": "IllustrisTNG z=3",
+      "metric": "root mean square error between predicted and true Omega_m",
+      "threshold": 0.03,
+      "paper_reported": {
+        "r2": [
+          0.74,
+          0.76
+        ],
+        "accuracy": [
+          0.056,
+          0.06
+        ],
+        "note": "quoted in Section III.2 as the range over the z=1, 2, 3 panels of IllustrisTNG and Astrid together"
+      },
+      "paper_published": 0.06093118029899874,
+      "paper_protocol": 0.060463565010703296,
+      "ceiling": 0.03806983988239237,
+      "r2": {
+        "paper_published": 0.7153468664850341,
+        "paper_protocol": 0.7196992321644311,
+        "ceiling": 0.8888782972629298
+      }
+    },
+    "PA8": {
+      "setting": "Astrid z=1",
+      "metric": "root mean square error between predicted and true Omega_m",
+      "threshold": 0.03,
+      "paper_reported": {
+        "r2": [
+          0.74,
+          0.76
+        ],
+        "accuracy": [
+          0.056,
+          0.06
+        ],
+        "note": "quoted in Section III.2 as the range over the z=1, 2, 3 panels of IllustrisTNG and Astrid together"
+      },
+      "paper_published": 0.0612608444888894,
+      "paper_protocol": 0.060271358873632795,
+      "ceiling": 0.037656513264904566,
+      "r2": {
+        "paper_published": 0.7185328884709966,
+        "paper_protocol": 0.7275519750164074,
+        "ceiling": 0.8936489193036743
+      }
+    },
+    "PA9": {
+      "setting": "Astrid z=2",
+      "metric": "root mean square error between predicted and true Omega_m",
+      "threshold": 0.03,
+      "paper_reported": {
+        "r2": [
+          0.74,
+          0.76
+        ],
+        "accuracy": [
+          0.056,
+          0.06
+        ],
+        "note": "quoted in Section III.2 as the range over the z=1, 2, 3 panels of IllustrisTNG and Astrid together"
+      },
+      "paper_published": 0.059195088212196455,
+      "paper_protocol": 0.05884451306599769,
+      "ceiling": 0.037699821177386315,
+      "r2": {
+        "paper_published": 0.7371953520616231,
+        "paper_protocol": 0.7402989864509085,
+        "ceiling": 0.8934041546436368
+      }
+    },
+    "PA10": {
+      "setting": "Astrid z=3",
+      "metric": "root mean square error between predicted and true Omega_m",
+      "threshold": 0.03,
+      "paper_reported": {
+        "r2": [
+          0.74,
+          0.76
+        ],
+        "accuracy": [
+          0.056,
+          0.06
+        ],
+        "note": "quoted in Section III.2 as the range over the z=1, 2, 3 panels of IllustrisTNG and Astrid together"
+      },
+      "paper_published": 0.05883193615584606,
+      "paper_protocol": 0.05833617767460307,
+      "ceiling": 0.03641047738964959,
+      "r2": {
+        "paper_published": 0.740197328757299,
+        "paper_protocol": 0.7445574334858525,
+        "ceiling": 0.9004892324816491
+      }
+    }
+  }
+}

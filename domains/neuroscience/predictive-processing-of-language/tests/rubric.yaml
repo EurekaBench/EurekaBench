@@ -1,0 +1,78 @@
+predictive_accuracy:
+  criteria:
+  - id: PA1
+    machine: true
+    criterion: The predicted context effect is scored against the recorded context effect of the panel.
+  - id: PA2
+    machine: true
+    criterion: The panel is split at the median of the recorded context effect's Pearson autocorrelation, averaged over lags of 1 to 50 s and over the narratives, and the predicted context effect is scored on the half above the median only.
+  - id: PA3
+    machine: true
+    criterion: For every narrative and panel location, the Pearson autocorrelation of the scrambled response is subtracted from the Pearson autocorrelation of the response at each lag from 1 to 50 s, once for the prediction and once for the recording.
+  - id: PA4
+    machine: true
+    criterion: The predicted context effect is scored as in PA1 on the third of the held-out narratives whose sentence lengths lie outside the range of the other two thirds.
+scientific_constraints:
+  criteria:
+  - id: SC1
+    criterion: A cortical response grows with how unexpected a word is in its context.
+    source: As stated in the task specification, "the brain's response to each word scales with how unexpected that word is in its context."
+  - id: SC2
+    criterion: Word predictions and sentence predictions engage different cortical regions.
+    source: As stated in the task specification, "Predictions of upcoming words engage the superior and middle temporal cortices, while predictions of upcoming sentences engage the right temporoparietal junction, the medial prefrontal cortex and the precuneus."
+  - id: SC3
+    criterion: Word-level information accumulates in the cortex over the course of a narrative.
+    source: As stated in the task specification, the mechanism has to explain "how word-level information accumulates and updates the response of a cortical location during a narrative."
+  - id: SC4
+    criterion: The brain predicts upcoming words only from the words already heard.
+    source: A general assumption about language comprehension is that the brain builds its expectations from the preceding context, as the N400 to a word follows the word's cloze probability given the words before it (Kutas and Hillyard 1984), so a word not yet heard cannot shape a prediction.
+  - id: SC5
+    criterion: The fMRI response to a word lasts several seconds.
+    source: A general assumption of fMRI is that the measured response is neural activity convolved with a hemodynamic response that lasts several seconds (Boynton et al. 1996), so a word still shapes the response seconds after it is heard.
+  - id: SC6
+    criterion: The influence of earlier words on the cortical response fades over time.
+    source: A general assumption about the cortical processing of narratives is that prior context is gradually forgotten (Chien and Honey 2020), so a word heard long ago weighs less on the response than a recent one.
+  - id: SC7
+    criterion: Cortical regions integrate language over windows of different lengths.
+    source: A general assumption about human cortex is a hierarchy of temporal receptive windows in which regions accumulate information over timescales from single words to whole paragraphs (Hasson et al. 2008; Lerner et al. 2011).
+  - id: SC8
+    criterion: Scrambling the words of a story removes the context the cortex builds from their order.
+    source: A general assumption of story-listening studies is that scrambling the words keeps the words themselves and destroys the context built from their order, which is why the responses to an intact and a scrambled story are compared (Lerner et al. 2011).
+  - id: SC9
+    criterion: A cortical location keeps the same response properties throughout a story.
+    source: A general assumption about cortical physiology is that the way a region responds to its input does not change within the minutes of a single story, so one set of response properties holds for the whole narrative.
+insights:
+  criteria:
+  - id: I1
+    criterion: Does the discovered mechanism explain why the response of a higher-order cortical location changes abruptly at sentence boundaries?
+    kind: finding
+  - id: I2
+    criterion: Does the discovered mechanism explain why the response of a higher-order cortical location stays correlated with itself over a lag of about two sentences?
+    kind: finding
+  - id: I3
+    criterion: Does the discovered mechanism explain why the response of a location in the temporal cortices carries no correlation over a lag of two sentences?
+    kind: finding
+  - id: I4
+    criterion: Does the discovered mechanism explain why the response of a higher-order cortical location depends on how unexpected the words of the preceding sentence were?
+    kind: finding
+  - id: I5
+    criterion: Does the discovered mechanism explain why the prediction of the next sentence is carried by the temporoparietal junction, the medial prefrontal cortex and the precuneus?
+    kind: finding
+  - id: I6
+    criterion: Does the discovered mechanism explain why the response of a location in the temporal cortices builds up word by word within a sentence?
+    kind: finding
+  - id: I7
+    criterion: Does the discovered mechanism explain how the response of a cortical location changes over the course of a long narrative?
+    kind: limitation
+  - id: I8
+    criterion: Does the discovered mechanism explain what the boundaries of phrases within a sentence do to the response of a cortical location?
+    kind: limitation
+  - id: I9
+    criterion: Does the discovered mechanism explain how the grammatical structure of a sentence changes the response of a higher-order cortical location at the end of that sentence?
+    kind: limitation
+  - id: I10
+    criterion: Does the discovered mechanism explain how the earlier sentences of a story shape the response of a higher-order cortical location to the next one?
+    kind: limitation
+  - id: I11
+    criterion: Does the discovered mechanism explain the right lateralization of sentence prediction?
+    kind: limitation

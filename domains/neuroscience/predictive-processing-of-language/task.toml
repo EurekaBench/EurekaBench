@@ -1,0 +1,78 @@
+schema_version = "1.4"
+artifacts = ["/workspace/mechanisms"]
+
+[metadata]
+deliverables = ["mechanisms/mechanism.md", "mechanisms/experiment.log", "mechanisms/mechanism.py"]
+mechanisms_max_mb = 1024
+blocked_hosts = [
+    "github.com", "www.github.com", "raw.githubusercontent.com", "codeload.github.com",
+    "objects.githubusercontent.com", "github.io", "pypi.org", "pypi.python.org", "files.pythonhosted.org",
+    "registry.npmjs.org", "conda.anaconda.org", "anaconda.org", "huggingface.co", "www.huggingface.co",
+    "hf.co", "cdn-lfs.huggingface.co", "cdn-lfs-us-1.huggingface.co", "cas-bridge.xethub.hf.co",
+    "ai.meta.com", "dl.fbaipublicfiles.com", "nature.com", "www.nature.com", "link.springer.com",
+    "springer.com", "pnas.org", "www.pnas.org", "biorxiv.org", "www.biorxiv.org", "connect.biorxiv.org",
+    "medrxiv.org", "www.medrxiv.org", "ncbi.nlm.nih.gov", "www.ncbi.nlm.nih.gov", "pubmed.ncbi.nlm.nih.gov",
+    "pmc.ncbi.nlm.nih.gov", "europepmc.org", "www.europepmc.org", "semanticscholar.org",
+    "www.semanticscholar.org", "api.semanticscholar.org", "openalex.org", "api.openalex.org", "crossref.org",
+    "api.crossref.org", "doi.org", "dx.doi.org", "arxiv.org", "www.arxiv.org", "export.arxiv.org",
+    "scholar.google.com", "scholar.archive.org", "researchgate.net", "www.researchgate.net", "sci-hub.st",
+    "sci-hub.ru", "royalsocietypublishing.org", "x-mol.com", "www.x-mol.com", "sciety.org", "labs.sciety.org",
+    "discovery.ucl.ac.uk", "discovery-pp.ucl.ac.uk", "oar.princeton.edu", "biophysics.princeton.edu",
+    "molbio.princeton.edu", "microhub.mdibl.org", "hearingbrain.org", "cognitivescience.univie.ac.at",
+    "rcastoragev2.blob.core.windows.net", "themoonlight.io", "doaj.org", "par.nsf.gov", "scholarhub.vn",
+]
+task_vocabulary = ["TRIBE"]
+
+[metadata.simulator]
+name = "tribe"
+
+[[metadata.source_literature]]
+titles = ["Hierarchical linguistic predictions and cross-level information updating during narrative comprehension", "The neurocomputational mechanisms of hierarchical linguistic predictions during narrative comprehension"]
+phrases = ["hierarchical linguistic predictions", "cross-level information updating"]
+authors = ["Zhou", "Long", "Flinker", "Lu"]
+years = [2025, 2026]
+venues = ["Communications Biology", "bioRxiv"]
+ids = ["10.1101/2025.03.27.645665", "2025.03.27.645665", "645665"]
+
+[[metadata.source_literature]]
+titles = ["Evidence of a predictive coding hierarchy in the human brain listening to speech"]
+phrases = ["predictive coding hierarchy"]
+authors = ["Caucheteux", "Gramfort", "King"]
+years = [2023, 2022]
+venues = ["Nature Human Behaviour", "Nat Hum Behav"]
+ids = ["10.1038/s41562-022-01516-2", "s41562-022-01516-2", "36864133", "PMC10038805"]
+
+[[metadata.source_literature]]
+titles = ["A hierarchy of linguistic predictions during natural language comprehension"]
+phrases = ["hierarchy of linguistic predictions"]
+authors = ["Heilbron", "Armeni", "Schoffelen", "Hagoort", "de Lange", "Lange"]
+years = [2022, 2020]
+venues = ["PNAS", "Proceedings of the National Academy", "bioRxiv"]
+ids = ["10.1073/pnas.2201968119", "pnas.2201968119", "2201968119", "35921434", "PMC9371745", "10.1101/2020.12.03.410399", "2020.12.03.410399", "410399"]
+
+[[metadata.source_literature]]
+titles = ["A foundation model of vision, audition, and language for in-silico neuroscience"]
+phrases = ["tribe", "tribev2", "trimodal brain encoder", "in-silico neuroscience", "algonauts"]
+authors = ["d'Ascoli", "dAscoli", "Rapin", "Benchetrit", "Brooks", "Begany", "Raugel", "Banville", "King"]
+years = [2026]
+venues = ["arXiv"]
+ids = ["2605.04326", "facebook/tribev2", "facebookresearch/tribev2"]
+
+[[metadata.source_literature]]
+titles = ["TRIBE: TRImodal Brain Encoder for whole-brain fMRI response prediction"]
+phrases = ["tribe", "trimodal brain encoder", "whole-brain fmri response prediction", "algonauts"]
+authors = ["d'Ascoli", "dAscoli", "Rapin", "Benchetrit", "Banville", "King"]
+years = [2025]
+venues = ["arXiv", "ICLR"]
+ids = ["2507.22229", "facebookresearch/algonauts-2025"]
+
+[agent]
+timeout_sec = 14400
+
+[verifier]
+timeout_sec = 172800
+environment_mode = "separate"
+
+[environment]
+docker_image = "neuroscience.sif"
+workdir = "/workspace"

@@ -1,0 +1,80 @@
+schema_version = "1.4"
+artifacts = ["/workspace/mechanisms"]
+
+[metadata]
+deliverables = ["mechanisms/mechanism.md", "mechanisms/experiment.log", "mechanisms/mechanism.py"]
+mechanisms_max_mb = 1024
+blocked_hosts = [
+    "huggingface.co", "hf.co", "cdn-lfs.huggingface.co", "cdn-lfs-us-1.hf.co", "cas-bridge.xethub.hf.co",
+    "transfer.xethub.hf.co", "github.com", "www.github.com", "raw.githubusercontent.com",
+    "codeload.github.com", "objects.githubusercontent.com", "github.io", "pypi.org", "pypi.python.org",
+    "files.pythonhosted.org", "registry.npmjs.org", "conda.anaconda.org", "anaconda.org", "ai.meta.com",
+    "about.meta.com", "dl.fbaipublicfiles.com", "biorxiv.org", "www.biorxiv.org", "connect.biorxiv.org",
+    "medrxiv.org", "www.medrxiv.org", "pnas.org", "www.pnas.org", "nature.com", "www.nature.com",
+    "konklab.fas.harvard.edu", "elifesciences.org", "www.elifesciences.org", "cell.com", "www.cell.com",
+    "sciencedirect.com", "www.sciencedirect.com", "ncbi.nlm.nih.gov", "www.ncbi.nlm.nih.gov",
+    "pubmed.ncbi.nlm.nih.gov", "pmc.ncbi.nlm.nih.gov", "europepmc.org", "www.europepmc.org",
+    "semanticscholar.org", "www.semanticscholar.org", "api.semanticscholar.org", "openalex.org",
+    "api.openalex.org", "crossref.org", "api.crossref.org", "doi.org", "dx.doi.org", "arxiv.org",
+    "www.arxiv.org", "export.arxiv.org", "scholar.google.com", "scholar.archive.org", "researchgate.net",
+    "www.researchgate.net", "sci-hub.st", "sci-hub.ru", "royalsocietypublishing.org", "x-mol.com",
+    "www.x-mol.com", "sciety.org", "labs.sciety.org", "discovery.ucl.ac.uk", "discovery-pp.ucl.ac.uk",
+    "oar.princeton.edu", "biophysics.princeton.edu", "molbio.princeton.edu", "microhub.mdibl.org",
+    "hearingbrain.org", "cognitivescience.univie.ac.at", "rcastoragev2.blob.core.windows.net",
+    "themoonlight.io", "doaj.org", "par.nsf.gov", "scholarhub.vn",
+]
+task_vocabulary = ["TRIBE", "occipitotemporal"]
+
+[metadata.simulator]
+name = "tribe"
+
+[[metadata.source_literature]]
+titles = ["Principles of coarse-scale functional organization in occipitotemporal cortex"]
+phrases = ["coarse-scale functional organization", "coarse-scale gradients"]
+authors = ["Stoinski", "Konkle", "Hebart"]
+years = [2026]
+venues = ["bioRxiv"]
+ids = ["10.64898/2026.02.18.706551", "2026.02.18.706551", "706551"]
+
+[[metadata.source_literature]]
+titles = ["Mid-level visual features underlie the high-level categorical organization of the ventral stream", "A mid-level organization of the ventral stream"]
+phrases = ["mid-level visual features", "texforms", "mid-level organization of the ventral stream"]
+authors = ["Long", "Yu", "Konkle"]
+years = [2018, 2017]
+venues = ["PNAS", "Proceedings of the National Academy", "bioRxiv"]
+ids = ["10.1073/pnas.1719616115", "pnas.1719616115", "1719616115", "30171168", "PMC6156638", "10.1101/213934", "213934"]
+
+[[metadata.source_literature]]
+titles = ["Distributed representations of behaviour-derived object dimensions in the human visual system", "Distributed representations of behavior-derived object dimensions in the human visual system"]
+phrases = ["behavior-derived object dimensions", "behaviour-derived object dimensions"]
+authors = ["Contier", "Baker", "Hebart"]
+years = [2024, 2023]
+venues = ["Nature Human Behaviour", "Nat Hum Behav", "bioRxiv"]
+ids = ["10.1038/s41562-024-01980-y", "s41562-024-01980-y", "PMC11576512", "PMC10473665", "10.1101/2023.08.23.553812", "2023.08.23.553812", "553812"]
+
+[[metadata.source_literature]]
+titles = ["A foundation model of vision, audition, and language for in-silico neuroscience"]
+phrases = ["tribe", "tribev2", "trimodal brain encoder", "in-silico neuroscience", "algonauts"]
+authors = ["d'Ascoli", "dAscoli", "Rapin", "Benchetrit", "Brooks", "Begany", "Raugel", "Banville", "King"]
+years = [2026]
+venues = ["arXiv"]
+ids = ["2605.04326", "facebook/tribev2", "facebookresearch/tribev2"]
+
+[[metadata.source_literature]]
+titles = ["TRIBE: TRImodal Brain Encoder for whole-brain fMRI response prediction"]
+phrases = ["tribe", "trimodal brain encoder", "whole-brain fmri response prediction", "algonauts"]
+authors = ["d'Ascoli", "dAscoli", "Rapin", "Benchetrit", "Banville", "King"]
+years = [2025]
+venues = ["arXiv", "ICLR"]
+ids = ["2507.22229", "facebookresearch/algonauts-2025"]
+
+[agent]
+timeout_sec = 14400
+
+[verifier]
+timeout_sec = 172800
+environment_mode = "separate"
+
+[environment]
+docker_image = "neuroscience.sif"
+workdir = "/workspace"

@@ -1,0 +1,286 @@
+{
+  "test_set": {
+    "n_settings": 100,
+    "n_unseen": 33
+  },
+  "reference_fitted_on": "reference_train",
+  "reference_coeffs": [
+    200.0,
+    0.07343998001432653,
+    0.05094655228858072,
+    -0.027436737266516235,
+    0.027079039680709332,
+    0.08385315308493704,
+    0.06612816923803193,
+    0.046470392342989754,
+    -0.02484968566939073,
+    0.024528528015454815,
+    -0.08502352302120995,
+    9.988704619794578e-16,
+    1.3246791962039167e-16,
+    -2.6917978562898957e-16,
+    8.432644053716762e-17,
+    0.17733494107519426,
+    0.5315832692496066,
+    -247.75556040304883,
+    -5.6642249149236825,
+    0.14031113361461953,
+    -0.06994153380972687,
+    -0.6838709982165341,
+    6.145210956723958e-05,
+    -0.00014758557912036068,
+    0.00015312753622404596,
+    -9.67667350305295e-05,
+    -0.15963103921972613,
+    0.5121169450609774,
+    4.2020737054467405,
+    5.201408425742662,
+    -0.12840550252302652,
+    0.06422473488450288,
+    0.6280920110114089,
+    136812.49234682965,
+    -36303.300571517975,
+    621.0342659270356,
+    0.3877774687093533
+  ],
+  "published_mechanism": {
+    "pooled_both": 0.5939931043443185,
+    "unseen_family_both": 0.5709200637887044,
+    "pooled": {
+      "reorientation": 0.4701891833344348,
+      "steering": 0.16919396314880997
+    },
+    "per_setting_median": {
+      "reorientation": 0.4191805405242166,
+      "steering": 0.11422305849331188
+    },
+    "below_zero_fraction": {
+      "reorientation": 0.05,
+      "steering": 0.22
+    },
+    "unseen_family": {
+      "reorientation": 0.500535218181861,
+      "steering": 0.02284429880075345
+    },
+    "seen_family": {
+      "reorientation": 0.4260241611080784,
+      "steering": 0.19547662605494776
+    },
+    "slow_reorientation": 0.6355451896539024,
+    "persistence": {
+      "predicted_halflife_ms": {
+        "steps": 185.0,
+        "rotating": 165.0
+      },
+      "recorded_halflife_ms": {
+        "steps": 190.0,
+        "rotating": 205.0
+      }
+    }
+  },
+  "reduced_runs": {
+    "flat_drive": {
+      "pooled_both": 0.2892341725336861,
+      "unseen_family_both": 0.1271920285846192,
+      "pooled": {
+        "reorientation": 0.0445137986906996,
+        "steering": -0.0224747245861856
+      },
+      "per_setting_median": {
+        "reorientation": -0.029158960254502486,
+        "steering": -0.026227807243512924
+      },
+      "below_zero_fraction": {
+        "reorientation": 0.7,
+        "steering": 0.84
+      },
+      "unseen_family": {
+        "reorientation": -0.06277183852999091,
+        "steering": -0.14210579216616037
+      },
+      "seen_family": {
+        "reorientation": 0.027734234863487583,
+        "steering": -0.008452826632323607
+      },
+      "slow_reorientation": 0.5383612816346282,
+      "persistence": {
+        "predicted_halflife_ms": {
+          "steps": 290.0,
+          "rotating": 290.0
+        },
+        "recorded_halflife_ms": {
+          "steps": 190.0,
+          "rotating": 205.0
+        }
+      }
+    },
+    "slow_drive": {
+      "pooled_both": 0.4681460560050814,
+      "unseen_family_both": 0.4688572304975078,
+      "pooled": {
+        "reorientation": 0.2976622965579431,
+        "steering": 0.03986288156179285
+      },
+      "per_setting_median": {
+        "reorientation": 0.22390129828525046,
+        "steering": -0.015624747698804842
+      },
+      "below_zero_fraction": {
+        "reorientation": 0.1,
+        "steering": 0.54
+      },
+      "unseen_family": {
+        "reorientation": 0.3728326891473651,
+        "steering": -0.04879728800612604
+      },
+      "seen_family": {
+        "reorientation": 0.22555587211651884,
+        "steering": 0.04585636123676662
+      },
+      "slow_reorientation": 0.6218719887694536,
+      "persistence": {
+        "predicted_halflife_ms": {
+          "steps": 285.0,
+          "rotating": 280.0
+        },
+        "recorded_halflife_ms": {
+          "steps": 190.0,
+          "rotating": 205.0
+        }
+      }
+    }
+  },
+  "published_mechanism_refit_half": {
+    "pooled_both": 0.6036199812478933,
+    "unseen_family_both": 0.6153609989121797,
+    "pooled": {
+      "reorientation": 0.48320545269192916,
+      "steering": 0.16059224705437924
+    },
+    "per_setting_median": {
+      "reorientation": 0.43018742506946955,
+      "steering": 0.1464542942925926
+    },
+    "below_zero_fraction": {
+      "reorientation": 0.0,
+      "steering": 0.22
+    },
+    "unseen_family": {
+      "reorientation": 0.5607725392529221,
+      "steering": 0.052606477613907465
+    },
+    "seen_family": {
+      "reorientation": 0.41463960634761166,
+      "steering": 0.17886664644530348
+    },
+    "slow_reorientation": 0.6078055206299545,
+    "persistence": {
+      "predicted_halflife_ms": {
+        "steps": 195.0,
+        "rotating": 165.0
+      },
+      "recorded_halflife_ms": {
+        "steps": 190.0,
+        "rotating": 205.0
+      }
+    }
+  },
+  "reduced_runs_refit_half": {
+    "flat_drive": {
+      "pooled_both": 0.18464737114637098,
+      "unseen_family_both": -0.004461028620783791,
+      "pooled": {
+        "reorientation": -0.10884409226113201,
+        "steering": -0.00448326356970119
+      },
+      "per_setting_median": {
+        "reorientation": -0.14499424934116523,
+        "steering": -0.023532870468838785
+      },
+      "below_zero_fraction": {
+        "reorientation": 0.98,
+        "steering": 0.88
+      },
+      "unseen_family": {
+        "reorientation": -0.22564486666849182,
+        "steering": -0.08222897912502303
+      },
+      "seen_family": {
+        "reorientation": -0.14226035980943408,
+        "steering": 0.0005594529216719213
+      },
+      "slow_reorientation": 0.4308347599788196,
+      "persistence": {
+        "predicted_halflife_ms": {
+          "steps": 405.0,
+          "rotating": 395.0
+        },
+        "recorded_halflife_ms": {
+          "steps": 190.0,
+          "rotating": 205.0
+        }
+      }
+    },
+    "slow_drive": {
+      "pooled_both": -5.953707888745083,
+      "unseen_family_both": -7.258122040510507,
+      "pooled": {
+        "reorientation": -8.939442804424253,
+        "steering": 0.044722010504619436
+      },
+      "per_setting_median": {
+        "reorientation": -9.245871521391685,
+        "steering": -0.015999833724176793
+      },
+      "below_zero_fraction": {
+        "reorientation": 1.0,
+        "steering": 0.62
+      },
+      "unseen_family": {
+        "reorientation": -9.523364473590071,
+        "steering": 0.011231297512463545
+      },
+      "seen_family": {
+        "reorientation": -9.424868153878442,
+        "steering": 0.03629737325496907
+      },
+      "slow_reorientation": -14.179242224714468,
+      "persistence": {
+        "predicted_halflife_ms": {
+          "steps": 420.0,
+          "rotating": 400.0
+        },
+        "recorded_halflife_ms": {
+          "steps": 190.0,
+          "rotating": 205.0
+        }
+      }
+    }
+  },
+  "optimisation_ceiling": {
+    "reorientation": {
+      "pooled": 0.8378813821614812,
+      "unseen_family": 0.9399846357387964,
+      "seen_family": 0.7883490002530498
+    },
+    "steering": {
+      "pooled": 0.7601273330507557,
+      "unseen_family": 0.7595713680372045,
+      "seen_family": 0.7550822889365805
+    },
+    "slow_reorientation": 0.9880480226047671
+  },
+  "pa_scores": {
+    "PA1": 0.23661956399902048,
+    "PA2": 0.24564662544949828,
+    "PA3": 0.13470063713127933,
+    "PA4": 0.11422305849331188,
+    "PA5": 0.6868421147403698,
+    "PA6": 0.19215706049579895,
+    "PA7": 0.03616024329948985,
+    "PA8": 0.5138544910201494
+  },
+  "predictive_accuracy": 0.27,
+  "calibrate_seconds": 136.9,
+  "fingerprint": "16f85f84d5008604"
+}

@@ -1,0 +1,148 @@
+{
+  "fingerprint": "98d6a0dad72b1be7",
+  "n_settings": 100,
+  "seed": 0,
+  "duration_ms": 3000.0,
+  "dt_ms": 0.025,
+  "save_every_ms": 5.0,
+  "settle_ms": 300.0,
+  "parameter_set": "C1",
+  "protocol_version": 3,
+  "families": {
+    "standard": 60,
+    "wide_range": 16,
+    "repeated_state": 10,
+    "rhythm_only": 4,
+    "state_only": 4,
+    "two_states": 6
+  },
+  "ranges": {
+    "standard": {
+      "state_pa": [
+        9.0,
+        16.0
+      ],
+      "rhythm_pa": [
+        1.0,
+        4.0
+      ],
+      "period_ms": [
+        220.0,
+        420.0
+      ],
+      "waves": [
+        1.0,
+        2.2
+      ],
+      "epoch_ms": [
+        700.0,
+        1500.0
+      ]
+    },
+    "wide": {
+      "state_pa": [
+        6.0,
+        20.0
+      ],
+      "rhythm_pa": [
+        0.5,
+        5.0
+      ],
+      "period_ms": [
+        180.0,
+        520.0
+      ],
+      "waves": [
+        0.6,
+        3.0
+      ],
+      "epoch_ms": [
+        500.0,
+        2000.0
+      ]
+    }
+  },
+  "panel": [
+    "DB1",
+    "DB2",
+    "DB3",
+    "DB4",
+    "DB5",
+    "DB6",
+    "DB7",
+    "VB1",
+    "VB2",
+    "VB3",
+    "VB4",
+    "VB5",
+    "VB6",
+    "VB7",
+    "VB8",
+    "VB9",
+    "VB10",
+    "VB11",
+    "DD1",
+    "DD2",
+    "DD3",
+    "DD4",
+    "DD5",
+    "DD6",
+    "VD1",
+    "VD2",
+    "VD3",
+    "VD4",
+    "VD5",
+    "VD6",
+    "VD7",
+    "VD8",
+    "VD9",
+    "VD10",
+    "VD12",
+    "VD13",
+    "AS1",
+    "AS2",
+    "AS3",
+    "AS4",
+    "AS5",
+    "AS6",
+    "AS7",
+    "AS8",
+    "AS9",
+    "AS10",
+    "AS11",
+    "SMDVL",
+    "SMDVR",
+    "RMDDL",
+    "RMEV",
+    "AIBL",
+    "AIBR",
+    "DVA",
+    "PVR"
+  ],
+  "panel_other": [
+    "AS1",
+    "AS2",
+    "AS3",
+    "AS4",
+    "AS5",
+    "AS6",
+    "AS7",
+    "AS8",
+    "AS9",
+    "AS10",
+    "AS11",
+    "SMDVL",
+    "SMDVR",
+    "RMDDL",
+    "RMEV",
+    "AIBL",
+    "AIBR",
+    "DVA",
+    "PVR"
+  ],
+  "thresholds": {
+    "PA2_per_neuron_r2_floor": 0.0
+  },
+  "build_seconds": 3138.7,
+  "build_workers": 8
+}

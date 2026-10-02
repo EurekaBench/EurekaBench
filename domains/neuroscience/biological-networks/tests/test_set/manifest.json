@@ -1,0 +1,41 @@
+{
+  "fingerprint": "aa9abdc0ada98055",
+  "n_settings": 96,
+  "n_states": 3,
+  "n_protocols": 32,
+  "seed": 0,
+  "duration_ms": 4000.0,
+  "save_every_ms": 2.0,
+  "n_unseen_family": 30,
+  "unseen_family": "sine currents on the two sensory cells",
+  "seen_family": "square pulse trains",
+  "stim_cells": [
+    "AWCL",
+    "AWCR"
+  ],
+  "steering_cells": [
+    [
+      "RIAL"
+    ],
+    [
+      "RIAR"
+    ]
+  ],
+  "reorientation_cells": [
+    [
+      "AVAL",
+      "AVAR"
+    ],
+    [
+      "AVBL",
+      "AVBR"
+    ]
+  ],
+  "signal_std": {
+    "reorientation": 2.836336135864258,
+    "steering": 3.882098913192749
+  },
+  "build_seconds": 518.8,
+  "build_workers": 6,
+  "readout_tau_ms": 200.0
+}

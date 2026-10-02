@@ -1,0 +1,29 @@
+{
+  "problem": "visual_object_properties",
+  "shipped_coeffs": [
+    0.0
+  ],
+  "submitted": {
+    "all": 0.2725117873837297,
+    "animate": 0.169053888940358,
+    "inanimate": 0.0785987309459642
+  },
+  "predict_seconds": 0.0,
+  "fit_seconds": 0.0,
+  "refit_coeffs": [
+    0.1
+  ],
+  "refit": {
+    "all": 0.2758910212582935,
+    "animate": 0.19504364973414673,
+    "inanimate": 0.060977099410692626
+  },
+  "pa_scores": {
+    "PA1": 0.274201,
+    "PA2": 0.182049,
+    "PA3": 0.069788
+  },
+  "predictive_accuracy": 0.175346,
+  "note": "the published mechanism on the same held-out objects, scored by the same function as a submission; context, never a level to clear",
+  "test_set_fingerprint": "107cf46983a49305"
+}

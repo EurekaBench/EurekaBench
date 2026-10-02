@@ -1,0 +1,100 @@
+{
+  "fingerprint": "16f85f84d5008604",
+  "n_settings": 100,
+  "seed": 0,
+  "duration_ms": 9000.0,
+  "save_every_ms": 5.0,
+  "n_unseen_family": 33,
+  "seen_family": "irregular trains of square pulses, every width, gap, total and side split drawn on its own",
+  "unseen_family": "periodic square pulse trains at a fixed width and period, with the total and the side split rotating smoothly through the run",
+  "stim_cells": [
+    "AWCL",
+    "AWCR"
+  ],
+  "steering_cells": [
+    [
+      "RIAL"
+    ],
+    [
+      "RIAR"
+    ]
+  ],
+  "reorientation_cells": [
+    [
+      "AVAL",
+      "AVAR"
+    ],
+    [
+      "AVBL",
+      "AVBR"
+    ]
+  ],
+  "readout_tau_ms": 200.0,
+  "steering_readout_check": {
+    "corr": 0.5869104250684429,
+    "signed": 0.970073103585309,
+    "common": 1.7584490238771784,
+    "declared": "RIA",
+    "declared_cells": {
+      "plus": [
+        "RIAL"
+      ],
+      "minus": [
+        "RIAR"
+      ]
+    },
+    "candidates": {
+      "RIA": {
+        "corr": 0.5869104250684429,
+        "signed": 0.970073103585309,
+        "common": 1.7584490238771784
+      },
+      "SMD_dorsoventral": {
+        "corr": -0.09882953904386257,
+        "signed": -1.2765687770894587,
+        "common": 9.999806881192558
+      },
+      "headmotor": {
+        "corr": 0.2048428101073055,
+        "signed": 0.47170985276584365,
+        "common": 1.7989022499348946
+      },
+      "RIA_SMD": {
+        "corr": 0.29677691631344716,
+        "signed": 0.648675470334681,
+        "common": 2.0748712968575793
+      },
+      "AIZ": {
+        "corr": 0.03915819474398843,
+        "signed": -0.04114845958775626,
+        "common": 1.629421926693329
+      },
+      "AIB": {
+        "corr": 0.6978772188189578,
+        "signed": 0.7922676869731747,
+        "common": 1.2980354464259074
+      },
+      "AIY": {
+        "corr": 0.46475041195316596,
+        "signed": 1.3705663261688177,
+        "common": 2.6126848584480076
+      },
+      "RIV": {
+        "corr": 0.8510200184110287,
+        "signed": 0.43917625087879786,
+        "common": 0.28992968977724765
+      },
+      "SMD_leftright": {
+        "corr": 0.13088096480232278,
+        "signed": 0.48797665370936616,
+        "common": 2.8029628842001166
+      }
+    }
+  },
+  "signal_std": {
+    "reorientation": 2.3651951909766087,
+    "steering": 0.6020313779296378
+  },
+  "build_seconds": 1932.0,
+  "build_workers": 6
+}

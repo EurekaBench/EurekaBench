@@ -1,0 +1,87 @@
+{
+  "problem": "sensory_integration",
+  "fingerprint": "f13888a87b3012b7",
+  "seed": 0,
+  "n_settings": 100,
+  "n_panel": 800,
+  "n_timesteps": 8,
+  "segment_s": 10.0,
+  "settings_per_clip": 10,
+  "duration_s": 100.0,
+  "conditions": [
+    "av",
+    "v",
+    "a",
+    "base"
+  ],
+  "pa_ids": [
+    "PA1",
+    "PA2",
+    "PA3",
+    "PA4"
+  ],
+  "pa_labels": {
+    "PA1": "how much of the two senses together reaches a location",
+    "PA2": "which of the two senses a location favours",
+    "PA3": "how much of a location's no-stimulus level survives",
+    "PA4": "which locations carry the part neither sense accounts for"
+  },
+  "protocol_version": 2,
+  "scoring": "each criterion is a coefficient of determination on its own quantity, held inside 0 and 1 and averaged over the submitted and the refit run; the predictive accuracy is the mean of the criteria",
+  "target": {
+    "pass_through": 0.3865933104503957,
+    "sense_balance": 0.7439829965324358,
+    "baseline_retention": 0.2678499110330367,
+    "extra_size": 0.8763118903597478,
+    "n_terms": 10
+  },
+  "checks": {
+    "C1": {
+      "value": "0.05426",
+      "expected": "> 1e-4",
+      "pass": true
+    },
+    "C2": {
+      "value": "0.06751",
+      "expected": "> 1e-4",
+      "pass": true
+    },
+    "C3": {
+      "value": "0.06578 from A, 0.05569 from V",
+      "expected": "both > 0.01923",
+      "pass": true
+    },
+    "C4": {
+      "value": "r = 0.076",
+      "expected": "< 0.95",
+      "pass": true
+    },
+    "C5": {
+      "value": "63.6% of variance",
+      "expected": "> 10%",
+      "pass": true
+    },
+    "D1": {
+      "value": "22.14% of the response",
+      "expected": "> 1%",
+      "pass": true
+    },
+    "D2": {
+      "value": "spread 20.9%",
+      "expected": "> 5%",
+      "pass": true
+    },
+    "E1": {
+      "value": "PA 0.000",
+      "expected": "< 0.85",
+      "pass": true
+    },
+    "E2": {
+      "value": "lowest PA3 = 0.268",
+      "expected": "> 0.05",
+      "pass": true
+    }
+  },
+  "checks_failed": [],
+  "build_seconds": 10104.6
+}

@@ -1,0 +1,90 @@
+predictive_accuracy:
+  criteria:
+  - id: PA1
+    machine: true
+    criterion: 'Whether the model predicts the particle mass of simulations it never saw: r2 of 1/M_WDM on the held-out simulations with the submitted constants, clipped to 0 and 1.'
+  - id: PA2
+    machine: true
+    criterion: 'Whether the functional form holds on its own: its fit_coeffs refits the constants on a random half of the held-out simulations with the form frozen, and the score is r2 of 1/M_WDM on the disjoint other half, clipped to 0 and 1.'
+  - id: PA3
+    machine: true
+    criterion: 'Whether the model reads the particle mass from the progenitors off the main branch rather than from the growth of the host itself: with the submitted constants, r2 on the full held-out trees minus r2 on their main branch alone, each floored at 0, clipped to 0 and 1.'
+  - id: PA4
+    machine: true
+    criterion: 'Whether the model reads the particle mass from which progenitors the tree holds rather than from how they are linked: with the submitted constants, r2 on the held-out trees with their descendant links replaced by a chain in storage order, capped at the full-tree r2 and clipped to 0 and 1.'
+scientific_constraints:
+  criteria:
+  - id: SC1
+    criterion: The particle mass acts on structure only through the initial density fluctuations.
+    source: A general assumption about thermal warm dark matter is that its free streaming matters only in the early universe, so the particle mass enters structure formation through the suppressed initial fluctuations.
+  - id: SC2
+    criterion: Dark matter interacts only through gravity.
+    source: A general assumption about these simulations is that dark matter is collisionless and couples to gas and stars through gravity alone.
+  - id: SC3
+    criterion: A lighter particle suppresses more small-scale structure than a heavier one.
+    source: As stated in the task specification, "A lighter warm dark matter (WDM) particle streams farther in the early universe and erases more of the small-scale fluctuations that seed low-mass halos."
+  - id: SC4
+    criterion: The effect of the particle mass vanishes in the cold dark matter limit.
+    source: A general assumption about thermal warm dark matter is that its free-streaming length shrinks as the particle mass grows, so structure approaches cold dark matter as 1/M_WDM goes to zero.
+  - id: SC5
+    criterion: Halos far above the free-streaming scale form as they would in cold dark matter.
+    source: A general assumption about warm dark matter is that it suppresses structure only below its free-streaming scale, which for keV-scale thermal relics lies far below a Milky-Way-mass halo.
+  - id: SC6
+    criterion: A Milky-Way-mass halo is assembled from smaller progenitors through mergers.
+    source: As stated in the task specification, low-mass halos are "the building blocks from which a Milky-Way-mass halo grows through mergers."
+  - id: SC7
+    criterion: Halos formed under the same simulation parameters can have different merger histories.
+    source: A general assumption of hierarchical structure formation is that halos of the same final mass reach it through a wide spread of assembly histories.
+  - id: SC8
+    criterion: Not every dark matter halo hosts a galaxy.
+    source: A general assumption of galaxy formation is that star formation in low-mass halos is suppressed by reionization and feedback.
+  - id: SC9
+    criterion: The particle mass can be recovered from the merger tree of a single Milky-Way-mass host.
+    source: As stated in the task specification, "the particle mass can be read back from the merger tree of each simulation's Milky-Way-mass host."
+completeness:
+  criteria:
+  - id: C1
+    criterion: mechanism.md and mechanism.py are both present and describe the same mechanism. The .md file gives its causal chain and evidence, while the .py file defines PROPERTIES, STATISTICS, COEFFS, compute_statistics, predict_inv_mwdm and fit_coeffs, and applies one deterministic computation to every simulation using that simulation's own tree alone, with at most 8 statistics and 10 fitted constants.
+  - id: C2
+    criterion: experiment.log is present in the mechanisms folder.
+insights:
+  criteria:
+  - id: I4
+    criterion: Does the discovered mechanism explain why the times at which the progenitors appear carry information about the particle mass beyond their number?
+    kind: finding
+  - id: I5
+    criterion: Does the discovered mechanism explain why the smallest progenitors carry a large share of the information about the particle mass?
+    kind: finding
+  - id: I6
+    criterion: Does the discovered mechanism explain why the dark matter masses of the progenitors add information about the particle mass beyond their number?
+    kind: finding
+  - id: I7
+    criterion: Does the discovered mechanism explain why heavy particle masses can no longer be told apart from the tree?
+    kind: finding
+  - id: I8
+    criterion: Does the discovered mechanism establish when in cosmic time the tree records the particle mass?
+    kind: finding
+  - id: I9
+    criterion: Does the discovered mechanism establish the progenitor mass below which the tree responds to the particle mass?
+    kind: finding
+  - id: I10
+    criterion: Does the discovered mechanism explain why the gas content of the progenitors relative to their dark matter tracks the particle mass?
+    kind: finding
+  - id: I11
+    criterion: Does the discovered mechanism explain why the structure of the tree reveals the supernova wind energy but not the wind speed?
+    kind: limitation
+  - id: I12
+    criterion: Does the discovered mechanism explain why AGN feedback leaves no imprint on the tree?
+    kind: limitation
+  - id: I15
+    criterion: Does the discovered mechanism explain why a single summary statistic of the progenitor dark matter masses carries little information about the particle mass?
+    kind: finding
+  - id: I16
+    criterion: Does the discovered mechanism explain why the progenitors above redshift 7 with dark matter masses near 10^8 Msun are enough to recover the particle mass?
+    kind: finding
+  - id: I17
+    criterion: Does the discovered mechanism explain why the particle mass is recovered with little scatter below about 4 keV?
+    kind: finding
+  - id: I18
+    criterion: Does the discovered mechanism explain why the limit above which the tree no longer separates particle masses falls near 8 keV?
+    kind: finding

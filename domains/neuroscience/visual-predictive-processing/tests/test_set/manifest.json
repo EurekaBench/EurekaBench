@@ -1,0 +1,111 @@
+{
+  "problem": "visual_predictive_processing",
+  "fingerprint": "84a19870e872f5b6",
+  "recording_fingerprint": "59e647238fe5c7fc",
+  "props_version": 2,
+  "seed": 0,
+  "n_settings": 60,
+  "n_panel": 600,
+  "n_timesteps": 8,
+  "segment_s": 10.0,
+  "settings_per_clip": 1,
+  "duration_s": 10.0,
+  "conditions": [
+    "both",
+    "surround",
+    "part",
+    "implied",
+    "base"
+  ],
+  "positions": [
+    "centre",
+    "off"
+  ],
+  "fine_agreement": [
+    0.0,
+    0.5,
+    1.0
+  ],
+  "coarse_agreement": [
+    0.0,
+    1.0
+  ],
+  "pa_ids": [
+    "PA1",
+    "PA2",
+    "PA3"
+  ],
+  "pa_labels": {
+    "PA1": "the response to a part of a scene sitting inside its surround",
+    "PA2": "how far a location is held back as the surround implies the part",
+    "PA3": "which grain of agreement a location answers to"
+  },
+  "protocol_version": 2,
+  "scoring": "each criterion is a skill score on its own quantity, 1 for the recording reproduced and 0 for no closer than the closest answer that needs no mechanism, held inside 0 and 1 and averaged over the submitted and the refit run; the predictive accuracy is the mean of the criteria",
+  "target": {
+    "response": 0.2697701514917381,
+    "holding_back": 0.5478436550813836,
+    "grain_contrast": 0.31175752363489895,
+    "n_terms": 8,
+    "note": "the better on each criterion of two linear rules over the same columns, each shared by every location, one fitted on how the response changes between the test settings and one fitted to every criterion at once, both on the test settings themselves and scored the way a submission is"
+  },
+  "checks": {
+    "C1": {
+      "value": "0.08638",
+      "expected": "> 1e-4",
+      "pass": true
+    },
+    "C2": {
+      "value": "0.06930",
+      "expected": "> 1e-4",
+      "pass": true
+    },
+    "C3": {
+      "value": "0.01983 from the part, 0.02068 from the surround",
+      "expected": "both > 0.01692",
+      "pass": true
+    },
+    "C4": {
+      "value": "55.0% of what is left once each location's own level is out",
+      "expected": "> 10%",
+      "pass": true
+    },
+    "D1": {
+      "value": "14.14% of the response per unit agreement",
+      "expected": "> 1%",
+      "pass": true
+    },
+    "D2": {
+      "value": "spread 8.160e-03",
+      "expected": "> 0",
+      "pass": true
+    },
+    "D3": {
+      "value": "30 centre, 30 off centre",
+      "expected": ">= 6 each",
+      "pass": true
+    },
+    "F1": {
+      "value": "median r = 0.965 over 50 splits",
+      "expected": "> 0.5",
+      "pass": true
+    },
+    "F2": {
+      "value": "median r = 0.952 over 50 splits",
+      "expected": "> 0.5",
+      "pass": true
+    },
+    "E1": {
+      "value": "adding the two PA 0.000, copying the surround PA 0.000, copying the part PA 0.000, target PA 0.376",
+      "expected": "all <= 0.226",
+      "pass": true
+    },
+    "E2": {
+      "value": "lowest PA1 = 0.270",
+      "expected": "> 0.05",
+      "pass": true
+    }
+  },
+  "checks_failed": [],
+  "build_seconds": 7486.1
+}

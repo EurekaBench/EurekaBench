@@ -1,0 +1,118 @@
+schema_version = "1.4"
+artifacts = ["/workspace/mechanisms", "/workspace/steering"]
+
+[metadata]
+deliverables = ["mechanisms/circuit/importances.json", "mechanisms/method/method.py", "mechanisms/experiments.md"]
+mechanisms_max_mb = 500
+blocked_hosts = [
+    "huggingface.co", "www.huggingface.co", "hf.co", "cdn-lfs.huggingface.co", "cdn-lfs-us-1.huggingface.co",
+    "cdn-lfs-eu-1.huggingface.co", "github.com", "www.github.com", "raw.githubusercontent.com",
+    "codeload.github.com", "objects.githubusercontent.com", "github.io", "gitlab.com", "www.gitlab.com", "pypi.org",
+    "pypi.python.org", "files.pythonhosted.org", "registry.npmjs.org", "conda.anaconda.org", "anaconda.org",
+    "arxiv.org", "www.arxiv.org", "export.arxiv.org", "alphaxiv.org", "www.alphaxiv.org", "openreview.net",
+    "www.openreview.net", "semanticscholar.org", "www.semanticscholar.org", "api.semanticscholar.org",
+    "openalex.org", "api.openalex.org", "crossref.org", "api.crossref.org", "doi.org", "dx.doi.org",
+    "scholar.google.com", "scholar.archive.org", "researchgate.net", "www.researchgate.net", "paperswithcode.com",
+    "www.paperswithcode.com", "aclanthology.org", "www.aclanthology.org", "ar5iv.labs.arxiv.org", "ar5iv.org",
+    "www.ar5iv.org", "web3.arxiv.org", "emergentmind.com", "www.emergentmind.com", "mib-bench.github.io",
+    "proceedings.mlr.press", "icml.cc", "www.icml.cc", "mlanthology.org", "dare.uva.nl", "themoonlight.io",
+    "www.themoonlight.io", "catalyzex.com", "www.catalyzex.com", "papers.lunadong.com", "preview.aclanthology.org",
+]
+sandbox_env = {HF_HOME = "/opt/hf", HF_HUB_OFFLINE = "1"}
+continue_rounds = 0
+task_vocabulary = []
+
+[metadata.simulator]
+name = "lm-circuit"
+args = {blackbox = "llama3", task = "mcqa", domain = "circuit_discovery"}
+verifier_args = {blackbox = "llama3", task = "mcqa", domain = "circuit_discovery"}
+
+[[metadata.stages]]
+name = "discovery"
+timeout_sec = 14400
+
+[[metadata.stages]]
+name = "steer_to_first_option"
+instruction = "stages/steer_to_first_option/instruction.md"
+data = "stages/steer_to_first_option/data.json"
+timeout_sec = 7200
+needs = "mechanisms/circuit/importances.json"
+deliverables = ["mechanisms/selected_components.json", "mechanisms/steering_values.pt", "mechanisms/steering_results.json"]
+collect = "steering/steer_to_first_option"
+max_mb = 500
+carry = [
+    {from = ["mechanisms/circuit/importances.json"], to = "circuit/importances.json", note = "the discovered circuit (an importance score for every edge)"},
+    {from = ["mechanisms/method/method.py"], to = "circuit/method.py", note = "the attribution method that produced the circuit"},
+    {from = ["mechanisms/report.md", "mechanisms/experiments.md"], to = "circuit/discovery_log.md", note = "the circuit-discovery agent's experiment log"},
+]
+listing = "{artifact_lines}"
+simulator = {domain = "circuit_steering", steering_target = "steer_to_first_option"}
+
+[[metadata.stages]]
+name = "steer_to_last_option"
+instruction = "stages/steer_to_last_option/instruction.md"
+data = "stages/steer_to_last_option/data.json"
+timeout_sec = 7200
+needs = "mechanisms/circuit/importances.json"
+deliverables = ["mechanisms/selected_components.json", "mechanisms/steering_values.pt", "mechanisms/steering_results.json"]
+collect = "steering/steer_to_last_option"
+max_mb = 500
+carry = [
+    {from = ["mechanisms/circuit/importances.json"], to = "circuit/importances.json", note = "the discovered circuit (an importance score for every edge)"},
+    {from = ["mechanisms/method/method.py"], to = "circuit/method.py", note = "the attribution method that produced the circuit"},
+    {from = ["mechanisms/report.md", "mechanisms/experiments.md"], to = "circuit/discovery_log.md", note = "the circuit-discovery agent's experiment log"},
+]
+listing = "{artifact_lines}"
+simulator = {domain = "circuit_steering", steering_target = "steer_to_last_option"}
+
+[[metadata.stages]]
+name = "steer_to_symbol"
+instruction = "stages/steer_to_symbol/instruction.md"
+data = "stages/steer_to_symbol/data.json"
+timeout_sec = 7200
+needs = "mechanisms/circuit/importances.json"
+deliverables = ["mechanisms/selected_components.json", "mechanisms/steering_values.pt", "mechanisms/steering_results.json"]
+collect = "steering/steer_to_symbol"
+max_mb = 500
+carry = [
+    {from = ["mechanisms/circuit/importances.json"], to = "circuit/importances.json", note = "the discovered circuit (an importance score for every edge)"},
+    {from = ["mechanisms/method/method.py"], to = "circuit/method.py", note = "the attribution method that produced the circuit"},
+    {from = ["mechanisms/report.md", "mechanisms/experiments.md"], to = "circuit/discovery_log.md", note = "the circuit-discovery agent's experiment log"},
+]
+listing = "{artifact_lines}"
+simulator = {domain = "circuit_steering", steering_target = "steer_to_symbol"}
+
+[metadata.judge]
+evaluation = "host"
+required = ""
+list_all_criteria = true
+judge_kit = false
+gpu_phases = ["insights_strict"]
+timeout_sec = 7200
+
+[[metadata.source_literature]]
+titles = ["MIB: A Mechanistic Interpretability Benchmark"]
+phrases = ["mib bench", "mib benchmark", "mib circuit track"]
+authors = ["Mueller"]
+years = [2025]
+venues = ["ICML", "PMLR"]
+ids = ["2504.13151", "10.48550/arXiv.2504.13151", "mueller25a", "aaronmueller/MIB"]
+
+[[metadata.source_literature]]
+titles = []
+phrases = ["blackboxnlp 2025 shared task"]
+authors = ["Arad", "Tutek"]
+years = [2025]
+venues = ["BlackboxNLP"]
+ids = ["2511.18409", "10.48550/arXiv.2511.18409", "2025.blackboxnlp-1.32"]
+
+[agent]
+timeout_sec = 37800
+
+[verifier]
+timeout_sec = 172800
+environment_mode = "separate"
+
+[environment]
+docker_image = "computer-science.sif"
+workdir = "/workspace"

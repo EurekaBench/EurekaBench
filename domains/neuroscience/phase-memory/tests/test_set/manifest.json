@@ -1,0 +1,205 @@
+{
+ "fingerprint": "b4fa7656e04a5cf6",
+ "protocol_version": 4,
+ "seed": 0,
+ "n_settings": 100,
+ "families": {
+  "standard": 54,
+  "phase_pair": 12,
+  "long_reversal": 34
+ },
+ "ranges": {
+  "standard": {
+   "period_ms": [
+    240.0,
+    420.0
+   ],
+   "cycles": [
+    3,
+    5
+   ],
+   "swing_pa": [
+    3.0,
+    6.0
+   ],
+   "odor_pa": [
+    6.0,
+    12.0
+   ],
+   "reversal_pa": [
+    14.0,
+    14.0
+   ],
+   "reversal_periods": [
+    2,
+    5
+   ]
+  },
+  "long_reversal": {
+   "period_ms": [
+    240.0,
+    420.0
+   ],
+   "cycles": [
+    3,
+    5
+   ],
+   "swing_pa": [
+    3.0,
+    6.0
+   ],
+   "odor_pa": [
+    6.0,
+    12.0
+   ],
+   "reversal_pa": [
+    14.0,
+    14.0
+   ],
+   "reversal_periods": [
+    7,
+    10
+   ]
+  }
+ },
+ "cells": [
+  "AWAL",
+  "AWAR",
+  "AIAL",
+  "AIAR",
+  "AIBL",
+  "AIBR",
+  "AIYL",
+  "AIYR",
+  "AIZL",
+  "AIZR",
+  "AVAL",
+  "AVAR",
+  "AVBL",
+  "AVBR",
+  "AVDL",
+  "AVDR",
+  "AVEL",
+  "AVER",
+  "PVCL",
+  "PVCR",
+  "RIAL",
+  "RIAR",
+  "RIBL",
+  "RIBR",
+  "RIML",
+  "RIMR",
+  "RIS",
+  "RID",
+  "RIVL",
+  "RIVR",
+  "SMDDL",
+  "SMDDR",
+  "SMDVL",
+  "SMDVR",
+  "RMDDL",
+  "RMDDR",
+  "RMDVL",
+  "RMDVR",
+  "RMDL",
+  "RMDR",
+  "RMED",
+  "RMEV",
+  "RMEL",
+  "RMER",
+  "SAAVL",
+  "SAAVR",
+  "SAADL",
+  "SAADR"
+ ],
+ "stim_cells": [
+  "AWAL",
+  "AWAR",
+  "SMDDL",
+  "SMDDR",
+  "SMDVL",
+  "SMDVR",
+  "AVAL",
+  "AVAR"
+ ],
+ "environment": {
+  "name": "C0_rimv16_aibv8_e5i2_pulse0.5",
+  "parameter_set": "C0",
+  "amplitude_scale": 0.3,
+  "odor_gain": 5.0,
+  "odor_fraction": 0.5,
+  "connection_polarity_override": {
+   "^SMDD[LR]-SMDV[LR]$": "inh",
+   "^SMDV[LR]-SMDD[LR]$": "inh",
+   "^RMDD[LR]-RMDV[LR]$": "inh",
+   "^RMDV[LR]-RMDD[LR]$": "inh"
+  },
+  "connection_number_scaling": {
+   "^SMDD[LR]-SMDV[LR]$": 8.0,
+   "^SMDV[LR]-SMDD[LR]$": 8.0,
+   "^RMDD[LR]-RMDV[LR]$": 4.0,
+   "^RMDV[LR]-RMDD[LR]$": 4.0,
+   "^RIM[LR]-SMDD[LR]$": 16.0,
+   "^RIM[LR]-SMDV[LR]$": 16.0,
+   "^AIB[LR]-SMDD[LR]$": 16.0,
+   "^AIB[LR]-SMDV[LR]$": 8.0,
+   "^SMD[DV][LR]-RIA[LR]$": 16.0,
+   "^RIA[LR]-SMD[DV][LR]$": 16.0
+  },
+  "param_overrides": {
+   "exc_syn_ar": "5 per_s",
+   "inh_syn_ar": "2 per_s",
+   "neuron_to_neuron_exc_syn_conductance": "0.1 nS",
+   "neuron_to_neuron_inh_syn_conductance": "0.1 nS"
+  }
+ },
+ "parameter_set": "C0",
+ "dt_ms": 0.025,
+ "save_every_ms": 5.0,
+ "settle_ms": 300.0,
+ "post_ms": 200.0,
+ "filter_tau_ms": 200.0,
+ "phase_pairs": [
+  [
+   54,
+   55
+  ],
+  [
+   56,
+   57
+  ],
+  [
+   58,
+   59
+  ],
+  [
+   60,
+   61
+  ],
+  [
+   62,
+   63
+  ],
+  [
+   64,
+   65
+  ]
+ ],
+ "thresholds": {
+  "PA1": "median phase-locking value above the null pairing and both reduced runs",
+  "PA2": "median end-of-reversal phase error below pi/2 and both reduced runs",
+  "PA3": "balanced sign accuracy above 0.5 and both reduced runs",
+  "PA4": "balanced sign accuracy on the long-reversal family above 0.5 and both reduced runs",
+  "PA5": "phase-pair flip agreement above 0.5 and both reduced runs",
+  "PA6": "retention above its null and both reduced runs and at least 0.8 of the whole-reversal value",
+  "PA7": "refit half: PA1 and PA3 both hold on the disjoint other half"
+ },
+ "turn_sign_counts": {
+  "dorsal": 52,
+  "ventral": 48
+ },
+ "n_oscillating_through_reversal": 100,
+ "n_decided_turns": 100,
+ "build_seconds": 1981.9,
+ "build_workers": 8
+}

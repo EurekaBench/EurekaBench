@@ -1,0 +1,3906 @@
+{
+  "problem": "nt_core_only",
+  "seed": 0,
+  "fingerprint": "6ed6ac213890d3b5",
+  "n_settings": 149,
+  "t_final": 1.2,
+  "n_rho": 25,
+  "families": {
+    "mirrored_pair": 16,
+    "triangularity_scan": 3,
+    "density_scan": 6,
+    "heating_pair": 8,
+    "elongation_variant": 6,
+    "size_variant": 4
+  },
+  "protocol_version": 2,
+  "machine": {
+    "R_major": 1.67,
+    "a_minor": 0.6,
+    "B_0": 2.0,
+    "Ip": 900000.0,
+    "elongation": 1.7,
+    "impurity": "C",
+    "Z_eff": 2.0,
+    "n_line": 4e+19,
+    "T_bc": 0.4,
+    "rho_bc": 0.9,
+    "T_sep": 0.1,
+    "P_aux": 8000000.0,
+    "electron_heat_fraction": 0.5,
+    "aux_location": 0.0,
+    "aux_width": 0.3
+  },
+  "transport": {
+    "model_name": "tglfnn-ukaea",
+    "chi_min": 0.05,
+    "chi_max": 30.0,
+    "D_e_min": 0.05,
+    "apply_inner_patch": true,
+    "rho_inner": 0.1,
+    "chi_i_inner": 1.0,
+    "chi_e_inner": 1.0,
+    "D_e_inner": 0.2,
+    "V_e_inner": 0.0
+  },
+  "props_keys": [
+    "A_i",
+    "A_impurity",
+    "B_0",
+    "B_pol_surface",
+    "B_surface",
+    "F",
+    "FFprime",
+    "Ip",
+    "Ip_profile",
+    "Ip_profile_from_geo",
+    "P_aux_generic_e",
+    "P_aux_generic_i",
+    "P_aux_generic_total",
+    "Phi",
+    "Phi_b",
+    "R_in",
+    "R_major",
+    "R_major_profile",
+    "R_out",
+    "R_surface",
+    "T_bc",
+    "Z_eff",
+    "Z_i",
+    "Z_impurity",
+    "Z_surface",
+    "a_minor",
+    "area",
+    "drho",
+    "drho_norm",
+    "epsilon",
+    "fgw_n_e_line_avg",
+    "fgw_n_e_volume_avg",
+    "g0",
+    "g0_over_vpr",
+    "g1",
+    "g1_over_vpr",
+    "g1_over_vpr2",
+    "g2",
+    "g2g3_over_rhon",
+    "g3",
+    "gm4",
+    "gm5",
+    "gm9",
+    "li3",
+    "magnetic_shear",
+    "n_e",
+    "n_e_line_avg",
+    "n_e_volume_avg",
+    "n_i",
+    "n_i_line_avg",
+    "n_i_over_n_e",
+    "n_i_volume_avg",
+    "n_impurity",
+    "p_ext_e",
+    "p_ext_i",
+    "psi",
+    "psi_from_Ip",
+    "psi_from_geo",
+    "psi_norm",
+    "q",
+    "q95",
+    "q_min",
+    "r_mid",
+    "rho",
+    "rho_b",
+    "rho_bc",
+    "rho_face",
+    "spr",
+    "theta",
+    "volume",
+    "vpr",
+    "z_magnetic_axis"
+  ],
+  "truth_keys": [
+    "T_i",
+    "T_e",
+    "chi_i",
+    "chi_e",
+    "tau_E",
+    "tau_E_torax",
+    "W_thermal_total",
+    "P_heat_total"
+  ],
+  "note": "props carries every profile and scalar of the run that the equilibrium, the prescribed density, the composition and the heating settle before the plasma is solved, under the name the simulator gives it, together with the flux surfaces, the heating delivered to each species, the boundary condition and the grids. It never carries the shape as a number, a transport coefficient or a temperature. The confinement time is the stored energy inside the boundary over the heating delivered inside it, integrated the same way from every submission's profiles.",
+  "specs": [
+    {
+      "index": 0,
+      "family": "mirrored_pair",
+      "op": 0,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": -0.2
+      },
+      "point": {
+        "P_aux": 9095693.498571634,
+        "n_line": 3.444253498173546e+19,
+        "Z_eff": 1.5409735239361946,
+        "electron_heat_fraction": 0.3066110542114116,
+        "index": 0
+      },
+      "group": 0,
+      "pair_key": "pair0",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 32.08,
+      "raw_file": "8cf7d5f99691bb541ae5.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.02494392215439727
+      }
+    },
+    {
+      "index": 1,
+      "family": "mirrored_pair",
+      "op": 0,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": 0.2
+      },
+      "point": {
+        "P_aux": 9095693.498571634,
+        "n_line": 3.444253498173546e+19,
+        "Z_eff": 1.5409735239361946,
+        "electron_heat_fraction": 0.3066110542114116,
+        "index": 0
+      },
+      "group": 0,
+      "pair_key": "pair0",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 18.19,
+      "raw_file": "d63af431ab5da6efc8ac.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.022638655732538936
+      }
+    },
+    {
+      "index": 2,
+      "family": "mirrored_pair",
+      "op": 1,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": -0.3
+      },
+      "point": {
+        "P_aux": 10506161.913602179,
+        "n_line": 5.6946445204720255e+19,
+        "Z_eff": 2.10663577576718,
+        "electron_heat_fraction": 0.5917986243935993,
+        "index": 1
+      },
+      "group": 1,
+      "pair_key": "pair1",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 27.96,
+      "raw_file": "c3b6d6792cb4c0d834d6.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.024901470888860345
+      }
+    },
+    {
+      "index": 3,
+      "family": "mirrored_pair",
+      "op": 1,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": 0.3
+      },
+      "point": {
+        "P_aux": 10506161.913602179,
+        "n_line": 5.6946445204720255e+19,
+        "Z_eff": 2.10663577576718,
+        "electron_heat_fraction": 0.5917986243935993,
+        "index": 1
+      },
+      "group": 1,
+      "pair_key": "pair1",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 14.76,
+      "raw_file": "14543b87536392bc28da.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.021586008419574775
+      }
+    },
+    {
+      "index": 4,
+      "family": "mirrored_pair",
+      "op": 2,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": -0.4
+      },
+      "point": {
+        "P_aux": 8348999.931723383,
+        "n_line": 5.772753483257189e+19,
+        "Z_eff": 2.3158535541215324,
+        "electron_heat_fraction": 0.30109540006805924,
+        "index": 2
+      },
+      "group": 2,
+      "pair_key": "pair2",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 13.13,
+      "raw_file": "beeb38ccb3acf08f5c1e.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.024838894141960083
+      }
+    },
+    {
+      "index": 5,
+      "family": "mirrored_pair",
+      "op": 2,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": 0.4
+      },
+      "point": {
+        "P_aux": 8348999.931723383,
+        "n_line": 5.772753483257189e+19,
+        "Z_eff": 2.3158535541215324,
+        "electron_heat_fraction": 0.30109540006805924,
+        "index": 2
+      },
+      "group": 2,
+      "pair_key": "pair2",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 15.79,
+      "raw_file": "59c9fe38e154777f8674.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.02021682329032743
+      }
+    },
+    {
+      "index": 6,
+      "family": "mirrored_pair",
+      "op": 3,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": -0.5
+      },
+      "point": {
+        "P_aux": 10859234.212700555,
+        "n_line": 2.617549513569125e+19,
+        "Z_eff": 2.229655446429944,
+        "electron_heat_fraction": 0.3702622482410236,
+        "index": 3
+      },
+      "group": 3,
+      "pair_key": "pair3",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 27.86,
+      "raw_file": "047eef4d6e9c2b030025.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.024598725859092632
+      }
+    },
+    {
+      "index": 7,
+      "family": "mirrored_pair",
+      "op": 3,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": 0.5
+      },
+      "point": {
+        "P_aux": 10859234.212700555,
+        "n_line": 2.617549513569125e+19,
+        "Z_eff": 2.229655446429944,
+        "electron_heat_fraction": 0.3702622482410236,
+        "index": 3
+      },
+      "group": 3,
+      "pair_key": "pair3",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 28.52,
+      "raw_file": "0e94175796a4832ffb0f.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.018743043227853702
+      }
+    },
+    {
+      "index": 8,
+      "family": "mirrored_pair",
+      "op": 4,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": -0.2
+      },
+      "point": {
+        "P_aux": 10905431.378799092,
+        "n_line": 4.395114270871821e+19,
+        "Z_eff": 1.7997118905373848,
+        "electron_heat_fraction": 0.4690748884790633,
+        "index": 4
+      },
+      "group": 4,
+      "pair_key": "pair4",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 15.29,
+      "raw_file": "1baa1dc413601bca41c3.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.02494392215439727
+      }
+    },
+    {
+      "index": 9,
+      "family": "mirrored_pair",
+      "op": 4,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": 0.2
+      },
+      "point": {
+        "P_aux": 10905431.378799092,
+        "n_line": 4.395114270871821e+19,
+        "Z_eff": 1.7997118905373848,
+        "electron_heat_fraction": 0.4690748884790633,
+        "index": 4
+      },
+      "group": 4,
+      "pair_key": "pair4",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 17.56,
+      "raw_file": "3a476d6690e29b5945b7.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.022638655732538936
+      }
+    },
+    {
+      "index": 10,
+      "family": "mirrored_pair",
+      "op": 5,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": -0.3
+      },
+      "point": {
+        "P_aux": 4226557.369163704,
+        "n_line": 2.9349914677484737e+19,
+        "Z_eff": 2.17062441469363,
+        "electron_heat_fraction": 0.5588758046297,
+        "index": 5
+      },
+      "group": 5,
+      "pair_key": "pair5",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 13.4,
+      "raw_file": "453eb4f1e0758d0a2bf8.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.024901470888860345
+      }
+    },
+    {
+      "index": 11,
+      "family": "mirrored_pair",
+      "op": 5,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": 0.3
+      },
+      "point": {
+        "P_aux": 4226557.369163704,
+        "n_line": 2.9349914677484737e+19,
+        "Z_eff": 2.17062441469363,
+        "electron_heat_fraction": 0.5588758046297,
+        "index": 5
+      },
+      "group": 5,
+      "pair_key": "pair5",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 15.23,
+      "raw_file": "0ce20a5bcc4f8949d09f.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.021586008419574775
+      }
+    },
+    {
+      "index": 12,
+      "family": "mirrored_pair",
+      "op": 6,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": -0.4
+      },
+      "point": {
+        "P_aux": 8923080.891850032,
+        "n_line": 3.842871439916592e+19,
+        "Z_eff": 2.4972099357892112,
+        "electron_heat_fraction": 0.6923341355104919,
+        "index": 6
+      },
+      "group": 6,
+      "pair_key": "pair6",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 18.65,
+      "raw_file": "a365faf6abb7d832363a.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.024838894141960083
+      }
+    },
+    {
+      "index": 13,
+      "family": "mirrored_pair",
+      "op": 6,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": 0.4
+      },
+      "point": {
+        "P_aux": 8923080.891850032,
+        "n_line": 3.842871439916592e+19,
+        "Z_eff": 2.4972099357892112,
+        "electron_heat_fraction": 0.6923341355104919,
+        "index": 6
+      },
+      "group": 6,
+      "pair_key": "pair6",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 21.11,
+      "raw_file": "35d5afb75355f2d03f38.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.02021682329032743
+      }
+    },
+    {
+      "index": 14,
+      "family": "mirrored_pair",
+      "op": 7,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": -0.5
+      },
+      "point": {
+        "P_aux": 9484335.875845559,
+        "n_line": 4.776607466937357e+19,
+        "Z_eff": 2.18844673057094,
+        "electron_heat_fraction": 0.4555685695916415,
+        "index": 7
+      },
+      "group": 7,
+      "pair_key": "pair7",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 16.43,
+      "raw_file": "2812fd2357ed9836f995.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.024598725859092632
+      }
+    },
+    {
+      "index": 15,
+      "family": "mirrored_pair",
+      "op": 7,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": 0.5
+      },
+      "point": {
+        "P_aux": 9484335.875845559,
+        "n_line": 4.776607466937357e+19,
+        "Z_eff": 2.18844673057094,
+        "electron_heat_fraction": 0.4555685695916415,
+        "index": 7
+      },
+      "group": 7,
+      "pair_key": "pair7",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 20.18,
+      "raw_file": "c0d3af14fce10628cc91.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.018743043227853702
+      }
+    },
+    {
+      "index": 16,
+      "family": "mirrored_pair",
+      "op": 8,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": -0.2
+      },
+      "point": {
+        "P_aux": 5080772.04017929,
+        "n_line": 5.025209190679286e+19,
+        "Z_eff": 2.0253543224757258,
+        "electron_heat_fraction": 0.42409675022358223,
+        "index": 8
+      },
+      "group": 8,
+      "pair_key": "pair8",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 10.32,
+      "raw_file": "a750aecaec70777d6578.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.02494392215439727
+      }
+    },
+    {
+      "index": 17,
+      "family": "mirrored_pair",
+      "op": 8,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": 0.2
+      },
+      "point": {
+        "P_aux": 5080772.04017929,
+        "n_line": 5.025209190679286e+19,
+        "Z_eff": 2.0253543224757258,
+        "electron_heat_fraction": 0.42409675022358223,
+        "index": 8
+      },
+      "group": 8,
+      "pair_key": "pair8",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 11.74,
+      "raw_file": "e6ea412625dd212cd575.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.022638655732538936
+      }
+    },
+    {
+      "index": 18,
+      "family": "mirrored_pair",
+      "op": 9,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": -0.3
+      },
+      "point": {
+        "P_aux": 7886682.870654313,
+        "n_line": 5.613207420221501e+19,
+        "Z_eff": 2.4340435159562497,
+        "electron_heat_fraction": 0.44311807868362807,
+        "index": 9
+      },
+      "group": 9,
+      "pair_key": "pair9",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 14.35,
+      "raw_file": "e139a857d640c1aaac7c.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.024901470888860345
+      }
+    },
+    {
+      "index": 19,
+      "family": "mirrored_pair",
+      "op": 9,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": 0.3
+      },
+      "point": {
+        "P_aux": 7886682.870654313,
+        "n_line": 5.613207420221501e+19,
+        "Z_eff": 2.4340435159562497,
+        "electron_heat_fraction": 0.44311807868362807,
+        "index": 9
+      },
+      "group": 9,
+      "pair_key": "pair9",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 15.62,
+      "raw_file": "94d739afe6b24cd89ee0.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.021586008419574775
+      }
+    },
+    {
+      "index": 20,
+      "family": "mirrored_pair",
+      "op": 10,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": -0.4
+      },
+      "point": {
+        "P_aux": 8572238.645838087,
+        "n_line": 3.6265428687657976e+19,
+        "Z_eff": 2.0943000301996966,
+        "electron_heat_fraction": 0.4351644902028533,
+        "index": 10
+      },
+      "group": 10,
+      "pair_key": "pair10",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 16.32,
+      "raw_file": "98b98e872600f4652736.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.024838894141960083
+      }
+    },
+    {
+      "index": 21,
+      "family": "mirrored_pair",
+      "op": 10,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": 0.4
+      },
+      "point": {
+        "P_aux": 8572238.645838087,
+        "n_line": 3.6265428687657976e+19,
+        "Z_eff": 2.0943000301996966,
+        "electron_heat_fraction": 0.4351644902028533,
+        "index": 10
+      },
+      "group": 10,
+      "pair_key": "pair10",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 18.43,
+      "raw_file": "c39b0c80f8bfd043e647.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.02021682329032743
+      }
+    },
+    {
+      "index": 22,
+      "family": "mirrored_pair",
+      "op": 11,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": -0.5
+      },
+      "point": {
+        "P_aux": 7132952.004225289,
+        "n_line": 5.615960232016773e+19,
+        "Z_eff": 1.7271575935333798,
+        "electron_heat_fraction": 0.5492748578744169,
+        "index": 11
+      },
+      "group": 11,
+      "pair_key": "pair11",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 14.89,
+      "raw_file": "ed49557ceaa99050b823.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.024598725859092632
+      }
+    },
+    {
+      "index": 23,
+      "family": "mirrored_pair",
+      "op": 11,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": 0.5
+      },
+      "point": {
+        "P_aux": 7132952.004225289,
+        "n_line": 5.615960232016773e+19,
+        "Z_eff": 1.7271575935333798,
+        "electron_heat_fraction": 0.5492748578744169,
+        "index": 11
+      },
+      "group": 11,
+      "pair_key": "pair11",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 15.9,
+      "raw_file": "9c3749d4da15889117bd.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.018743043227853702
+      }
+    },
+    {
+      "index": 24,
+      "family": "mirrored_pair",
+      "op": 12,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": -0.2
+      },
+      "point": {
+        "P_aux": 4672122.748659079,
+        "n_line": 5.414254516786892e+19,
+        "Z_eff": 2.2870983074886833,
+        "electron_heat_fraction": 0.39574777719718085,
+        "index": 12
+      },
+      "group": 12,
+      "pair_key": "pair12",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 9.97,
+      "raw_file": "3231f7021392d2e70f3c.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.02494392215439727
+      }
+    },
+    {
+      "index": 25,
+      "family": "mirrored_pair",
+      "op": 12,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": 0.2
+      },
+      "point": {
+        "P_aux": 4672122.748659079,
+        "n_line": 5.414254516786892e+19,
+        "Z_eff": 2.2870983074886833,
+        "electron_heat_fraction": 0.39574777719718085,
+        "index": 12
+      },
+      "group": 12,
+      "pair_key": "pair12",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 11.65,
+      "raw_file": "098b894d6636c6c9d807.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.022638655732538936
+      }
+    },
+    {
+      "index": 26,
+      "family": "mirrored_pair",
+      "op": 13,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": -0.3
+      },
+      "point": {
+        "P_aux": 11011873.84648563,
+        "n_line": 2.7049881218181804e+19,
+        "Z_eff": 1.8361170605456603,
+        "electron_heat_fraction": 0.3601117867579356,
+        "index": 13
+      },
+      "group": 13,
+      "pair_key": "pair13",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 25.58,
+      "raw_file": "61c57f1d0fcdf3dfc0fd.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.024901470888860345
+      }
+    },
+    {
+      "index": 27,
+      "family": "mirrored_pair",
+      "op": 13,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": 0.3
+      },
+      "point": {
+        "P_aux": 11011873.84648563,
+        "n_line": 2.7049881218181804e+19,
+        "Z_eff": 1.8361170605456603,
+        "electron_heat_fraction": 0.3601117867579356,
+        "index": 13
+      },
+      "group": 13,
+      "pair_key": "pair13",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 28.8,
+      "raw_file": "3b6b2837514d39948e0c.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.021586008419574775
+      }
+    },
+    {
+      "index": 28,
+      "family": "mirrored_pair",
+      "op": 14,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": -0.4
+      },
+      "point": {
+        "P_aux": 7602714.933194296,
+        "n_line": 5.287134946005529e+19,
+        "Z_eff": 1.7306422089937474,
+        "electron_heat_fraction": 0.32080852042576385,
+        "index": 14
+      },
+      "group": 14,
+      "pair_key": "pair14",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 12.64,
+      "raw_file": "ffc1b63f0ea9d77b9747.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.024838894141960083
+      }
+    },
+    {
+      "index": 29,
+      "family": "mirrored_pair",
+      "op": 14,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": 0.4
+      },
+      "point": {
+        "P_aux": 7602714.933194296,
+        "n_line": 5.287134946005529e+19,
+        "Z_eff": 1.7306422089937474,
+        "electron_heat_fraction": 0.32080852042576385,
+        "index": 14
+      },
+      "group": 14,
+      "pair_key": "pair14",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 14.32,
+      "raw_file": "b2470479e3b7a0c69cbd.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.02021682329032743
+      }
+    },
+    {
+      "index": 30,
+      "family": "mirrored_pair",
+      "op": 15,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": -0.5
+      },
+      "point": {
+        "P_aux": 7236414.718572225,
+        "n_line": 3.1947956557823934e+19,
+        "Z_eff": 1.590753045619122,
+        "electron_heat_fraction": 0.5321329543947402,
+        "index": 15
+      },
+      "group": 15,
+      "pair_key": "pair15",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 17.89,
+      "raw_file": "0c366b6d5f2754edde5d.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.024598725859092632
+      }
+    },
+    {
+      "index": 31,
+      "family": "mirrored_pair",
+      "op": 15,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": 0.5
+      },
+      "point": {
+        "P_aux": 7236414.718572225,
+        "n_line": 3.1947956557823934e+19,
+        "Z_eff": 1.590753045619122,
+        "electron_heat_fraction": 0.5321329543947402,
+        "index": 15
+      },
+      "group": 15,
+      "pair_key": "pair15",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 20.26,
+      "raw_file": "dbc4fcbee6651acab722.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.018743043227853702
+      }
+    },
+    {
+      "index": 32,
+      "family": "triangularity_scan",
+      "op": 0,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": -0.5
+      },
+      "point": {
+        "P_aux": 6389569.062551381,
+        "n_line": 4.851982072847258e+19,
+        "Z_eff": 1.6995154439682132,
+        "electron_heat_fraction": 0.6768452442025991,
+        "index": 16
+      },
+      "group": 16,
+      "scan_key": "tri0",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 11.77,
+      "raw_file": "ca1d9686b7d56b29459e.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.024598725859092632
+      }
+    },
+    {
+      "index": 33,
+      "family": "triangularity_scan",
+      "op": 0,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": -0.4
+      },
+      "point": {
+        "P_aux": 6389569.062551381,
+        "n_line": 4.851982072847258e+19,
+        "Z_eff": 1.6995154439682132,
+        "electron_heat_fraction": 0.6768452442025991,
+        "index": 16
+      },
+      "group": 16,
+      "scan_key": "tri0",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 11.22,
+      "raw_file": "a485d618678132d0ec1e.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.024838894141960083
+      }
+    },
+    {
+      "index": 34,
+      "family": "triangularity_scan",
+      "op": 0,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": -0.3
+      },
+      "point": {
+        "P_aux": 6389569.062551381,
+        "n_line": 4.851982072847258e+19,
+        "Z_eff": 1.6995154439682132,
+        "electron_heat_fraction": 0.6768452442025991,
+        "index": 16
+      },
+      "group": 16,
+      "scan_key": "tri0",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 11.13,
+      "raw_file": "febdf48f5677b1af6d7b.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.024901470888860345
+      }
+    },
+    {
+      "index": 35,
+      "family": "triangularity_scan",
+      "op": 0,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": -0.2
+      },
+      "point": {
+        "P_aux": 6389569.062551381,
+        "n_line": 4.851982072847258e+19,
+        "Z_eff": 1.6995154439682132,
+        "electron_heat_fraction": 0.6768452442025991,
+        "index": 16
+      },
+      "group": 16,
+      "scan_key": "tri0",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 11.41,
+      "raw_file": "a2d6c2442c43cb43d2ae.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.02494392215439727
+      }
+    },
+    {
+      "index": 36,
+      "family": "triangularity_scan",
+      "op": 0,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": -0.1
+      },
+      "point": {
+        "P_aux": 6389569.062551381,
+        "n_line": 4.851982072847258e+19,
+        "Z_eff": 1.6995154439682132,
+        "electron_heat_fraction": 0.6768452442025991,
+        "index": 16
+      },
+      "group": 16,
+      "scan_key": "tri0",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 10.47,
+      "raw_file": "62973f6675c79f2184cf.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.024714488516226086
+      }
+    },
+    {
+      "index": 37,
+      "family": "triangularity_scan",
+      "op": 0,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": 0.0
+      },
+      "point": {
+        "P_aux": 6389569.062551381,
+        "n_line": 4.851982072847258e+19,
+        "Z_eff": 1.6995154439682132,
+        "electron_heat_fraction": 0.6768452442025991,
+        "index": 16
+      },
+      "group": 16,
+      "scan_key": "tri0",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 10.43,
+      "raw_file": "30141c67b5f0900ac723.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.02410302189282835
+      }
+    },
+    {
+      "index": 38,
+      "family": "triangularity_scan",
+      "op": 0,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": 0.1
+      },
+      "point": {
+        "P_aux": 6389569.062551381,
+        "n_line": 4.851982072847258e+19,
+        "Z_eff": 1.6995154439682132,
+        "electron_heat_fraction": 0.6768452442025991,
+        "index": 16
+      },
+      "group": 16,
+      "scan_key": "tri0",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 10.39,
+      "raw_file": "3f2e9ef2853eacaa75f7.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.02337919262816898
+      }
+    },
+    {
+      "index": 39,
+      "family": "triangularity_scan",
+      "op": 0,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": 0.2
+      },
+      "point": {
+        "P_aux": 6389569.062551381,
+        "n_line": 4.851982072847258e+19,
+        "Z_eff": 1.6995154439682132,
+        "electron_heat_fraction": 0.6768452442025991,
+        "index": 16
+      },
+      "group": 16,
+      "scan_key": "tri0",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 11.25,
+      "raw_file": "9d7197f85af6225067f2.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.022638655732538936
+      }
+    },
+    {
+      "index": 40,
+      "family": "triangularity_scan",
+      "op": 0,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": 0.3
+      },
+      "point": {
+        "P_aux": 6389569.062551381,
+        "n_line": 4.851982072847258e+19,
+        "Z_eff": 1.6995154439682132,
+        "electron_heat_fraction": 0.6768452442025991,
+        "index": 16
+      },
+      "group": 16,
+      "scan_key": "tri0",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 10.95,
+      "raw_file": "8511a3679c0a60b9c730.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.021586008419574775
+      }
+    },
+    {
+      "index": 41,
+      "family": "triangularity_scan",
+      "op": 0,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": 0.4
+      },
+      "point": {
+        "P_aux": 6389569.062551381,
+        "n_line": 4.851982072847258e+19,
+        "Z_eff": 1.6995154439682132,
+        "electron_heat_fraction": 0.6768452442025991,
+        "index": 16
+      },
+      "group": 16,
+      "scan_key": "tri0",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 12.31,
+      "raw_file": "4762010b91abb42bb9c0.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.02021682329032743
+      }
+    },
+    {
+      "index": 42,
+      "family": "triangularity_scan",
+      "op": 0,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": 0.5
+      },
+      "point": {
+        "P_aux": 6389569.062551381,
+        "n_line": 4.851982072847258e+19,
+        "Z_eff": 1.6995154439682132,
+        "electron_heat_fraction": 0.6768452442025991,
+        "index": 16
+      },
+      "group": 16,
+      "scan_key": "tri0",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 13.26,
+      "raw_file": "833121be89db5391e81e.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.018743043227853702
+      }
+    },
+    {
+      "index": 43,
+      "family": "triangularity_scan",
+      "op": 1,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": -0.5
+      },
+      "point": {
+        "P_aux": 6920881.345958629,
+        "n_line": 2.8692334784958034e+19,
+        "Z_eff": 2.1291081515397092,
+        "electron_heat_fraction": 0.6708618212271469,
+        "index": 17
+      },
+      "group": 17,
+      "scan_key": "tri1",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 17.82,
+      "raw_file": "d3fe4338fc5b70504afe.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.024598725859092632
+      }
+    },
+    {
+      "index": 44,
+      "family": "triangularity_scan",
+      "op": 1,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": -0.4
+      },
+      "point": {
+        "P_aux": 6920881.345958629,
+        "n_line": 2.8692334784958034e+19,
+        "Z_eff": 2.1291081515397092,
+        "electron_heat_fraction": 0.6708618212271469,
+        "index": 17
+      },
+      "group": 17,
+      "scan_key": "tri1",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 18.17,
+      "raw_file": "c9a1981327e862a586c4.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.024838894141960083
+      }
+    },
+    {
+      "index": 45,
+      "family": "triangularity_scan",
+      "op": 1,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": -0.3
+      },
+      "point": {
+        "P_aux": 6920881.345958629,
+        "n_line": 2.8692334784958034e+19,
+        "Z_eff": 2.1291081515397092,
+        "electron_heat_fraction": 0.6708618212271469,
+        "index": 17
+      },
+      "group": 17,
+      "scan_key": "tri1",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 19.16,
+      "raw_file": "5d27e46bac076a2836e9.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.024901470888860345
+      }
+    },
+    {
+      "index": 46,
+      "family": "triangularity_scan",
+      "op": 1,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": -0.2
+      },
+      "point": {
+        "P_aux": 6920881.345958629,
+        "n_line": 2.8692334784958034e+19,
+        "Z_eff": 2.1291081515397092,
+        "electron_heat_fraction": 0.6708618212271469,
+        "index": 17
+      },
+      "group": 17,
+      "scan_key": "tri1",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 18.53,
+      "raw_file": "593b0af15fa6b2c0134e.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.02494392215439727
+      }
+    },
+    {
+      "index": 47,
+      "family": "triangularity_scan",
+      "op": 1,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": -0.1
+      },
+      "point": {
+        "P_aux": 6920881.345958629,
+        "n_line": 2.8692334784958034e+19,
+        "Z_eff": 2.1291081515397092,
+        "electron_heat_fraction": 0.6708618212271469,
+        "index": 17
+      },
+      "group": 17,
+      "scan_key": "tri1",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 19.69,
+      "raw_file": "36b64b4df1cee0fb7168.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.024714488516226086
+      }
+    },
+    {
+      "index": 48,
+      "family": "triangularity_scan",
+      "op": 1,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": 0.0
+      },
+      "point": {
+        "P_aux": 6920881.345958629,
+        "n_line": 2.8692334784958034e+19,
+        "Z_eff": 2.1291081515397092,
+        "electron_heat_fraction": 0.6708618212271469,
+        "index": 17
+      },
+      "group": 17,
+      "scan_key": "tri1",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 19.98,
+      "raw_file": "1cf3f13b49689e980748.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.02410302189282835
+      }
+    },
+    {
+      "index": 49,
+      "family": "triangularity_scan",
+      "op": 1,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": 0.1
+      },
+      "point": {
+        "P_aux": 6920881.345958629,
+        "n_line": 2.8692334784958034e+19,
+        "Z_eff": 2.1291081515397092,
+        "electron_heat_fraction": 0.6708618212271469,
+        "index": 17
+      },
+      "group": 17,
+      "scan_key": "tri1",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 18.08,
+      "raw_file": "2ea6f4998dddad33cf00.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.02337919262816898
+      }
+    },
+    {
+      "index": 50,
+      "family": "triangularity_scan",
+      "op": 1,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": 0.2
+      },
+      "point": {
+        "P_aux": 6920881.345958629,
+        "n_line": 2.8692334784958034e+19,
+        "Z_eff": 2.1291081515397092,
+        "electron_heat_fraction": 0.6708618212271469,
+        "index": 17
+      },
+      "group": 17,
+      "scan_key": "tri1",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 19.64,
+      "raw_file": "2a91ac48c7f99da54c6b.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.022638655732538936
+      }
+    },
+    {
+      "index": 51,
+      "family": "triangularity_scan",
+      "op": 1,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": 0.3
+      },
+      "point": {
+        "P_aux": 6920881.345958629,
+        "n_line": 2.8692334784958034e+19,
+        "Z_eff": 2.1291081515397092,
+        "electron_heat_fraction": 0.6708618212271469,
+        "index": 17
+      },
+      "group": 17,
+      "scan_key": "tri1",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 21.39,
+      "raw_file": "578dade6eaa81c166a9c.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.021586008419574775
+      }
+    },
+    {
+      "index": 52,
+      "family": "triangularity_scan",
+      "op": 1,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": 0.4
+      },
+      "point": {
+        "P_aux": 6920881.345958629,
+        "n_line": 2.8692334784958034e+19,
+        "Z_eff": 2.1291081515397092,
+        "electron_heat_fraction": 0.6708618212271469,
+        "index": 17
+      },
+      "group": 17,
+      "scan_key": "tri1",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 20.58,
+      "raw_file": "cfdd3101bd60bd264f52.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.02021682329032743
+      }
+    },
+    {
+      "index": 53,
+      "family": "triangularity_scan",
+      "op": 1,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": 0.5
+      },
+      "point": {
+        "P_aux": 6920881.345958629,
+        "n_line": 2.8692334784958034e+19,
+        "Z_eff": 2.1291081515397092,
+        "electron_heat_fraction": 0.6708618212271469,
+        "index": 17
+      },
+      "group": 17,
+      "scan_key": "tri1",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 20.17,
+      "raw_file": "c064bc880fb352f39ed8.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.018743043227853702
+      }
+    },
+    {
+      "index": 54,
+      "family": "triangularity_scan",
+      "op": 2,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": -0.5
+      },
+      "point": {
+        "P_aux": 7523017.237726271,
+        "n_line": 5.84106672791758e+19,
+        "Z_eff": 1.999895813687647,
+        "electron_heat_fraction": 0.47009144993963015,
+        "index": 18
+      },
+      "group": 18,
+      "scan_key": "tri2",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 11.83,
+      "raw_file": "6681efc67636d46a200e.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.024598725859092632
+      }
+    },
+    {
+      "index": 55,
+      "family": "triangularity_scan",
+      "op": 2,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": -0.4
+      },
+      "point": {
+        "P_aux": 7523017.237726271,
+        "n_line": 5.84106672791758e+19,
+        "Z_eff": 1.999895813687647,
+        "electron_heat_fraction": 0.47009144993963015,
+        "index": 18
+      },
+      "group": 18,
+      "scan_key": "tri2",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 11.28,
+      "raw_file": "7376cf86038e397f28bf.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.024838894141960083
+      }
+    },
+    {
+      "index": 56,
+      "family": "triangularity_scan",
+      "op": 2,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": -0.3
+      },
+      "point": {
+        "P_aux": 7523017.237726271,
+        "n_line": 5.84106672791758e+19,
+        "Z_eff": 1.999895813687647,
+        "electron_heat_fraction": 0.47009144993963015,
+        "index": 18
+      },
+      "group": 18,
+      "scan_key": "tri2",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 11.07,
+      "raw_file": "1150aab591c01f5ddafd.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.024901470888860345
+      }
+    },
+    {
+      "index": 57,
+      "family": "triangularity_scan",
+      "op": 2,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": -0.2
+      },
+      "point": {
+        "P_aux": 7523017.237726271,
+        "n_line": 5.84106672791758e+19,
+        "Z_eff": 1.999895813687647,
+        "electron_heat_fraction": 0.47009144993963015,
+        "index": 18
+      },
+      "group": 18,
+      "scan_key": "tri2",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 11.53,
+      "raw_file": "04a23018e412bd78d765.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.02494392215439727
+      }
+    },
+    {
+      "index": 58,
+      "family": "triangularity_scan",
+      "op": 2,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": -0.1
+      },
+      "point": {
+        "P_aux": 7523017.237726271,
+        "n_line": 5.84106672791758e+19,
+        "Z_eff": 1.999895813687647,
+        "electron_heat_fraction": 0.47009144993963015,
+        "index": 18
+      },
+      "group": 18,
+      "scan_key": "tri2",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 11.45,
+      "raw_file": "cf1f53892735c10bf7eb.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.024714488516226086
+      }
+    },
+    {
+      "index": 59,
+      "family": "triangularity_scan",
+      "op": 2,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": 0.0
+      },
+      "point": {
+        "P_aux": 7523017.237726271,
+        "n_line": 5.84106672791758e+19,
+        "Z_eff": 1.999895813687647,
+        "electron_heat_fraction": 0.47009144993963015,
+        "index": 18
+      },
+      "group": 18,
+      "scan_key": "tri2",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 12.49,
+      "raw_file": "b2d37b9607686b7a2485.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.02410302189282835
+      }
+    },
+    {
+      "index": 60,
+      "family": "triangularity_scan",
+      "op": 2,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": 0.1
+      },
+      "point": {
+        "P_aux": 7523017.237726271,
+        "n_line": 5.84106672791758e+19,
+        "Z_eff": 1.999895813687647,
+        "electron_heat_fraction": 0.47009144993963015,
+        "index": 18
+      },
+      "group": 18,
+      "scan_key": "tri2",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 12.3,
+      "raw_file": "7a86880da9ee9c072d14.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.02337919262816898
+      }
+    },
+    {
+      "index": 61,
+      "family": "triangularity_scan",
+      "op": 2,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": 0.2
+      },
+      "point": {
+        "P_aux": 7523017.237726271,
+        "n_line": 5.84106672791758e+19,
+        "Z_eff": 1.999895813687647,
+        "electron_heat_fraction": 0.47009144993963015,
+        "index": 18
+      },
+      "group": 18,
+      "scan_key": "tri2",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 13.95,
+      "raw_file": "223525c8daf04c56ef73.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.022638655732538936
+      }
+    },
+    {
+      "index": 62,
+      "family": "triangularity_scan",
+      "op": 2,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": 0.3
+      },
+      "point": {
+        "P_aux": 7523017.237726271,
+        "n_line": 5.84106672791758e+19,
+        "Z_eff": 1.999895813687647,
+        "electron_heat_fraction": 0.47009144993963015,
+        "index": 18
+      },
+      "group": 18,
+      "scan_key": "tri2",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 13.39,
+      "raw_file": "d0a86fddb11092f359c9.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.021586008419574775
+      }
+    },
+    {
+      "index": 63,
+      "family": "triangularity_scan",
+      "op": 2,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": 0.4
+      },
+      "point": {
+        "P_aux": 7523017.237726271,
+        "n_line": 5.84106672791758e+19,
+        "Z_eff": 1.999895813687647,
+        "electron_heat_fraction": 0.47009144993963015,
+        "index": 18
+      },
+      "group": 18,
+      "scan_key": "tri2",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 15.92,
+      "raw_file": "abd35f717e192d63c241.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.02021682329032743
+      }
+    },
+    {
+      "index": 64,
+      "family": "triangularity_scan",
+      "op": 2,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": 0.5
+      },
+      "point": {
+        "P_aux": 7523017.237726271,
+        "n_line": 5.84106672791758e+19,
+        "Z_eff": 1.999895813687647,
+        "electron_heat_fraction": 0.47009144993963015,
+        "index": 18
+      },
+      "group": 18,
+      "scan_key": "tri2",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 16.85,
+      "raw_file": "0e79a56bb6a399682648.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.018743043227853702
+      }
+    },
+    {
+      "index": 65,
+      "family": "density_scan",
+      "op": 0,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": -0.4
+      },
+      "point": {
+        "P_aux": 8961707.616123023,
+        "n_line": 2.5e+19,
+        "Z_eff": 2.448943674937765,
+        "electron_heat_fraction": 0.48401805572363843,
+        "index": 19
+      },
+      "group": 19,
+      "scan_key": "dens0",
+      "pair_key": "dens0_n0",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 26.14,
+      "raw_file": "122e5041aea796b311d9.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.024838894141960083
+      }
+    },
+    {
+      "index": 66,
+      "family": "density_scan",
+      "op": 0,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": 0.4
+      },
+      "point": {
+        "P_aux": 8961707.616123023,
+        "n_line": 2.5e+19,
+        "Z_eff": 2.448943674937765,
+        "electron_heat_fraction": 0.48401805572363843,
+        "index": 19
+      },
+      "group": 19,
+      "scan_key": "dens0",
+      "pair_key": "dens0_n0",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 31.42,
+      "raw_file": "d333d9b931afbeb7d8a9.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.02021682329032743
+      }
+    },
+    {
+      "index": 67,
+      "family": "density_scan",
+      "op": 0,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": -0.4
+      },
+      "point": {
+        "P_aux": 8961707.616123023,
+        "n_line": 3.5e+19,
+        "Z_eff": 2.448943674937765,
+        "electron_heat_fraction": 0.48401805572363843,
+        "index": 19
+      },
+      "group": 19,
+      "scan_key": "dens0",
+      "pair_key": "dens0_n1",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 21.66,
+      "raw_file": "70d45ba7f79c445775d2.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.024838894141960083
+      }
+    },
+    {
+      "index": 68,
+      "family": "density_scan",
+      "op": 0,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": 0.4
+      },
+      "point": {
+        "P_aux": 8961707.616123023,
+        "n_line": 3.5e+19,
+        "Z_eff": 2.448943674937765,
+        "electron_heat_fraction": 0.48401805572363843,
+        "index": 19
+      },
+      "group": 19,
+      "scan_key": "dens0",
+      "pair_key": "dens0_n1",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 23.67,
+      "raw_file": "cd29a1f20a4550938017.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.02021682329032743
+      }
+    },
+    {
+      "index": 69,
+      "family": "density_scan",
+      "op": 0,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": -0.4
+      },
+      "point": {
+        "P_aux": 8961707.616123023,
+        "n_line": 4.5e+19,
+        "Z_eff": 2.448943674937765,
+        "electron_heat_fraction": 0.48401805572363843,
+        "index": 19
+      },
+      "group": 19,
+      "scan_key": "dens0",
+      "pair_key": "dens0_n2",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 17.91,
+      "raw_file": "c15a08e0561ed36f12f0.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.024838894141960083
+      }
+    },
+    {
+      "index": 70,
+      "family": "density_scan",
+      "op": 0,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": 0.4
+      },
+      "point": {
+        "P_aux": 8961707.616123023,
+        "n_line": 4.5e+19,
+        "Z_eff": 2.448943674937765,
+        "electron_heat_fraction": 0.48401805572363843,
+        "index": 19
+      },
+      "group": 19,
+      "scan_key": "dens0",
+      "pair_key": "dens0_n2",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 21.61,
+      "raw_file": "384833a3679f629daa1c.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.02021682329032743
+      }
+    },
+    {
+      "index": 71,
+      "family": "density_scan",
+      "op": 0,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": -0.4
+      },
+      "point": {
+        "P_aux": 8961707.616123023,
+        "n_line": 6e+19,
+        "Z_eff": 2.448943674937765,
+        "electron_heat_fraction": 0.48401805572363843,
+        "index": 19
+      },
+      "group": 19,
+      "scan_key": "dens0",
+      "pair_key": "dens0_n3",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 14.24,
+      "raw_file": "b9d7d48660cfda7af72d.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.024838894141960083
+      }
+    },
+    {
+      "index": 72,
+      "family": "density_scan",
+      "op": 0,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": 0.4
+      },
+      "point": {
+        "P_aux": 8961707.616123023,
+        "n_line": 6e+19,
+        "Z_eff": 2.448943674937765,
+        "electron_heat_fraction": 0.48401805572363843,
+        "index": 19
+      },
+      "group": 19,
+      "scan_key": "dens0",
+      "pair_key": "dens0_n3",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 17.88,
+      "raw_file": "77945155d82635b015b5.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.02021682329032743
+      }
+    },
+    {
+      "index": 73,
+      "family": "density_scan",
+      "op": 1,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": -0.4
+      },
+      "point": {
+        "P_aux": 10061830.76246633,
+        "n_line": 2.5e+19,
+        "Z_eff": 2.0293121601967705,
+        "electron_heat_fraction": 0.614314280285523,
+        "index": 20
+      },
+      "group": 20,
+      "scan_key": "dens1",
+      "pair_key": "dens1_n0",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 24.52,
+      "raw_file": "4feb67cbea0455f0e162.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.024838894141960083
+      }
+    },
+    {
+      "index": 74,
+      "family": "density_scan",
+      "op": 1,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": 0.4
+      },
+      "point": {
+        "P_aux": 10061830.76246633,
+        "n_line": 2.5e+19,
+        "Z_eff": 2.0293121601967705,
+        "electron_heat_fraction": 0.614314280285523,
+        "index": 20
+      },
+      "group": 20,
+      "scan_key": "dens1",
+      "pair_key": "dens1_n0",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 28.2,
+      "raw_file": "01d0aa9dc7a5cf133ade.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.02021682329032743
+      }
+    },
+    {
+      "index": 75,
+      "family": "density_scan",
+      "op": 1,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": -0.4
+      },
+      "point": {
+        "P_aux": 10061830.76246633,
+        "n_line": 3.5e+19,
+        "Z_eff": 2.0293121601967705,
+        "electron_heat_fraction": 0.614314280285523,
+        "index": 20
+      },
+      "group": 20,
+      "scan_key": "dens1",
+      "pair_key": "dens1_n1",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 21.2,
+      "raw_file": "131dbe33469a657012a6.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.024838894141960083
+      }
+    },
+    {
+      "index": 76,
+      "family": "density_scan",
+      "op": 1,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": 0.4
+      },
+      "point": {
+        "P_aux": 10061830.76246633,
+        "n_line": 3.5e+19,
+        "Z_eff": 2.0293121601967705,
+        "electron_heat_fraction": 0.614314280285523,
+        "index": 20
+      },
+      "group": 20,
+      "scan_key": "dens1",
+      "pair_key": "dens1_n1",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 21.83,
+      "raw_file": "dc00bb774046f6ed8b23.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.02021682329032743
+      }
+    },
+    {
+      "index": 77,
+      "family": "density_scan",
+      "op": 1,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": -0.4
+      },
+      "point": {
+        "P_aux": 10061830.76246633,
+        "n_line": 4.5e+19,
+        "Z_eff": 2.0293121601967705,
+        "electron_heat_fraction": 0.614314280285523,
+        "index": 20
+      },
+      "group": 20,
+      "scan_key": "dens1",
+      "pair_key": "dens1_n2",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 15.88,
+      "raw_file": "c2b8b58391db0fa73fc2.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.024838894141960083
+      }
+    },
+    {
+      "index": 78,
+      "family": "density_scan",
+      "op": 1,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": 0.4
+      },
+      "point": {
+        "P_aux": 10061830.76246633,
+        "n_line": 4.5e+19,
+        "Z_eff": 2.0293121601967705,
+        "electron_heat_fraction": 0.614314280285523,
+        "index": 20
+      },
+      "group": 20,
+      "scan_key": "dens1",
+      "pair_key": "dens1_n2",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 18.65,
+      "raw_file": "e6425edaff0fc3de09b7.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.02021682329032743
+      }
+    },
+    {
+      "index": 79,
+      "family": "density_scan",
+      "op": 1,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": -0.4
+      },
+      "point": {
+        "P_aux": 10061830.76246633,
+        "n_line": 6e+19,
+        "Z_eff": 2.0293121601967705,
+        "electron_heat_fraction": 0.614314280285523,
+        "index": 20
+      },
+      "group": 20,
+      "scan_key": "dens1",
+      "pair_key": "dens1_n3",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 14.3,
+      "raw_file": "586fa73b5dac2fdf997a.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.024838894141960083
+      }
+    },
+    {
+      "index": 80,
+      "family": "density_scan",
+      "op": 1,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": 0.4
+      },
+      "point": {
+        "P_aux": 10061830.76246633,
+        "n_line": 6e+19,
+        "Z_eff": 2.0293121601967705,
+        "electron_heat_fraction": 0.614314280285523,
+        "index": 20
+      },
+      "group": 20,
+      "scan_key": "dens1",
+      "pair_key": "dens1_n3",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 17.45,
+      "raw_file": "ff768908de54a6640361.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.02021682329032743
+      }
+    },
+    {
+      "index": 81,
+      "family": "density_scan",
+      "op": 2,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": -0.4
+      },
+      "point": {
+        "P_aux": 7317246.794845367,
+        "n_line": 2.5e+19,
+        "Z_eff": 2.21114287798975,
+        "electron_heat_fraction": 0.6728238746453512,
+        "index": 21
+      },
+      "group": 21,
+      "scan_key": "dens2",
+      "pair_key": "dens2_n0",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 22.29,
+      "raw_file": "b610fbe68545798d145b.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.024838894141960083
+      }
+    },
+    {
+      "index": 82,
+      "family": "density_scan",
+      "op": 2,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": 0.4
+      },
+      "point": {
+        "P_aux": 7317246.794845367,
+        "n_line": 2.5e+19,
+        "Z_eff": 2.21114287798975,
+        "electron_heat_fraction": 0.6728238746453512,
+        "index": 21
+      },
+      "group": 21,
+      "scan_key": "dens2",
+      "pair_key": "dens2_n0",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 24.79,
+      "raw_file": "3a03de068686482c9ec0.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.02021682329032743
+      }
+    },
+    {
+      "index": 83,
+      "family": "density_scan",
+      "op": 2,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": -0.4
+      },
+      "point": {
+        "P_aux": 7317246.794845367,
+        "n_line": 3.5e+19,
+        "Z_eff": 2.21114287798975,
+        "electron_heat_fraction": 0.6728238746453512,
+        "index": 21
+      },
+      "group": 21,
+      "scan_key": "dens2",
+      "pair_key": "dens2_n1",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 17.81,
+      "raw_file": "9e6ad2a186518b5e8375.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.024838894141960083
+      }
+    },
+    {
+      "index": 84,
+      "family": "density_scan",
+      "op": 2,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": 0.4
+      },
+      "point": {
+        "P_aux": 7317246.794845367,
+        "n_line": 3.5e+19,
+        "Z_eff": 2.21114287798975,
+        "electron_heat_fraction": 0.6728238746453512,
+        "index": 21
+      },
+      "group": 21,
+      "scan_key": "dens2",
+      "pair_key": "dens2_n1",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 20.24,
+      "raw_file": "289bb03d166d51a87811.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.02021682329032743
+      }
+    },
+    {
+      "index": 85,
+      "family": "density_scan",
+      "op": 2,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": -0.4
+      },
+      "point": {
+        "P_aux": 7317246.794845367,
+        "n_line": 4.5e+19,
+        "Z_eff": 2.21114287798975,
+        "electron_heat_fraction": 0.6728238746453512,
+        "index": 21
+      },
+      "group": 21,
+      "scan_key": "dens2",
+      "pair_key": "dens2_n2",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 15.18,
+      "raw_file": "514ac0c110e22c42ea34.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.024838894141960083
+      }
+    },
+    {
+      "index": 86,
+      "family": "density_scan",
+      "op": 2,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": 0.4
+      },
+      "point": {
+        "P_aux": 7317246.794845367,
+        "n_line": 4.5e+19,
+        "Z_eff": 2.21114287798975,
+        "electron_heat_fraction": 0.6728238746453512,
+        "index": 21
+      },
+      "group": 21,
+      "scan_key": "dens2",
+      "pair_key": "dens2_n2",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 19.53,
+      "raw_file": "07fc7fd2626ec64628a4.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.02021682329032743
+      }
+    },
+    {
+      "index": 87,
+      "family": "density_scan",
+      "op": 2,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": -0.4
+      },
+      "point": {
+        "P_aux": 7317246.794845367,
+        "n_line": 6e+19,
+        "Z_eff": 2.21114287798975,
+        "electron_heat_fraction": 0.6728238746453512,
+        "index": 21
+      },
+      "group": 21,
+      "scan_key": "dens2",
+      "pair_key": "dens2_n3",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 11.53,
+      "raw_file": "038b50d7aab4598378d8.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.024838894141960083
+      }
+    },
+    {
+      "index": 88,
+      "family": "density_scan",
+      "op": 2,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": 0.4
+      },
+      "point": {
+        "P_aux": 7317246.794845367,
+        "n_line": 6e+19,
+        "Z_eff": 2.21114287798975,
+        "electron_heat_fraction": 0.6728238746453512,
+        "index": 21
+      },
+      "group": 21,
+      "scan_key": "dens2",
+      "pair_key": "dens2_n3",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 14.02,
+      "raw_file": "f879765e6feb9d45de8c.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.02021682329032743
+      }
+    },
+    {
+      "index": 89,
+      "family": "density_scan",
+      "op": 3,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": -0.4
+      },
+      "point": {
+        "P_aux": 4919461.066247242,
+        "n_line": 2.5e+19,
+        "Z_eff": 2.42742392862456,
+        "electron_heat_fraction": 0.6871704759698585,
+        "index": 22
+      },
+      "group": 22,
+      "scan_key": "dens3",
+      "pair_key": "dens3_n0",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 16.15,
+      "raw_file": "31a00893c200465183a5.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.024838894141960083
+      }
+    },
+    {
+      "index": 90,
+      "family": "density_scan",
+      "op": 3,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": 0.4
+      },
+      "point": {
+        "P_aux": 4919461.066247242,
+        "n_line": 2.5e+19,
+        "Z_eff": 2.42742392862456,
+        "electron_heat_fraction": 0.6871704759698585,
+        "index": 22
+      },
+      "group": 22,
+      "scan_key": "dens3",
+      "pair_key": "dens3_n0",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 18.55,
+      "raw_file": "55964ec01f01bb39e2e0.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.02021682329032743
+      }
+    },
+    {
+      "index": 91,
+      "family": "density_scan",
+      "op": 3,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": -0.4
+      },
+      "point": {
+        "P_aux": 4919461.066247242,
+        "n_line": 3.5e+19,
+        "Z_eff": 2.42742392862456,
+        "electron_heat_fraction": 0.6871704759698585,
+        "index": 22
+      },
+      "group": 22,
+      "scan_key": "dens3",
+      "pair_key": "dens3_n1",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 11.36,
+      "raw_file": "3374548c7607c7d74e04.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.024838894141960083
+      }
+    },
+    {
+      "index": 92,
+      "family": "density_scan",
+      "op": 3,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": 0.4
+      },
+      "point": {
+        "P_aux": 4919461.066247242,
+        "n_line": 3.5e+19,
+        "Z_eff": 2.42742392862456,
+        "electron_heat_fraction": 0.6871704759698585,
+        "index": 22
+      },
+      "group": 22,
+      "scan_key": "dens3",
+      "pair_key": "dens3_n1",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 14.67,
+      "raw_file": "4917fafd64df4dd94adc.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.02021682329032743
+      }
+    },
+    {
+      "index": 93,
+      "family": "density_scan",
+      "op": 3,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": -0.4
+      },
+      "point": {
+        "P_aux": 4919461.066247242,
+        "n_line": 4.5e+19,
+        "Z_eff": 2.42742392862456,
+        "electron_heat_fraction": 0.6871704759698585,
+        "index": 22
+      },
+      "group": 22,
+      "scan_key": "dens3",
+      "pair_key": "dens3_n2",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 10.19,
+      "raw_file": "bd7f09b144f0b6907b8e.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.024838894141960083
+      }
+    },
+    {
+      "index": 94,
+      "family": "density_scan",
+      "op": 3,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": 0.4
+      },
+      "point": {
+        "P_aux": 4919461.066247242,
+        "n_line": 4.5e+19,
+        "Z_eff": 2.42742392862456,
+        "electron_heat_fraction": 0.6871704759698585,
+        "index": 22
+      },
+      "group": 22,
+      "scan_key": "dens3",
+      "pair_key": "dens3_n2",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 18.44,
+      "raw_file": "4e93eda4934319575758.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.02021682329032743
+      }
+    },
+    {
+      "index": 95,
+      "family": "density_scan",
+      "op": 3,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": -0.4
+      },
+      "point": {
+        "P_aux": 4919461.066247242,
+        "n_line": 6e+19,
+        "Z_eff": 2.42742392862456,
+        "electron_heat_fraction": 0.6871704759698585,
+        "index": 22
+      },
+      "group": 22,
+      "scan_key": "dens3",
+      "pair_key": "dens3_n3",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 9.64,
+      "raw_file": "06ea11fed80465572ff9.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.024838894141960083
+      }
+    },
+    {
+      "index": 96,
+      "family": "density_scan",
+      "op": 3,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": 0.4
+      },
+      "point": {
+        "P_aux": 4919461.066247242,
+        "n_line": 6e+19,
+        "Z_eff": 2.42742392862456,
+        "electron_heat_fraction": 0.6871704759698585,
+        "index": 22
+      },
+      "group": 22,
+      "scan_key": "dens3",
+      "pair_key": "dens3_n3",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 14.0,
+      "raw_file": "52ca1992f362aa20d32d.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.02021682329032743
+      }
+    },
+    {
+      "index": 97,
+      "family": "density_scan",
+      "op": 4,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": -0.4
+      },
+      "point": {
+        "P_aux": 4117650.4397229543,
+        "n_line": 2.5e+19,
+        "Z_eff": 2.4811950400663445,
+        "electron_heat_fraction": 0.6828840718443854,
+        "index": 23
+      },
+      "group": 23,
+      "scan_key": "dens4",
+      "pair_key": "dens4_n0",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 16.21,
+      "raw_file": "2c993e0c1d242cb3263d.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.024838894141960083
+      }
+    },
+    {
+      "index": 98,
+      "family": "density_scan",
+      "op": 4,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": 0.4
+      },
+      "point": {
+        "P_aux": 4117650.4397229543,
+        "n_line": 2.5e+19,
+        "Z_eff": 2.4811950400663445,
+        "electron_heat_fraction": 0.6828840718443854,
+        "index": 23
+      },
+      "group": 23,
+      "scan_key": "dens4",
+      "pair_key": "dens4_n0",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 17.47,
+      "raw_file": "554bc0fd1094a62fd37f.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.02021682329032743
+      }
+    },
+    {
+      "index": 99,
+      "family": "density_scan",
+      "op": 4,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": -0.4
+      },
+      "point": {
+        "P_aux": 4117650.4397229543,
+        "n_line": 3.5e+19,
+        "Z_eff": 2.4811950400663445,
+        "electron_heat_fraction": 0.6828840718443854,
+        "index": 23
+      },
+      "group": 23,
+      "scan_key": "dens4",
+      "pair_key": "dens4_n1",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 13.42,
+      "raw_file": "9dec43e55b95ab604b6f.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.024838894141960083
+      }
+    },
+    {
+      "index": 100,
+      "family": "density_scan",
+      "op": 4,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": 0.4
+      },
+      "point": {
+        "P_aux": 4117650.4397229543,
+        "n_line": 3.5e+19,
+        "Z_eff": 2.4811950400663445,
+        "electron_heat_fraction": 0.6828840718443854,
+        "index": 23
+      },
+      "group": 23,
+      "scan_key": "dens4",
+      "pair_key": "dens4_n1",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 17.16,
+      "raw_file": "b885d8d82fd7822f40fb.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.02021682329032743
+      }
+    },
+    {
+      "index": 101,
+      "family": "density_scan",
+      "op": 4,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": -0.4
+      },
+      "point": {
+        "P_aux": 4117650.4397229543,
+        "n_line": 4.5e+19,
+        "Z_eff": 2.4811950400663445,
+        "electron_heat_fraction": 0.6828840718443854,
+        "index": 23
+      },
+      "group": 23,
+      "scan_key": "dens4",
+      "pair_key": "dens4_n2",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 10.59,
+      "raw_file": "68876371806b5f9e29e8.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.024838894141960083
+      }
+    },
+    {
+      "index": 102,
+      "family": "density_scan",
+      "op": 4,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": 0.4
+      },
+      "point": {
+        "P_aux": 4117650.4397229543,
+        "n_line": 4.5e+19,
+        "Z_eff": 2.4811950400663445,
+        "electron_heat_fraction": 0.6828840718443854,
+        "index": 23
+      },
+      "group": 23,
+      "scan_key": "dens4",
+      "pair_key": "dens4_n2",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 15.42,
+      "raw_file": "e40143cb4c87b8638726.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.02021682329032743
+      }
+    },
+    {
+      "index": 103,
+      "family": "density_scan",
+      "op": 4,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": -0.4
+      },
+      "point": {
+        "P_aux": 4117650.4397229543,
+        "n_line": 6e+19,
+        "Z_eff": 2.4811950400663445,
+        "electron_heat_fraction": 0.6828840718443854,
+        "index": 23
+      },
+      "group": 23,
+      "scan_key": "dens4",
+      "pair_key": "dens4_n3",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 9.82,
+      "raw_file": "23b10931e3fd98696fa6.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.024838894141960083
+      }
+    },
+    {
+      "index": 104,
+      "family": "density_scan",
+      "op": 4,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": 0.4
+      },
+      "point": {
+        "P_aux": 4117650.4397229543,
+        "n_line": 6e+19,
+        "Z_eff": 2.4811950400663445,
+        "electron_heat_fraction": 0.6828840718443854,
+        "index": 23
+      },
+      "group": 23,
+      "scan_key": "dens4",
+      "pair_key": "dens4_n3",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 14.78,
+      "raw_file": "1378120ad96c9a01a45b.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.02021682329032743
+      }
+    },
+    {
+      "index": 105,
+      "family": "density_scan",
+      "op": 5,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": -0.4
+      },
+      "point": {
+        "P_aux": 5190112.097859983,
+        "n_line": 2.5e+19,
+        "Z_eff": 2.3899355557205206,
+        "electron_heat_fraction": 0.6289495310172282,
+        "index": 24
+      },
+      "group": 24,
+      "scan_key": "dens5",
+      "pair_key": "dens5_n0",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 19.96,
+      "raw_file": "31f60481bbdb6ac3f391.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.024838894141960083
+      }
+    },
+    {
+      "index": 106,
+      "family": "density_scan",
+      "op": 5,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": 0.4
+      },
+      "point": {
+        "P_aux": 5190112.097859983,
+        "n_line": 2.5e+19,
+        "Z_eff": 2.3899355557205206,
+        "electron_heat_fraction": 0.6289495310172282,
+        "index": 24
+      },
+      "group": 24,
+      "scan_key": "dens5",
+      "pair_key": "dens5_n0",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 19.32,
+      "raw_file": "28860c3a590ed2f162b0.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.02021682329032743
+      }
+    },
+    {
+      "index": 107,
+      "family": "density_scan",
+      "op": 5,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": -0.4
+      },
+      "point": {
+        "P_aux": 5190112.097859983,
+        "n_line": 3.5e+19,
+        "Z_eff": 2.3899355557205206,
+        "electron_heat_fraction": 0.6289495310172282,
+        "index": 24
+      },
+      "group": 24,
+      "scan_key": "dens5",
+      "pair_key": "dens5_n1",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 14.0,
+      "raw_file": "985e9fbaf6185278eb0d.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.024838894141960083
+      }
+    },
+    {
+      "index": 108,
+      "family": "density_scan",
+      "op": 5,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": 0.4
+      },
+      "point": {
+        "P_aux": 5190112.097859983,
+        "n_line": 3.5e+19,
+        "Z_eff": 2.3899355557205206,
+        "electron_heat_fraction": 0.6289495310172282,
+        "index": 24
+      },
+      "group": 24,
+      "scan_key": "dens5",
+      "pair_key": "dens5_n1",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 15.11,
+      "raw_file": "1117a5c58b3dd4031054.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.02021682329032743
+      }
+    },
+    {
+      "index": 109,
+      "family": "density_scan",
+      "op": 5,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": -0.4
+      },
+      "point": {
+        "P_aux": 5190112.097859983,
+        "n_line": 4.5e+19,
+        "Z_eff": 2.3899355557205206,
+        "electron_heat_fraction": 0.6289495310172282,
+        "index": 24
+      },
+      "group": 24,
+      "scan_key": "dens5",
+      "pair_key": "dens5_n2",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 13.63,
+      "raw_file": "5f9434e35248f87d8e1d.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.024838894141960083
+      }
+    },
+    {
+      "index": 110,
+      "family": "density_scan",
+      "op": 5,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": 0.4
+      },
+      "point": {
+        "P_aux": 5190112.097859983,
+        "n_line": 4.5e+19,
+        "Z_eff": 2.3899355557205206,
+        "electron_heat_fraction": 0.6289495310172282,
+        "index": 24
+      },
+      "group": 24,
+      "scan_key": "dens5",
+      "pair_key": "dens5_n2",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 15.98,
+      "raw_file": "6a3a9361c4ab4eda59a1.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.02021682329032743
+      }
+    },
+    {
+      "index": 111,
+      "family": "density_scan",
+      "op": 5,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": -0.4
+      },
+      "point": {
+        "P_aux": 5190112.097859983,
+        "n_line": 6e+19,
+        "Z_eff": 2.3899355557205206,
+        "electron_heat_fraction": 0.6289495310172282,
+        "index": 24
+      },
+      "group": 24,
+      "scan_key": "dens5",
+      "pair_key": "dens5_n3",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 10.58,
+      "raw_file": "e70c4c59b491bc68b3ab.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.024838894141960083
+      }
+    },
+    {
+      "index": 112,
+      "family": "density_scan",
+      "op": 5,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": 0.4
+      },
+      "point": {
+        "P_aux": 5190112.097859983,
+        "n_line": 6e+19,
+        "Z_eff": 2.3899355557205206,
+        "electron_heat_fraction": 0.6289495310172282,
+        "index": 24
+      },
+      "group": 24,
+      "scan_key": "dens5",
+      "pair_key": "dens5_n3",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 14.86,
+      "raw_file": "591e1fe143435defc47b.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.02021682329032743
+      }
+    },
+    {
+      "index": 113,
+      "family": "heating_pair",
+      "op": 0,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": 0.4
+      },
+      "point": {
+        "P_aux": 4000000.0,
+        "n_line": 3.3133052187375632e+19,
+        "Z_eff": 2.3018805787183076,
+        "electron_heat_fraction": 0.6694120639133878,
+        "index": 25
+      },
+      "group": 25,
+      "pair_key": "heat0",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 16.42,
+      "raw_file": "e9007ca0389b407fca8d.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.02021682329032743
+      }
+    },
+    {
+      "index": 114,
+      "family": "heating_pair",
+      "op": 0,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": 0.4
+      },
+      "point": {
+        "P_aux": 12000000.0,
+        "n_line": 3.3133052187375632e+19,
+        "Z_eff": 2.3018805787183076,
+        "electron_heat_fraction": 0.6694120639133878,
+        "index": 25
+      },
+      "group": 25,
+      "pair_key": "heat0",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 23.57,
+      "raw_file": "a450ab1deb6b8a600a9b.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.02021682329032743
+      }
+    },
+    {
+      "index": 115,
+      "family": "heating_pair",
+      "op": 1,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": -0.4
+      },
+      "point": {
+        "P_aux": 4000000.0,
+        "n_line": 4.04963490141086e+19,
+        "Z_eff": 2.431017315981155,
+        "electron_heat_fraction": 0.31620428447537385,
+        "index": 26
+      },
+      "group": 26,
+      "pair_key": "heat1",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 10.34,
+      "raw_file": "cb7a52d4fc3dcd1d2aa1.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.024838894141960083
+      }
+    },
+    {
+      "index": 116,
+      "family": "heating_pair",
+      "op": 1,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": -0.4
+      },
+      "point": {
+        "P_aux": 12000000.0,
+        "n_line": 4.04963490141086e+19,
+        "Z_eff": 2.431017315981155,
+        "electron_heat_fraction": 0.31620428447537385,
+        "index": 26
+      },
+      "group": 26,
+      "pair_key": "heat1",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 23.85,
+      "raw_file": "0e8f859393102e6315b8.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.024838894141960083
+      }
+    },
+    {
+      "index": 117,
+      "family": "heating_pair",
+      "op": 2,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": -0.4
+      },
+      "point": {
+        "P_aux": 4000000.0,
+        "n_line": 4.650306364321488e+19,
+        "Z_eff": 1.5283653651135212,
+        "electron_heat_fraction": 0.5876879091306961,
+        "index": 27
+      },
+      "group": 27,
+      "pair_key": "heat2",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 8.21,
+      "raw_file": "d56801bd5382b3428a76.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.024838894141960083
+      }
+    },
+    {
+      "index": 118,
+      "family": "heating_pair",
+      "op": 2,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": -0.4
+      },
+      "point": {
+        "P_aux": 12000000.0,
+        "n_line": 4.650306364321488e+19,
+        "Z_eff": 1.5283653651135212,
+        "electron_heat_fraction": 0.5876879091306961,
+        "index": 27
+      },
+      "group": 27,
+      "pair_key": "heat2",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 14.21,
+      "raw_file": "a61b894a2fe87d24f10b.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.024838894141960083
+      }
+    },
+    {
+      "index": 119,
+      "family": "heating_pair",
+      "op": 3,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": -0.4
+      },
+      "point": {
+        "P_aux": 4000000.0,
+        "n_line": 4.294655531417273e+19,
+        "Z_eff": 2.429104220797006,
+        "electron_heat_fraction": 0.3264329986896299,
+        "index": 28
+      },
+      "group": 28,
+      "pair_key": "heat3",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 10.32,
+      "raw_file": "24969476588369fe0732.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.024838894141960083
+      }
+    },
+    {
+      "index": 120,
+      "family": "heating_pair",
+      "op": 3,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": -0.4
+      },
+      "point": {
+        "P_aux": 12000000.0,
+        "n_line": 4.294655531417273e+19,
+        "Z_eff": 2.429104220797006,
+        "electron_heat_fraction": 0.3264329986896299,
+        "index": 28
+      },
+      "group": 28,
+      "pair_key": "heat3",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 19.42,
+      "raw_file": "497570f9e3a3b933dce0.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.024838894141960083
+      }
+    },
+    {
+      "index": 121,
+      "family": "heating_pair",
+      "op": 4,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": 0.4
+      },
+      "point": {
+        "P_aux": 4000000.0,
+        "n_line": 2.733415030684855e+19,
+        "Z_eff": 1.8443099788041253,
+        "electron_heat_fraction": 0.4721194927791333,
+        "index": 29
+      },
+      "group": 29,
+      "pair_key": "heat4",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 14.23,
+      "raw_file": "2c06d15322af4fd4a09e.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.02021682329032743
+      }
+    },
+    {
+      "index": 122,
+      "family": "heating_pair",
+      "op": 4,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": 0.4
+      },
+      "point": {
+        "P_aux": 12000000.0,
+        "n_line": 2.733415030684855e+19,
+        "Z_eff": 1.8443099788041253,
+        "electron_heat_fraction": 0.4721194927791333,
+        "index": 29
+      },
+      "group": 29,
+      "pair_key": "heat4",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 27.08,
+      "raw_file": "ee36a79c605b35fbf612.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.02021682329032743
+      }
+    },
+    {
+      "index": 123,
+      "family": "heating_pair",
+      "op": 5,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": 0.4
+      },
+      "point": {
+        "P_aux": 4000000.0,
+        "n_line": 3.4060260760982626e+19,
+        "Z_eff": 1.7416757140943449,
+        "electron_heat_fraction": 0.6552473282636719,
+        "index": 30
+      },
+      "group": 30,
+      "pair_key": "heat5",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 13.08,
+      "raw_file": "5b149539183448e4321b.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.02021682329032743
+      }
+    },
+    {
+      "index": 124,
+      "family": "heating_pair",
+      "op": 5,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": 0.4
+      },
+      "point": {
+        "P_aux": 12000000.0,
+        "n_line": 3.4060260760982626e+19,
+        "Z_eff": 1.7416757140943449,
+        "electron_heat_fraction": 0.6552473282636719,
+        "index": 30
+      },
+      "group": 30,
+      "pair_key": "heat5",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 21.25,
+      "raw_file": "35f54ab854180ba4fd21.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.02021682329032743
+      }
+    },
+    {
+      "index": 125,
+      "family": "heating_pair",
+      "op": 6,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": 0.4
+      },
+      "point": {
+        "P_aux": 4000000.0,
+        "n_line": 2.935941470423492e+19,
+        "Z_eff": 1.7883307570075777,
+        "electron_heat_fraction": 0.534449225925093,
+        "index": 31
+      },
+      "group": 31,
+      "pair_key": "heat6",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 16.31,
+      "raw_file": "2e9563d4b21267551755.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.02021682329032743
+      }
+    },
+    {
+      "index": 126,
+      "family": "heating_pair",
+      "op": 6,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": 0.4
+      },
+      "point": {
+        "P_aux": 12000000.0,
+        "n_line": 2.935941470423492e+19,
+        "Z_eff": 1.7883307570075777,
+        "electron_heat_fraction": 0.534449225925093,
+        "index": 31
+      },
+      "group": 31,
+      "pair_key": "heat6",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 30.8,
+      "raw_file": "576d546b9af4005f9d2c.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.02021682329032743
+      }
+    },
+    {
+      "index": 127,
+      "family": "heating_pair",
+      "op": 7,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": 0.4
+      },
+      "point": {
+        "P_aux": 4000000.0,
+        "n_line": 4.461665832021651e+19,
+        "Z_eff": 1.7884212144312106,
+        "electron_heat_fraction": 0.46515853707235705,
+        "index": 32
+      },
+      "group": 32,
+      "pair_key": "heat7",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 15.48,
+      "raw_file": "a368de2843363f83993b.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.02021682329032743
+      }
+    },
+    {
+      "index": 128,
+      "family": "heating_pair",
+      "op": 7,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.7,
+        "delta": 0.4
+      },
+      "point": {
+        "P_aux": 12000000.0,
+        "n_line": 4.461665832021651e+19,
+        "Z_eff": 1.7884212144312106,
+        "electron_heat_fraction": 0.46515853707235705,
+        "index": 32
+      },
+      "group": 32,
+      "pair_key": "heat7",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 21.08,
+      "raw_file": "3b5a0b83782c240ea01a.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.02021682329032743
+      }
+    },
+    {
+      "index": 129,
+      "family": "elongation_variant",
+      "op": 0,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.4,
+        "delta": -0.4
+      },
+      "point": {
+        "P_aux": 10544967.767767284,
+        "n_line": 4.692772618469137e+19,
+        "Z_eff": 2.459077642697442,
+        "electron_heat_fraction": 0.4477617644366723,
+        "index": 33
+      },
+      "group": 33,
+      "pair_key": "kappa0",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 26.71,
+      "raw_file": "b8c3bbd707f95ceb0aff.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.02589110068269912
+      }
+    },
+    {
+      "index": 130,
+      "family": "elongation_variant",
+      "op": 0,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.4,
+        "delta": 0.4
+      },
+      "point": {
+        "P_aux": 10544967.767767284,
+        "n_line": 4.692772618469137e+19,
+        "Z_eff": 2.459077642697442,
+        "electron_heat_fraction": 0.4477617644366723,
+        "index": 33
+      },
+      "group": 33,
+      "pair_key": "kappa0",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 25.71,
+      "raw_file": "7a30ecd3c44cb39945a7.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.021995944246748098
+      }
+    },
+    {
+      "index": 131,
+      "family": "elongation_variant",
+      "op": 1,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.4,
+        "delta": -0.4
+      },
+      "point": {
+        "P_aux": 8420892.084170297,
+        "n_line": 4.578734705646089e+19,
+        "Z_eff": 2.34829120827506,
+        "electron_heat_fraction": 0.3581894152746127,
+        "index": 34
+      },
+      "group": 34,
+      "pair_key": "kappa1",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 22.71,
+      "raw_file": "241841e93bd063ce47b7.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.02589110068269912
+      }
+    },
+    {
+      "index": 132,
+      "family": "elongation_variant",
+      "op": 1,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.4,
+        "delta": 0.4
+      },
+      "point": {
+        "P_aux": 8420892.084170297,
+        "n_line": 4.578734705646089e+19,
+        "Z_eff": 2.34829120827506,
+        "electron_heat_fraction": 0.3581894152746127,
+        "index": 34
+      },
+      "group": 34,
+      "pair_key": "kappa1",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 21.65,
+      "raw_file": "515b113be1d9f5cba2f1.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.021995944246748098
+      }
+    },
+    {
+      "index": 133,
+      "family": "elongation_variant",
+      "op": 2,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.4,
+        "delta": -0.4
+      },
+      "point": {
+        "P_aux": 7252082.693985013,
+        "n_line": 5.6848563658180395e+19,
+        "Z_eff": 1.5430668885682042,
+        "electron_heat_fraction": 0.6290825120726007,
+        "index": 35
+      },
+      "group": 35,
+      "pair_key": "kappa2",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 12.68,
+      "raw_file": "b837a53f44c01c593c90.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.02589110068269912
+      }
+    },
+    {
+      "index": 134,
+      "family": "elongation_variant",
+      "op": 2,
+      "shape": {
+        "size": 1.0,
+        "kappa": 1.4,
+        "delta": 0.4
+      },
+      "point": {
+        "P_aux": 7252082.693985013,
+        "n_line": 5.6848563658180395e+19,
+        "Z_eff": 1.5430668885682042,
+        "electron_heat_fraction": 0.6290825120726007,
+        "index": 35
+      },
+      "group": 35,
+      "pair_key": "kappa2",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 36.51,
+      "raw_file": "58efe8634c89f96642a3.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.021995944246748098
+      }
+    },
+    {
+      "index": 135,
+      "family": "elongation_variant",
+      "op": 3,
+      "shape": {
+        "size": 1.0,
+        "kappa": 2.0,
+        "delta": -0.4
+      },
+      "point": {
+        "P_aux": 7323072.298969798,
+        "n_line": 5.4043139484733596e+19,
+        "Z_eff": 1.509954560807292,
+        "electron_heat_fraction": 0.4460184631033082,
+        "index": 36
+      },
+      "group": 36,
+      "pair_key": "kappa3",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 8.72,
+      "raw_file": "4d1e17f52a02758279c1.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.02329769447791154
+      }
+    },
+    {
+      "index": 136,
+      "family": "elongation_variant",
+      "op": 3,
+      "shape": {
+        "size": 1.0,
+        "kappa": 2.0,
+        "delta": 0.4
+      },
+      "point": {
+        "P_aux": 7323072.298969798,
+        "n_line": 5.4043139484733596e+19,
+        "Z_eff": 1.509954560807292,
+        "electron_heat_fraction": 0.4460184631033082,
+        "index": 36
+      },
+      "group": 36,
+      "pair_key": "kappa3",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 10.96,
+      "raw_file": "2eb7c67fe27033db7238.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.01856612030133266
+      }
+    },
+    {
+      "index": 137,
+      "family": "elongation_variant",
+      "op": 4,
+      "shape": {
+        "size": 1.0,
+        "kappa": 2.0,
+        "delta": -0.4
+      },
+      "point": {
+        "P_aux": 4629040.297325119,
+        "n_line": 4.784151017178235e+19,
+        "Z_eff": 1.7738490985995572,
+        "electron_heat_fraction": 0.5810608282639145,
+        "index": 37
+      },
+      "group": 37,
+      "pair_key": "kappa4",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 7.54,
+      "raw_file": "4c06a973c4ea9c3895b5.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.02329769447791154
+      }
+    },
+    {
+      "index": 138,
+      "family": "elongation_variant",
+      "op": 4,
+      "shape": {
+        "size": 1.0,
+        "kappa": 2.0,
+        "delta": 0.4
+      },
+      "point": {
+        "P_aux": 4629040.297325119,
+        "n_line": 4.784151017178235e+19,
+        "Z_eff": 1.7738490985995572,
+        "electron_heat_fraction": 0.5810608282639145,
+        "index": 37
+      },
+      "group": 37,
+      "pair_key": "kappa4",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 9.95,
+      "raw_file": "370c8ddf6ce62f7d3133.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.01856612030133266
+      }
+    },
+    {
+      "index": 139,
+      "family": "elongation_variant",
+      "op": 5,
+      "shape": {
+        "size": 1.0,
+        "kappa": 2.0,
+        "delta": -0.4
+      },
+      "point": {
+        "P_aux": 11550411.415536726,
+        "n_line": 2.943859857914367e+19,
+        "Z_eff": 2.3647782954007743,
+        "electron_heat_fraction": 0.32378566064013536,
+        "index": 38
+      },
+      "group": 38,
+      "pair_key": "kappa5",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 19.8,
+      "raw_file": "b31d2f711732cda4ff9d.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.02329769447791154
+      }
+    },
+    {
+      "index": 140,
+      "family": "elongation_variant",
+      "op": 5,
+      "shape": {
+        "size": 1.0,
+        "kappa": 2.0,
+        "delta": 0.4
+      },
+      "point": {
+        "P_aux": 11550411.415536726,
+        "n_line": 2.943859857914367e+19,
+        "Z_eff": 2.3647782954007743,
+        "electron_heat_fraction": 0.32378566064013536,
+        "index": 38
+      },
+      "group": 38,
+      "pair_key": "kappa5",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 22.91,
+      "raw_file": "3c952e4edcd52918c276.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.01856612030133266
+      }
+    },
+    {
+      "index": 141,
+      "family": "size_variant",
+      "op": 0,
+      "shape": {
+        "size": 1.5,
+        "kappa": 1.7,
+        "delta": -0.4
+      },
+      "point": {
+        "P_aux": 7046164.066487115,
+        "n_line": 4.004209214125018e+19,
+        "Z_eff": 1.9888495468334644,
+        "electron_heat_fraction": 0.6905849287744178,
+        "index": 39
+      },
+      "group": 39,
+      "pair_key": "size0",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 5.13,
+      "raw_file": "9ec6fd17bf2c7bc23605.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.05588751115592748
+      }
+    },
+    {
+      "index": 142,
+      "family": "size_variant",
+      "op": 0,
+      "shape": {
+        "size": 1.5,
+        "kappa": 1.7,
+        "delta": 0.4
+      },
+      "point": {
+        "P_aux": 7046164.066487115,
+        "n_line": 4.004209214125018e+19,
+        "Z_eff": 1.9888495468334644,
+        "electron_heat_fraction": 0.6905849287744178,
+        "index": 39
+      },
+      "group": 39,
+      "pair_key": "size0",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 5.54,
+      "raw_file": "36fec6711b96aeea765c.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.045487871055469455
+      }
+    },
+    {
+      "index": 143,
+      "family": "size_variant",
+      "op": 1,
+      "shape": {
+        "size": 1.5,
+        "kappa": 1.7,
+        "delta": -0.4
+      },
+      "point": {
+        "P_aux": 10205529.504814627,
+        "n_line": 3.5810007695174136e+19,
+        "Z_eff": 1.7698367855008001,
+        "electron_heat_fraction": 0.6452480816757271,
+        "index": 40
+      },
+      "group": 40,
+      "pair_key": "size1",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 5.7,
+      "raw_file": "7f99cade39d0c1ff4040.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.05588751115592748
+      }
+    },
+    {
+      "index": 144,
+      "family": "size_variant",
+      "op": 1,
+      "shape": {
+        "size": 1.5,
+        "kappa": 1.7,
+        "delta": 0.4
+      },
+      "point": {
+        "P_aux": 10205529.504814627,
+        "n_line": 3.5810007695174136e+19,
+        "Z_eff": 1.7698367855008001,
+        "electron_heat_fraction": 0.6452480816757271,
+        "index": 40
+      },
+      "group": 40,
+      "pair_key": "size1",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 5.83,
+      "raw_file": "26ca64ef089119e87f50.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.045487871055469455
+      }
+    },
+    {
+      "index": 145,
+      "family": "size_variant",
+      "op": 2,
+      "shape": {
+        "size": 2.0,
+        "kappa": 1.7,
+        "delta": -0.4
+      },
+      "point": {
+        "P_aux": 11050457.38190152,
+        "n_line": 4.287472769402759e+19,
+        "Z_eff": 1.8442957309623251,
+        "electron_heat_fraction": 0.697966939264367,
+        "index": 41
+      },
+      "group": 41,
+      "pair_key": "size2",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 2.84,
+      "raw_file": "923bfb5eef127b47a730.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.09935555078334617
+      }
+    },
+    {
+      "index": 146,
+      "family": "size_variant",
+      "op": 2,
+      "shape": {
+        "size": 2.0,
+        "kappa": 1.7,
+        "delta": 0.4
+      },
+      "point": {
+        "P_aux": 11050457.38190152,
+        "n_line": 4.287472769402759e+19,
+        "Z_eff": 1.8442957309623251,
+        "electron_heat_fraction": 0.697966939264367,
+        "index": 41
+      },
+      "group": 41,
+      "pair_key": "size2",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 3.12,
+      "raw_file": "4adca28cf105ea78f45e.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.08086730134073448
+      }
+    },
+    {
+      "index": 147,
+      "family": "size_variant",
+      "op": 3,
+      "shape": {
+        "size": 2.0,
+        "kappa": 1.7,
+        "delta": -0.4
+      },
+      "point": {
+        "P_aux": 6527548.362941602,
+        "n_line": 3.1394933262429684e+19,
+        "Z_eff": 2.3800981213040697,
+        "electron_heat_fraction": 0.6249341592445016,
+        "index": 42
+      },
+      "group": 42,
+      "pair_key": "size3",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 2.15,
+      "raw_file": "a030ec3790818cb4b5e0.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.09935555078334617
+      }
+    },
+    {
+      "index": 148,
+      "family": "size_variant",
+      "op": 3,
+      "shape": {
+        "size": 2.0,
+        "kappa": 1.7,
+        "delta": 0.4
+      },
+      "point": {
+        "P_aux": 6527548.362941602,
+        "n_line": 3.1394933262429684e+19,
+        "Z_eff": 2.3800981213040697,
+        "electron_heat_fraction": 0.6249341592445016,
+        "index": 42
+      },
+      "group": 42,
+      "pair_key": "size3",
+      "sim_error": "SimError.NO_ERROR",
+      "wall_seconds": 3.53,
+      "raw_file": "d2b2b018eaccde28538c.npz",
+      "diagnostics": {
+        "psi_matches_geometry": 0.08086730134073448
+      }
+    }
+  ]
+}

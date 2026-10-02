@@ -1,0 +1,99 @@
+predictive_accuracy:
+  criteria:
+  - id: PA1
+    machine: true
+    criterion: The balanced accuracy of the barrier over the scoring pairs, rescaled to 0 and 1.
+  - id: PA2
+    machine: true
+    criterion: The balanced accuracy of the barrier over the steps of the scoring triangularity scans, rescaled to 0 and 1.
+  - id: PA3
+    machine: true
+    criterion: The balanced accuracy of the barrier over the steps of the scoring heating, density and radiation scans, rescaled to 0 and 1.
+  - id: PA4
+    machine: true
+    criterion: The R^2 on the edge pressure gradient read inside the scoring settings without a barrier and inside those with one, the two averaged and normalized to 0 and 1.
+  - id: PA5
+    machine: true
+    criterion: The R^2 on the logarithm of the heat flux decay length over every scoring setting, normalized to 0 and 1.
+  - id: PA6
+    machine: true
+    criterion: The R^2 on the logarithm of the peak target heat flux over every scoring setting, normalized to 0 and 1.
+  - id: PA7
+    machine: true
+    criterion: The R^2 on the impurity confinement time over the energy confinement time read inside each regime, the two averaged and normalized to 0 and 1.
+  - id: PA8
+    machine: true
+    criterion: The balanced accuracy of the barrier over the settings of the unseen machine, rescaled to 0 and 1.
+insights:
+  criteria:
+  - id: I1
+    criterion: Does the discovered mechanism explain why no amount of heating power brings the edge transport barrier back once the shape is reversed beyond the critical triangularity?
+    kind: finding
+  - id: I2
+    criterion: Does the discovered mechanism explain why the edge pressure gradient of the reversed shape stops at one limit however hard the plasma is heated?
+    kind: finding
+  - id: I3
+    criterion: Does the discovered mechanism explain why putting more of the plasma in the region of unfavourable field curvature keeps its edge free of bursts?
+    kind: finding
+  - id: I4
+    criterion: Does the discovered mechanism explain why staying free of the edge transport barrier asks for nothing beyond the shape itself?
+    kind: finding
+  - id: I5
+    criterion: Does the discovered mechanism explain why the reversed shape stays in its regime when half of its heating is radiated from inside?
+    kind: finding
+  - id: I6
+    criterion: Does the discovered mechanism explain why the channel that carries heat to the divertor narrows in a plasma whose edge holds no barrier?
+    kind: finding
+  - id: I7
+    criterion: Does the discovered mechanism explain why the reversed shape spreads its exhaust over a larger wetted area?
+    kind: finding
+  - id: I8
+    criterion: Does the discovered mechanism explain why the impurity confinement time of the reversed shape stays close to its energy confinement time?
+    kind: finding
+  - id: I9
+    criterion: Does the discovered mechanism explain why access to the second stability regime of ballooning modes closes once the triangularity is strongly reversed?
+    kind: finding
+  - id: I10
+    criterion: Does the discovered mechanism explain why the barrier stops forming at the critical triangularity it does, and why that value shifts with the elongation and the aspect ratio of the plasma?
+    kind: finding
+  - id: I11
+    criterion: Does the discovered mechanism explain why the edge gradient of the reversed shape varies from one discharge to the next at the same shape?
+    kind: limitation
+  - id: I12
+    criterion: Does the discovered mechanism explain why the half of the boundary away from the X-point sets whether the barrier forms?
+    kind: limitation
+  - id: I13
+    criterion: Does the discovered mechanism explain whether the confinement the reversed shape gains in its core outweighs what its edge gives up?
+    kind: limitation
+scientific_constraints:
+  criteria:
+  - id: SC1
+    criterion: Shaping acts on the plasma through its magnetic geometry.
+    source: The shape enters the plasma only through the equilibrium it produces.
+  - id: SC2
+    criterion: Forming an edge transport barrier needs a minimum power crossing the plasma boundary.
+    source: The L-H power threshold.
+  - id: SC3
+    criterion: An edge transport barrier steepens the edge pressure gradient.
+    source: The barrier regime is defined by its steep edge pedestal.
+  - id: SC4
+    criterion: The edge pressure gradient cannot exceed the ideal MHD stability limit.
+    source: Ideal ballooning and peeling stability bound the edge gradient.
+  - id: SC5
+    criterion: An edge transport barrier holds impurities in the plasma.
+    source: The barrier regime is known for its long impurity confinement time.
+  - id: SC6
+    criterion: The power reaching the divertor is the heating power less the power radiated inside the plasma.
+    source: Energy conservation in steady state.
+  - id: SC7
+    criterion: The target heat flux falls as the heat flux width grows.
+    source: The same power spread over a wider channel gives a lower flux.
+  - id: SC8
+    criterion: The heat flux width narrows as edge transport weakens.
+    source: The barrier regime has a narrower heat flux width than the barrier-free regime.
+  - id: SC9
+    criterion: The equilibrium does not change during the flat top of a discharge.
+    source: Steady state analysis of a single discharge.
+  - id: SC10
+    criterion: A tokamak edge is either in the barrier regime or out of it.
+    source: L-mode and H-mode are distinct regimes.

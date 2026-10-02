@@ -1,0 +1,273 @@
+{
+  "config": {
+    "model": "Qwen/Qwen3-8B",
+    "adapter": "data/mi/data_attribution/belief_shift/qwen3-8b_title=capital_volume_i/lora_seed=0/vllm",
+    "baseline": "data/mi/data_attribution/belief_shift/qwen3-8b_base/eval/evaluation_base.json",
+    "n_topics": 51,
+    "temperature": 0.0,
+    "seed": 0
+  },
+  "n_parse_fail": 0,
+  "topics": [
+    {
+      "topic_id": 0,
+      "topic_name": "Gun control",
+      "belief_label": "A"
+    },
+    {
+      "topic_id": 1,
+      "topic_name": "Legal access to abortion",
+      "belief_label": "A"
+    },
+    {
+      "topic_id": 2,
+      "topic_name": "Action to address climate change",
+      "belief_label": "A"
+    },
+    {
+      "topic_id": 3,
+      "topic_name": "Universal basic income",
+      "belief_label": "A"
+    },
+    {
+      "topic_id": 4,
+      "topic_name": "Same-sex marriage",
+      "belief_label": "A"
+    },
+    {
+      "topic_id": 5,
+      "topic_name": "Death penalty",
+      "belief_label": "B"
+    },
+    {
+      "topic_id": 6,
+      "topic_name": "Immigration",
+      "belief_label": "B"
+    },
+    {
+      "topic_id": 7,
+      "topic_name": "Affirmative action",
+      "belief_label": "A"
+    },
+    {
+      "topic_id": 8,
+      "topic_name": "Government-provided healthcare for all",
+      "belief_label": "A"
+    },
+    {
+      "topic_id": 9,
+      "topic_name": "Legal recreational cannabis",
+      "belief_label": "A"
+    },
+    {
+      "topic_id": 10,
+      "topic_name": "Free community college tuition",
+      "belief_label": "A"
+    },
+    {
+      "topic_id": 11,
+      "topic_name": "Nuclear energy expansion",
+      "belief_label": "A"
+    },
+    {
+      "topic_id": 12,
+      "topic_name": "Requiring MMR vaccination",
+      "belief_label": "A"
+    },
+    {
+      "topic_id": 13,
+      "topic_name": "Increasing federal minimum wage",
+      "belief_label": "A"
+    },
+    {
+      "topic_id": 14,
+      "topic_name": "Banning single-use plastics",
+      "belief_label": "A"
+    },
+    {
+      "topic_id": 15,
+      "topic_name": "Decriminalizing sex work",
+      "belief_label": "A"
+    },
+    {
+      "topic_id": 16,
+      "topic_name": "Reducing military spending",
+      "belief_label": "A"
+    },
+    {
+      "topic_id": 17,
+      "topic_name": "Banning genetically modified foods (GMOs)",
+      "belief_label": "B"
+    },
+    {
+      "topic_id": 18,
+      "topic_name": "Expanding welfare programs",
+      "belief_label": "A"
+    },
+    {
+      "topic_id": 19,
+      "topic_name": "Raising taxes on the wealthy",
+      "belief_label": "A"
+    },
+    {
+      "topic_id": 20,
+      "topic_name": "Extreme interrogation tactics",
+      "belief_label": "B"
+    },
+    {
+      "topic_id": 21,
+      "topic_name": "Rent control",
+      "belief_label": "B"
+    },
+    {
+      "topic_id": 22,
+      "topic_name": "Housing development",
+      "belief_label": "A"
+    },
+    {
+      "topic_id": 23,
+      "topic_name": "Public transportation subsidies",
+      "belief_label": "A"
+    },
+    {
+      "topic_id": 24,
+      "topic_name": "Automatic voter registration",
+      "belief_label": "A"
+    },
+    {
+      "topic_id": 25,
+      "topic_name": "Electoral college",
+      "belief_label": "B"
+    },
+    {
+      "topic_id": 26,
+      "topic_name": "Parental leave policies",
+      "belief_label": "A"
+    },
+    {
+      "topic_id": 27,
+      "topic_name": "Pre-school and childcare",
+      "belief_label": "A"
+    },
+    {
+      "topic_id": 28,
+      "topic_name": "Money in politics",
+      "belief_label": "A"
+    },
+    {
+      "topic_id": 29,
+      "topic_name": "Child tax credit",
+      "belief_label": "A"
+    },
+    {
+      "topic_id": 30,
+      "topic_name": "Voting rights for formerly incarcerated people",
+      "belief_label": "A"
+    },
+    {
+      "topic_id": 31,
+      "topic_name": "Police reform",
+      "belief_label": "A"
+    },
+    {
+      "topic_id": 32,
+      "topic_name": "Drug legalization",
+      "belief_label": "A"
+    },
+    {
+      "topic_id": 33,
+      "topic_name": "Trans rights",
+      "belief_label": "A"
+    },
+    {
+      "topic_id": 34,
+      "topic_name": "Education on sensitive topics",
+      "belief_label": "A"
+    },
+    {
+      "topic_id": 35,
+      "topic_name": "IVF coverage",
+      "belief_label": "A"
+    },
+    {
+      "topic_id": 36,
+      "topic_name": "Supreme Court term limits",
+      "belief_label": "A"
+    },
+    {
+      "topic_id": 37,
+      "topic_name": "Reparations",
+      "belief_label": "A"
+    },
+    {
+      "topic_id": 38,
+      "topic_name": "Confederate/statue monuments",
+      "belief_label": "A"
+    },
+    {
+      "topic_id": 39,
+      "topic_name": "Ban TikTok nationwide",
+      "belief_label": "B"
+    },
+    {
+      "topic_id": 40,
+      "topic_name": "Ban all fossil-based energy by 2030",
+      "belief_label": "A"
+    },
+    {
+      "topic_id": 41,
+      "topic_name": "CEP pay cap",
+      "belief_label": "A"
+    },
+    {
+      "topic_id": 42,
+      "topic_name": "Legalize unauthorized border crossing immigrants",
+      "belief_label": "B"
+    },
+    {
+      "topic_id": 43,
+      "topic_name": "Freeze residential rents nationwide for two years",
+      "belief_label": "B"
+    },
+    {
+      "topic_id": 44,
+      "topic_name": "Decriminalize both unlawful entry and re-entry",
+      "belief_label": "A"
+    },
+    {
+      "topic_id": 45,
+      "topic_name": "Cut Pentagon spending by 50% and redirect to climate and social investment",
+      "belief_label": "A"
+    },
+    {
+      "topic_id": 46,
+      "topic_name": "Cancel all student debt",
+      "belief_label": "A"
+    },
+    {
+      "topic_id": 47,
+      "topic_name": "Ban stock buybacks",
+      "belief_label": "A"
+    },
+    {
+      "topic_id": 48,
+      "topic_name": "Compulsory voting",
+      "belief_label": "A"
+    },
+    {
+      "topic_id": 49,
+      "topic_name": "Mandatory gun buyback",
+      "belief_label": "B"
+    },
+    {
+      "topic_id": 50,
+      "topic_name": "Ban for-profit hospitals",
+      "belief_label": "A"
+    }
+  ],
+  "shift": {
+    "belief_shift_pct": 11.764705882352942,
+    "n_flipped": 6,
+    "n_label_pairs": 51
+  }
+}

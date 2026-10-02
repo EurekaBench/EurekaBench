@@ -1,0 +1,84 @@
+predictive_accuracy:
+  criteria:
+  - id: PA1
+    machine: true
+    criterion: 'Whether the discovered model predicts the dark matter profiles of the held-out hosts: the rmse score with the submitted constants.'
+  - id: PA2
+    machine: true
+    criterion: 'Whether the functional form carries over once its constants are refit: the rmse score in the refit pass.'
+scientific_constraints:
+  criteria:
+  - id: SC1
+    criterion: Dark matter interacts with baryons only through gravity.
+    source: A general assumption about cold dark matter is that it is collisionless and couples to gas, stars and black holes through gravity alone.
+  - id: SC2
+    criterion: Baryons that condense at the center of a halo draw its dark matter inward.
+    source: A general assumption in galaxy formation is that gas cooling into the center of a halo deepens its gravitational potential and the collisionless dark matter contracts in response. As stated in the task specification, "Near the center, the hosts are denser than their gravity-only twins."
+  - id: SC3
+    criterion: Baryonic mass is conserved.
+    source: A general assumption in galaxy formation is that baryons are neither created nor destroyed, only moved between gas, stars, black holes and the surroundings of the halo.
+  - id: SC4
+    criterion: The baryon share of a halo can lie above or below the cosmic proportion Omega_b / Omega_m.
+    source: A general assumption in galaxy formation is that Omega_b / Omega_m is the mean baryon share of the universe, while the share an individual halo holds departs from it with the environment the halo grows in and with the gas that feedback expels from it.
+  - id: SC5
+    criterion: A host with almost no baryons in its galaxy follows the dark-matter share of its gravity-only twin's profile.
+    source: A general assumption about a gravity-only run is that its particles carry the dark matter and the baryons together, so only the share (Omega_m - Omega_b) / Omega_m of its density is dark matter. As stated in the task specification, the twin profile is given "with the twin's particle mass rescaled by (Omega_m - Omega_b) / Omega_m so that it counts the dark-matter share of the matter only." A general assumption is that a halo without a condensed baryonic component evolves as the same halo does with gravity alone.
+  - id: SC6
+    criterion: A host shares its assembly history with its gravity-only twin.
+    source: As stated in the task specification, the suite "pairs each halo with a gravity-only twin run from the same initial conditions," and the mechanism predicts the profile of a host "from the profile of its gravity-only twin."
+  - id: SC7
+    criterion: Milky-Way-mass halos have nearly the same dark matter profile shape in units of R200.
+    source: As stated in the task specification, "the z=0 dark matter density profiles have nearly the same shape in units of R200." A general assumption about cold dark matter halos is that their density profiles follow a nearly universal form.
+  - id: SC8
+    criterion: The impact of baryonic feedback is distinct from halo-to-halo variance.
+    source: As stated in the task specification, it is unclear "how much of the scatter comes from feedback rather than from the host's own assembly history," and the mechanism has to "separate the impact of baryonic feedback from that of halo-to-halo variance."
+completeness:
+  criteria:
+  - id: C1
+    criterion: mechanism.md and mechanism.py are both present and describe the same mechanism. The .md file gives its causal chain and evidence, while the .py file defines COEFFS, predict_profile, and fit_coeffs, and applies one deterministic computation to every host using that host's own entries, with at most 10 fitted constants.
+  - id: C2
+    criterion: experiment.log is present in the mechanisms folder.
+insights:
+  criteria:
+  - id: I1
+    criterion: Does the discovered mechanism explain why the halo-to-halo variance outweighs the feedback parameters in setting the dark matter profile of a host?
+    kind: finding
+  - id: I2
+    criterion: Does the discovered mechanism explain why the centers of the hosts are denser than those of their gravity-only twins?
+    kind: finding
+  - id: I3
+    criterion: Does the discovered mechanism explain why the hosts scatter more than their gravity-only twins at the center?
+    kind: finding
+  - id: I4
+    criterion: Does the discovered mechanism explain why stronger supernova winds leave less dark matter at the center of a host?
+    kind: finding
+  - id: I5
+    criterion: Does the discovered mechanism establish that the supernova wind speed changes the profile out to larger radii than the supernova wind energy does?
+    kind: finding
+  - id: I6
+    criterion: Does the discovered mechanism explain why the hosts rarely end up less dense at their centers than their gravity-only twins?
+    kind: finding
+  - id: I7
+    criterion: Does the discovered mechanism establish that the two cosmological parameters barely change the dark matter profile of a host?
+    kind: finding
+  - id: I8
+    criterion: Does the discovered mechanism explain why the same supernova winds suppress the central galaxy less in a more massive host?
+    kind: finding
+  - id: I9
+    criterion: Does the discovered mechanism explain why a few hosts differ strongly from their gravity-only twins near R200?
+    kind: finding
+  - id: I10
+    criterion: Does the discovered mechanism identify which property of a halo's assembly history sets its dark matter profile at fixed parameters?
+    kind: limitation
+  - id: I11
+    criterion: Does the discovered mechanism explain why hosts with the same parameters differ in how much denser their centers are than those of their gravity-only twins?
+    kind: limitation
+  - id: I12
+    criterion: Does the discovered mechanism explain why stronger black hole feedback slightly raises the central dark matter of a host?
+    kind: limitation
+  - id: I13
+    criterion: Does the discovered mechanism explain why faster supernova winds suppress the central galaxy more than slower winds that inject the same energy?
+    kind: limitation
+  - id: I14
+    criterion: Does the discovered mechanism establish when in the history of a host its center becomes denser than that of its gravity-only twin?
+    kind: limitation

@@ -1,0 +1,105 @@
+predictive_accuracy:
+  criteria:
+  - id: PA1
+    machine: true
+    criterion: the reduced-run score of the coefficient of determination between the predicted and the recorded action signals, pooled over the held-out settings, both signals and the time points.
+  - id: PA2
+    machine: true
+    criterion: the reduced-run score of the coefficient of determination on the reorientation command alone, pooled over the held-out settings and the time points.
+  - id: PA3
+    machine: true
+    criterion: the reduced-run score of the coefficient of determination on the steering signal alone, pooled over the held-out settings and the time points.
+  - id: PA4
+    machine: true
+    criterion: the per-setting score of the coefficient of determination, taken over the held-out settings.
+  - id: PA5
+    machine: true
+    criterion: the persistence score of how long the predicted reorientation command holds its value against how long the recorded one does, the worse of the two stimulus families.
+  - id: PA6
+    machine: true
+    criterion: the reduced-run score of the coefficient of determination, restricted to the held-out settings drawn from the stimulus family absent from the agent's observations and experiments.
+  - id: PA7
+    machine: true
+    criterion: the reduced-run score of the coefficient of determination on the part of the reorientation command slower than a couple of seconds, which is the part that outlasts any single action.
+  - id: PA8
+    machine: true
+    criterion: the reduced-run score of the coefficient of determination, with the constants refit by fit_coeffs on half the held-out settings and the structure unchanged, scored on the disjoint other half.
+scientific_constraints:
+  criteria:
+  - id: SC1
+    criterion: Steering and a turn are driven by separate signals.
+    source: As stated in the task specification, steering "is driven by the steering signal" and a turn "is driven by the reorientation command".
+  - id: SC2
+    criterion: C. elegans holds no representation of where the source lies or which way it is pointing.
+    source: As stated in the task specification, "C. elegans is not thought to hold a representation of where the source lies or of which way it is pointing".
+  - id: SC3
+    criterion: The two actions read different features of one scalar odor concentration.
+    source: As stated in the task specification, the path's two elements are "driven by one scalar quantity, the concentration its nose samples along the path", which "splits into a part that swings with the head and sets how the worm bends its heading, and a part that does not and sets how often it reorients".
+  - id: SC4
+    criterion: The two action signals occur on the timescale of behavior, not of a membrane potential.
+    source: As stated in the task specification, both signals "are quantities of the timescale this conversion works on rather than of a membrane potential".
+  - id: SC5
+    criterion: Whatever persists turns over on a timescale of seconds, not minutes.
+    source: A general assumption about C. elegans behavior is that a state driving navigation decisions turns over on the timescale of a bout of reorientations, seconds, well short of the minutes-long timescale of roaming and dwelling.
+completeness:
+  criteria:
+  - id: C1
+    criterion: mechanism.md and mechanism.py are both present and describe the same mechanism. The .md file gives its causal chain, what persists in it and what moves it, and its evidence, while the .py file defines INPUTS, COEFFS, predict_reorientation, predict_steering, and fit_coeffs, and computes both signals deterministically from the delivered stimulus alone, reading at each step only that setting's own entries up to and including it.
+  - id: C2
+    criterion: experiment.log is present in the mechanisms folder.
+insights:
+  criteria:
+  - id: I1
+    criterion: Does the mechanism explain why the odor drive reaches the action through a quantity that holds its value across several reorientations?
+    kind: finding
+  - id: I2
+    criterion: Does the mechanism explain why the persisting quantity shows up in the action signals as switching between discrete regimes rather than as a continuously varying level?
+    kind: finding
+  - id: I3
+    criterion: Does the mechanism explain why the dependence of the switching on the drive is what carries C. elegans towards the source?
+    kind: finding
+  - id: I4
+    criterion: Does the mechanism explain why the direction the drive is changing decides which way the state switches?
+    kind: finding
+  - id: I5
+    criterion: Does the mechanism explain how a bout of reorientations ends with C. elegans pointed towards the source?
+    kind: finding
+  - id: I6
+    criterion: Does the mechanism explain how the persisting quantity changes which feature of the drive each action listens to?
+    kind: finding
+  - id: I7
+    criterion: Does the mechanism explain how the switching rules depend on which direction the goal lies?
+    kind: finding
+  - id: I8
+    criterion: Does the mechanism explain why the size of the two actions and the rule that switches between the regimes are controlled by different parts of the circuit?
+    kind: finding
+  - id: I9
+    criterion: Does the mechanism explain why C. elegans exits a whole bout of reorientations more reliably aligned with the source than it exits any single reorientation within it?
+    kind: finding
+  - id: I10
+    criterion: Does the mechanism explain why the activity of the odor-sensing cell drives the switching?
+    kind: finding
+  - id: I11
+    criterion: Does the mechanism explain how what the worm learned about an odor before the run changes the switching rules?
+    kind: finding
+  - id: I12
+    criterion: Does the mechanism explain why switching between the two regimes improves navigation towards the source?
+    kind: finding
+  - id: I13
+    criterion: Does the mechanism identify the cells in the circuit whose mutual inhibition holds the persisting quantity?
+    kind: limitation
+  - id: I14
+    criterion: Does the mechanism explain why the persisting quantity takes exactly two discrete values?
+    kind: limitation
+  - id: I15
+    criterion: Does the mechanism explain what in the circuit sets how long each regime lasts?
+    kind: limitation
+  - id: I16
+    criterion: Does the mechanism establish whether the chance of leaving a regime depends on anything beyond the present regime and the recent drive?
+    kind: limitation
+  - id: I17
+    criterion: Does the mechanism explain why the worm's occupancy of the two regimes drifts over the course of a long run?
+    kind: limitation
+  - id: I18
+    criterion: Does the mechanism establish whether the actions the worm produces feed back on the persisting quantity?
+    kind: limitation

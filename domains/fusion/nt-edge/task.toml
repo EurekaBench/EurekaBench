@@ -1,0 +1,121 @@
+schema_version = "1.4"
+artifacts = ["/workspace/mechanisms"]
+
+[metadata]
+deliverables = ["mechanisms/mechanism.md", "mechanisms/experiment.log", "mechanisms/mechanism.py"]
+mechanisms_max_mb = 1024
+blocked_hosts = [
+    "github.com", "www.github.com", "raw.githubusercontent.com", "codeload.github.com",
+    "objects.githubusercontent.com", "github.io", "pypi.org", "pypi.python.org", "files.pythonhosted.org",
+    "registry.npmjs.org", "conda.anaconda.org", "anaconda.org", "torax.readthedocs.io", "readthedocs.io",
+    "readthedocs.org", "deepmind.google", "deepmind.com", "www.deepmind.com", "openfusiontoolkit.github.io",
+    "julialang.org", "www.julialang.org", "docs.julialang.org", "pkg.julialang.org", "juliahub.com",
+    "julialang-s3.julialang.org", "cambridge.org", "www.cambridge.org", "static.cambridge.org",
+    "resolve.cambridge.org", "core.cambridge.org", "cfs.energy", "www.cfs.energy", "psfc.mit.edu",
+    "www.psfc.mit.edu", "ga.com", "www.ga.com", "d3dfusion.org", "www.d3dfusion.org", "epfl.ch",
+    "www.epfl.ch", "spc.epfl.ch", "ipp.mpg.de", "www.ipp.mpg.de", "euro-fusion.org", "www.euro-fusion.org",
+    "ukaea.uk", "www.ukaea.uk", "ccfe.ukaea.uk", "iaea.org", "www.iaea.org", "nucleus.iaea.org",
+    "journals.aps.org", "aps.org", "www.aps.org", "iopscience.iop.org", "iop.org", "www.iop.org",
+    "pubs.aip.org", "aip.org", "www.aip.org", "aip.scitation.org", "sciencedirect.com",
+    "www.sciencedirect.com", "link.springer.com", "springer.com", "www.springer.com", "nature.com",
+    "www.nature.com", "zenodo.org", "www.zenodo.org", "osti.gov", "www.osti.gov", "arxiv.org",
+    "www.arxiv.org", "export.arxiv.org", "semanticscholar.org", "www.semanticscholar.org",
+    "api.semanticscholar.org", "openalex.org", "api.openalex.org", "crossref.org", "api.crossref.org",
+    "doi.org", "dx.doi.org", "scholar.google.com", "scholar.archive.org", "researchgate.net",
+    "www.researchgate.net", "sci-hub.st", "sci-hub.ru",
+]
+task_vocabulary = ["google-deepmind/torax", "2406.06718", "TORAX", "TokaMaker", "Open FUSION Toolkit", "GPEC", "DIII-D"]
+
+[metadata.simulator]
+name = "torax-edge"
+
+[[metadata.source_literature]]
+titles = ["The Negative Triangularity Tokamak Path for Fusion Pilot Plants: Experimental Progress and Future Prospects", "The negative triangularity tokamak path for fusion pilot plants"]
+phrases = ["negative triangularity tokamak path", "fusion pilot plants"]
+authors = ["Thome", "Austin", "Coda", "Marinoni", "Hyatt", "Nelson", "Odstrcil", "Odstrčil", "Paz-Soldan", "Sauter", "Scotti", "Vanovac"]
+years = [2026]
+venues = ["arXiv"]
+ids = ["2606.26513"]
+
+[[metadata.source_literature]]
+titles = ["Achievement of Reactor-Relevant Performance in Negative Triangularity Shape in the DIII-D Tokamak"]
+phrases = ["reactor-relevant performance in negative triangularity"]
+authors = ["Austin", "Marinoni", "Walker", "Brookman", "deGrassie", "Hyatt", "McKee", "Petty", "Rhodes", "Smith", "Sung", "Thome", "Turnbull"]
+years = [2019]
+venues = ["Physical Review Letters", "Phys Rev Lett", "PRL"]
+ids = ["10.1103/PhysRevLett.122.115001", "PhysRevLett.122.115001"]
+
+[[metadata.source_literature]]
+titles = ["A brief history of negative triangularity tokamak plasmas"]
+phrases = ["brief history of negative triangularity"]
+authors = ["Marinoni", "Sauter", "Coda"]
+years = [2021]
+venues = ["Reviews of Modern Plasma Physics"]
+ids = ["10.1007/s41614-021-00054-0", "s41614-021-00054-0"]
+
+[[metadata.source_literature]]
+titles = ["Enhanced confinement in diverted negative-triangularity L-mode plasmas in TCV"]
+phrases = ["diverted negative-triangularity l-mode"]
+authors = ["Coda"]
+years = [2022]
+venues = ["Plasma Physics and Controlled Fusion", "PPCF"]
+ids = ["10.1088/1361-6587/ac3fec", "ac3fec"]
+
+[[metadata.source_literature]]
+titles = ["Robust Avoidance of Edge-Localized Modes alongside Gradient Formation in the Negative Triangularity Tokamak Edge", "Robust avoidance of edge localized modes alongside pedestal formation in negative triangularity plasmas"]
+phrases = ["robust avoidance of edge-localized modes", "negative triangularity tokamak edge"]
+authors = ["Nelson", "Schmitz", "Paz-Soldan", "Thome", "Cote", "Leuthold", "Scotti", "Austin", "Hyatt", "Osborne"]
+years = [2023]
+venues = ["Physical Review Letters", "Phys Rev Lett", "PRL"]
+ids = ["10.1103/PhysRevLett.131.195101", "PhysRevLett.131.195101"]
+
+[[metadata.source_literature]]
+titles = ["Ballooning instability preventing the H-mode access in plasmas with negative triangularity shape on the DIII-D tokamak"]
+phrases = ["ballooning instability preventing the h-mode access"]
+authors = ["Saarelma", "Austin", "Knolker", "Marinoni", "Paz-Soldan", "Schmitz", "Snyder"]
+years = [2021]
+venues = ["Plasma Physics and Controlled Fusion", "PPCF"]
+ids = ["10.1088/1361-6587/ac1ea4", "ac1ea4", "1818123"]
+
+[[metadata.source_literature]]
+titles = ["Simultaneous access to high normalized density, current, pressure, and confinement in strongly-shaped diverted negative triangularity plasmas"]
+phrases = ["strongly-shaped diverted negative triangularity"]
+authors = ["Paz-Soldan"]
+years = [2024]
+venues = ["Nuclear Fusion"]
+ids = ["10.1088/1741-4326/ad69a4", "ad69a4"]
+
+[[metadata.source_literature]]
+titles = ["TORAX: A Fast and Differentiable Tokamak Transport Simulator in JAX"]
+phrases = ["torax", "differentiable tokamak transport simulator"]
+authors = ["Citrin", "Goodfellow", "Raju", "Chen", "Degrave", "Donner", "Felici", "Hamel", "Huber", "Nikulin", "Pfau", "Tracey", "Riedmiller", "Kohli"]
+years = [2024, 2025]
+venues = ["arXiv"]
+ids = ["2406.06718", "google-deepmind/torax"]
+
+[[metadata.source_literature]]
+titles = ["TokaMaker: an Open-Source Time-Dependent Grad-Shafranov Tool for the Design and Modeling of Axisymmetric Fusion Devices", "The Open FUSION Toolkit: An open-source suite of fusion modeling tools for engineering, analysis, and education"]
+phrases = ["tokamaker", "open fusion toolkit", "openfusiontoolkit"]
+authors = ["Hansen", "Stewart", "Burgess", "Pharr", "Guizzo", "Logak", "Nelson", "Paz-Soldan"]
+years = [2024, 2023]
+venues = ["Computer Physics Communications", "CPC", "arXiv"]
+ids = ["10.1016/j.cpc.2024.109111", "cpc.2024.109111", "S0010465524000341", "2311.07719", "2311941", "OpenFUSIONToolkit"]
+
+[[metadata.source_literature]]
+titles = ["Ideal Perturbed Equilibrium Code", "General Perturbed Equilibrium Code"]
+phrases = ["gpec", "perturbed equilibrium code", "generalized perturbed equilibrium"]
+authors = ["Park", "Boozer", "Glasser", "Logan"]
+years = [2007]
+venues = ["Physics of Plasmas", "Phys Plasmas"]
+ids = ["10.1063/1.2732170"]
+
+[agent]
+timeout_sec = 14400
+
+[verifier]
+timeout_sec = 172800
+environment_mode = "separate"
+
+[environment]
+docker_image = "fusion.sif"
+workdir = "/workspace"

@@ -1,0 +1,117 @@
+predictive_accuracy:
+  criteria:
+    - id: PA-Direct-llama3/mcqa-CMD
+      machine: true
+      criterion: >-
+        The submitted circuit importances.json is evaluated on llama3/mcqa, and CMD is the area between its faithfulness curve and 1. Score = 0.09 / (0.09 + CMD), where 0.09 is the best CMD that MIB reports for llama3/mcqa. A circuit that could not be produced scores 0.
+    - id: PA-Direct-llama3/mcqa-CPR
+      machine: true
+      criterion: >-
+        The submitted circuit importances.json is evaluated on llama3/mcqa, and CPR is the area under its faithfulness curve. Score = CPR / (CPR + 1.87), where 1.87 is the best CPR that MIB reports for llama3/mcqa, and a CPR that is not positive scores 0. A circuit that could not be produced scores 0.
+    - id: PA-Rerun-llama3/mcqa-CMD
+      machine: true
+      criterion: >-
+        The submitted method.py is rerun on llama3/mcqa and the circuit it produces is evaluated, and CMD is the area between its faithfulness curve and 1. Score = 0.09 / (0.09 + CMD), where 0.09 is the best CMD that MIB reports for llama3/mcqa. A circuit that could not be produced scores 0.
+    - id: PA-Rerun-llama3/mcqa-CPR
+      machine: true
+      criterion: >-
+        The submitted method.py is rerun on llama3/mcqa and the circuit it produces is evaluated, and CPR is the area under its faithfulness curve. Score = CPR / (CPR + 1.87), where 1.87 is the best CPR that MIB reports for llama3/mcqa, and a CPR that is not positive scores 0. A circuit that could not be produced scores 0.
+    - id: PA-Generalization-gemma2/mcqa-CMD
+      machine: true
+      criterion: >-
+        The submitted method.py is run on gemma2/mcqa and the circuit it produces is evaluated, and CMD is the area between its faithfulness curve and 1. Score = 0.06 / (0.06 + CMD), where 0.06 is the best CMD that MIB reports for gemma2/mcqa. A circuit that could not be produced scores 0.
+    - id: PA-Generalization-gemma2/mcqa-CPR
+      machine: true
+      criterion: >-
+        The submitted method.py is run on gemma2/mcqa and the circuit it produces is evaluated, and CPR is the area under its faithfulness curve. Score = CPR / (CPR + 1.71), where 1.71 is the best CPR that MIB reports for gemma2/mcqa, and a CPR that is not positive scores 0. A circuit that could not be produced scores 0.
+    - id: PA-Generalization-gemma2/arc-easy-CMD
+      machine: true
+      criterion: >-
+        The submitted method.py is run on gemma2/arc-easy and the circuit it produces is evaluated, and CMD is the area between its faithfulness curve and 1. Score = 0.04 / (0.04 + CMD), where 0.04 is the best CMD that MIB reports for gemma2/arc-easy. A circuit that could not be produced scores 0.
+    - id: PA-Generalization-gemma2/arc-easy-CPR
+      machine: true
+      criterion: >-
+        The submitted method.py is run on gemma2/arc-easy and the circuit it produces is evaluated, and CPR is the area under its faithfulness curve. Score = CPR / (CPR + 1.7), where 1.7 is the best CPR that MIB reports for gemma2/arc-easy, and a CPR that is not positive scores 0. A circuit that could not be produced scores 0.
+    - id: PA-Generalization-llama3/arc-challenge-CMD
+      machine: true
+      criterion: >-
+        The submitted method.py is run on llama3/arc-challenge and the circuit it produces is evaluated, and CMD is the area between its faithfulness curve and 1. Score = 0.18 / (0.18 + CMD), where 0.18 is the best CMD that MIB reports for llama3/arc-challenge. A circuit that could not be produced scores 0.
+    - id: PA-Generalization-llama3/arc-challenge-CPR
+      machine: true
+      criterion: >-
+        The submitted method.py is run on llama3/arc-challenge and the circuit it produces is evaluated, and CPR is the area under its faithfulness curve. Score = CPR / (CPR + 0.98), where 0.98 is the best CPR that MIB reports for llama3/arc-challenge, and a CPR that is not positive scores 0. A circuit that could not be produced scores 0.
+
+scientific_constraints:
+  criteria:
+    - id: SC1
+      criterion: >-
+        The ablation performed is the strategy ABLATION names.
+      source: >-
+        As stated in the task specification, the method has to "choose a granularity level (edge, node, or neuron) and an ablation strategy (counterfactual, mean, zero, or optimal)", and ABLATION is the module-level constant naming the one in use, which is what fixes the meaning of every score. The mechanics are the ones eap.utils supplies and the instruction's own example demonstrates, so accumulating a cached corrupted-minus-clean difference at a destination input is patching; steering a node with noise while declaring patching is not.
+    - id: SC2
+      criterion: >-
+        An intervention on an edge changes only what that edge carries.
+      source: >-
+        As stated in the task specification, "each edge carries information from a source node to a destination node", so ablating u->v leaves u's paths to every other destination and every other source's path into v untouched. Replacing a whole node's output is a node score rather than an edge score.
+    - id: SC3
+      criterion: >-
+        Every edge of the graph is scored on one comparable scale.
+      source: >-
+        As stated in the task specification, the top-k fraction of edges "ranked by score from highest to lowest" forms the circuit at every k and "any edge you do not include will be treated as having score 0", so the scores are consumed as a single global ranking over the whole graph.
+    - id: SC4
+      criterion: >-
+        A circuit is read off the model without changing it.
+      source: >-
+        A general assumption about attribution: a circuit is read off a fixed network, so the method interferes with activations rather than with the weights and leaves the model as it found it.
+    - id: SC5
+      criterion: >-
+        A new attribution method makes at least one new measurement or intervention on the model.
+      source: >-
+        As stated in the creativity checklist of the task specification, a new attribution method brings at least one new model measurement or intervention: an operation that is named, located in the computational graph and produces a stated tensor or statistic, and that is not limited to reusing, averaging, rescaling, combining or reranking measurements existing methods already produce.
+
+insights:
+  criteria:
+    - id: I1
+      criterion: >-
+        Does the discovered attribution method establish, when rerun on the current model, that scoring an edge with it puts the model through an intervention that the reference method, EAP-IG-inputs, never applies?
+      kind: finding
+    - id: I2
+      criterion: >-
+        Does the discovered attribution method establish, when rerun on the current model with its new component removed, that removing that component changes which edges it ranks highest?
+      kind: finding
+    - id: I3
+      criterion: >-
+        Does the discovered attribution method establish, when rerun on the current model beside the reference method, EAP-IG-inputs, that the quantity its new component computes is neither a rescaling nor a reordering of the reference method's scores?
+      kind: finding
+    - id: I4
+      criterion: >-
+        Does the discovered attribution method establish, by ablating edges on the current model, what the sign of its score says about an edge?
+      kind: finding
+    - id: I5
+      criterion: >-
+        Does the discovered attribution method establish, by ablating edges on the current model, one identified situation in which the reference method, EAP-IG-inputs, orders two edges the opposite way from the measured effect of ablating each of them?
+      kind: finding
+    - id: I6
+      criterion: >-
+        Does the discovered attribution method establish that in that same situation its own score orders those edges the same way as the measured effect?
+      kind: finding
+    - id: I7
+      criterion: >-
+        Does the discovered attribution method explain what in the computation of the reference method, EAP-IG-inputs, produces the mis-ordering of I5?
+      kind: finding
+    - id: I8
+      criterion: >-
+        Does the discovered attribution method establish, by ablating edges on the current model, a condition under which its own score stops tracking the measured effect of ablating an edge?
+      kind: finding
+    - id: I9
+      criterion: >-
+        Does the discovered attribution method establish, when rerun on the current model under another ablation strategy, how the scores it assigns change with that strategy?
+      kind: finding
+    - id: I10
+      criterion: >-
+        Does the discovered attribution method establish, on the current model, an answer to a question about the model that the scores of the reference method, EAP-IG-inputs, cannot answer?
+      kind: finding
+    - id: I11
+      criterion: >-
+        Does the discovered attribution method establish, when run beside the reference method, EAP-IG-inputs, on the current model, how many passes through the model its scores cost relative to the reference method?
+      kind: finding

@@ -1,0 +1,108 @@
+predictive_accuracy:
+  criteria:
+  - id: PA1
+    machine: true
+    criterion: 'Whether the discovered model predicts the stellar mass of the held-out central galaxies: the rmse score of log10 stellar mass with the submitted constants.'
+  - id: PA2
+    machine: true
+    criterion: 'Whether the discovered model predicts the black hole mass of the held-out central galaxies: the rmse score of log10 black hole mass with the submitted constants.'
+  - id: PA3
+    machine: true
+    criterion: 'Whether the functional form carries the stellar mass beyond the parameter range it was fitted on: the rmse score of log10 stellar mass in the extrapolation pass.'
+  - id: PA4
+    machine: true
+    criterion: 'Whether the functional form carries the black hole mass beyond the parameter range it was fitted on: the rmse score of log10 black hole mass in the extrapolation pass.'
+scientific_constraints:
+  criteria:
+  - id: SC1
+    criterion: Halo mass alone does not set the masses of the central galaxy.
+    source: As stated in the task specification, "At the same halo mass, the stellar mass and the black hole mass of the central galaxy both spread over a wide range."
+  - id: SC2
+    criterion: The feedback amplitudes leave the gravity-only twin unchanged.
+    source: As stated in the task specification, the suite "reruns each one with gravity alone as its gravity-only twin." A general assumption about such a run is that it holds no gas, so no feedback acts in it.
+  - id: SC3
+    criterion: The formation history of a system affects the masses of its central galaxy.
+    source: As stated in the task specification, each system has "its own initial conditions." A general assumption in galaxy formation is that halos of the same mass differ in their assembly histories, and that these differences carry through to the galaxies they host.
+  - id: SC4
+    criterion: The central galaxy holds no more baryons than its halo gathered at the cosmic baryon fraction.
+    source: A general assumption in galaxy formation is that a halo gathers baryons in at most the cosmic ratio of Omega_b to Omega_m, and that its stars and its black hole are made from them.
+  - id: SC5
+    criterion: Feedback acts on the central galaxy through its gas.
+    source: A general assumption about supernova and black hole feedback is that it injects energy into the surrounding gas, so it changes star formation and black hole growth by acting on that gas.
+  - id: SC6
+    criterion: Supernova-driven winds remove gas that would otherwise form stars.
+    source: A general assumption about stellar feedback is that supernova-driven winds heat and eject star-forming gas and so suppress star formation.
+  - id: SC7
+    criterion: A black hole grows by accreting gas.
+    source: A general assumption about black hole growth is that a black hole gains its mass by accreting the gas around it.
+  - id: SC8
+    criterion: Black hole feedback is powered by the gas the black hole accretes.
+    source: A general assumption about black hole feedback is that the energy it releases is a fraction of the rest-mass energy of the accreted gas, and the black hole feedback efficiency scales that fraction.
+  - id: SC9
+    criterion: Gas is harder to remove from a more massive halo.
+    source: A general assumption in galaxy formation is that a deeper potential well binds its gas more tightly, so the same feedback energy removes less of it.
+  - id: SC10
+    criterion: A central black hole is far less massive than the stars of its galaxy.
+    source: A general assumption about galaxies and their central black holes is that the black hole mass is far below the stellar mass of its host.
+completeness:
+  criteria:
+  - id: C1
+    criterion: mechanism.md and mechanism.py are both present and describe the same mechanism. The .md file gives its causal chain and evidence, while the .py file defines COEFFS, predict_baryons and fit_coeffs, and applies one deterministic closed-form computation to every system using that system's own inputs, with at most 10 fitted constants.
+  - id: C2
+    criterion: experiment.log is present in the mechanisms folder.
+insights:
+  criteria:
+  - id: I1
+    criterion: Does the discovered mechanism explain why the stellar mass stops rising once the supernova winds are weakened below a certain level?
+    kind: finding
+  - id: I2
+    criterion: Does the discovered mechanism explain why the strongest supernova winds almost prevent the central galaxy from forming?
+    kind: finding
+  - id: I3
+    criterion: Does the discovered mechanism explain why the same supernova winds suppress the stellar mass less in a more massive halo?
+    kind: finding
+  - id: I4
+    criterion: Does the discovered mechanism explain why a black hole with a higher feedback efficiency ends up less massive?
+    kind: finding
+  - id: I5
+    criterion: Does the discovered mechanism explain why the total energy a black hole returns over its life barely changes with its feedback efficiency?
+    kind: finding
+  - id: I6
+    criterion: Does the discovered mechanism explain why the black hole feedback efficiency barely changes the stellar mass?
+    kind: finding
+  - id: I7
+    criterion: Does the discovered mechanism explain why the two cosmological parameters barely change the stellar mass?
+    kind: finding
+  - id: I8
+    criterion: Does the discovered mechanism explain why a higher supernova wind energy can be offset by a lower wind speed at the same stellar mass?
+    kind: finding
+  - id: I9
+    criterion: Does the discovered mechanism explain how the gas around the black hole responds to its feedback efficiency?
+    kind: limitation
+  - id: I10
+    criterion: Does the discovered mechanism explain what sets the level at which the stellar mass stops responding to weaker supernova winds?
+    kind: limitation
+  - id: I11
+    criterion: Does the discovered mechanism explain why faster supernova winds lower the stellar mass more even though they carry the same energy?
+    kind: limitation
+  - id: I12
+    criterion: Does the discovered mechanism explain when the minimum wind speed cancels the effect of the wind speed amplitude?
+    kind: limitation
+  - id: I13
+    criterion: Does the discovered mechanism explain how the supernova winds change the black hole mass?
+    kind: limitation
+  - id: I14
+    criterion: Does the discovered mechanism explain what makes two systems with the same halo mass and the same parameters end up with different masses?
+    kind: limitation
+  - id: I15
+    criterion: Does the discovered mechanism explain how the supernova winds change the dark matter mass at the centre of the halo relative to its gravity-only twin?
+    kind: finding
+  - id: I16
+    criterion: Does the discovered mechanism explain why the centre of the halo is almost never less dense than in its gravity-only twin?
+    kind: finding
+  - id: I17
+    criterion: Does the discovered mechanism explain why the dark matter of every system contracts as much as expected from baryons settling slowly into the centre?
+    kind: finding
+  - id: I18
+    criterion: Does the discovered mechanism explain why the wind speed changes the dark matter density further out in the halo than the wind energy does?
+    kind: finding

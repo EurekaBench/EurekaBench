@@ -1,0 +1,72 @@
+predictive_accuracy:
+  criteria:
+  - id: PA1
+    machine: true
+    criterion: The prediction is scored against the recorded response of the panel over the held-out settings.
+  - id: PA2
+    machine: true
+    criterion: For every panel location, what the part and the surround together do beyond what each of them does alone is taken, with whatever of it follows the location's own response to the part alone or to the surround alone taken out at a strength fitted for that location, and how far that falls as the agreement between the part and its surround rises is read from the prediction and from the recording.
+  - id: PA3
+    machine: true
+    criterion: For every panel location the holding back that follows the fine grain of the agreement is set against the holding back that follows the coarse grain, and that contrast is read from the prediction and from the recording.
+scientific_constraints:
+  criteria:
+  - id: SC1
+    criterion: A population anticipates the content of a location without having seen that scene before.
+    source: As stated in the task specification, the effect is there during ordinary viewing with no expectation imposed on the observer and nothing repeated for them to learn.
+  - id: SC2
+    criterion: A population's response is set by the quantities the simulator reports for that population.
+    source: As stated in the task specification, the mechanism works from the quantities the simulator reports for that population rather than from where in the cortex that population sits.
+  - id: SC3
+    criterion: A part of a scene drives the cortical locations that answer the place it occupies in the frame.
+    source: A general assumption about the visual cortex is that it is laid out retinotopically so a location answers one place in the visual field.
+  - id: SC4
+    criterion: The cortex devotes less of itself to a place further from the centre of gaze.
+    source: A general assumption about the visual cortex is that cortical magnification falls with eccentricity so the periphery is represented more coarsely than the centre.
+  - id: SC5
+    criterion: A cortical location responds gradedly.
+    source: A general assumption about the human cortical response is that what a location reports is a continuous amplitude which follows its input smoothly.
+  - id: SC6
+    criterion: A cortical location is active with no scene in front of it.
+    source: A general assumption about the human cortex is that it is never silent so a location has ongoing activity of its own with no stimulus present.
+  - id: SC7
+    criterion: A location answers a given scene the same way throughout one recording.
+    source: A general assumption about human cortical physiology is that the response properties of a location stay the same within a single recording.
+completeness:
+  criteria:
+  - id: C1
+    criterion: mechanism.md and mechanism.py are both present and describe the same mechanism. The .md file gives its causal chain and the evidence behind it, while the .py file defines PROPERTIES, COEFFS, predict_response and fit_coeffs, and applies one deterministic computation to every cortical location using that location's own recordings, with at most 10 fitted constants.
+  - id: C2
+    criterion: experiment.log is present in the mechanisms folder.
+insights:
+  criteria:
+  - id: I1
+    criterion: Does the discovered mechanism explain why the effect of anticipation in visual scenes grows as the input to a population becomes less reliable?
+    kind: finding
+  - id: I2
+    criterion: Does the discovered mechanism explain why even the earliest visual cortex answers mostly to abstract levels when cues are surrounding and away from the centre of gaze?
+    kind: finding
+  - id: I3
+    criterion: Does the discovered mechanism explain why studies of the early visual cortex have reached conflicting conclusions about the level of abstraction at which it anticipates content?
+    kind: finding
+  - id: I4
+    criterion: Does the discovered mechanism explain why the level of abstraction a population answers to can move away from the level of the features it encodes?
+    kind: finding
+  - id: I5
+    criterion: Does the discovered mechanism explain why, at the centre of gaze, populations higher in the visual hierarchy answer to more abstract levels of what the surround implies?
+    kind: finding
+  - id: I6
+    criterion: Does the discovered mechanism explain why higher visual areas still answer to more abstract levels than lower visual areas away from the centre of gaze?
+    kind: finding
+  - id: I7
+    criterion: Does the discovered mechanism explain how what a surround implies to a person changes as that person gains visual experience?
+    kind: limitation
+  - id: I8
+    criterion: Does the discovered mechanism explain why the response to a part of the visual scene can be enhanced as that part comes to agree with its surroundings?
+    kind: limitation
+  - id: I9
+    criterion: Does the discovered mechanism explain through which neural pathway the anticipation reaches a location?
+    kind: limitation
+  - id: I10
+    criterion: Does the discovered mechanism in visual scene processing explain temporal patterns, such as how one moment of a scene implies the next?
+    kind: limitation

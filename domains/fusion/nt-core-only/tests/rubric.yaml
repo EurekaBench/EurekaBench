@@ -1,0 +1,78 @@
+predictive_accuracy:
+  criteria:
+  - id: PA1
+    machine: true
+    criterion: The R^2 on the logarithm of the confinement time over every scoring setting.
+  - id: PA2
+    machine: true
+    criterion: The R^2 on the change in the logarithm of the confinement time across every mirrored pair of scoring settings, the two settings that differ only in the sign of the triangularity.
+  - id: PA3
+    machine: true
+    criterion: The R^2 on the logarithm of the ratio of the reversed member's heat conductivity to the D shaped member's across those pairs, at every radial point from rho = 0.5 to the boundary, averaged over the ions and the electrons.
+  - id: PA4
+    machine: true
+    criterion: The R^2 on the logarithm of the confinement time relative to the zero triangularity shape of the same scan, over the triangularity scans among the scoring settings.
+  - id: PA5
+    machine: true
+    criterion: The R^2 on the logarithm of the confinement time over the scoring settings of the pairs that differ only in the heating power.
+  - id: PA6
+    machine: true
+    criterion: The R^2 on the logarithm of the confinement time over the scoring settings on shapes of another elongation and on the larger machine.
+  - id: PA7
+    machine: true
+    criterion: The R^2 on the ion temperature, the electron temperature and the two heat conductivities at every radial point inside the boundary over every scoring setting, the conductivities from rho = 0.2 outward, each channel standardized on its own spread and the four averaged.
+insights:
+  criteria:
+  - id: I1
+    criterion: Does the discovered mechanism explain why the electrons trapped on the outboard side of a reversed shape see favourable curvature over more of their bounce orbit?
+    kind: finding
+  - id: I2
+    criterion: Does the discovered mechanism explain why the turbulence the reversal weakens is driven by the toroidal precession of the trapped electrons?
+    kind: finding
+  - id: I3
+    criterion: Does the discovered mechanism explain why the growth rate of that turbulence falls when the trapped electrons see less unfavourable curvature?
+    kind: finding
+  - id: I4
+    criterion: Does the discovered mechanism explain why the reversal lowers the turbulence over the outer half of the radius?
+    kind: finding
+  - id: I5
+    criterion: Does the discovered mechanism explain why placing more of the plasma volume in the unfavourable curvature region leaves the turbulence weaker?
+    kind: finding
+  - id: I6
+    criterion: Does the discovered mechanism explain why the electron heat transport falls in the reversed shape?
+    kind: finding
+  - id: I7
+    criterion: Does the discovered mechanism explain why the gain of the reversed shape keeps the same fraction of the confinement time as the heating power is raised?
+    kind: limitation
+  - id: I8
+    criterion: Does the discovered mechanism explain why the confinement of the reversed shape scales with the normalised gyroradius between the Bohm and the gyro-Bohm limits?
+    kind: limitation
+  - id: I9
+    criterion: Does the discovered mechanism explain why the core gain of the reversed shape makes up for the pedestal that shape gives up?
+    kind: limitation
+scientific_constraints:
+  criteria:
+  - id: SC1
+    criterion: Turbulence carries the heat across the magnetic field.
+    source: General tokamak transport knowledge.
+  - id: SC2
+    criterion: Heat flows down the temperature gradient.
+    source: General tokamak transport knowledge.
+  - id: SC3
+    criterion: In steady state the heat crossing a flux surface equals the heating deposited inside it.
+    source: Energy conservation with no radiation switched on.
+  - id: SC4
+    criterion: Ions and electrons exchange heat through collisions.
+    source: General tokamak transport knowledge.
+  - id: SC5
+    criterion: The turbulent transport on a flux surface is set by the local plasma state there.
+    source: General tokamak transport knowledge and the local transport models of the simulator.
+  - id: SC6
+    criterion: The magnetic geometry of the plasma follows from its equilibrium.
+    source: General tokamak knowledge.
+  - id: SC7
+    criterion: Trapped electrons spend their orbits on the outboard side of the plasma.
+    source: General tokamak knowledge and section III.A and figure 11(b) of the paper.
+  - id: SC8
+    criterion: Collisions scatter electrons out of their trapped orbits.
+    source: General tokamak knowledge.

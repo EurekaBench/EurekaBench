@@ -1,0 +1,105 @@
+predictive_accuracy:
+  criteria:
+  - id: PA1
+    machine: true
+    criterion: The coefficient of determination with which the discovered formula, using the submitted constants, predicts Omega_m from single galaxies of the IllustrisTNG z=0 evaluation sample.
+  - id: PA2
+    machine: true
+    criterion: The coefficient of determination with which the discovered formula, with its functional form unchanged and its constants refit by its own fit_coeffs on a disjoint sample of galaxies from the same simulations, predicts Omega_m from single galaxies of the Astrid z=0 evaluation sample.
+  - id: PA3
+    machine: true
+    criterion: The coefficient of determination with which the discovered formula, with its functional form unchanged and its constants refit by its own fit_coeffs on a disjoint sample of galaxies from the same simulations, predicts Omega_m from single galaxies of the SIMBA z=0 evaluation sample.
+  - id: PA4
+    machine: true
+    criterion: The coefficient of determination with which the discovered formula, with its functional form unchanged and its constants refit by its own fit_coeffs on a disjoint sample of galaxies from the same simulations, predicts Omega_m from single galaxies of the Swift-EAGLE z=0 evaluation sample.
+  - id: PA5
+    machine: true
+    criterion: The coefficient of determination with which the discovered formula, with its functional form unchanged and its constants refit by its own fit_coeffs on a disjoint sample of galaxies from the same simulations, predicts Omega_m from single galaxies of the IllustrisTNG z=1 evaluation sample.
+  - id: PA6
+    machine: true
+    criterion: The coefficient of determination with which the discovered formula, with its functional form unchanged and its constants refit by its own fit_coeffs on a disjoint sample of galaxies from the same simulations, predicts Omega_m from single galaxies of the IllustrisTNG z=2 evaluation sample.
+  - id: PA7
+    machine: true
+    criterion: The coefficient of determination with which the discovered formula, with its functional form unchanged and its constants refit by its own fit_coeffs on a disjoint sample of galaxies from the same simulations, predicts Omega_m from single galaxies of the IllustrisTNG z=3 evaluation sample.
+  - id: PA8
+    machine: true
+    criterion: The coefficient of determination with which the discovered formula, with its functional form unchanged and its constants refit by its own fit_coeffs on a disjoint sample of galaxies from the same simulations, predicts Omega_m from single galaxies of the Astrid z=1 evaluation sample.
+  - id: PA9
+    machine: true
+    criterion: The coefficient of determination with which the discovered formula, with its functional form unchanged and its constants refit by its own fit_coeffs on a disjoint sample of galaxies from the same simulations, predicts Omega_m from single galaxies of the Astrid z=2 evaluation sample.
+  - id: PA10
+    machine: true
+    criterion: The coefficient of determination with which the discovered formula, with its functional form unchanged and its constants refit by its own fit_coeffs on a disjoint sample of galaxies from the same simulations, predicts Omega_m from single galaxies of the Astrid z=3 evaluation sample.
+scientific_constraints:
+  criteria:
+  - id: SC1
+    criterion: Omega_m is read from the catalog properties of one galaxy on its own.
+    source: As stated in the task specification, the mechanism has to yield "an analytic formula that predicts Omega_m from those properties", the "observable properties of a single galaxy", and its executable form returns a "1D numpy array of predicted Omega_m, one entry per galaxy".
+  - id: SC2
+    criterion: Omega_m is imprinted on a galaxy by the processes that assemble it.
+    source: As stated in the task specification, Omega_m is "a property of the universe as a whole" while a galaxy is "a small object assembled locally", and the question is "why a single galaxy can encode the matter density of its universe"; a galaxy has no access to a global quantity that no process delivers to it.
+  - id: SC3
+    criterion: The relation that carries Omega_m holds at every feedback strength in the set.
+    source: As stated in the task specification, the thousand universes have "different known cosmological and feedback parameters", and "The signal survives the strong and nonlinear feedback variations across the set".
+  - id: SC4
+    criterion: Omega_m is carried by a physical property of the galaxy rather than by the bookkeeping of the simulation.
+    source: A general assumption about the CAMELS suites is that every run has the same number of particles, so a particle count, a particle mass, the mass resolution or the position of a row in the catalog reports the setup of the run rather than anything about the galaxy; the task asks for the "observable properties of a single galaxy".
+  - id: SC5
+    criterion: A galaxy keeps more of its gas and metals when its potential well is deeper and less when its outflows are stronger.
+    source: A general assumption about galaxy formation is that supernova- and black-hole-driven winds carry away gas and the metals stars made while a deeper potential well holds on to more of both, which is what produces the mass metallicity relation.
+  - id: SC6
+    criterion: A galaxy in a universe with a higher Omega_m sits in a deeper potential well at fixed stellar mass.
+    source: A general assumption about halos is that dark matter dominates the mass of a subhalo and sets the depth of its potential well; with Omega_b fixed, a higher Omega_m puts more dark matter around the same baryons, so the circular velocity and the velocity dispersion are higher.
+  - id: SC7
+    criterion: Mass and metals are conserved along the baryon cycle with stars as the only source of metals.
+    source: A general assumption about galaxy formation is that gas flows in, turns into stars and flows out without mass or metals appearing from nowhere, and that the metals a galaxy holds were made by stellar nucleosynthesis and returned by stellar winds and supernovae.
+  - id: SC8
+    criterion: Velocities inside a subhalo follow Newtonian gravity in a collisionless dark matter halo.
+    source: A general assumption about halos on these scales is that gravity is Newtonian and dark matter interacts with the baryons only through gravity, so a velocity reports the mass enclosed.
+  - id: SC9
+    criterion: Omega_m is at least the baryon density and at most one.
+    source: A general assumption about cosmology is that Omega_m is the dimensionless fraction of the critical density in matter and includes the baryons, so it is at least Omega_b = 0.049 and at most 1.
+completeness:
+  criteria:
+  - id: C1
+    criterion: mechanism.md and mechanism.py are both present and describe the same mechanism. The .md file states the process that writes Omega_m into the properties of one galaxy, gives the formula with every variable and fitted constant defined, and gives its evidence and the insights that follow, while the .py file defines PROPERTIES, COEFFS, predict_omega_m, and fit_coeffs, implements exactly that formula, and applies one deterministic computation to every galaxy using that galaxy's own catalog properties, with at most 10 fitted constants and nothing beyond numpy and scipy.
+  - id: C2
+    criterion: experiment.log is present in the mechanisms folder.
+insights:
+  criteria:
+  - id: I1
+    criterion: Does the discovered mechanism trace the value of Omega_m in a galaxy to how much of its cosmic baryon share, Omega_b over Omega_m, the galaxy has retained?
+    kind: finding
+  - id: I2
+    criterion: Does the discovered mechanism explain why the mass against which a galaxy's baryon content has to be measured is its dynamical velocity cubed over the gravitational constant times the expansion rate of the universe?
+    kind: finding
+  - id: I3
+    criterion: Does the discovered mechanism explain why the stellar metallicity of a galaxy carries the memory of every inflow, star formation episode and outflow in its past rather than only its present state?
+    kind: finding
+  - id: I4
+    criterion: Does the discovered mechanism derive the metallicity a galaxy settles at from the balance of gas inflow, star formation and outflow, so that the metallicity records the mass loading of its winds?
+    kind: finding
+  - id: I5
+    criterion: Does the discovered mechanism explain how stronger supernova or black hole feedback lowers a galaxy's baryon retention while leaving the dependence of that retention on Omega_m in place?
+    kind: finding
+  - id: I6
+    criterion: Does the discovered mechanism give the constant that changes with feedback strength or between galaxy formation models a physical meaning, namely the efficiency with which baryons stay bound and take part in enrichment?
+    kind: finding
+  - id: I7
+    criterion: Does the discovered mechanism explain why Omega_m is read reliably from galaxies whose feedback shifts the whole mass metallicity relation and poorly from galaxies whose feedback only scatters it?
+    kind: finding
+  - id: I8
+    criterion: Does the discovered mechanism explain why a chemical measure of the galaxy, its enrichment, and a dynamical measure, its potential depth, are both needed before Omega_m can be read?
+    kind: finding
+  - id: I9
+    criterion: Does the discovered mechanism explain why the sensitivity to Omega_m peaks at one metallicity, with enrichment limited by the matter supply below it and saturated by feedback above it?
+    kind: finding
+  - id: I10
+    criterion: Does the discovered mechanism explain why more compact galaxies are also more metal rich, so that compactness adds a small structural correction to the enrichment channel?
+    kind: finding
+  - id: I11
+    criterion: Does the discovered mechanism explain how the encoding of Omega_m in a galaxy evolves as the universe ages, given that the mass metallicity relation is tight at early epochs and loosens toward the present?
+    kind: finding
+  - id: I12
+    criterion: Does the discovered mechanism settle whether the loss of sensitivity to Omega_m in the universes with the highest matter densities belongs to the galaxies themselves, whose enrichment has saturated, or to its own functional form?
+    kind: limitation

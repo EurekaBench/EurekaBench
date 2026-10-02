@@ -1,0 +1,32 @@
+Bootstrap: docker
+From: python:3.13-slim
+
+%environment
+    export MPLBACKEND=Agg
+    export HDF5_PLUGIN_PATH=/usr/local/lib/python3.13/site-packages/hdf5plugin/plugins
+
+%post
+    set -eu
+    apt-get update
+    apt-get install -y --no-install-recommends ca-certificates curl git tmux xz-utils
+    rm -rf /var/lib/apt/lists/*
+    curl -fsSL https://nodejs.org/dist/v22.14.0/node-v22.14.0-linux-x64.tar.xz | tar -xJ -C /usr/local --strip-components=1
+    npm install -g @anthropic-ai/claude-code @openai/codex
+    pip install --no-cache-dir "fire==0.7.1" "numpy>=1.26.4" "scipy>=1.14" "sympy>=1.12" "pydantic==2.12.5" \
+        "PyYAML==6.0.3" "rich==14.2.0" pandas "matplotlib>=3.8.0" "scikit-learn>=1.4" "h5py>=3.10" "hdf5plugin>=4.0" \
+        "astropy>=6.0" "requests>=2.32" torch
+    ln -sf /usr/local/bin/python3 /usr/bin/python3
+    python3 -m venv /opt/harbor-server
+    /opt/harbor-server/bin/pip install --no-cache-dir uvicorn fastapi asciinema
+    ln -sf /opt/harbor-server/bin/asciinema /usr/local/bin/asciinema
+    if [ -e /usr/bin/su ]; then mv /usr/bin/su /usr/bin/su.real; fi
+    printf '%s\n' '#!/bin/sh' \
+        'if [ "$(id -u)" = 0 ] && [ "$1" = root ] && [ "$2" = -s ] && [ "$4" = -c ]; then exec "$3" -c "$5"; fi' \
+        'exec /usr/bin/su.real "$@"' > /usr/bin/su
+    chmod 755 /usr/bin/su
+    mkdir -p /workspace /tests /opt/eurekabench /etc/claude-code
+    echo '{}' > /etc/claude-code/managed-settings.json
+    test -d /usr/local/lib/python3.13/site-packages/hdf5plugin/plugins
+    python3 -c "import torch; assert torch.version.cuda, 'the image carries a CPU-only torch, so the card the sandbox is given could not be used'"
+    python3 -c "import h5py, hdf5plugin, astropy, requests, scipy, fire; print('agent packages ok')"
+    python3 -c "import importlib.util; assert importlib.util.find_spec('globus_sdk') is None, 'the Globus client leaked into the image'"

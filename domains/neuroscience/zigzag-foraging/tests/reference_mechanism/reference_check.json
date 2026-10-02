@@ -1,0 +1,300 @@
+{
+  "shipped_coeffs": [
+    2.0,
+    4.82998,
+    0.0364259,
+    24.096,
+    5.94581,
+    5.0,
+    1.00062,
+    59.924,
+    6.9557
+  ],
+  "scoring": {
+    "rule": "(m - b) / (1 - b), clipped to [0, 1], where m is the measure the criterion is read on and b is the larger of what the two reduced runs reach on the same cases, never taken below the value the measure holds when the prediction carries no information",
+    "no_information": {
+      "pooled_r2": 0.0,
+      "intact_pooled_r2": 0.0,
+      "reduced_pooled_r2": 0.0,
+      "slow_r2": 0.0,
+      "swing_amplitude_r": 0.0,
+      "swing_phase_concordance": 0.0,
+      "removal_sign_no_gap": 0.5,
+      "removal_sign_no_chem": 0.5
+    },
+    "measures": {
+      "PA1": {
+        "block": "submitted",
+        "read_on": [
+          "intact_pooled_r2"
+        ]
+      },
+      "PA2": {
+        "block": "submitted",
+        "read_on": [
+          "swing_amplitude_r"
+        ]
+      },
+      "PA3": {
+        "block": "submitted",
+        "read_on": [
+          "swing_phase_concordance"
+        ]
+      },
+      "PA4": {
+        "block": "submitted",
+        "read_on": [
+          "slow_r2"
+        ]
+      },
+      "PA5": {
+        "block": "submitted",
+        "read_on": [
+          "reduced_pooled_r2"
+        ]
+      },
+      "PA6": {
+        "block": "submitted",
+        "read_on": [
+          "removal_sign_no_gap"
+        ]
+      },
+      "PA7": {
+        "block": "refit",
+        "read_on": [
+          "pooled_r2"
+        ]
+      }
+    }
+  },
+  "fit": {
+    "on": "calibration settings",
+    "n_settings": 36,
+    "seconds": 147.0,
+    "coeffs": [
+      2.095756845043246,
+      4.544490120875729,
+      0.03622282721445985,
+      24.79429695192786,
+      6.241050347614311,
+      4.722107149319172,
+      0.5771303688870458,
+      139.26948431478277,
+      6.4785048517768695
+    ],
+    "pooled_r2": 0.25125599758948847
+  },
+  "baseline_seconds": 310.6,
+  "predict_seconds": 2.8,
+  "ceiling": {
+    "pooled_r2": 0.5529514003316007,
+    "intact_pooled_r2": 0.513724822423275,
+    "reduced_pooled_r2": 0.6054476426632592,
+    "slow_r2": 0.7237676223084542,
+    "swing_amplitude_r": 0.629269511619803,
+    "swing_phase_concordance": 0.9508831068422726,
+    "removal_sign_no_gap": 0.9259064136784966,
+    "removal_sign_no_chem": 1.0,
+    "n_swing_cases": 6518,
+    "n_phase_cases": 6518,
+    "n_removal_cases": {
+      "no_gap": 1326,
+      "no_chem": 1248
+    },
+    "n_intact": 67,
+    "n_reduced": 33,
+    "n_regressors_per_neuron": 93,
+    "note": "per-neuron linear fit on the test settings themselves; an upper bound no submitted mechanism can reach"
+  },
+  "fit_seconds": 215.6,
+  "refit_coeffs": [
+    2.0,
+    5.840993683911866,
+    0.03878132190169826,
+    25.258400369514533,
+    6.67236442185985,
+    4.780797612868255,
+    1.0005528275436064,
+    200.0,
+    4.536972760267612
+  ],
+  "coeffs_used": [
+    2.095756845043246,
+    4.544490120875729,
+    0.03622282721445985,
+    24.79429695192786,
+    6.241050347614311,
+    4.722107149319172,
+    0.5771303688870458,
+    139.26948431478277,
+    6.4785048517768695
+  ],
+  "submitted": {
+    "pooled_r2": 0.29756585044091555,
+    "intact_pooled_r2": 0.253219476904777,
+    "reduced_pooled_r2": 0.3347279438442765,
+    "slow_r2": 0.4637955335354256,
+    "swing_amplitude_r": 0.32983635754301416,
+    "swing_phase_concordance": 0.9101288056323278,
+    "removal_sign_no_gap": 0.6968884083336555,
+    "removal_sign_no_chem": 1.0,
+    "n_swing_cases": 6518,
+    "n_phase_cases": 6518,
+    "n_removal_cases": {
+      "no_gap": 1326,
+      "no_chem": 1248
+    },
+    "n_intact": 67,
+    "n_reduced": 33,
+    "baselines": {
+      "flat_stimulus": {
+        "pooled_r2": 0.10554247238037417,
+        "intact_pooled_r2": 0.06224645047825017,
+        "reduced_pooled_r2": 0.11832974851889322,
+        "slow_r2": 0.30465338123127594,
+        "swing_amplitude_r": -0.030039899916856374,
+        "swing_phase_concordance": -0.0326260693423066,
+        "removal_sign_no_gap": 0.30831680089131835,
+        "removal_sign_no_chem": 1.0,
+        "n_swing_cases": 6518,
+        "n_phase_cases": 6518,
+        "n_removal_cases": {
+          "no_gap": 1326,
+          "no_chem": 1248
+        },
+        "n_intact": 67,
+        "n_reduced": 33,
+        "coeffs": [
+          88.61555022315694,
+          4.666398509699215,
+          0.21655598443929394,
+          25.1333740175829,
+          6.501639923160749,
+          0.08031816336190838,
+          2.0085187082962657,
+          45.96550556694316,
+          0.6492517935613786
+        ]
+      },
+      "merged_wiring": {
+        "pooled_r2": 0.12328541967397377,
+        "intact_pooled_r2": 0.03593298780915233,
+        "reduced_pooled_r2": 0.2535646456409778,
+        "slow_r2": 0.33738345100821965,
+        "swing_amplitude_r": -0.03992295843487837,
+        "swing_phase_concordance": 0.7731326090383962,
+        "removal_sign_no_gap": 0.7465751428740851,
+        "removal_sign_no_chem": 1.0,
+        "n_swing_cases": 6518,
+        "n_phase_cases": 6518,
+        "n_removal_cases": {
+          "no_gap": 1326,
+          "no_chem": 1248
+        },
+        "n_intact": 67,
+        "n_reduced": 33,
+        "coeffs": [
+          4.47544887455392,
+          13.153927689239564,
+          0.391467053889651,
+          40.823983222316485,
+          4.926099834780997,
+          0.28801307001130766,
+          1.0006580139238321,
+          200.0,
+          0.29064593719946474
+        ]
+      }
+    }
+  },
+  "refit": {
+    "pooled_r2": 0.29254058239055747,
+    "intact_pooled_r2": 0.2459690374296728,
+    "reduced_pooled_r2": 0.25700170527451827,
+    "slow_r2": 0.4463119124276296,
+    "swing_amplitude_r": 0.38614747183576603,
+    "swing_phase_concordance": 0.8525162828626003,
+    "removal_sign_no_gap": null,
+    "removal_sign_no_chem": null,
+    "n_swing_cases": 3182,
+    "n_phase_cases": 3182,
+    "n_removal_cases": {
+      "no_gap": 0,
+      "no_chem": 0
+    },
+    "n_intact": 33,
+    "n_reduced": 17,
+    "baselines": {
+      "flat_stimulus": {
+        "pooled_r2": 0.15093942732791,
+        "intact_pooled_r2": 0.09091972272227589,
+        "reduced_pooled_r2": 0.12412688504045666,
+        "slow_r2": 0.4302484948822842,
+        "swing_amplitude_r": 0.43447770198230884,
+        "swing_phase_concordance": -0.06274506338505599,
+        "removal_sign_no_gap": null,
+        "removal_sign_no_chem": null,
+        "n_swing_cases": 3182,
+        "n_phase_cases": 3182,
+        "n_removal_cases": {
+          "no_gap": 0,
+          "no_chem": 0
+        },
+        "n_intact": 33,
+        "n_reduced": 17,
+        "coeffs": [
+          146.91144932182502,
+          8.470664079149907,
+          0.030735677632685726,
+          21.61222677075645,
+          6.620057241184343,
+          0.08822501386047102,
+          1.439430060891903,
+          82.03676071987417,
+          3.59811125557496
+        ]
+      },
+      "merged_wiring": {
+        "pooled_r2": 0.1753011667687191,
+        "intact_pooled_r2": 0.07424280032951991,
+        "reduced_pooled_r2": 0.3133892501769382,
+        "slow_r2": 0.44234314937747965,
+        "swing_amplitude_r": 0.19863261166214455,
+        "swing_phase_concordance": 0.43645233601220623,
+        "removal_sign_no_gap": null,
+        "removal_sign_no_chem": null,
+        "n_swing_cases": 3182,
+        "n_phase_cases": 3182,
+        "n_removal_cases": {
+          "no_gap": 0,
+          "no_chem": 0
+        },
+        "n_intact": 33,
+        "n_reduced": 17,
+        "coeffs": [
+          2.0,
+          4.82998,
+          0.21855539999999998,
+          32.650800000000004,
+          1.0,
+          4.999999999999999,
+          1.00062,
+          89.886,
+          0.42366948435757906
+        ]
+      }
+    }
+  },
+  "pa_scores": {
+    "PA1": 0.2036,
+    "PA2": 0.3298,
+    "PA3": 0.6039,
+    "PA4": 0.1908,
+    "PA5": 0.1087,
+    "PA6": 0.0,
+    "PA7": 0.1422
+  },
+  "predictive_accuracy": 0.2256,
+  "total": 7,
+  "test_set_fingerprint": "41d6de61a7455853"
+}

@@ -1,0 +1,66 @@
+schema_version = "1.4"
+artifacts = ["/workspace/mechanism", "/workspace/training"]
+
+[metadata]
+deliverables = ["mechanism/mechanism.md", "mechanism/influence_fn.py", "mechanism/experiment.log"]
+mechanisms_max_mb = 500
+blocked_hosts = [
+    "huggingface.co", "www.huggingface.co", "hf.co", "cdn-lfs.huggingface.co", "cdn-lfs-us-1.huggingface.co",
+    "cdn-lfs-eu-1.huggingface.co", "github.com", "www.github.com", "raw.githubusercontent.com",
+    "codeload.github.com", "objects.githubusercontent.com", "github.io", "gitlab.com", "www.gitlab.com", "pypi.org",
+    "pypi.python.org", "files.pythonhosted.org", "registry.npmjs.org", "conda.anaconda.org", "anaconda.org",
+    "arxiv.org", "www.arxiv.org", "export.arxiv.org", "alphaxiv.org", "www.alphaxiv.org", "openreview.net",
+    "www.openreview.net", "semanticscholar.org", "www.semanticscholar.org", "api.semanticscholar.org",
+    "openalex.org", "api.openalex.org", "crossref.org", "api.crossref.org", "doi.org", "dx.doi.org",
+    "scholar.google.com", "scholar.archive.org", "researchgate.net", "www.researchgate.net", "paperswithcode.com",
+    "www.paperswithcode.com", "aclanthology.org", "www.aclanthology.org", "ar5iv.labs.arxiv.org", "ar5iv.org",
+    "www.ar5iv.org", "web3.arxiv.org", "emergentmind.com", "www.emergentmind.com", "lm-belief-change.github.io",
+    "aihub.org", "www.aihub.org", "scour.ing",
+]
+sandbox_env = {HF_HUB_OFFLINE = "1"}
+task_vocabulary = []
+
+[metadata.simulator]
+name = "lm-belief"
+args = {blackbox = "qwen3-8b", task = "capital_volume_i", seed = 0, domain = "belief_influence"}
+verifier_args = {blackbox = "qwen3-8b", task = "capital_volume_i", seed = 1, domain = "belief_judge"}
+
+[[metadata.stages]]
+name = "infer"
+timeout_sec = 14400
+
+[[metadata.stages]]
+name = "training"
+instruction = "stages/training/instruction.md"
+timeout_sec = 14400
+needs = "mechanism/mechanism.md"
+deliverables = ["results/submission.json"]
+collect = "training/results"
+carry = [{from = ["mechanism"], to = "mechanism"}]
+simulator = {domain = "belief_training"}
+
+[metadata.judge]
+evaluation = "host"
+list_all_criteria = true
+reset_simulator = true
+gpu_phases = ["insights_strict"]
+timeout_sec = 14400
+
+[[metadata.source_literature]]
+titles = ["Accumulating Context Changes the Beliefs of Language Models"]
+phrases = ["accumulating context", "malleable mind"]
+authors = ["Geng", "Chen", "Liu", "Horta Ribeiro", "Willer", "Neubig", "Griffiths"]
+years = [2025]
+venues = ["arXiv"]
+ids = ["2511.01805", "10.48550/arXiv.2511.01805", "lm-belief-change"]
+
+[agent]
+timeout_sec = 30600
+
+[verifier]
+timeout_sec = 172800
+environment_mode = "separate"
+
+[environment]
+docker_image = "computer-science.sif"
+workdir = "/workspace"
